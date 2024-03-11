@@ -2,32 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+.background-overlay::before {
+  content: "";
+  background-image: url("../public/methods/Vector.png");
+  background-position: 0px 30px;
+  opacity: 0.4;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 105%;
+  background-repeat: no-repeat;
+}
+.background-over::before {
+  content: "";
+  background-image: url("../public/methods/Vector-4.png");
+  /* background-position: 0px 30px; */
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.imagee {
+  animation: rotateAnimation 0.5s ease forwards;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  /* 50% {
+    transform: rotate(-10deg);
+  } */
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+.gradient-with-image {
+  width: 100%;
+  height: 250px; /* Adjust height as needed */
+
+  background: radial-gradient(
+      circle at 120% 25%,
+      rgba(0, 0, 0, 0) 15%,
+      rgba(0, 0, 0, 0) 45%,
+      #3b0d17 45%
+    ),
+    radial-gradient(
+      circle at 131% 80%,
+      #f0574c00 42%,
+      #f0564c 42%,
+      #f0564c 30%
+    ),
+    url("../public/methods/banner-bg.png");
+  /* background-size: 100% 100%; */
+  /* Adjust background position as needed */
+  background-position-x: 100%;
+  background-size: contain;
+  background-repeat: repeat; /* Prevent image repeat */
+}
+.background{
+  background-image: url("../public/methods/Vector-2.png");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
 }
