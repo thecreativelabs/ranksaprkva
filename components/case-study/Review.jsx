@@ -112,6 +112,23 @@ export default function Review() {
             swiperRef.current.swiper.slideNext();
         }
     };
+    const breakpoints = {
+        // when window width is >= 320px
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 20
+        },
+        // when window width is >= 480px
+        480: {
+            slidesPerView: 3,
+            spaceBetween: 30
+        },
+        // when window width is >= 640px
+        640: {
+            slidesPerView: 4,
+            spaceBetween: 25
+        }
+    };
     return (
         <div className="min-h-[150vh] w-full flex flex-col justify-center items-center">
             <div className="w-full sm:h-[100vh] px-4 lg:px-0 lg:w-4/5 flex flex-col justify-center">
@@ -132,19 +149,21 @@ export default function Review() {
             </div>
             <div className="w-full lg:h-[60vh]  flex flex-col bg-[#f9f9f9] mt-8 lg:mt-12">
                 <div className='flex w-full mt-[70px] justify-center items-center '>
-                    <div className='flex w-[65%] gap-[20px]  items-center'>
+                    <div className='flex sm:flex-row flex-col w-[65%] gap-[20px]  items-center'>
                         <p className="text-2xl font-['Roboto'] font-normal">
                             {data.testimonial.title}
                         </p>
-                        <p className="text-xl font-['Roboto'] font-normal">
-                            {data.testimonial.rating}
-                        </p>
-                        <div>
-                            <Rating rating={data.testimonial.rating} />
+                        <div className='flex items-center  gap-[10px]'>
+                            <p className="text-xl font-['Roboto'] font-normal">
+                                {data.testimonial.rating}
+                            </p>
+                            <div>
+                                <Rating rating={data.testimonial.rating} />
+                            </div>
+                            <p className='text-xs text-light-red'>
+                                {data.testimonial.totalreviews} reviews
+                            </p>
                         </div>
-                        <p className='text-xs text-light-red'>
-                            {data.testimonial.totalreviews} reviews
-                        </p>
                     </div>
                 </div>
                 <div className='h-[65%] w-full mt-[20px] relative justify-center items-center flex'>
@@ -159,15 +178,19 @@ export default function Review() {
                         <Swiper
                             ref={swiperRef}
 
-                            spaceBetween={25}
+                            // spaceBetween={25}
                             slidesPerView={4}
-                            // navigation
+
                             loop={true}
                             pagination={{ clickable: true }}
 
                             onSwiper={(swiper) => console.log(swiper)}
                             onSlideChange={() => console.log('slide change')}
                             className="h-[100%] flex w-[95%] p-52  relative"
+
+
+
+                            breakpoints={breakpoints}
                         >
 
 
