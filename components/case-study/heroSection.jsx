@@ -17,8 +17,8 @@ const data = {
 
 export default function HeroSection() {
     return (
-        <div className="min-h-[100vh] w-full max-h-fit flex flex-col justify-center items-center">
-            <div className="w-[80%] min-h-[80vh] flex flex-col justify-evenly ">
+        <div className="h-[100vh]  w-full max-h-[800px] flex flex-col justify-center items-center">
+            <div className="w-[80%] max-w-[1200px] h-[80vh] flex flex-col justify-evenly ">
                 <p className=" text-light-red text-sm font-bold font-DM-sans uppercase leading-[21px] tracking-widest">
                     {data.title}
                 </p>

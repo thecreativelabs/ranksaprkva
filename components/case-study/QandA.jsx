@@ -101,7 +101,7 @@ export default function QAndA() {
     };
     return (
         <div className="flex justify-center pt-[120px] pb-[60px] items-center">
-            <div className="lg:w-4/5 w-full flex sm:flex-row flex-col justify-between">
+            <div className="lg:w-4/5 max-w-[1200px] w-full flex sm:flex-row flex-col justify-between">
                 <p className="text-dark-red ml-[20px] sm:w-[50%] w-[100%] text-xxl lg:text-xxxxl font-normal font-Amiri   leading-[32px] lg:leading-relaxed">
                     {data.title}
                 </p>

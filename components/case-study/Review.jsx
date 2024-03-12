@@ -130,8 +130,8 @@ export default function Review() {
         }
     };
     return (
-        <div className="min-h-[150vh] w-full flex flex-col justify-center items-center">
-            <div className="w-full sm:h-[100vh] px-4 lg:px-0 lg:w-4/5 flex flex-col justify-center">
+        <div className="h-[150vh] w-full min-h-[1300px] sm:max-h-[1500px] max-h-1500px flex flex-col justify-center items-center">
+            <div className="w-full sm:h-[100vh] max-w-[1200px] max-h-[700px] px-4 lg:px-0 lg:w-4/5 flex flex-col justify-center">
                 <p className="text-light-red  text-sm sm:text-sm font-bold font-DM-sans uppercase tracking-widest">
                     {data.title}
                 </p>
@@ -147,9 +147,9 @@ export default function Review() {
                     </p>
                 </div>
             </div>
-            <div className="w-full lg:h-[60vh]  flex flex-col bg-[#f9f9f9] mt-8 lg:mt-12">
-                <div className='flex w-full mt-[70px] justify-center items-center '>
-                    <div className='flex sm:flex-row flex-col w-[65%] gap-[20px]  items-center'>
+            <div className="w-full pb-[20px] max-h-fit flex flex-col justify-center items-center bg-[#f9f9f9] mt-8 lg:mt-12">
+                <div className='flex max-w-[1200px] w-full mt-[70px] justify-center items-center '>
+                    <div className='flex sm:flex-row flex-col w-[78%] gap-[20px]  items-center'>
                         <p className="text-2xl font-['Roboto'] font-normal">
                             {data.testimonial.title}
                         </p>
@@ -166,8 +166,8 @@ export default function Review() {
                         </div>
                     </div>
                 </div>
-                <div className='h-[65%] w-full mt-[20px] relative justify-center items-center flex'>
-                    <div className='w-[68%] flex'>
+                <div className='h-[65%] max-w-[1250px] w-full mt-[20px] relative justify-center items-center flex'>
+                    <div className='w-[80%] flex'>
                         <button className='mr-[5px]' onClick={handlePrev}> <svg fill={"#C42A1C"} height="30px" width="30px" viewBox="-29.7 -29.7 389.40 389.40" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" transform="rotate(180)">
                             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                             <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>

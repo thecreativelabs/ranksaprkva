@@ -330,14 +330,14 @@ export default function SeoCases() {
     const lastnum = parseInt((data.cards.length % 16 == 0) ? data.cards.length / 16 : (data.cards.length / 16) + 1)
     console.log(lastnum)
     return (
-        <div className='flex justify-center items-center'>
-            <div className='w-full lg:w-[75%] flex justify-center items-center flex-col'>
-                <div className='w-full flex justify-center items-center mt-[70px]'>
+        <div className='flex justify-center  items-center'>
+            <div className='w-full  relative  min-h-fit max-w-[1200px] lg:w-[75%] flex justify-center items-center flex-col'>
+                <div className='w-full flex m justify-center items-center mt-[70px]'>
                     <p className="text-dark-red w-[80%] lg:w-[unset] text-[27.30px] lg:text-[46px] font-normal font-Amiri tracking-wide leading-[35px] sm:leading-[67.34px]">
                         {data.title}
                     </p>
                 </div>
-                <div className='grid grid-cols-1 lg:grid-cols-4 gap-[25px] mt-[50px] lg:mt-[70px] gap-y-[70px]'>
+                <div className='grid grid-cols-1 min-h-[] lg:grid-cols-4 gap-[25px] mt-[50px] lg:mt-[70px] sm:mb-[0px] mb-[0px] gap-y-[70px]'>
                     {
                         [...Array(16)].map((_, i) => {
                             return (
@@ -353,7 +353,7 @@ export default function SeoCases() {
                         })
                     }
                 </div>
-                <div className='grid grid-cols-4 gap-[10px] ml-[20px]  justify-center items-center mt-[20px]'>
+                <div className='grid grid-cols-4 absolute bottom-[-50px] gap-[10px] ml-[20px]  justify-center items-center mt-[50px]'>
                     <div className='hover:cursor-pointer' onClick={() => setPage(page > 0 ? page - 1 : page)}>{(page > 0) ? <Prevbutton for="button" color="#ccc" className="h-[15px] lg:h-[20px] font-bold text-blue-300" /> : ""}</div>
                     <button className='font-bold text-[black]' >{page + 1}</button>
                     <button onClick={() => setPage((page < lastnum - 1) ? page + 1 : page)} className='text-[#CCC] ml-[-10px] font-bold hover:text-[black]' >{((page < lastnum - 1)) && page + 2}</button>

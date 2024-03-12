@@ -37,12 +37,12 @@ const data = {
 }
 export default function Feature_case_Study() {
     return (
-        <div className="min-h-[92vh] w-full max-h-fit bg-[#F0F0ED] flex justify-center items-center">
-            <div className="w-[80%] h-[70%]">
+        <div className=" w-full py-[100px] bg-[#F0F0ED] flex justify-center items-center">
+            <div className="w-[80%] max-w-[1200px] h-[70%]">
                 <p className="text-red-950 text-2xl lg:text-[37.30px] font-normal font-Amiri tracking-wide leading-[67.34px]">
                     {data.title}
                 </p>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4 lg:mt-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 ">
                     {
                         data.cards.map((card, i) => {
                             return (

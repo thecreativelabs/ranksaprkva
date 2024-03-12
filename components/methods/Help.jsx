@@ -5,9 +5,9 @@ const data = {
 };
 export default function Help() {
   return (
-    <div className="bg-[#F7DEB0] max-h-full h-[50vh] relative w-full">
+    <div className="bg-[#F7DEB0] sm:h-[50vh]  flex justify-center items-center max-h-[500px] relative w-full">
       <div
-        className="max-h-full h-full w-full bg-contain bg-no-repeat flex gap-[12px] flex-col background-over justify-center items-center">
+        className="max-h-full h-full w-full max-w-[1400px] bg-contain bg-no-repeat flex gap-[12px] flex-col background-over justify-center items-center">
         <div className="w-[80%] flex justify-between">
           <div className="space-y-[20px]">
             <p className="text-xxl text-dark-red font-bold font-DM-sans">
