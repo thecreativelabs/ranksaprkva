@@ -94,9 +94,9 @@ export default function Slider() {
             data.map((dataa, i) => {
               return (
                 <SwiperSlide key={i} className="">
-                  <div className="flex w-full h-full justify-center  items-center">
+                  <div className="flex sm:flex-row flex-col w-full h-full justify-center  items-center">
                     <div
-                      className={` h-[60%] w-[45%] flex justify-center relative items-center bg-cover`}
+                      className={` h-[60%] sm:mt-[0px] mt-[50px] sm:w-[45%] w-[80%] flex justify-center relative items-center bg-cover`}
                       style={{
                         backgroundImage: `url(${'./methods/Vector-3.png'})`,
                         backgroundColor: dataa.color
@@ -107,7 +107,7 @@ export default function Slider() {
                         className="absolute h-[100px] top-[-35px] right-[-35px]"
                       />
                     </div>
-                    <div className="w-[40%] ml-[30px] gap-y-[30px] flex flex-col justify-evenly items-center">
+                    <div className="sm:w-[40%] w-[80%] ml-[30px] gap-y-[30px] flex flex-col justify-evenly items-center">
                       <div className="w-full ml- flex">
                         <div className="flex w-1/2 flex-col border-r-[1px] ml-[-10px] pb-2 border-[#dcdcdc] justify-center items-center">
                           <div className="flex w-[50%] justify-center items-center">
@@ -146,7 +146,7 @@ export default function Slider() {
                         </div>
                       </div>
                       <div>
-                        <p className="text-dark-red text-xxl font-bold font-DM-sans w-[100%]">
+                        <p className="text-dark-red sm:text-xxl text-xl font-bold font-DM-sans w-[100%]">
                           {dataa.content}
                         </p>
                         <div className="text-sm justify-start w-[50%] font-bold mt-[20px]  uppercase flex tracking-widest gap-[15px] items-center text-light-red">
@@ -167,7 +167,7 @@ export default function Slider() {
               );
             })
           }
-          <div className="h-[50px] z-20 absolute bottom-4 right-10">
+          <div className="h-[50px] z-20 absolute sm:bottom-4 bottom-2 right-10">
             <PrevButton/>
             <Nextbutton />
           </div>

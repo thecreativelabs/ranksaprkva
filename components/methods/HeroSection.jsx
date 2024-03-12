@@ -9,7 +9,7 @@ const herosection = {
 export default function Hero() {
   return (
     <>
-    <style jsx>{`
+      <style jsx>{`
         .background-overlay::before {
           content: "";
           background-image: url("./methods/Vector.png");
@@ -24,7 +24,7 @@ export default function Hero() {
           background-repeat: no-repeat;
         }
       `}</style>
-      <div className="max-h-full h-[165vh] bg-[#F0F0ED] relative w-full">
+     <div className="max-h-full sm:h-[165vh] h-screen  bg-[#F0F0ED] relative w-full">
         <div
           className="max-h-full h-full w-full  bg-contain bg-no-repeat flex gap-[12px] flex-col background-overlay justify-center items-center">
           <p
@@ -32,17 +32,18 @@ export default function Hero() {
             {herosection.title}
           </p>
           <p
-            className="w-[x]  text-center text-red-950 text-[67.30px] font-normal font-['Amiri'] leading-[67.34px]">
+            className="w-[x]  text-center text-red-950 text-xxl sm:text-[67.30px] font-normal font-['Amiri'] sm:leading-[67.34px]">
             {herosection.heading}
           </p>
           <p
-            className="max-w-[40%] text-center text-red-950 text-[18px] font-normal font-DM-Sans leading-[29.70px]">
+            className="w-[80%] sm:w-[40%] text-center text-red-950 text-xs sm:text-[18px] font-normal font-DM-Sans leading-[17px] sm:leading-[29.70px]">
             {herosection.content}
           </p>
-          <img src={herosection.image} className="h-[544px] mt-[4%]" />
+          <img src={herosection.image} className="sm:h-[544px] h-[220px] mt-[4%]" />
         </div>
         
-      </div>
+      </div> 
+
     </>
   )
 }

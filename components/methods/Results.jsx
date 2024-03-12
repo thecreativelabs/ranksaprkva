@@ -12,7 +12,7 @@ const data = {
 export default function Results() {
   return (
     <div
-      className="h-[145vh] w-full bg-cover bg-no-repeat flex flex-col justify-center items-center"
+      className="sm:h-[145vh] h-fit w-full sm:py-0 py-10 bg-cover bg-no-repeat flex flex-col justify-center items-center"
       style={{ backgroundImage: "url('./methods/cta-bg.png')", backgroundPositionY: "200px" }}>
       <div className="w-[80%] mt-[80px] h-[100%]">
         <img src={data.image} className="w-[100%]" />

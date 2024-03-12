@@ -37,17 +37,17 @@ const data = {
 export default function ContentAndServices() {
   return (
     <div
-      className="h-[180vh]  w-full flex flex-col gap-[30px] justify-center items-center"
+      className="sm:h-[180vh] h-fit  w-full flex flex-col gap-[30px] justify-center items-center"
     >
       <p
         className="text-light-red text-sm font-medium font-DM-sans uppercase mb-[5px] leading-[21px] tracking-widest"
       >
         {data.title}
       </p>
-      <p className="text-center text-red-950 text-xxxl w-[40%] font-normal font-Amiri">
+      <p className="text-center text-red-950 text-xxl sm:text-xxxl sm:w-[40%] w-[90%] font-normal font-Amiri">
         {data.text}
       </p>
-      <div className="w-[73%] grid grid-cols-3 gap-[25px]">
+      <div className="w-[73%] grid  grid-cols-1 sm:grid-cols-3 gap-[25px]">
         {
           data.cards.map((card, i) => {
             return (
@@ -72,7 +72,7 @@ export default function ContentAndServices() {
           })
         }
       </div>
-      <div className="w-[73%] mt-[50px] max-h-fit">
+      <div className="w-[73%] sm:mt-[50px] mt-[10px] max-h-fit">
         <img src={data.bg_image} />
       </div>
     </div>

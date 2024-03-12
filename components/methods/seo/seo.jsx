@@ -62,21 +62,27 @@ export default function SEO() {
   return (
 
     <div
-      className="bg-white relative z-10 mt-[50px] flex flex-col gap-[10%] justify-center items-center w-[90%] border-t-[3px] border-solid border-yellow-500 h-[45%]">
+      className="bg-white relative z-10 sm:py-0 py-4 mt-[50px] flex flex-col gap-[10%] justify-center items-center w-[90%] border-t-[3px] border-solid border-yellow-500 h-[45%]">
       <p className="text-xxl font-bold tracking-wider">{data.heading}</p>
-      <div className="flex  w-[85%] ">
+      <div className="flex sm:flex-row flex-col  w-[85%] ">
         {
           data.services.map((service, i) => {
             return (
               <div key={i} className="w-full flex flex-col gap-[25px]">
-                <Growth />
-                <a className="text-xl font-bold">{service.heading}</a>
+                <div className="sm:block hidden">
+                  <Growth />
+                  <a className="text-xl font-bold">{service.heading}</a>
+                </div>
+                <div className=" flex sm:hidden mt-[20px]">
+                  <Growth />
+                  <a className="text-xl  mt-[6px] font-bold">{service.heading}</a>
+                </div>
                 <ul
                   className=" ml-[13px] w-[80%] list-disc space-y-2 text-[#f60]"
                 >
                   {service.points.map((point, i) => {
                     return (
-                      <li key={i} className="leading-[25px]">
+                      <li key={i} className="sm:leading-[28px] sm:text-[17px] leading-[22px] text-[13px]">
                         <span className="text-black">{point}</span>
                       </li>
                     );

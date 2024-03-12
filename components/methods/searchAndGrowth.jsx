@@ -38,30 +38,30 @@ const data = {
 
 export default function SearchAndGrowth() {
   return (
-    <div className="relative h-[120vh] w-full flex bg-white justify-center items-center">
+    <div className="relative sm:h-[120vh] h-fit w-full flex flex-col bg-white justify-center items-center">
       <div
-        className="absolute top-[-100px] flex items-center justify-center rounded h-[250px] bg gradient-with-image min-w-[76%] max-w-3xl">
+        className="sm:absolute relative top-[-100px] flex flex-col items-center justify-center rounded h-[180px] sm:h-[250px] bg gradient-with-image min-w-[76%] max-w-3xl">
         <div
-          className="w-[90%] min-w-3xl h-full gap-[20px] flex flex-col justify-center">
+          className="w-[90%] min-w-3xl h-[80%] sm:h-full gap-[20px] flex flex-col justify-center">
           <p
-            className="text-white text-[28.40px] font-DM-sans font-bold w-[60%] leading-10">
+            className="text-white text-[20px] sm:text-[28.40px] font-DM-sans font-bold sm:w-[60%] w-[80%] leading-6 sm:leading-10">
             {data.banner.text}
           </p>
           <button
-            className="w-[260px] h-[61px] relative bg-amber-400 rounded text-center text-red-950 text-sm font-bold font-['DM Sans'] uppercase leading-[21px] tracking-widest">
+            className="w-[260px] h-[50px] sm:h-[61px] relative bg-amber-400 rounded text-center text-red-950 text-sm font-bold font-['DM Sans'] uppercase leading-[21px] tracking-widest">
             {data.banner.button.text}
           </button>
         </div>
       </div>
-      <div className="min-w-[76%] max-w-3xl mt-[15%]">
-        <p className="text-xxl font-medium tracking-wide w-[100%]">{data.text}</p>
-        <div className="grid grid-cols-3 mt-[50px] relative gap-[20px]">
+      <div className="min-w-[76%] max-w-3xl sm:p-0 p-4 mt-[-15%] sm:mt-[15%]">
+        <p className="sm:text-xxl text-lg  font-medium tracking-wide w-[100%]">{data.text}</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 mt-[50px] relative gap-[20px]">
           {
             data.cards.map((e, i) => {
               return <div className='max-w-[100%] flex flex-col gap-2' key={i}>
                 {e.Icon}
-                <p className="text-xl font-bold tracking-wider mt-[10px] w-[97%]">{e.heading}</p>
-                <p className="text-[16px] font-normal  leading-[26px]">
+                <p className="sm:text-xl text-base font-bold tracking-wider mt-[10px] w-[97%]">{e.heading}</p>
+                <p className="sm:text-[16px] text-xs font-normal  leading-[18px] sm:leading-[26px]">
                   {e.content}
                 </p>
               </div>;
