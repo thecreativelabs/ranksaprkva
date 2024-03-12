@@ -15,6 +15,11 @@ module.exports = {
 
         
       },
+      colors: {
+        'light-red':'#C42A1C',
+        'light-pink':'#E55447',
+        'dark-red':'#3B0D17'
+      },
       fontSize: {
         "6xl": ["80px", "80px"],
         // 'lg': ["21px", "34px"],
@@ -25,6 +30,8 @@ module.exports = {
         'xl': ['20px', '28px'], 
         'xxl': ['28px', '30px'],
         'xxxl': ['37px', '67px'],
+        'xxxxl': ['50px', '80px'],
+
 
 
 

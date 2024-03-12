@@ -146,16 +146,16 @@ export default function Slider() {
                         </div>
                       </div>
                       <div>
-                        <p className="text-[#3B0D17] text-xxl font-bold font-DM-sans w-[100%]">
+                        <p className="text-dark-red text-xxl font-bold font-DM-sans w-[100%]">
                           {dataa.content}
                         </p>
-                        <div className="text-sm justify-start w-[50%] font-bold mt-[20px]  uppercase flex tracking-widest gap-[15px] items-center text-[#C42A1C]">
+                        <div className="text-sm justify-start w-[50%] font-bold mt-[20px]  uppercase flex tracking-widest gap-[15px] items-center text-light-red">
                           {dataa.button}
-                          <button className="mt-[-2px] w-[38px] rounded-[50%] bg-[#C42A1C] hover:bg-black">
+                          <button className="mt-[-2px] w-[38px] rounded-[50%] bg-light-red hover:bg-black">
                             <CircleArrow
                               className=""
                               style={{ color: 'black' }}
-                              bg="#E55447"
+                              bg="light-pink"
                               color="white"
                             />
                           </button>
@@ -167,12 +167,6 @@ export default function Slider() {
               );
             })
           }
-
-
-
-
-
-
           <div className="h-[50px] z-20 absolute bottom-4 right-10">
             <PrevButton/>
             <Nextbutton />
@@ -180,28 +174,7 @@ export default function Slider() {
         </Swiper>
 
       </div >
-      {/* <Script id='swiper'>
-        {`
-          var swiper = new Swiper(".swiper-js", {
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
-            loop: true,
-            speed: 1000,
-          });
-        `}
-      </Script> */}
-      {/* <script>
-        var swiper = new Swiper(".swiper-js", {
-          navigation: {
-          nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-        loop: true,
-        speed: 1000,
-  });
-      </script> */}
+     
 
 
     </>

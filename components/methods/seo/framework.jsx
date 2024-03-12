@@ -44,38 +44,38 @@ const data = {
 };
 export default function Framework() {
   return (
-    <div class="relative background h-[220vh] w-full bg-[#F0F0ED]">
+    <div className="relative background h-[220vh] w-full bg-[#F0F0ED]">
       <img
         src={data.image}
-        class="absolute top-[-60px] left-[45%] h-[120px] w-[120px]"
+        className="absolute top-[-60px] left-[45%] h-[120px] w-[120px]"
       />
       <div
-        class="w-full h-full flex flex-col justify-center items-center">
+        className="w-full h-full flex flex-col justify-center items-center">
         <p
-          class="text-red-500 text-sm font-medium font-DM-sans uppercase mb-[5px] leading-[21px] tracking-widest">
+          className="text-light-red text-sm font-medium font-DM-sans uppercase mb-[5px] leading-[21px] tracking-widest">
           {data.title}
         </p>
         <p
-          class="text-center text-red-950 text-[37.30px] font-normal font-['Amiri'] leading-[67.34px]">
+          className="text-center text-red-950 text-[37.30px] font-normal font-['Amiri'] leading-[67.34px]">
           {data.text}
         </p>
-        <img src={data.headingImage} class="w-[73%] mt-[4%]" />
-        <div class="flex gap-[40px] mt-[20px] w-[73%]">
+        <img src={data.headingImage} className="w-[73%] mt-[4%]" />
+        <div className="flex gap-[40px] mt-[20px] w-[73%]">
           {
             data.planBenefits.map((e, i) => {
               return i != 0 ? (
-                <div class="w-[100%]">
-                  <p class="text-base font-bold">{e.heading}</p>
-                  <ul class="mt-[25px] list-disc space-y-2">
+                <div className="w-[100%]">
+                  <p className="text-base font-bold">{e.heading}</p>
+                  <ul className="mt-[25px] list-disc space-y-2">
                     {e.points.map((point, k) => {
                       return <li key={k}>{point}</li>;
                     })}
                   </ul>
                 </div>
               ) : (
-                <div class="w-[128%] ">
-                  <p class="text-base font-bold">{e.heading}</p>
-                  <ul class="mt-[25px] list-disc space-y-2">
+                <div className="w-[128%] ">
+                  <p className="text-base font-bold">{e.heading}</p>
+                  <ul className="mt-[25px] list-disc space-y-2">
                     {e.points.map((point, k) => {
                       return <li key={k}>{point}</li>;
                     })}

@@ -40,7 +40,7 @@ export default function ContentAndServices() {
       className="h-[180vh]  w-full flex flex-col gap-[30px] justify-center items-center"
     >
       <p
-        className="text-red-500 text-sm font-medium font-DM-sans uppercase mb-[5px] leading-[21px] tracking-widest"
+        className="text-light-red text-sm font-medium font-DM-sans uppercase mb-[5px] leading-[21px] tracking-widest"
       >
         {data.title}
       </p>
@@ -63,7 +63,7 @@ export default function ContentAndServices() {
                   <p className="text-[16px] mt-[-20px] w-[95%] font-normal font-DM-sans leading-[26px]">
                     {card.content}
                   </p>
-                  <button className="text-base font-bold  text-[#E55447]">
+                  <button className="text-base font-bold  text-light-pink">
                     {card.button.text}
                   </button>
                 </div>

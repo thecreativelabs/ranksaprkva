@@ -38,30 +38,30 @@ const data = {
 
 export default function SearchAndGrowth() {
   return (
-    <div class="relative h-[120vh] w-full flex bg-white justify-center items-center">
+    <div className="relative h-[120vh] w-full flex bg-white justify-center items-center">
       <div
-        class="absolute top-[-100px] flex items-center justify-center rounded h-[250px] bg gradient-with-image min-w-[76%] max-w-3xl">
+        className="absolute top-[-100px] flex items-center justify-center rounded h-[250px] bg gradient-with-image min-w-[76%] max-w-3xl">
         <div
-          class="w-[90%] min-w-3xl h-full gap-[20px] flex flex-col justify-center">
+          className="w-[90%] min-w-3xl h-full gap-[20px] flex flex-col justify-center">
           <p
-            class="text-white text-[28.40px] font-DM-sans font-bold w-[60%] leading-10">
+            className="text-white text-[28.40px] font-DM-sans font-bold w-[60%] leading-10">
             {data.banner.text}
           </p>
           <button
-            class="w-[260px] h-[61px] relative bg-amber-400 rounded text-center text-red-950 text-sm font-bold font-['DM Sans'] uppercase leading-[21px] tracking-widest">
+            className="w-[260px] h-[61px] relative bg-amber-400 rounded text-center text-red-950 text-sm font-bold font-['DM Sans'] uppercase leading-[21px] tracking-widest">
             {data.banner.button.text}
           </button>
         </div>
       </div>
-      <div class="min-w-[76%] max-w-3xl mt-[15%]">
-        <p class="text-xxl font-medium tracking-wide w-[100%]">{data.text}</p>
-        <div class="grid grid-cols-3 mt-[50px] relative gap-[20px]">
+      <div className="min-w-[76%] max-w-3xl mt-[15%]">
+        <p className="text-xxl font-medium tracking-wide w-[100%]">{data.text}</p>
+        <div className="grid grid-cols-3 mt-[50px] relative gap-[20px]">
           {
             data.cards.map((e, i) => {
-              return <div class='max-w-[100%] flex flex-col gap-2' key={i}>
+              return <div className='max-w-[100%] flex flex-col gap-2' key={i}>
                 {e.Icon}
-                <p class="text-xl font-bold tracking-wider mt-[10px] w-[97%]">{e.heading}</p>
-                <p class="text-[16px] font-normal  leading-[26px]">
+                <p className="text-xl font-bold tracking-wider mt-[10px] w-[97%]">{e.heading}</p>
+                <p className="text-[16px] font-normal  leading-[26px]">
                   {e.content}
                 </p>
               </div>;

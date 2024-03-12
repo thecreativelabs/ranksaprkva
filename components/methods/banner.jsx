@@ -1,6 +1,6 @@
 
 // import { CircleArrow } from "../ui/icons/index";
-import CircleArrow from '../ui/icons/circleButtonArrow'
+import CircleArrow from '@components/ui/icons/circleButtonArrow'
 // import {image} from '../../assets'
 // import {image} from  '../../assets/method/logo1.png'
 const data = {
@@ -20,7 +20,7 @@ const data = {
 
 export default function Banner() {
   return (
-    <div className="w-full h-[60vh] flex flex-col justify-center items-center bg-[#3B0D17]">
+    <div className="w-full h-[60vh] flex flex-col justify-center items-center bg-dark-red">
       <div className="flex gap-[10px]">
         {
           data.logos.map((logo, i) => {
