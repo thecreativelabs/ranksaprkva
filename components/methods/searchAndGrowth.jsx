@@ -1,7 +1,7 @@
 'use client'
-import Growth from "../ui/icons/Growth";
-import Task from "../ui/icons/taskList";
-import Search from "../ui/icons/search";
+import Growth from "@components/ui/icons/Growth";
+import Task from "@components/ui/icons/taskList";
+import Search from "@components/ui/icons/search";
 
 
 const data = {

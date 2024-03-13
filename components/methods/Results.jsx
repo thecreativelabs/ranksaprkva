@@ -1,5 +1,5 @@
 'use client'
-import CircleArrow from '../ui/icons/circleButtonArrow'
+import CircleArrow from '@components/ui/icons/circleButtonArrow'
 
 const data = {
   image: "./methods/bigcta.png",

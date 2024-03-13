@@ -1,5 +1,5 @@
 'use client'
-import Growth from "../ui/icons/Growth";
+import Growth from "@components/ui/icons/Growth";
 const data = {
   title: "SUPERCHARGE YOUR SEARCH POTENTIAL",
   text: "Accelerate your results and uncover additional paths to success.",
