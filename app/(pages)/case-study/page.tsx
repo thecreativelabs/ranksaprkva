@@ -6,13 +6,13 @@ import QAndA from "@components/case-study/QandA"
 import Help from '@components/methods/Help'
 export default function Case_study() {
     return (
-        <div>
+        <>
             <HeroSection />
             <FeatureCaseStudy />
             <SeoCases />
             <Review />
             <QAndA />
             <Help />
-        </div>
+        </>
     )
 }

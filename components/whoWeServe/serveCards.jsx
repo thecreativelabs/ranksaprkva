@@ -3,12 +3,12 @@ import Growth from "@components/ui/icons/Growth";
 export default function ServeCards(props) {
     return (
 
-        <div className="bg-[#F0F0ED] pl-4 pr-3 py-3 flex justify-center items-center h-[220px] max-h-[300px]">
+        <div className="bg-[#F0F0ED] pl-4 pr-3 py-6 flex min-w-fit justify-center items-center min-h-fit  max-h-[350px]">
             <div className="flex flex-col h-full w-[90%] gap-y-2 items-start">
                 <div className="bg-white h-fit w-fit p-2 rounded-[50%]">
                     <Growth className="p-1" />
                 </div>
-                <p className="text-xl font-bold tracking-wider">
+                <p className="text-xl pr-2 font-bold tracking-wider">
 
                     {props.data.heading}
                 </p>

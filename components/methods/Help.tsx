@@ -21,7 +21,7 @@ export default function Help() {
             <form action="  " className="space-y-[15px]">
               <div className="flex gap-[5px] flex-col">
                 <label
-                  for="email"
+                  
                   className="text-dark-red capitalize font-medium text-[13px]"
                 >email</label  >
                 <input
@@ -34,10 +34,11 @@ export default function Help() {
               </div>
               <div className="flex gap-[5px] flex-col">
                 <label
-                  for="dropdown"
+                  
                   className="text-dark-red capitalize font-medium text-[13px]"
                 >Choose an option:</label >
                 <select
+                title="dropdown"
                   id="dropdown"
                   name="dropdown"
                   className="border-[1px] border-[#ccc] text-[#787878] bg-white w-[80%] rounded placeholder:text-[#BFBFBF] placeholder:font-DM-sans px-3 p-2">

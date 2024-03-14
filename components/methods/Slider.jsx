@@ -1,19 +1,16 @@
 'use client'
-// import Uparrow from "@components/ui/icons/upArrow.astro";
-// import { ArrowIcon, UpArrow } from "../ui/icons";
-import UpArrow from "../ui/icons/upArrow";
-import CircleArrow from '../ui/icons/circleButtonArrow'
+import UpArrow from "@components/ui/icons/upArrow";
+import CircleArrow from '@components/ui/icons/circleButtonArrow'
 import Script from "next/script";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Nextbutton from './Nextbutton'
-import PrevButton from './PrevButton'
-// Import Swiper styles
+import Nextbutton from '@components/methods/Nextbutton'
+import PrevButton from '@components/methods/PrevButton'
 import 'swiper/css';
-
+import Image from "next/image";
 const data = [
   {
-    image: "./methods/Lychee-the-Label.png",
-    logo: "./methods/logo4.png",
+    image: "/methods/Lychee-the-Label.png",
+    logo: "/methods/logo4.png",
     color: "#F6917C",
     counter: [
       {
@@ -36,8 +33,8 @@ const data = [
     button: "Read case study",
   },
   {
-    image: "./methods/Lychee-the-Label.png",
-    logo: "./methods/logo2.png",
+    image: "/methods/Lychee-the-Label.png",
+    logo: "/methods/logo2.png",
     color: "#00a88f",
     counter: [
       {
@@ -62,11 +59,8 @@ const data = [
   },
 ];
 export default function Slider() {
-
-
   return (
     <>
-
       <style>
         {`
           .swiper-button {
@@ -77,9 +71,7 @@ export default function Slider() {
           }
           `}
       </style>
-
       <div className="w-full h-[100%] bg-transparent">
-
         <Swiper
           spaceBetween={50}
           slidesPerView={1}
@@ -89,7 +81,6 @@ export default function Slider() {
           speed={200}
           className="h-[100%] relative"
         >
-
           {
             data.map((dataa, i) => {
               return (
@@ -101,11 +92,12 @@ export default function Slider() {
                         backgroundImage: `url(${'./methods/Vector-3.png'})`,
                         backgroundColor: dataa.color
                       }}>
-                      <img src={dataa.image} className="h-[200px] " />
-                      <img
+                      
+                      <Image height={200} width={200} alt="image" src={dataa.image} className="h-[200px] max-w-fit"  ></Image>
+                      <Image height={100} width={100} alt="image"
                         src={dataa.logo}
-                        className="absolute h-[100px] top-[-35px] right-[-35px]"
-                      />
+                        className="absolute h-[100px] max-w-fit top-[-35px] right-[-35px]"></Image>
+                     
                     </div>
                     <div className="sm:w-[40%] w-[80%] ml-[30px] gap-y-[30px] flex flex-col justify-evenly items-center">
                       <div className="w-full ml- flex">

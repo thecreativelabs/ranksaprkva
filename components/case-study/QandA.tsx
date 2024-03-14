@@ -1,7 +1,12 @@
-'use client'
-import { useState, useEffect } from "react";
+'use client';
+import React, { useState } from "react";
 
-const data = {
+interface QAndAItem {
+    question: string;
+    answer: string;
+}
+
+const data: { title: string; QandA: QAndAItem[] } = {
     title: "Your SEO Case Study Question, Answered",
     QandA: [
         {
@@ -78,19 +83,48 @@ const data = {
         },
     ]
 }
-function Arrow(props) {
+
+interface QAndAProps {
+    className?: string;
+ }
+
+function Arrow(props: { color: string; rotate: number; className:string; onClick: () => void }): JSX.Element {
+    
+// 
     return (
-        <svg fill={props.color} onClick={props.onClick} style={{ transform: `rotate(${props.rotate}deg)`,transition: " 0.3s ease-out" }} className={`${props.className} hover:cursor-pointer`} height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,157.202,250.606,154.389z"></path> </g></svg>
-    )
+        <svg
+            fill={props.color}
+            onClick={props.onClick}
+            style={{ transform: `rotate(${props.rotate}deg)`, transition: " 0.3s ease-out" }}
+            className={`${props.className} hover:cursor-pointer`}
+            height="20px"
+            width="20px"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 330 330"
+           
+        >
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+            <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <path
+                    id="XMLID_222_"
+                    d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,157.202,250.606,154.389z"
+                ></path>
+            </g>
+        </svg>
+    );
 }
 
-export default function QAndA() {
+const QAndA: React.FC<QAndAProps> = () => {
     const size = data.QandA.length;
     const initialArray = Array(size).fill(false);
-    const [open, setopen] = useState(initialArray)
-    const setElement = (index, value) => {
+    const [open, setOpen] = useState < boolean[] > (initialArray);
+
+    const setElement = (index: number, value: boolean) => {
         if (index >= 0 && index < size) {
-            setopen(prevArray => {
+            setOpen(prevArray => {
                 const newArray = [...prevArray];
                 newArray[index] = value;
                 return newArray;
@@ -99,38 +133,47 @@ export default function QAndA() {
             console.log("Index out of bounds");
         }
     };
+
     return (
         <div className="flex justify-center pt-[120px] pb-[60px] items-center">
             <div className="lg:w-4/5 max-w-[1200px] w-full flex sm:flex-row flex-col justify-between">
-                <p className="text-dark-red ml-[20px] sm:w-[50%] w-[100%] text-xxl lg:text-xxxxl font-normal font-Amiri   leading-[32px] lg:leading-relaxed">
+                <p className="text-dark-red ml-[20px] sm:w-[50%] w-[100%] text-xxl lg:text-xxxxl font-normal font-Amiri leading-[32px] lg:leading-relaxed">
                     {data.title}
                 </p>
                 <div className="sm:w-[50%] w-[100%] sm:items-start items-center sm:mt-[0px] mt-[20px] justify-center flex flex-col ">
-                    {
-                        data.QandA.map((card, i) => {
-                            return (
-                                <div key={i} className="w-[90%] border-t-[1px] border-black py-4">
-                                    <div className="relative w-full flex justify-between items-center">
-                                        <button className="text-xl text-left w-[80%] hover:text-light-pink hover:cursor-pointer font-DM-sans font-bold  " style={{ color: (open[i]) ? "#E55447" : "" }} onClick={() => setElement(i, !open[i])}>
-                                            {card.question}
-
-                                        </button>
-                                        <Arrow color='#E55447' className='h-[15px] w-[15px] ' rotate={open[i]?'270':'90'} onClick={() => setElement(i, !open[i])} />
-
-                                    </div>
-                                    <div className={` overflow-hidden `} style={{ maxHeight: open[i] ? "1000px" : "0px", transition: "max-height 0.5s ease-in-out"  }}>
-                                        <p className=" font-DM-sans text-base leading-[25px] font-normal mt-[20px]">
-                                            {card.answer.split('\n').map((line, i) => <span key={i}>{line}<br /> <br /></span>)}
-                                        </p>
-                                    </div>
-
-                                </div>
-                            )
-                        })
-                    }
+                    {data.QandA.map((card, i) => (
+                        <div key={i} className="w-[90%] border-t-[1px] border-black py-4">
+                            <div className="relative w-full flex justify-between items-center">
+                                <button
+                                    className="text-xl text-left w-[80%] hover:text-light-pink hover:cursor-pointer font-DM-sans font-bold"
+                                    style={{ color: open[i] ? "#E55447" : "" }}
+                                    onClick={() => setElement(i, !open[i])}
+                                >
+                                    {card.question}
+                                </button>
+                                <Arrow
+                                    color="#E55447"
+                                    className="h-[15px] w-[15px]"
+                                    rotate={open[i] ? 270 : 90}
+                                    onClick={() => setElement(i, !open[i])}
+                                />
+                            </div>
+                            <div className={` overflow-hidden `} style={{ maxHeight: open[i] ? "1000px" : "0px", transition: "max-height 0.5s ease-in-out" }}>
+                                <p className="font-DM-sans text-base leading-[25px] font-normal mt-[20px]">
+                                    {card.answer.split('\n').map((line, i) => (
+                                        <span key={i}>
+                                            {line}
+                                            <br /> <br />
+                                        </span>
+                                    ))}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
-
         </div>
-    )
-}
+    );
+};
+
+export default QAndA;

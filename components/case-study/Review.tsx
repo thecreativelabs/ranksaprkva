@@ -1,17 +1,13 @@
 'use client'
-import Rating from '@components/case-study/rating'
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
+import SwiperCore, { Pagination } from 'swiper/core';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import Prevbutton from '@components/methods/PrevButton';
-import Nextbutton from '@components/methods/Nextbutton';
-import { useSwiper } from 'swiper/react';
+import Rating from '@components/case-study/rating';
+
+// Initialize Swiper core components
+// SwiperCore.use([Pagination]);
 
 // import 'swiper/css';
 const data = {
@@ -94,50 +90,48 @@ const data = {
         ]
     }
 }
-
 export default function Review() {
-    const swiper = useSwiper();
-    const swiperRef = useRef(null);
+    const swiperRef = useRef<SwiperCore>(null);
+
     const handlePrev = () => {
-        // Simulate a click on the hidden button
         if (swiperRef.current && swiperRef.current.swiper) {
-            // Access swiper instance and perform slideNext action
             swiperRef.current.swiper.slidePrev();
         }
     };
+
     const handleNext = () => {
-        // Simulate a click on the hidden button
         if (swiperRef.current && swiperRef.current.swiper) {
-            // Access swiper instance and perform slideNext action
             swiperRef.current.swiper.slideNext();
         }
     };
+
     const breakpoints = {
-        // when window width is >= 320px
         320: {
             slidesPerView: 1,
             spaceBetween: 20
         },
-        // when window width is >= 480px
         480: {
             slidesPerView: 3,
             spaceBetween: 30
         },
-        // when window width is >= 640px
         640: {
             slidesPerView: 4,
             spaceBetween: 25
         }
     };
+
     return (
         <div className="h-[150vh] w-full min-h-[1300px] sm:max-h-[1500px] max-h-1500px flex flex-col justify-center items-center">
+            {/* Content */}
             <div className="w-full sm:h-[100vh] max-w-[1200px] max-h-[700px] px-4 lg:px-0 lg:w-4/5 flex flex-col justify-center">
-                <p className="text-light-red  text-sm sm:text-sm font-bold font-DM-sans uppercase tracking-widest">
+                {/* Title and heading */}
+                <p className="text-light-red text-sm sm:text-sm font-bold font-DM-sans uppercase tracking-widest">
                     {data.title}
                 </p>
                 <p className="text-dark-red sm:w-[70%] w-[100%] text-xxl lg:text-xxxxl font-normal font-Amiri mt-8 lg:mt-6 leading-[32px] lg:leading-relaxed">
                     {data.heading}
                 </p>
+                {/* Left and right content */}
                 <div className="flex flex-col lg:flex-row mt-8 lg:mt-12 gap-6 lg:gap-12">
                     <p className="text-dark-red text-base lg:text-xl font-normal font-DM-Sans leading-normal lg:max-w-[48%]">
                         {data.leftcontent}
@@ -147,13 +141,16 @@ export default function Review() {
                     </p>
                 </div>
             </div>
+
+            {/* Testimonial */}
             <div className="w-full pb-[20px] max-h-fit flex flex-col justify-center items-center bg-[#f9f9f9] mt-8 lg:mt-12">
+                {/* Title, rating, and total reviews */}
                 <div className='flex max-w-[1200px] w-full mt-[70px] justify-center items-center '>
-                    <div className='flex sm:flex-row flex-col w-[78%] gap-[20px]  items-center'>
+                    <div className='flex sm:flex-row flex-col w-[78%] gap-[20px] items-center'>
                         <p className="text-2xl font-['Roboto'] font-normal">
                             {data.testimonial.title}
                         </p>
-                        <div className='flex items-center  gap-[10px]'>
+                        <div className='flex items-center gap-[10px]'>
                             <p className="text-xl font-['Roboto'] font-normal">
                                 {data.testimonial.rating}
                             </p>
@@ -166,9 +163,11 @@ export default function Review() {
                         </div>
                     </div>
                 </div>
+
+                {/* Swiper container */}
                 <div className='h-[65%] max-w-[1250px] w-full mt-[20px] relative justify-center items-center flex'>
                     <div className='w-[80%] flex'>
-                        <button className='mr-[5px]' onClick={handlePrev}> <svg fill={"#C42A1C"} height="30px" width="30px" viewBox="-29.7 -29.7 389.40 389.40" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" transform="rotate(180)">
+                    <button title='title' type='button' className='mr-[5px]' onClick={handlePrev}> <svg fill={"#C42A1C"} height="30px" width="30px" viewBox="-29.7 -29.7 389.40 389.40" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" transform="rotate(180)">
                             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                             <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -182,7 +181,7 @@ export default function Review() {
                             slidesPerView={4}
 
                             loop={true}
-                            pagination={{ clickable: true }}
+                            // pagination={{ clickable: true }}
 
                             onSwiper={(swiper) => console.log(swiper)}
                             onSlideChange={() => console.log('slide change')}
@@ -227,7 +226,7 @@ export default function Review() {
 
 
                         </Swiper>
-                        <button className='ml-[5px]' onClick={handleNext}><svg fill={"#C42A1C"} height="30px" width="30px" viewBox="-29.7 -29.7 389.40 389.40" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+                        <button title='title' type='button'  className='ml-[5px]' onClick={handleNext}><svg fill={"#C42A1C"} height="30px" width="30px" viewBox="-29.7 -29.7 389.40 389.40" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                             <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -236,7 +235,6 @@ export default function Review() {
                         </svg>
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>

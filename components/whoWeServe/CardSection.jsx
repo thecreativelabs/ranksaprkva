@@ -272,7 +272,7 @@ export default function CardSection() {
                                 <p className="sm:text-[50px] mt-[20px] text-[25px] sm:leading-[60px] leading-[30px] font-Amiri font-normal text-dark-red">
 
                                     {data.title}</p>
-                                <div className='grid md:grid-cols-4 py-[30px] sm:grid-cols-2 grid-cols-1 gap-[30px]'>
+                                <div className='grid md:grid-cols-3 lg:grid-cols-4 py-[30px] sm:grid-cols-2 grid-cols-1 gap-[30px]'>
                                     {
                                         data.cards.map((card, i) => {
                                             return (
