@@ -48,9 +48,9 @@ export default function Help() {
                     style={{ color: '#ccc' }}
                     disabled
                     selected>Select an option</option>
-                  <option value="option1">Option 1</option>
-                  <option value="option2">Option 2</option>
-                  <option value="option3">Option 3</option>
+                  <option defaultValue="option1">Option 1</option>
+                  <option defaultValue="option2">Option 2</option>
+                  <option defaultValue="option3">Option 3</option>
 
                 </select>
 

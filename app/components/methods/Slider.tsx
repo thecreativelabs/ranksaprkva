@@ -1,13 +1,32 @@
 'use client'
+import { useState } from "react";
 import UpArrow from "@components/ui/icons/upArrow";
-import CircleArrow from '@components/ui/icons/circleButtonArrow'
+import CircleArrow from '@components/ui/icons/circleButtonArrow';
 import Script from "next/script";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Nextbutton from '@components/methods/Nextbutton'
-import PrevButton from '@components/methods/PrevButton'
+import Nextbutton from '@components/methods/Nextbutton';
+import PrevButton from '@components/methods/PrevButton';
 import 'swiper/css';
 import Image from "next/image";
-const data = [
+
+interface Counter {
+  number: {
+    Icon: JSX.Element;
+    text: string;
+  };
+  text: string;
+}
+
+interface Data {
+  image: string;
+  logo: string;
+  color: string;
+  counter: Counter[];
+  content: string;
+  button: string;
+}
+
+const data: Data[] = [
   {
     image: "/methods/Lychee-the-Label.png",
     logo: "/methods/logo4.png",
@@ -40,7 +59,6 @@ const data = [
       {
         number: {
           Icon: <UpArrow />,
-
           text: "1,122%",
         },
         text: "Page One Keywords",
@@ -58,6 +76,7 @@ const data = [
     button: "Read case study",
   },
 ];
+
 export default function Slider() {
   return (
     <>
@@ -142,8 +161,8 @@ export default function Slider() {
                           {dataa.content}
                         </p>
                         <div className="text-sm justify-start w-[50%] font-bold mt-[20px]  uppercase flex tracking-widest gap-[15px] items-center text-light-red">
-                          {dataa.button}
-                          <button className="mt-[-2px] w-[38px] rounded-[50%] bg-light-red hover:bg-black">
+                          {dataa.button} 
+                          <button type="button" title="button" className="mt-[-2px] w-[38px] rounded-[50%] bg-light-red hover:bg-black">
                             <CircleArrow
                               className=""
                               style={{ color: 'black' }}
