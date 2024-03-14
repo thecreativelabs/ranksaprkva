@@ -6,12 +6,6 @@ const learn = [
   {
     title: "",
   },
-  {
-    title: "",
-  },
-  {
-    title: "",
-  },
 ];
 
 const Learn = () => {
