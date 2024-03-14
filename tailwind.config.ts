@@ -18,7 +18,11 @@ module.exports = {
       colors: {
         'light-red':'#C42A1C',
         'light-pink':'#E55447',
-        'dark-red':'#3B0D17'
+        'dark-red':'#3B0D17',
+        btnBg: {
+          DEFAULT: '#F0B342',
+          hover: '#c92045',
+        },
       },
       fontSize: {
         "6xl": ["80px", "80px"],
@@ -42,6 +46,14 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      space: {
+        // '5px': '5px',
+      }    
+    },
+    fontFamily: {
+      primary: 'sans-serif',
+      secondary: ["DM Sans", 'sans-serif'],
+      tertiary: 'serif'
     },
   },
   plugins: [],

@@ -19,7 +19,7 @@ const data: ResultsData = {
 export default function Results(): JSX.Element {
     return (
         <div
-            className="sm:h-[145vh] h-fit w-full sm:py-0 py-10 bg-cover bg-no-repeat flex flex-col justify-center items-center"
+            className="sm:h-[145vh] h-fit w-full sm:pb-[50px] pb-0 sm:mt-[40px] mt-[0px] bg-cover bg-no-repeat flex flex-col justify-center items-center"
             style={{ backgroundImage: "url('./methods/cta-bg.png')", backgroundPositionY: "200px" }}>
             <div className="w-[80%] mt-[80px] h-[100%]">
                 <Image src={data.image} className="w-[100%] max-h-fit" height={1000} width={1000} alt="Result" />
