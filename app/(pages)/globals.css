@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .background-overlay::before {
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+.background-overlay::before {
   content: "";
-  background-image: url("../public/methods/Vector.png");
+  background-image: url("../../public/methods/Vector.png");
   background-position: 0px 30px;
   opacity: 0.4;
   position: absolute;
@@ -17,7 +24,8 @@
 }
 .background-over::before {
   content: "";
-  background-image: url("../public/methods/Vector-4.png");
+  background-image: url("../../public/methods/Vector-4.png");
+  /* background-position: 0px 30px; */
   opacity: 0.2;
   position: absolute;
   top: 0;
@@ -55,15 +63,16 @@
       #f0564c 42%,
       #f0564c 30%
     ),
-    url("../public/methods/banner-bg.png");
- 
-  background-position-x: 100%;
+    url("../../public/methods/banner-bg.png");
+  /* background-size: 100% 100%; */
+  /* Adjust background position as needed */
+  /* background-position-x: 100%;
   background-size: contain;
-  background-repeat: repeat; 
-} */
-/* .background{
-  background-image: url("../public/methods/Vector-2.png");
+  background-repeat: repeat; Prevent image repeat */
+/* } */
+.background{
+  background-image: url("../../public/methods/Vector-2.png");
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: 0 100%;
-} */
+}
