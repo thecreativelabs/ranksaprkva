@@ -39,18 +39,18 @@ const Career = () => {
             </p>
           ))}
         </div>
-        <div className="bg-[#F0B342] mt-10 text-[#3B0D17] h-auto w-[240px] lg:[270px] py-1 px-1 md:w-[250px] md:h-14 md:flex md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300">
-          <button className="relative md:inline-flex inline-flex items-center md:items-center group gap-px">
+        <div className="bg-[#F0B342] mb-20 rounded mt-6 text-[#3B0D17] h-auto w-[240px] lg:w-[270px] py-1 px-1 md:w-[250px] md:h-14 md:flex md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300">
+          <button className="relative w-full flex items-center justify-center md:inline-flex group gap-px">
             {data.map((item, index) => (
               <a
                 key={index}
                 href={item.path}
-                className="inline-flex items-center gap-px md:inline-flex md:items-center md:gap-px"
+                className="flex items-center gap-px md:inline-flex md:items-center md:gap-px"
               >
-                <span className="md:text-md mx-2 text-md md:mt-0 py-2 md:py-0 font-medium cursor-pointer">
+                <span className="text-md md:py-0 px-2 py-2 font-medium cursor-pointer">
                   {item.text}
                 </span>
-                <GoArrowRight className="ml-2 font-bold md:mt-0" size={25} />
+                <GoArrowRight className="font-bold" size={25} />
               </a>
             ))}
           </button>

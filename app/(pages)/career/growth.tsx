@@ -13,24 +13,25 @@ const data = {
       title: "Senior Customer Success Manager",
       image:
         "https://cdn.shortpixel.ai/spai/q_glossy+w_334+to_auto+ret_img/victorious.com/wp-content/uploads/2023/10/lillian-watkins-video-testimonial-cover.jpg",
+      icon: "https://victorious.com/wp-content/uploads/2023/08/icon-play.svg"
     },
     {
       name: "JACK WHITE",
       title: "SEO Team Lead",
-      image:
-        "https://cdn.shortpixel.ai/spai/q_glossy+w_334+to_auto+ret_img/victorious.com/wp-content/uploads/2023/10/jack-white-testimonial-2.jpg",
+      image:"https://cdn.shortpixel.ai/spai/q_glossy+w_334+to_auto+ret_img/victorious.com/wp-content/uploads/2023/10/jack-white-testimonial-2.jpg",
+      icon: "https://victorious.com/wp-content/uploads/2023/08/icon-play.svg"  
     },
     {
       name: "AUBRIE LANKFORD",
       title: "Sales Operation Specialist",
-      image:
-        "https://cdn.shortpixel.ai/spai/q_glossy+w_334+to_auto+ret_img/victorious.com/wp-content/uploads/2023/10/aubrie-lankford-testimonial-2.jpg",
+      image: "https://cdn.shortpixel.ai/spai/q_glossy+w_334+to_auto+ret_img/victorious.com/wp-content/uploads/2023/10/aubrie-lankford-testimonial-2.jpg",
+      icon: "https://victorious.com/wp-content/uploads/2023/08/icon-play.svg"
     },
     {
       name: "KEVIN WALLNER",
       title: "Product Manager",
-      image:
-        "https://cdn.shortpixel.ai/spai/q_glossy+w_334+to_auto+ret_img/victorious.com/wp-content/uploads/2023/10/kevin-wallner-testimonial-cover-copy.jpg",
+      image: "https://cdn.shortpixel.ai/spai/q_glossy+w_334+to_auto+ret_img/victorious.com/wp-content/uploads/2023/10/kevin-wallner-testimonial-cover-copy.jpg",
+      icon: "https://victorious.com/wp-content/uploads/2023/08/icon-play.svg"
     },
   ],
 };
@@ -59,9 +60,9 @@ const growth = () => {
           >
             <div className="relative">
               <img src={item.image} alt={item.name} />
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="absolute top-1/2 left-1/2 hover:opacity-70 cursor-pointer transform -translate-x-1/2 -translate-y-1/2">
                 <img
-                  src="https://victorious.com/wp-content/uploads/2023/08/icon-play.svg"
+                  src={item.icon}
                   alt=""
                 />
               </div>

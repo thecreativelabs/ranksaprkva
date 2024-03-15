@@ -2,6 +2,12 @@ import React from "react";
 import { FaCircleArrowRight } from "react-icons/fa6";
 import Container from "./Container";
 
+const data = {
+  heading: "Experience the difference of a values-driven search strategy.",
+  discription: "Discover how organic search visibility and a made-to-measure SEO agency partnership can benefit your business in the long run.",
+  text: " GET YOUR CUSTOM STRATEGY"
+};
+
 const Strategy = () => {
   return (
     <div
@@ -23,15 +29,14 @@ const Strategy = () => {
         </div>
         <div className="grid ml-0 mt-14">
           <h2 className="md:text-5xl tracking-wider leading-8 font-tertiary w-auto md:w-[60%] font-medium mt-4 text-3xl text-[#3B0D17]">
-            Sharpen your SEO strategy to see sustainable returns.
+            {data.heading}
           </h2>
           <p className="mt-4 text-md text-[#3B0D17] w-auto md:w-[60%] leading-7 tracking-wider font-medium font-primary">
-            Discover how organic search visibility and a made-to-measure SEO
-            agency partnership can benefit your business in the long run.
+            {data.discription}
           </p>
           <div className="mt-14 flex items-center mb-8">
             <p className="mr-2 font-semibold text-md text-[#C42A1C]">
-              GET YOUR CUSTOM STRATEGY
+             {data.text}
             </p>
             <FaCircleArrowRight className="text-[#C42A1C]/70" size={40} />
           </div>
