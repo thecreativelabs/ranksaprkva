@@ -2,13 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSwiper } from 'swiper/react';
 
-interface PrevButtonProps {
-    className?: string;
-    color?: string;
-    for?: string;
-}
 
-export default function PrevButton(props: PrevButtonProps): JSX.Element {
+export default function PrevButton(props: any): JSX.Element {
     const swiper = useSwiper();
     const [button, setButton] = useState<boolean>(false);
 

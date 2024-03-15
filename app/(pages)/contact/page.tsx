@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '@/components/Container';
 // import Contactform from "@components/contactform";
-
+import { Icon } from 'next/dist/lib/metadata/types/metadata-types';
 const contact = {
     address : {
         

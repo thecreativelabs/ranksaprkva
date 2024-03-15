@@ -1,4 +1,8 @@
-import ServeCards from '@components/whoWeServe/serveCards'
+import React from 'react';
+import ServeCards from '@components/whoWeServe/serveCards';
+
+
+
 const data = [
     {
         title: 'Industries',

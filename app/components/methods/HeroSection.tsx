@@ -1,13 +1,8 @@
 'use client'
 import Image from "next/image";
-interface HeroSectionData {
-  title: string;
-  heading: string;
-  content: string;
-  image: string;
-}
 
-const herosection: HeroSectionData = {
+
+const herosection = {
   title: "Top of Search, Top of the Game",
   heading: "Boost your brand's visibility.",
   content:
@@ -38,10 +33,10 @@ export default function Hero() {
           <p className="h-[21px] text-center text-light-red text-sm font-medium font-DM-sans uppercase leading-[21px] tracking-widest">
             {herosection.title}
           </p>
-          <p className="w-[x] text-center text-red-950 text-xxl sm:text-[67.30px] font-normal font-['Amiri'] sm:leading-[67.34px]">
+          <p className="w-[x] text-center text-dark-red text-xxl sm:text-xxxxxl font-normal font-['Amiri'] sm:leading-[67.34px]">
             {herosection.heading}
           </p>
-          <p className="w-[80%] sm:w-[40%] text-center text-red-950 text-xs sm:text-[18px] font-normal font-DM-Sans leading-[17px] sm:leading-[29.70px]">
+          <p className="w-[80%] sm:w-[40%] text-center text-dark-red text-xs sm:text-[18px] font-normal font-DM-Sans leading-[17px] sm:leading-[29.70px]">
             {herosection.content}
           </p>
           {/* <img src={herosection.image} className="sm:h-[544px] h-[220px] mt-[4%]" /> */}

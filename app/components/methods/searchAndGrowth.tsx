@@ -2,30 +2,10 @@
 import Growth from "@components/ui/icons/Growth";
 import Task from "@components/ui/icons/taskList";
 import Search from "@components/ui/icons/search";
+import SearchCards from "./searchCards";
 
-interface CardData {
-    Icon: JSX.Element;
-    heading: string;
-    content: string;
-}
 
-interface BannerButton {
-    text: string;
-    url: string;
-}
-
-interface BannerData {
-    text: string;
-    button: BannerButton;
-}
-
-interface SearchAndGrowthData {
-    banner: BannerData;
-    text: string;
-    cards: CardData[];
-}
-
-const data: SearchAndGrowthData = {
+const data = {
     banner: {
         text: "Uncover the path to success with a search strategy tailored to your business.",
         button: {
@@ -64,7 +44,7 @@ export default function SearchAndGrowth(): JSX.Element {
                     <p className="text-white text-[20px] sm:text-[28.40px] font-DM-sans font-bold sm:w-[60%] w-[80%] leading-6 sm:leading-10">
                         {data.banner.text}
                     </p>
-                    <button className="w-[260px] h-[50px] sm:h-[61px] relative bg-amber-400 rounded text-center text-red-950 text-sm font-bold font-['DM Sans'] uppercase leading-[21px] tracking-widest">
+                    <button className="w-[260px] h-[50px] sm:h-[61px] relative bg-amber-400 rounded text-center text-dark-red text-sm font-bold font-['DM Sans'] uppercase leading-[21px] tracking-widest">
                         {data.banner.button.text}
                     </button>
                 </div>
@@ -73,13 +53,8 @@ export default function SearchAndGrowth(): JSX.Element {
                 <p className="sm:text-xxl text-lg font-medium tracking-wide w-[100%]">{data.text}</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 mt-[50px] relative gap-[20px]">
                     {data.cards.map((e, i) => (
-                        <div className="max-w-[100%] flex flex-col gap-2" key={i}>
-                            {e.Icon}
-                            <p className="sm:text-xl text-base font-bold tracking-wider mt-[10px] w-[97%]">{e.heading}</p>
-                            <p className="sm:text-[16px] text-xs font-normal leading-[18px] sm:leading-[26px]">
-                                {e.content}
-                            </p>
-                        </div>
+                        <SearchCards key={i} data={e} />
+
                     ))}
                 </div>
             </div>

@@ -2,13 +2,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSwiper } from 'swiper/react';
 
-interface NextButtonProps {
-    className?: string;
-    color?: string;
-    for?: string;
-}
 
-export default function NextButton(props: NextButtonProps): JSX.Element {
+
+export default function NextButton(props: any): JSX.Element {
     const [button, setButton] = useState<boolean>(false);
     useEffect(() => {
         if (props != null && props.for === 'button')

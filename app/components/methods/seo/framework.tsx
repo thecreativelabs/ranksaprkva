@@ -1,22 +1,11 @@
 import Image from 'next/image';
 import SEO from '@components/methods/seo/seo';
 
-interface PlanBenefit {
-    heading: string;
-    points: string[];
-    image: string;
-}
 
-interface FrameworkData {
-    image: string;
-    title: string;
-    text: string;
-    headingImage: string;
-    planBenefits: PlanBenefit[];
-    cardImageForSmallScreen: string[];
-}
 
-const data: FrameworkData = {
+
+
+const data = {
     image: "/methods/v-isotype.png",
     title: "OUR STRATEGIC FRAMEWORK",
     text: "Get clear-cut results you can count on.",
@@ -78,7 +67,7 @@ export default function Framework(): JSX.Element {
                 <p className="text-light-red text-sm font-medium font-DM-sans uppercase mb-[5px] leading-[21px] tracking-widest">
                     {data.title}
                 </p>
-                <p className="text-center text-red-950 sm:text-[37.30px] text-[20px] font-normal font-['Amiri'] leading-[30px] sm:leading-[67.34px]">
+                <p className="text-center text-dark-red sm:text-[37.30px] text-[20px] font-normal font-['Amiri'] leading-[30px] sm:leading-[67.34px]">
                     {data.text}
                 </p>
                 <Image alt='image' src={data.headingImage} width={1000} height={1000} className=" sm:flex hidden w-[73%] max-h-fit mt-[4%]" />

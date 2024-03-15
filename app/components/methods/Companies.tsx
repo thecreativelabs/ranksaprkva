@@ -1,8 +1,10 @@
 import Slider from '@components/methods/Slider';
+import Image from 'next/image';
+// import Logo from '@/assets/methods/logos.png'
 
 const data = {
   title: "Real companies, real gains.​",
-  logo: ["./methods/logos.png"],
+  logo: ["/methods/logos.png"],
 };
 
 export default function Companies() {
@@ -15,12 +17,12 @@ export default function Companies() {
         <div className="grid sm:grid-cols-6 grid-cols-3 sm:gap-[25px] gap-[10px] ">
           {Array.from({ length: 12 }).map((_, i) => (
             <div key={i}>
-              <img src={data.logo[0]} className="sm:h-[50px] h-[30px]" alt={`logo-${i}`} />
+              <Image src={data.logo[0]} width={100} height={100} className="sm:h-[50px] max-w-fit h-[30px]" alt={`logo-${i}`} />
             </div>
           ))}
         </div>
       </div>
-      <div className="h-[60%] w-[100%]">
+      <div className="h-[60%] flex justify-center items-center w-[100%]">
         <Slider />
       </div>
     </div>

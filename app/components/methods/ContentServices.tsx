@@ -1,5 +1,6 @@
 import Growth from "@components/ui/icons/Growth";
-
+import bgimg from '@/assets/methods/Group 1.png'
+import Image from "next/image";
 interface Card {
   icon: string;
   heading: string;
@@ -49,7 +50,7 @@ const data: Data = {
       },
     },
   ],
-  bg_image: "./methods/Group 1.png",
+  bg_image: "../methods/Group 1.png",
 };
 
 export default function ContentAndServices() {
@@ -58,7 +59,7 @@ export default function ContentAndServices() {
       <p className="text-light-red text-sm font-medium font-DM-sans uppercase mb-[5px] leading-[21px] tracking-widest">
         {data.title}
       </p>
-      <p className="text-center text-red-950 text-xxl sm:text-xxxl sm:w-[40%] w-[90%] font-normal font-Amiri">
+      <p className="text-center text-dark-red text-xxl sm:text-xxxl sm:w-[40%] w-[90%] font-normal font-Amiri">
         {data.text}
       </p>
       <div className="w-[73%] grid grid-cols-1 sm:grid-cols-3 gap-[25px]">
@@ -82,7 +83,7 @@ export default function ContentAndServices() {
         ))}
       </div>
       <div className="w-[73%] sm:mt-[50px] mt-[10px] max-h-fit">
-        <img src={data.bg_image} alt="background" />
+        <img src='./methods/Group 1.png' alt="background"  />
       </div>
     </div>
   );

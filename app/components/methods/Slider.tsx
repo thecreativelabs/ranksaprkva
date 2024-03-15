@@ -1,5 +1,6 @@
 'use client'
 import { useState } from "react";
+import { Navigation, Pagination, Scrollbar, A11y,Autoplay } from 'swiper/modules';
 import UpArrow from "@components/ui/icons/upArrow";
 import CircleArrow from '@components/ui/icons/circleButtonArrow';
 import Script from "next/script";
@@ -8,25 +9,12 @@ import Nextbutton from '@components/methods/Nextbutton';
 import PrevButton from '@components/methods/PrevButton';
 import 'swiper/css';
 import Image from "next/image";
+import Bgimg from '../../../public/methods/Vector-3.png'
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
-interface Counter {
-  number: {
-    Icon: JSX.Element;
-    text: string;
-  };
-  text: string;
-}
 
-interface Data {
-  image: string;
-  logo: string;
-  color: string;
-  counter: Counter[];
-  content: string;
-  button: string;
-}
-
-const data: Data[] = [
+const data = [
   {
     image: "/methods/Lychee-the-Label.png",
     logo: "/methods/logo4.png",
@@ -90,14 +78,21 @@ export default function Slider() {
           }
           `}
       </style>
-      <div className="w-full h-[100%] bg-transparent">
+      <div className="w-full h-[400px] bg-transparent">
         <Swiper
+         modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
           spaceBetween={50}
           slidesPerView={1}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
           loop={true}
-          speed={200}
+          speed={350}
+        
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction:true
+          }}
+          
           className="h-[100%] relative"
         >
           {
@@ -106,7 +101,7 @@ export default function Slider() {
                 <SwiperSlide key={i} className="">
                   <div className="flex sm:flex-row flex-col w-full h-full justify-center  items-center">
                     <div
-                      className={` h-[60%] sm:mt-[0px] mt-[50px] sm:w-[45%] w-[80%] flex justify-center relative items-center bg-cover`}
+                      className={` h-[80%] sm:mt-[0px] mt-[50px] sm:w-[45%] w-[80%] flex justify-center relative items-center bg-cover`}
                       style={{
                         backgroundImage: `url(${'./methods/Vector-3.png'})`,
                         backgroundColor: dataa.color

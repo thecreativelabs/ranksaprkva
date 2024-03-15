@@ -1,19 +1,10 @@
 import Cards from '@components/case-study/cards';
-import CircleArrow from '@components/ui/icons/circleButtonArrow';
+import { IoMdArrowForward } from "react-icons/io";
 
-interface FeatureCardProps {
-    data: {
-        image: string;
-        logo: string;
-        color: string;
-        title: string;
-        button: {
-            text: string;
-        };
-    };
-}
 
-export default function FeatureCard(props: FeatureCardProps) {
+
+
+export default function FeatureCard(props: any) {
     return (
         <div className="flex flex-col justify-between">
             <Cards className='h-[256px]' color={props.data.color} image={props.data.image} logo={props.data.logo} />
@@ -23,12 +14,9 @@ export default function FeatureCard(props: FeatureCardProps) {
                 </p>
                 <div className="text-sm justify-start w-[100%] font-bold mt-[12px]  uppercase flex tracking-widest gap-[15px] items-center text-light-red">
                     {props.data.button.text}
-                    <button type='button' title='arrow' className="w-[38px] rounded-[50%] bg-light-red hover:bg-black">
-                        <CircleArrow
-                            className=""
-                            style={{ color: 'black' }}
-                            bg="light-pink"
-                            color="white"
+                    <button type='button' title='arrow' className="w-[38px] flex justify-center items-center h-[38px] rounded-[50%] bg-light-red hover:bg-black">
+                        <IoMdArrowForward
+                            className="text-white h-[25px] w-[25px]"                          
                         />
                     </button>
                 </div>

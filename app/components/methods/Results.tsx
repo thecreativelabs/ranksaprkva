@@ -1,14 +1,9 @@
 'use client'
  import CircleArrow from '@components/ui/icons/circleButtonArrow';
 import Image from 'next/image';
-interface ResultsData {
-    image: string;
-    title: string;
-    content: string;
-    button: string;
-}
 
-const data: ResultsData = {
+
+const data = {
     image: "/methods/bigcta.png",
     title: "Ready to rank higher?",
     content:
@@ -26,7 +21,7 @@ export default function Results(): JSX.Element {
                 <p className="text-[50px] mt-[50px] leading-[50px] font-Amiri font-normal text-dark-red">
                     {data.title}
                 </p>
-                <p className=" text-red-950 mt-[30px] text-[18px] font-normal font-DM-Sans leading-[29.70px]">
+                <p className=" text-dark-red mt-[30px] text-[18px] font-normal font-DM-Sans leading-[29.70px]">
                     {data.content}
                 </p>
                 <button  type='button' title='button' className="text-sm font-bold mt-[40px] uppercase flex justify-center tracking-widest gap-[15px] items-center text-light-red">

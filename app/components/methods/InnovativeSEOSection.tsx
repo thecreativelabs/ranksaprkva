@@ -1,16 +1,7 @@
 'use client'
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-interface CardData {
-  name: string;
-  heading: string;
-  content: string;
-  image: string;
-  testimonial: {
-    text: string;
-    author: string;
-  };
-}
+
 
 const data = {
   heading: "Discover SEO that doesn't settle.",

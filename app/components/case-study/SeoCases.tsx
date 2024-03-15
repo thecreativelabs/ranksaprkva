@@ -4,20 +4,9 @@ import { useState } from 'react';
 import Nextbutton from '@components/methods/Nextbutton';
 import Prevbutton from '@components/methods/PrevButton';
 
-interface CardData {
-    image: string;
-    logo: string;
-    color: string;
-    title: string;
-    text: string;
-}
 
-interface TestData {
-    title: string;
-    cards: CardData[];
-}
 
-const data: TestData = {
+const data = {
     title: 'Take it from our case studies, SEO is a powerful marketing pipeline.',
     cards: [
 

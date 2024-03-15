@@ -1,18 +1,9 @@
 'use client'
 import FeatureCard from './featureCard';
 
-interface CardData {
-    image: string;
-    logo: string;
-    color: string;
-    title: string;
-    button: {
-        text: string;
-        url: string;
-    };
-}
 
-const data: { title: string; cards: CardData[] } = {
+
+const data = {
     title: 'Featured Case Studies',
     cards: [
         {
@@ -52,7 +43,7 @@ export default function Feature_case_Study() {
     return (
         <div className="w-full py-[100px] bg-[#F0F0ED] flex justify-center items-center">
             <div className="w-[80%] max-w-[1200px] h-[70%]">
-                <p className="text-red-950 text-2xl lg:text-[37.30px] font-normal font-Amiri tracking-wide leading-[67.34px]">
+                <p className="text-dark-red text-2xl lg:text-[37.30px] font-normal font-Amiri tracking-wide leading-[67.34px]">
                     {data.title}
                 </p>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">

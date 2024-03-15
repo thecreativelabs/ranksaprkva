@@ -19,6 +19,10 @@ module.exports = {
         'light-red':'#C42A1C',
         'light-pink':'#E55447',
         'dark-red':'#3B0D17',
+        'gray':'#F7F7F6',
+        'lightblue':'#DAF4F4',
+        'lightyellow':'#ffae00',
+        'darkyellow':'#F0B342',
         btnBg: {
           DEFAULT: '#F0B342',
           hover: '#c92045',
@@ -33,8 +37,10 @@ module.exports = {
         'lg': ['18px', '24px'], 
         'xl': ['20px', '28px'], 
         'xxl': ['28px', '30px'],
-        'xxxl': ['37px', '67px'],
+        'xxxl': ['37px', '52px'],
         'xxxxl': ['50px', '80px'],
+        'xxxxxl': ['65px', '85px'],
+
 
 
 
