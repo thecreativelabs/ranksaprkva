@@ -48,7 +48,7 @@ const menuitems = [
 
   {
     title: "Company",
-    path: "/pricing",
+    path: "/company",
   },
   {
     title: "Learn",

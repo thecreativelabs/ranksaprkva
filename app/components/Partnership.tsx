@@ -28,7 +28,7 @@ const partner = [
 const Partnership = () => {
   return (
     <Container>
-      <div className="mt-18">
+      <div className="mt-18 mb-20">
         <div className="grid md:grid-cols-2 py-10">
           <div className="grid md:ml-16 mt-14">
             <div className="max-w-lg">

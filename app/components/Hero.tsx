@@ -49,7 +49,7 @@ const Hero = () => {
             className="w-full h-[300px] md:h-[550px] object-cover"
             alt="decorative element"
           />
-          <div className="mx-auto md:absolute md:left-[350px] md:w-[220px] md:top-[400px] w-[120px] mx-h-[100px] absolute left-[220px] top-[240px]">
+          <div className="absolute h-[80px] md:h-[100px] max-w-fit w-[100px] top-[220px] right-[-18px] md:w-[220px] md:top-[390px] md:right-[-75px]">
             <img
               src="https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_auto/victorious.com/wp-content/uploads/2023/12/home-hero-badge.webp"
               alt="Your Alt Text"

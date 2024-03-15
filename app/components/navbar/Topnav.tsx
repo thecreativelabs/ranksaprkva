@@ -1,4 +1,3 @@
-// pages/index.js
 import React from 'react';
 import Container from '@/components/Container'
 import { BsArrowRightCircleFill } from "react-icons/bs";
@@ -11,7 +10,7 @@ const Topnav = () => {
     },
     {
       title: 'Careers',
-      path: '../../pages/Career',
+      path: '/career',
     },
     {
       title: 'Customer Login',
