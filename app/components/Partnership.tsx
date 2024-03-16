@@ -22,6 +22,7 @@ const partner = [
     description2:
       "SEO is an untapped marketing channel with the power to unlock high-conversion traffic and long-term ROI — well help you find the key.",
     text: "EXPLORE OUR SERVICES",
+    path: "/"
   },
 ];
 
@@ -41,16 +42,21 @@ const Partnership = () => {
                 <br />
                 {partner[2].description2}
               </p>
-              <div className="mt-14 flex items-center mb-8">
-                <p className="mr-2 font-semibold text-md text-[#C42A1C]">{partner[2].text}</p>
-                <FaCircleArrowRight className="text-[#C42A1C]/70" size={32} />
+              <div className="mt-10 flex items-center mb-8 text-red-600 hover:text-red-600/60  cursor-pointer">
+                <a href={partner[2].path} className="flex items-center"> 
+                  {" "}
+                  <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
+                    {partner[2].text}
+                  </p>
+                  <FaCircleArrowRight className="" size={35} />
+                </a>
               </div>
             </div>
           </div>
 
           <div className="grid place-items-center">
             <div className="sm:grid-cols-2 md:grid-cols-3 mt-16 gap-8 md:gap-20">
-              <div className="bg-[#F0F0ED] w-full flex flex-col gap-4 mb-6 items-start group hover:border-slate-100 border rounded transition-all px-8 py-10">
+              <div className="bg-[#F0F0ED] w-full flex flex-col gap-4 mb-6 items-start group rounded transition-all px-8 py-10">
                 <div className="items-center justify-between">
                   <div className="mt-1 mb-6 bg-white border shadow shadow-indigo-100/50 border-indigo-100 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">
                     <span className="text-[#C42A1C] text">
@@ -109,15 +115,18 @@ const Partnership = () => {
                     {partner[0].description}
                   </p>
                 </div>
-                <div>
-                  <p className="mt-2 font-medium text-[#C42A1C] leading-relaxed">
-                    {partner[0].text}
+                <div className="mt-10 flex items-center mb-8 text-red-600 hover:text-red-600/60  cursor-pointer">
+                <a href={partner[2].path} className="flex items-center"> 
+                  {" "}
+                  <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
+                    {partner[2].text}
                   </p>
-                </div>
+                </a>
               </div>
-              <div className="bg-[#F0F0ED] w-full flex flex-col gap-4 mb-6 items-start group hover:border-slate-100 border rounded transition-all px-8 py-10">
+              </div>
+              <div className="bg-[#F0F0ED] w-full flex flex-col gap-4 mb-6 items-start group rounded transition-all px-8 py-10">
                 <div className="w-full items-center justify-between">
-                  <div className="mt-1 mb-6 bg-white border shadow shadow-indigo-100/50 border-indigo-100 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">
+                  <div className="mt-1 mb-6 bg-white border  shadow-indigo-100/50 border-indigo-100 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">
                     <span className="text-[#C42A1C]">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -198,11 +207,14 @@ const Partnership = () => {
                     {partner[1].description}
                   </p>
                 </div>
-                <div>
-                  <p className="mt-2 font-medium text-[#C42A1C] leading-relaxed">
-                    {partner[1].text}
+                <div className="mt-10 flex items-center mb-8 text-red-600 hover:text-red-600/60  cursor-pointer">
+                <a href={partner[2].path} className="flex items-center"> 
+                  {" "}
+                  <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
+                    {partner[2].text}
                   </p>
-                </div>
+                </a>
+              </div>
               </div>
             </div>
           </div>

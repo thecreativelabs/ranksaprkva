@@ -43,7 +43,7 @@ const Cta = () => {
               type="email"
               id="email"
               name="email"
-              className="mt-1 p-2 border rounded w-full md:w-[540px]"
+              className="mt-1 p-2 rounded w-full md:w-[540px]"
               placeholder="Enter your email"
               required
             />
@@ -59,7 +59,7 @@ const Cta = () => {
             <select
               id="interest"
               name="interest"
-              className="mt-1 p-2 border rounded w-full md:w-[540px]"
+              className="mt-1 p-2 rounded w-full md:w-[540px]"
               required
             >
               <option value="" selected>

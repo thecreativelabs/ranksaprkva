@@ -139,9 +139,10 @@ const Learn = () => {
             {learn.description}
           </p>
           <div className="flex flex-col w-auto md:flex-row gap-x-8">
-          <div className="w-full md:w-1/2">
+          <div className="w-full cursor-pointer md:w-1/2">
             {learn.it.map((item, index) => (
               <div key={index}>
+                <a href="/">
                 <div className="mx-auto bg-[#3b0d17] h-[1px] w-full"></div>
                 <div className="flex mt-5 mb-5 md:gap-x-8">
                   {item.icon}
@@ -152,12 +153,14 @@ const Learn = () => {
                     <FaArrowRight className="mt-5 ml-4 md:ml-0" />
                   </div>
                 </div>
+                </a>
               </div>
             ))}
           </div>
-          <div className="w-full md:w-1/2">
+          <div className="w-full cursor-pointer md:w-1/2">
               {learn.it2.map((items, index) => (
                 <div key={index}>
+                  <a href="/">
                   <div className="mx-auto bg-[#3b0d17] h-[1px] w-full"></div>
                   <div className="flex mt-5 mb-5 md:gap-x-8">
                     {items.icon}
@@ -166,6 +169,7 @@ const Learn = () => {
                       <FaArrowRight className="mt-5 ml-4 md:ml-0" />
                     </div>
                   </div>
+                  </a>
                 </div>
               ))}
             </div>

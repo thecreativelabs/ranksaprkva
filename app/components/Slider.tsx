@@ -76,7 +76,8 @@ const data: Data[] = [
     button: "Read case study",
   },
   {
-    image: "https://victorious.com/wp-content/uploads/2023/10/Citron-Hennessey-White.svg",
+    image:
+      "https://victorious.com/wp-content/uploads/2023/10/Citron-Hennessey-White.svg",
     logo: "/homepage/award_us-search-2022-winner-best-use-search-health.png",
     color: "#e0ad1f",
     counter: [
@@ -125,7 +126,7 @@ const Slider = () => {
               loop={true}
               speed={1000}
               className="h-[100%] relative"
-              style={{ transitionDuration: "2s" }} 
+              style={{ transitionDuration: "2s" }}
             >
               {data.map((dataa, i) => {
                 return (
@@ -196,20 +197,22 @@ const Slider = () => {
                           <p className="text-dark-red text-left sm:text-xxl md:text-xxl tracking-wider leading-7 md:leading-10 text-md font-bold font-DM-sans w-[100%]">
                             {dataa.content}
                           </p>
-                          <div className="md:text-sm text-xs justify-start w-auto font-bold mt-[20px] uppercase flex tracking-wide gap-[15px] items-center text-light-red">
-                            {dataa.button}
-                            <button
-                              type="button"
-                              title="button"
-                              className="mt-[-2px] w-[38px] rounded-[50%] bg-light-red hover:bg-black"
-                            >
-                              <CircleArrow
-                                className=""
-                                style={{ color: "black" }}
-                                bg="light-pink"
-                                color="white"
-                              />
-                            </button>
+                          <div className="md:text-sm text-xs justify-start w-auto font-bold mt-[20px] uppercase cursor-pointer flex tracking-wide gap-[15px] items-center text-light-red">
+                            <a href="/" className="flex">
+                              {dataa.button}
+                              <button
+                                type="button"
+                                title="button"
+                                className="mt-[-12px] ml-2 w-[38px] rounded-[50%] bg-light-red hover:bg-light-red/60"
+                              >
+                                <CircleArrow
+                                  className=""
+                                  style={{ color: "black" }}
+                                  bg="light-pink"
+                                  color="white"
+                                />
+                              </button>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -227,6 +230,6 @@ const Slider = () => {
       </div>
     </>
   );
-}
+};
 
 export default Slider;

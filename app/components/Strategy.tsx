@@ -5,7 +5,8 @@ import Container from "./Container";
 const data = {
   heading: "Experience the difference of a values-driven search strategy.",
   discription: "Discover how organic search visibility and a made-to-measure SEO agency partnership can benefit your business in the long run.",
-  text: " GET YOUR CUSTOM STRATEGY"
+  text: " GET YOUR CUSTOM STRATEGY",
+  path: "/"
 };
 
 const Strategy = () => {
@@ -34,12 +35,15 @@ const Strategy = () => {
           <p className="mt-4 text-md text-[#3B0D17] w-auto md:w-[60%] leading-7 tracking-wider font-medium font-primary">
             {data.discription}
           </p>
-          <div className="mt-14 flex items-center mb-8">
-            <p className="mr-2 font-semibold text-md text-[#C42A1C]">
-             {data.text}
-            </p>
-            <FaCircleArrowRight className="text-[#C42A1C]/70" size={40} />
-          </div>
+          <div className="mt-10 flex items-center mb-8 text-red-600 hover:text-red-600/60  cursor-pointer">
+                <a href={data.path} className="flex items-center"> 
+                  {" "}
+                  <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
+                    {data.text}
+                  </p>
+                  <FaCircleArrowRight className="" size={35} />
+                </a>
+              </div>
         </div>
       </Container>
     </div>
