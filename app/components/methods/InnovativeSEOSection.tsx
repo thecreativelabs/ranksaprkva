@@ -53,7 +53,7 @@ export default function InnovativeSection() {
   return (
     <Container>
       <div className="md:py-[120px] sm:py-[80px] py-[40px] h-fit flex  flex-col justify-center items-center w-full bg-white">
-        <div className="w-[90%] flex flex-col justify-center items-center">
+        <div className="w-[95%] flex flex-col justify-center items-center">
           <p className="text-center sm:text-xxxl text-xxl w-[100%] font-normal font-Amiri">
             {data.heading}
           </p>

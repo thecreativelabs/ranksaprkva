@@ -53,7 +53,7 @@
 }
 
 .gradient-with-image {
-  width: 100%;
+  width: 90%;
   height: 250px;
 
   background: radial-gradient(circle at 120% 25%,

@@ -19,7 +19,7 @@ const data = {
 
 export default function Banner() {
   return (
-    <div className="w-full md:py-[120px] sm:py-[80px] py-[40px]  h-fit flex flex-col justify-center items-center bg-dark-red">
+    <div className="w-full md:py-[80px] sm:py-[40px] py-[20px]  h-fit flex flex-col justify-center items-center bg-dark-red">
       <Container>
         <div className="grid grid-cols-2 sm:grid-cols-4 sm:gap-[10px] gap-[5px]">
           {data.logos.map((logo, i) => (

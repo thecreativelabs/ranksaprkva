@@ -40,8 +40,8 @@ const data = {
 export default function SearchAndGrowth(): JSX.Element {
     return (
         <Container>
-            <div className="relative py-[120px] h-fit w-full flex flex-col bg-white justify-center items-center">
-                <div className="sm:absolute relative top-[-100px] flex flex-col items-center justify-center rounded h-[180px] sm:h-[250px] bg gradient-with-image min-w-[76%] max-w-3xl">
+            <div className="relative py-[120px] h-fit  flex flex-col bg-white justify-center items-center">
+                <div className="sm:absolute relative top-[-100px] flex flex-col items-center justify-center rounded h-[180px] sm:h-[250px] bg gradient-with-image ">
                     <div className="w-[90%] min-w-3xl h-[80%] sm:h-full gap-[20px] flex flex-col justify-center">
                         <p className="text-white text-[20px] sm:text-[28.40px] font-DM-sans font-bold sm:w-[60%] w-[80%] leading-6 sm:leading-10">
                             {data.banner.text}
@@ -51,7 +51,7 @@ export default function SearchAndGrowth(): JSX.Element {
                         </button>
                     </div>
                 </div>
-                <div className="min-w-[76%] max-w-3xl sm:p-0 p-4 mt-[-15%] sm:mt-[15%]">
+                <div className="w-[90%]  sm:p-0 p-4 mt-[-15%] sm:mt-[15%]">
                     <p className="sm:text-xxl text-lg font-medium tracking-wide w-[100%]">{data.text}</p>
                     <div className="grid grid-cols-1 sm:grid-cols-3 mt-[50px] relative gap-[20px]">
                         {data.cards.map((e, i) => (

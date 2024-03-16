@@ -72,7 +72,7 @@ const data: SEOData = {
 
 export default function SEO(): JSX.Element {
     return (
-        <div className="bg-white relative z-10 sm:py-[50px] py-4 mt-[50px] flex flex-col gap-[10%] justify-center items-center w-[90%] border-t-[3px] border-solid border-yellow-500 h-[45%]">
+        <div className="bg-white relative z-10 sm:py-[50px] py-4 mt-[50px] flex flex-col gap-[10%] justify-center items-center w-[100%] border-t-[3px] border-solid border-yellow-500 h-[45%]">
             <p className="text-xxl font-bold tracking-wider">{data.heading}</p>
             <div className="flex sm:flex-row flex-col w-[85%] py-[30px]">
                 {data.services.map((service, i) => (

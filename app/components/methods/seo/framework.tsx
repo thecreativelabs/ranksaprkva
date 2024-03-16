@@ -72,11 +72,11 @@ export default function Framework(): JSX.Element {
                     <p className="text-center text-dark-red sm:text-[37.30px] text-[20px] font-normal font-Amiri leading-[30px] sm:leading-[67.34px]">
                         {data.text}
                     </p>
-                    <Image alt='image' src={data.headingImage} width={1000} height={1000} className=" sm:flex hidden w-[73%] max-h-fit mt-[4%]" />
-                    <div className="flex sm:flex-row flex-col gap-[40px] mt-[20px] w-[73%]">
+                    <Image alt='image' src={data.headingImage} width={1000} height={1000} className=" sm:flex hidden w-[90%] max-h-fit mt-[4%]" />
+                    <div className="flex sm:flex-row flex-col gap-[40px] mt-[20px] w-[90%]">
                         {data.planBenefits.map((e, i) => (
                             <div key={i} className={i !== 0 ? "w-[100%]" : "sm:w-[128%] w-[100%]"}>
-                                <Image width={1000} height={1000} alt='image' src={e.image} className="flex sm:max-h-fit sm:max-w-fit sm:hidden mb-2" />
+                                <Image width={1000} height={1000} alt='image' src={e.image} className="flex  sm:hidden mb-2" />
                                 <p className="sm:text-base text-sm font-bold">{e.heading}</p>
                                 <ul className="mt-[25px] list-disc space-y-2">
                                     {e.points.map((point, k) => (

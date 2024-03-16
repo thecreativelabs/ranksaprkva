@@ -2,24 +2,9 @@ import Growth from "@components/ui/icons/Growth";
 import bgimg from '@/assets/methods/Group 1.png'
 import Image from "next/image";
 import Container from "../Container";
-interface Card {
-  icon: string;
-  heading: string;
-  content: string;
-  button: {
-    text: string;
-    url: string;
-  };
-}
 
-interface Data {
-  title: string;
-  text: string;
-  cards: Card[];
-  bg_image: string;
-}
 
-const data: Data = {
+const data = {
   title: "SUPERCHARGE YOUR SEARCH POTENTIAL",
   text: "Accelerate your results and uncover additional paths to success.",
   cards: [
