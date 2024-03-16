@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -37,7 +35,7 @@
 }
 .imagee {
   animation: rotateAnimation 0.5s ease forwards;
-} */
+}
 
 /* @keyframes rotateAnimation {
   0% {
@@ -65,12 +63,12 @@
     ),
     url("../../public/methods/banner-bg.png");
   /* background-size: 100% 100%; */
-  /* Adjust background position as needed */
-  /* background-position-x: 100%;
+/* Adjust background position as needed */
+/* background-position-x: 100%;
   background-size: contain;
   background-repeat: repeat; Prevent image repeat */
 /* } */
-.background{
+.background {
   background-image: url("../../public/methods/Vector-2.png");
   background-size: 80%;
   background-repeat: no-repeat;

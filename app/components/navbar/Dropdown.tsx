@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export interface NavItem {
   title: string;
@@ -8,10 +8,14 @@ export interface NavItem {
 interface NavDropdownProps {
   title: string;
   lastItem?: boolean;
-  children: NavItem[];
+  childrens: NavItem[];
 }
 
-const NavDropdown: React.FC<NavDropdownProps> = ({ title, lastItem, children }) => {
+const NavDropdown: React.FC<NavDropdownProps> = ({
+  title,
+  lastItem,
+  childrens,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -32,19 +36,25 @@ const NavDropdown: React.FC<NavDropdownProps> = ({ title, lastItem, children }) 
             viewBox="0 0 24 24"
             strokeWidth="3"
             stroke="currentColor"
-            className={`w-3 h-3 mt-0.5 ${isOpen ? 'rotate-180' : ''}`}
+            className={`w-3 h-3 mt-0.5 ${isOpen ? "rotate-180" : ""}`}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            ></path>
           </svg>
         </button>
         {isOpen && (
           <div
             className={`lg:absolute w-full lg:w-48 z-50 border-l lg:border-0 border-slate-200 ${
-              lastItem ? 'lg:right-0 origin-top-right' : 'lg:left-0 origin-top-left'
+              lastItem
+                ? "lg:right-0 origin-top-right"
+                : "lg:left-0 origin-top-left"
             }`}
           >
             <div className="mx-auto w-[300px] h-[200px] px-4 lg:py-2 lg:bg-white lg:rounded-md lg:shadow lg:border flex flex-col overflow-hidden">
-              {children.map((item, index) => (
+              {childrens.map((item, index) => (
                 <a
                   key={index}
                   href={item.path}

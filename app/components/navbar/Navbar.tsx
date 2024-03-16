@@ -155,7 +155,7 @@ const Navbar = () => {
                   {item.children ? (
                     <Dropdown
                       title={item.title}
-                      children={item.children}
+                      childrens={item.children}
                       lastItem={index === menuitems.length - 1}
                     />
                   ) : (
