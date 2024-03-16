@@ -1,6 +1,7 @@
 import Growth from "@components/ui/icons/Growth";
 import bgimg from '@/assets/methods/Group 1.png'
 import Image from "next/image";
+import Container from "../Container";
 interface Card {
   icon: string;
   heading: string;
@@ -55,36 +56,38 @@ const data: Data = {
 
 export default function ContentAndServices() {
   return (
-    <div className="sm:h-[180vh] h-fit w-full flex flex-col gap-[30px] justify-center items-center">
-      <p className="text-light-red text-sm font-medium font-DM-sans uppercase mb-[5px] leading-[21px] tracking-widest">
-        {data.title}
-      </p>
-      <p className="text-center text-dark-red text-xxl sm:text-xxxl sm:w-[40%] w-[90%] font-normal font-Amiri">
-        {data.text}
-      </p>
-      <div className="w-[73%] grid grid-cols-1 sm:grid-cols-3 gap-[25px]">
-        {data.cards.map((card, i) => (
-          <div key={i} className="bg-[#F0F0ED] px-4 flex justify-center items-center min-h-[290px] max-h-[500px]">
-            <div className="flex flex-col h-full w-[90%] justify-evenly items-start">
-              <div className="bg-white h-fit w-fit p-2 rounded-[50%]">
-                <Growth className="p-1" />
+    <Container>
+      <div className="md:py-[120px] sm:py-[80px] py-[40px] h-fit w-full flex flex-col gap-[30px] justify-center items-center">
+        <p className="text-light-red text-sm font-medium font-DM-sans uppercase mb-[5px] leading-[21px] tracking-widest">
+          {data.title}
+        </p>
+        <p className="text-center text-dark-red text-xxl sm:text-xxxl sm:w-[60%] w-[90%] font-normal font-Amiri">
+          {data.text}
+        </p>
+        <div className="w-[90%] grid grid-cols-1 sm:grid-cols-3 gap-[25px]">
+          {data.cards.map((card, i) => (
+            <div key={i} className="bg-[#F0F0ED] px-4 flex justify-center items-center min-h-[290px] max-h-[500px]">
+              <div className="flex flex-col h-full w-[90%] justify-evenly items-start">
+                <div className="bg-white h-fit w-fit p-2 rounded-[50%]">
+                  <Growth className="p-1" />
+                </div>
+                <p className="text-xl mt-[-15px] font-bold tracking-wider">
+                  {card.heading}
+                </p>
+                <p className="text-[16px] mt-[-20px] w-[95%] font-normal font-DM-sans leading-[26px]">
+                  {card.content}
+                </p>
+                <button className="text-base font-bold text-light-pink">
+                  {card.button.text}
+                </button>
               </div>
-              <p className="text-xl mt-[-15px] font-bold tracking-wider">
-                {card.heading}
-              </p>
-              <p className="text-[16px] mt-[-20px] w-[95%] font-normal font-DM-sans leading-[26px]">
-                {card.content}
-              </p>
-              <button className="text-base font-bold text-light-pink">
-                {card.button.text}
-              </button>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div className="w-[90%] sm:mt-[50px] mt-[10px] max-h-fit">
+          <img src='./methods/Group 1.png' alt="background" />
+        </div>
       </div>
-      <div className="w-[73%] sm:mt-[50px] mt-[10px] max-h-fit">
-        <img src='./methods/Group 1.png' alt="background"  />
-      </div>
-    </div>
+    </Container>
   );
 }

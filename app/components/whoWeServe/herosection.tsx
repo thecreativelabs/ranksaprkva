@@ -13,7 +13,7 @@ const data = {
 
 export default function Hero() {
     return (
-        <div className="sm:h-[70vh] h-fit sm:py-0 py-[100px]  w-full max-h-[600px] flex flex-col justify-center items-center">
+        <div className="md:py-[120px] sm:py-[80px] py-[40px] h-fit  w-full max-h-[600px] flex flex-col justify-center items-center">
             {/* <div className="sm:w-[80%] w-[90%] max-w-[1200px] h-[] sm:h-[55%] mt-[8%] sm:space-y-1 space-y-[30px] flex flex-col justify-between ">
                 <p className="text-light-red text-sm font-bold font-DM-sans uppercase leading-[21px] tracking-widest">
                     {data.title}
