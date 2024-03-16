@@ -1,12 +1,9 @@
-import React from 'react'
-import Container from '@/components/Container';
-// import Contactform from "@components/contactform";
-import { Icon } from 'next/dist/lib/metadata/types/metadata-types';
 "use client";
 
 import React from "react";
 import Container from "@/components/Container";
 import Contactform from "./contactform";
+import { Icon } from "next/dist/lib/metadata/types/metadata-types";
 
 const contact = {
   header: "Get in touch.",
