@@ -6,6 +6,7 @@ import Story from "./story";
 import Growth from "./growth";
 import Feedback from "./feedback";
 import Stats from "./stats";
+import Gallery from "./gallery";
 import Strategy from "@/components/Strategy";
 
 export default function RootLayout({
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Growth />
         <Feedback />
         <Stats />
+        {/* <Gallery /> */}
         <Strategy />
       </body>
     </html>
