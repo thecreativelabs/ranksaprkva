@@ -23,7 +23,7 @@ export default function Banner() {
                 <p className="sm:text-lg font-DM-sans sm:w-[60%] w-[80%] mt-[10px] text-dark-red font-normal tracking-wider space-x-5 sm:leading-[30px] text-[12px] leading-[17px]">
                     {data.content}
                 </p>
-                <div className="bg-[#F0B342] mt-10 pr-2 text-[#3B0D17] w-fit md:h-14 h-14 md:flex md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300">
+                <div className="bg-darkyellow mt-10 pr-2 text-dark-red w-fit md:h-14 h-14 md:flex md:items-center items-center gap-4 hover:bg-light-red hover:text-white transition-all duration-300">
                     <button className="relative md:inline-flex inline-flex items-center md:items-center group gap-px">
                         <a
                             href={data.button.url}
