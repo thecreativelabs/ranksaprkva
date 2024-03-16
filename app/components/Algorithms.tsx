@@ -301,7 +301,7 @@ const Algorithms = () => {
         {AlgoData.it.map((item, index) => (
           <div
             key={index}
-            className="bg-[#F0F0ED] md:h-[300px] h-auto w-full flex flex-col gap-4 mb-6 items-start group hover:border-slate-100 border rounded transition-all px-8 py-6"
+            className="bg-[#F0F0ED] md:h-[300px] h-auto w-full flex flex-col gap-4 mb-6 items-start group rounded transition-all px-8 py-6"
           >
             <div className="items-center justify-between">
               <div className="mt-1 mb-6 bg-white border shadow shadow-indigo-100/50 border-indigo-100 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">

@@ -493,7 +493,7 @@ const growth = () => {
                 className="md:h-[220px] w-auto h-auto md:w-[360px] flex flex-col gap-0 md:gap-4 mb-0 md:mb-6 items-start group rounded transition-all px-0 md:px-8 py-6"
               >
                 <div className="items-center justify-between">
-                  <div className="mt-1 mb-4 md:mb-6 bg-white border shadow shadow-indigo-100/50 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">
+                  <div className="mt-1 mb-4 md:mb-6 bg-white shadow shadow-indigo-100/50 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">
                     <span className="text-[#C42A1C] text">{item.icon}</span>
                   </div>
                   <h3 className="font-semibold font-sans text-left text-lg md:text-2xl text-[#3B0D17]">

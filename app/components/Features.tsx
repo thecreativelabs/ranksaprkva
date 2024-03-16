@@ -9,6 +9,8 @@ const feature = [
       "Flexible, full-funnel services that transform your organic traffic into tangible returns.",
     description:
       "Our proven, repeatable methodology frees us up to cultivate a meaningful relationship with you. Our SEO marketing company functions as an extension of your team and leans into your niche to translate our SEO know-how into a focused strategy unique to your business.",
+    text: "EXPLORE OUR METHOD",
+    path: "/",
   },
 ];
 
@@ -28,11 +30,14 @@ const Features = () => {
               <p className="mt-4 text-[#3B0D17] leading-7 tracking-wide">
                 {feature[0].description}
               </p>
-              <div className="mt-10 flex items-center mb-8">
-                <p className="mr-2 font-sans font-semibold text-red-600 tracking-wide">
-                  EXPLORE OUR METHOD
-                </p>
-                <FaCircleArrowRight className="text-red-600" size={35} />
+              <div className="mt-10 flex items-center mb-8 text-red-600 hover:text-red-600/60  cursor-pointer">
+                <a href={feature[0].path} className="flex items-center"> 
+                  {" "}
+                  <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
+                    {feature[0].text}
+                  </p>
+                  <FaCircleArrowRight className="" size={35} />
+                </a>
               </div>
             </div>
           </div>
