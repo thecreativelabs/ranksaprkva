@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-import { Navigation, Pagination, Scrollbar, A11y,Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import UpArrow from "@components/ui/icons/upArrow";
 import CircleArrow from '@components/ui/icons/circleButtonArrow';
 import Script from "next/script";
@@ -12,60 +12,62 @@ import Image from "next/image";
 import Bgimg from '../../../public/methods/Vector-3.png'
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import { FaArrowUp } from "react-icons/fa";
 
 
-const data = [
-  {
-    image: "/methods/Lychee-the-Label.png",
-    logo: "/methods/logo4.png",
-    color: "#F6917C",
-    counter: [
-      {
-        number: {
-          Icon: <UpArrow />,
-          text: "1,122%",
-        },
-        text: "Page One Keywords",
-      },
-      {
-        number: {
-          Icon: <UpArrow />,
-          text: "214%",
-        },
-        text: "YoY Monthly Revenue",
-      },
-    ],
-    content:
-      "See how Victorious helped Lychee The Label increase monthly revenue by 214%.",
-    button: "Read case study",
-  },
-  {
-    image: "/methods/Lychee-the-Label.png",
-    logo: "/methods/logo2.png",
-    color: "#00a88f",
-    counter: [
-      {
-        number: {
-          Icon: <UpArrow />,
-          text: "1,122%",
-        },
-        text: "Page One Keywords",
-      },
-      {
-        number: {
-          Icon: <UpArrow />,
-          text: "214%",
-        },
-        text: "YoY Monthly Revenue",
-      },
-    ],
-    content:
-      "See how Victorious helped Lychee The Label increase monthly revenue by 214%.",
-    button: "Read case study",
-  },
-];
 
-export default function Slider() {
+
+export default function Slider(props: any) {
+  const data = (props.data == null || props == null) ? [
+    {
+      image: "/methods/Lychee-the-Label.png",
+      logo: "/methods/logo4.png",
+      color: "#F6917C",
+      counter: [
+        {
+          number: {
+            Icon: <UpArrow />,
+            text: "1,122%",
+          },
+          text: "Page One Keywords",
+        },
+        {
+          number: {
+            Icon: <UpArrow />,
+            text: "214%",
+          },
+          text: "YoY Monthly Revenue",
+        },
+      ],
+      content:
+        "See how Victorious helped Lychee The Label increase monthly revenue by 214%.",
+      button: "Read case study",
+    },
+    {
+      image: "/methods/Lychee-the-Label.png",
+      logo: "/methods/logo2.png",
+      color: "#00a88f",
+      counter: [
+        {
+          number: {
+            Icon: <UpArrow />,
+            text: "1,122%",
+          },
+          text: "Page One Keywords",
+        },
+        {
+          number: {
+            Icon: <UpArrow />,
+            text: "214%",
+          },
+          text: "YoY Monthly Revenue",
+        },
+      ],
+      content:
+        "See how Victorious helped Lychee The Label increase monthly revenue by 214%.",
+      button: "Read case study",
+    },
+  ] : props.data;
   return (
     <>
       <style>
@@ -80,47 +82,47 @@ export default function Slider() {
       </style>
       <div className="w-full h-[400px] bg-transparent">
         <Swiper
-         modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           spaceBetween={50}
           slidesPerView={1}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
           loop={true}
           speed={350}
-        
+
           autoplay={{
             delay: 5000,
-            disableOnInteraction:true
+            disableOnInteraction: true
           }}
-          
+
           className="h-[100%] relative"
         >
           {
-            data.map((dataa, i) => {
+            data.map((dataa: any, i: any) => {
               return (
                 <SwiperSlide key={i} className="">
-                  <div className="flex sm:flex-row flex-col w-full h-full justify-center  items-center">
+                  <div className="flex sm:flex-row flex-col w-full h-full justify-between  items-center">
                     <div
-                      className={` h-[80%] sm:mt-[0px] mt-[50px] sm:w-[45%] w-[80%] flex justify-center relative items-center bg-cover`}
+                      className={` h-[90%] sm:mt-[10px] mt-[45px] sm:w-[50%] w-[80%] flex justify-center relative items-center bg-cover`}
                       style={{
                         backgroundImage: `url(${'./methods/Vector-3.png'})`,
                         backgroundColor: dataa.color
                       }}>
-                      
+
                       <Image height={200} width={200} alt="image" src={dataa.image} className="h-[200px] max-w-fit"  ></Image>
                       <Image height={100} width={100} alt="image"
                         src={dataa.logo}
-                        className="absolute h-[100px] max-w-fit top-[-35px] right-[-35px]"></Image>
-                     
+                        className="absolute h-[100px] max-w-fit top-[-32px] right-[-35px]"></Image>
+
                     </div>
                     <div className="sm:w-[40%] w-[80%] ml-[30px] gap-y-[30px] flex flex-col justify-evenly items-center">
                       <div className="w-full ml- flex">
                         <div className="flex w-1/2 flex-col border-r-[1px] ml-[-10px] pb-2 border-[#dcdcdc] justify-center items-center">
-                          <div className="flex w-[50%] justify-center items-center">
-                            <UpArrow
+                          <div className="flex justify-center items-center">
+                            <FaArrowUp
                               className="h-[30px] relative w-[30px] font-bold"
-                              color={dataa.color}
-                              weight="15"
+                              style={{ color: dataa.color }}
+
                             />
                             <p
                               className="font-bold text-xxxl font-DM-sans"
@@ -135,10 +137,10 @@ export default function Slider() {
                         <div className="flex w-1/2 flex-col pb-2 justify-center items-center">
                           <div className="flex justify-center items-center">
 
-                            <UpArrow
+                            <FaArrowUp
                               className="h-[30px] relative w-[30px] font-bold"
-                              color={dataa.color}
-                              weight="15"
+                              style={{ color: dataa.color }}
+
                             />
                             <p
                               className="font-bold text-xxxl   font-DM-sans"
@@ -156,7 +158,7 @@ export default function Slider() {
                           {dataa.content}
                         </p>
                         <div className="text-sm justify-start w-[50%] font-bold mt-[20px]  uppercase flex tracking-widest gap-[15px] items-center text-light-red">
-                          {dataa.button} 
+                          {dataa.button}
                           <button type="button" title="button" className="mt-[-2px] w-[38px] rounded-[50%] bg-light-red hover:bg-black">
                             <CircleArrow
                               className=""
@@ -174,13 +176,13 @@ export default function Slider() {
             })
           }
           <div className="h-[50px] z-20 absolute sm:bottom-4 bottom-2 right-10">
-            <PrevButton/>
+            <PrevButton />
             <Nextbutton />
           </div>
         </Swiper>
 
       </div >
-     
+
 
 
     </>

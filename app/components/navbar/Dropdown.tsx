@@ -9,12 +9,14 @@ interface NavDropdownProps {
   title: string;
   lastItem?: boolean;
   childrens: NavItem[];
+  path:string;
 }
 
 const NavDropdown: React.FC<NavDropdownProps> = ({
   title,
   lastItem,
   childrens,
+  path,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -29,7 +31,8 @@ const NavDropdown: React.FC<NavDropdownProps> = ({
           onClick={toggleDropdown}
           className="flex items-center gap-1 text-sm w-full lg:w-auto transition lg:px-3 py-2 text-[#3B0D17] hover:text-[#F0B342] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full"
         >
-          <span>{title}</span>
+          <a href={path}>{title}</a>
+          {/* <span>{title}</span> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

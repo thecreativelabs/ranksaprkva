@@ -9,11 +9,11 @@ import { useEffect, useState } from "react";
 const menuitems = [
   {
     title: "Method",
-    path: "/",
+    path: "/methods",
   },
   {
     title: "Services",
-    path: "/marketing-solutions",
+    path: "/services",
     // children: marketingSolutions?.map((solution) => ({
     //   title: solution.title,
     //   path: "/marketing-solutions/" + solution.slug.current,
@@ -35,6 +35,7 @@ const menuitems = [
         path: "/careers",
       },
     ],
+    path:'/case-study'
   },
   {
     title: "Who We Serve",
@@ -44,6 +45,7 @@ const menuitems = [
         path: "/success-stories",
       },
     ],
+    path:'/who-we-serve'
   },
 
   {
@@ -154,6 +156,7 @@ const Navbar = () => {
                 <>
                   {item.children ? (
                     <Dropdown
+                    path={item.path}
                       title={item.title}
                       childrens={item.children}
                       lastItem={index === menuitems.length - 1}

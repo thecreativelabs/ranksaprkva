@@ -86,7 +86,10 @@ export default function Framework(): JSX.Element {
                             </div>
                         ))}
                     </div>
-                    <SEO />
+                    <div className="bg-white relative z-10 px-[50px] w-[100%] mt-[50px] border-t-[3px] border-solid border-yellow-500 h-[45%]">
+
+                        <SEO />
+                    </div>
                 </div>
             </Container>
         </div>

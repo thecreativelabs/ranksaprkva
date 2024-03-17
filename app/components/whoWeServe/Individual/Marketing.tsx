@@ -1,28 +1,29 @@
 import Container from "@/components/Container";
 import Slider from "@/components/methods/Slider";
 import Image from "next/image";
-const data = [
-    {
-        title: 'How SEO Fuels a Prosperous SaaS Marketing Funnel',
-        content: 'Incorporating a partnership with a SaaS SEO company into your current marketing strategy is an investment in your business’ visibility and profitability.',
-        points: ['Keep your SaaS solution at the forefront of future users’ minds.', 'Improve crawlability and create a better user experience for visitors.', 'Drive continuous traffic while reducing ongoing ad spend.'],
-        image: '/whoWeServe/redimage1.png'
-    },
-    {
-        title: 'How SEO Fuels a Prosperous SaaS Marketing Funnel',
-        content: 'Incorporating a partnership with a SaaS SEO company into your current marketing strategy is an investment in your business’ visibility and profitability.',
-        points: ['Keep your SaaS solution at the forefront of future users’ minds.', 'Improve crawlability and create a better user experience for visitors.', 'Drive continuous traffic while reducing ongoing ad spend.'],
-        image: '/whoWeServe/redimage2.png'
-    }
-]
-export default function Marketing() {
+
+export default function Marketing(props:any) {
+    const data = (props==null || props.data==null)?[
+        {
+            title: 'How SEO Fuels a Prosperous SaaS Marketing Funnel',
+            content: 'Incorporating a partnership with a SaaS SEO company into your current marketing strategy is an investment in your business’ visibility and profitability.',
+            points: ['Keep your SaaS solution at the forefront of future users’ minds.', 'Improve crawlability and create a better user experience for visitors.', 'Drive continuous traffic while reducing ongoing ad spend.'],
+            image: '/whoWeServe/redimage1.png'
+        },
+        {
+            title: 'How SEO Fuels a Prosperous SaaS Marketing Funnel',
+            content: 'Incorporating a partnership with a SaaS SEO company into your current marketing strategy is an investment in your business’ visibility and profitability.',
+            points: ['Keep your SaaS solution at the forefront of future users’ minds.', 'Improve crawlability and create a better user experience for visitors.', 'Drive continuous traffic while reducing ongoing ad spend.'],
+            image: '/whoWeServe/redimage2.png'
+        }
+    ]:props.data;
     return (
         <>
             <Container>
                 <div className="w-full flex justify-center">
-                    <div className=" w-[90%] sm:space-y-[150px] space-y-[50px] sm:py-[80px] py-[30px]">
+                    <div className=" w-[90%] sm:space-y-[150px] space-y-[50px] sm:py-[150px] py-[30px]">
                         {
-                            data.map((card, i) => {
+                            data.map((card:any, i:any) => {
                                 console.log(i)
                                 return (
                                     <div key={i} className="flex sm:flex-row flex-col justify-between items-center">

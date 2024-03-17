@@ -3,20 +3,21 @@ import Image from "next/image"
 import { GoArrowRight } from "react-icons/go"
 import { FaStar } from "react-icons/fa";
 
-const data = {
-    heading: 'Want to see how a SaaS SEO consultant can help your business rise above the rest?',
-    content: 'Our team of award-winning SaaS SEO experts (and all-around awesome people) are ready to take your business to the top of search results.',
-    button: {
-        text: 'STAND OUT IN SEARCH',
-        url: ''
-    },
-    bg: './whoWeServe/Vector.png'
-}
 
-export default function Banner() {
+export default function Banner(props:any) {
+    const data = (props==null || props.data==null)?{
+        heading: 'Want to see how a SaaS SEO consultant can help your business rise above the rest?',
+        content: 'Our team of award-winning SaaS SEO experts (and all-around awesome people) are ready to take your business to the top of search results.',
+        button: {
+            text: 'STAND OUT IN SEARCH',
+            url: ''
+        },
+        bg: './whoWeServe/Vector.png',
+        image:'/whoWeServe/cutout.png'
+    }:props.data;
     return (
         <Container >
-            <div className="bg-lightblue relative px-[20px] sm:px-[70px] sm:py-[50px] pt-[20px] pb-[250px] bg-[url(../../public/whoWeServe/Vector.png)] bg-cover sm:bg-contain bg-no-repeat bg-right ">
+            <div className="bg-lightblue relative px-[20px] sm:px-[70px] sm:py-[50px] pt-[20px] pb-[250px] bg-[url(../../public/whoWeServe/Vector.png)] bg-cover sm:bg-contain bg-no-repeat bg-right " >
                 <p className=" sm:text-xxxl leading-[25px] text-xxl w-[100%] md:w-[55%] font-normal font-Amiri">
                     {data.heading}
                 </p>
@@ -40,7 +41,7 @@ export default function Banner() {
                         </a>
                     </button>
                 </div>
-                <Image src='/whoWeServe/cutout.png' className="absolute bottom-0 right-0" height={550} width={550} alt='bg' />
+                <Image src={data.image} className="absolute bottom-0 right-0" height={550} width={550} alt='bg' />
             </div>
         </Container>
     )

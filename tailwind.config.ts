@@ -23,6 +23,7 @@ module.exports = {
         'lightblue':'#DAF4F4',
         'lightyellow':'#ffae00',
         'darkyellow':'#F0B342',
+        'lightgreen':'#8AC7C7',
         btnBg: {
           DEFAULT: '#F0B342',
           hover: '#c92045',

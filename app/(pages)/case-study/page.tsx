@@ -8,6 +8,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Topnav from "@/components/navbar/Topnav";
 import Footer from "@/components/Footer";
 import Cta from "@/components/Cta";
+
 export default function Case_study() {
     return (
         <>

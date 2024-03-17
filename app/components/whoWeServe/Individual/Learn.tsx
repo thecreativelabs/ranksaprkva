@@ -1,30 +1,30 @@
 import Container from "@/components/Container"
 
-const data = {
-    title: 'Learn about our measures of success.',
-    content: 'We’ll navigate the art of optimization so you can concentrate on growing your business.',
-    points: [
-        {
-            heading: 'Inbound Channel Tracking',
-            content: 'By tracking traffic data across acquisition channels, we help you determine which marketing efforts are most effective and whether your SEO tactics are paying off.'
-        },
-        {
-            heading: 'Inbound Channel Tracking',
-            content: 'By tracking traffic data across acquisition channels, we help you determine which marketing efforts are most effective and whether your SEO tactics are paying off.'
-        },
-        {
-            heading: 'Inbound Channel Tracking',
-            content: 'By tracking traffic data across acquisition channels, we help you determine which marketing efforts are most effective and whether your SEO tactics are paying off.'
-        },
-        {
-            heading: 'Inbound Channel Tracking',
-            content: 'By tracking traffic data across acquisition channels, we help you determine which marketing efforts are most effective and whether your SEO tactics are paying off.'
-        },
-       
-    ]
-}
 
-export default function Learn() {
+export default function Learn(props:any) {
+    const data =(props==null || props.data==null)? {
+        title: 'Learn about our measures of success.',
+        content: 'We’ll navigate the art of optimization so you can concentrate on growing your business.',
+        points: [
+            {
+                heading: 'Inbound Channel Tracking',
+                content: 'By tracking traffic data across acquisition channels, we help you determine which marketing efforts are most effective and whether your SEO tactics are paying off.'
+            },
+            {
+                heading: 'Inbound Channel Tracking',
+                content: 'By tracking traffic data across acquisition channels, we help you determine which marketing efforts are most effective and whether your SEO tactics are paying off.'
+            },
+            {
+                heading: 'Inbound Channel Tracking',
+                content: 'By tracking traffic data across acquisition channels, we help you determine which marketing efforts are most effective and whether your SEO tactics are paying off.'
+            },
+            {
+                heading: 'Inbound Channel Tracking',
+                content: 'By tracking traffic data across acquisition channels, we help you determine which marketing efforts are most effective and whether your SEO tactics are paying off.'
+            },
+    
+        ]
+    }:props.data;
     return (
         <Container >
             <div className="w-full flex justify-center">
@@ -38,7 +38,7 @@ export default function Learn() {
 
                     <div className="mt-[50px]">
                         {
-                            data.points.map((point, i) => {
+                            data.points.map((point:any, i:any) => {
                                 return (
                                     <div key={i}>
                                         <div key={i} className="w-[100%] border-t-[1px] border-black py-6">
