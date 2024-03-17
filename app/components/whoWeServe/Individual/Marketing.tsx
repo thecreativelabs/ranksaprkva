@@ -40,7 +40,7 @@ export default function Marketing(props:any) {
                                                 <p className="sm:leading-[28px]  sm:text-[17px] w-[90%] leading-[22px] text-[13px]">{card.content}</p>
 
                                                 <ul className="ml-[20px] w-[80%] list-disc space-y-2 text-lightyellow">
-                                                    {card.points.map((point, j) => (
+                                                    {card.points.map((point:any, j:any) => (
                                                         <li key={j} className="sm:leading-[28px] sm:text-[17px] leading-[22px] text-[13px]">
                                                             <span className="text-black">{point}</span>
                                                         </li>
