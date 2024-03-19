@@ -35,7 +35,7 @@ const menuitems = [
         path: "/careers",
       },
     ],
-    path:'/case-study'
+    path: "/case-study",
   },
   {
     title: "Who We Serve",
@@ -45,7 +45,7 @@ const menuitems = [
         path: "/success-stories",
       },
     ],
-    path:'/who-we-serve'
+    path: "/who-we-serve",
   },
 
   {
@@ -81,14 +81,18 @@ const Navbar = () => {
   }, []);
 
   const headerClasses = `
-      ${isSticky ? "sticky top-0 border-b bg-white" : ""}
+      ${
+        isSticky
+          ? "sticky top-0 border border-slate-200 bg-white rounded-md"
+          : ""
+      }
       transition-all duration-300
     `;
 
   const defaultClasses =
     "mt-4 py-2 z-50 bg-white border-transparent mx-auto w-full lg:w-[1200px]";
   const activeClasses =
-    "top-4 z-50 py-2 border-gray-200 backdrop-blur-lg mx-auto w-full lg:w-[1200px]";
+    "top-4 z-50 py-2 border-gray-200 backdrop-blur-lg mx-auto w-[95%] lg:w-[1200px]";
 
   // const navbar = () => {
   return (
@@ -156,7 +160,7 @@ const Navbar = () => {
                 <>
                   {item.children ? (
                     <Dropdown
-                    path={item.path}
+                      path={item.path}
                       title={item.title}
                       childrens={item.children}
                       lastItem={index === menuitems.length - 1}
@@ -175,34 +179,17 @@ const Navbar = () => {
                 </>
               ))}
             </ul>
-            <div className=" lg:mr-20 h-auto w-auto lg:hidden flex flex-col items-start mt-8 gap-4">
-              <button className="">
-                <a
-                  href="/contact"
-                  className=" flex-col md:h-[100px] md:py-4 md:w-auto font-primary font-medium text-md rounded text-center px-8 w-auto md:px-10 py-4 bg-btnBg text-text hover:bg-[#c92045] hover:text-white transition-all duration-300 "
-                >
-                  Get Started
-                </a>
-              </button>
-            </div>
-          </div>
-          <div className="bg-[#F0B342] text-[#3B0D17] w-[200px] h-12 hidden lg:flex items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300">
-            <button className="relative inline-flex items-center group gap-px text-center">
-              <span className="ml-6 font-primary font-medium cursor-pointer">
+            <button className="rounded-sm bg-[#F0B342] text-[#3B0D17] py-4 px-6 lg:hidden flex items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300">
+              <span className="font-medium text-sm font-semibold cursor-pointer">
                 FREE SEO REVIEW
               </span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-4 h-4 mt-px group-hover:translate-x-1 transition-transform"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
+            </button>
+          </div>
+          <div className="rounded-sm bg-[#F0B342] text-[#3B0D17] w-[200px] h-12 hidden lg:flex items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300">
+            <button className="relative inline-flex items-center group gap-px text-center">
+              <span className="ml-6 font-medium cursor-pointer">
+                FREE SEO REVIEW
+              </span>
             </button>
           </div>
         </div>
