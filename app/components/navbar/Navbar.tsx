@@ -80,17 +80,12 @@ const Navbar = () => {
     };
   }, []);
 
-  const headerClasses = `
-      ${
-        isSticky
-          ? "sticky top-0 border border-slate-200 bg-white rounded-md"
-          : ""
-      }
-      transition-all duration-300
-    `;
+  const headerClasses = `border border-slate-200 transition-all duration-300 ${
+    isSticky ? "sticky top-0 bg-white rounded-md" : ""
+  }`;
 
   const defaultClasses =
-    "mt-4 py-2 z-50 bg-white border-transparent mx-auto w-full lg:w-[1200px]";
+    "mt-4 py-2 z-50 border-transparent bg-white mx-auto w-full lg:w-[1200px]";
   const activeClasses =
     "top-4 z-50 py-2 border-gray-200 backdrop-blur-lg mx-auto w-[95%] lg:w-[1200px]";
 
