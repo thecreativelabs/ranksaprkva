@@ -200,8 +200,6 @@ export default function Review() {
               loop={true}
               // pagination={{ clickable: true }}
 
-              onSwiper={(swiper) => console.log(swiper)}
-              onSlideChange={() => console.log("slide change")}
               className="h-[100%] flex w-[95%] p-52  relative"
               breakpoints={breakpoints}
             >

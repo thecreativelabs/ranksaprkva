@@ -27,148 +27,130 @@ export default defineType({
           type: "string",
         },
         {
-          name: "cta",
-          title: "CTA",
-          type: "object",
-          fields: [
-            {
-              name: "title",
-              title: "Title",
-              type: "string",
-            },
-            {
-              name: "button",
-              title: "Button",
-              type: "reference",
-              to: [{ type: "button" }],
-            },
-          ],
-        },
-        {
-          name: "secondaryButton",
-          title: "Secondary Button",
+          name: "button",
+          title: "Button",
           type: "reference",
           to: [{ type: "button" }],
         },
         {
-          name: "revenue",
-          title: "Revenue",
-          type: "number",
+          name: "mainImage",
+          title: "Main Image",
+          type: "image",
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative text",
+              description: "Important for SEO and accessiblity.",
+            },
+          ],
+          options: {
+            hotspot: true,
+          },
+        },
+        {
+          name: "secondaryImage",
+          title: "Secondary Image",
+          type: "image",
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative text",
+              description: "Important for SEO and accessiblity.",
+            },
+          ],
+          options: {
+            hotspot: true,
+          },
         },
       ],
     },
     // features
     {
-      name: "features",
-      title: "Features",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            {
-              name: "heading",
-              title: "Heading",
-              type: "string",
-            },
-            {
-              name: "description",
-              title: "Description",
-              type: "string",
-            },
-            {
-              name: "image",
-              title: "Image",
-              type: "image",
-              fields: [
-                {
-                  name: "alt",
-                  type: "string",
-                  title: "Alternative text",
-                  description: "Important for SEO and accessiblity.",
-                },
-              ],
-              options: {
-                hotspot: true,
-              },
-            },
-            {
-              name: "type",
-              title: "Type",
-              type: "string",
-              options: {
-                list: [
-                  { title: "CTA Button", value: "ctaButton" },
-                  { title: "List", value: "list" },
-                  { title: "Metrics", value: "metrics" },
-                ],
-              },
-            },
-            {
-              name: "button",
-              title: "Button",
-              type: "reference",
-              to: [{ type: "button" }],
-              hidden: ({ parent }) => parent?.type !== "ctaButton",
-            },
-            {
-              name: "list",
-              title: "List",
-              type: "array",
-              of: [{ type: "string" }],
-              hidden: ({ parent }) => parent?.type !== "list",
-            },
-            {
-              name: "metrics",
-              title: "Metrics",
-              type: "array",
-              of: [
-                {
-                  type: "object",
-                  fields: [
-                    {
-                      name: "key",
-                      title: "Key",
-                      type: "string",
-                    },
-                    {
-                      name: "value",
-                      title: "Value",
-                      type: "number",
-                    },
-                    {
-                      name: "symbol",
-                      title: "Symbol",
-                      type: "string",
-                    },
-                  ],
-                },
-              ],
-              hidden: ({ parent }) => parent?.type !== "metrics",
-            },
-          ],
-        },
-      ],
-    },
-    // featuresGrid
-    {
-      name: "featuresGrid",
-      title: "Features Grid",
+      name: "section1",
+      title: "Section 1",
       type: "object",
       options: {
         collapsible: true,
       },
       fields: [
         {
+          name: "stats",
+          title: "Stats",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                {
+                  name: "image",
+                  title: "Image",
+                  type: "image",
+                  fields: [
+                    {
+                      name: "alt",
+                      type: "string",
+                      title: "Alternative text",
+                      description: "Important for SEO and accessiblity.",
+                    },
+                  ],
+                  options: {
+                    hotspot: true,
+                  },
+                },
+                {
+                  name: "title",
+                  title: "Title",
+                  type: "string",
+                },
+              ],
+            },
+          ],
+        },
+        {
           name: "heading",
           title: "Heading",
           type: "string",
         },
         {
-          name: "subHeading",
-          title: "Sub Heading",
-          type: "string",
+          name: "description",
+          title: "Description",
+          type: "blockContent",
         },
+        {
+          name: "button",
+          title: "Button",
+          type: "reference",
+          to: [{ type: "button" }],
+        },
+        {
+          name: "image",
+          title: "Image",
+          type: "image",
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative text",
+              description: "Important for SEO and accessiblity.",
+            },
+          ],
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
+    },
+    // section2
+    {
+      name: "section2",
+      title: "Section 2",
+      type: "object",
+      options: {
+        collapsible: true,
+      },
+      fields: [
         {
           name: "features",
           title: "Features",
@@ -185,12 +167,146 @@ export default defineType({
                 {
                   name: "description",
                   title: "Description",
+                  type: "blockContent",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "featuresAlt",
+          title: "Features Alt",
+          type: "object",
+          fields: [
+            {
+              name: "heading",
+              title: "Heading",
+              type: "string",
+            },
+            {
+              name: "description",
+              title: "Description",
+              type: "string",
+            },
+            {
+              name: "features",
+              title: "Features",
+              type: "array",
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    {
+                      name: "title",
+                      title: "Title",
+                      type: "string",
+                    },
+                    {
+                      name: "description",
+                      title: "Description",
+                      type: "string",
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "whoWeServe",
+          title: "Who We Serve",
+          type: "object",
+          fields: [
+            {
+              name: "heading",
+              title: "Heading",
+              type: "string",
+            },
+            {
+              name: "description",
+              title: "Description",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    },
+    // section3
+    {
+      name: "section3",
+      title: "Section 3",
+      type: "object",
+      options: {
+        collapsible: true,
+      },
+
+      type: "object",
+      fields: [
+        {
+          name: "title",
+          title: "Title",
+          type: "string",
+        },
+        {
+          name: "description",
+          title: "Description",
+          type: "string",
+        },
+        {
+          name: "button",
+          title: "Button",
+          type: "reference",
+          to: [{ type: "button" }],
+        },
+        {
+          name: "image",
+          title: "Image",
+          type: "image",
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative text",
+              description: "Important for SEO and accessiblity.",
+            },
+          ],
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
+    },
+    // faqs
+    {
+      name: "faqs",
+      title: "FAQs",
+      type: "object",
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        {
+          name: "title",
+          title: "Title",
+          type: "string",
+        },
+        {
+          name: "faqs",
+          title: "FAQs",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                {
+                  name: "question",
+                  title: "Question",
                   type: "string",
                 },
                 {
-                  name: "icon",
-                  title: "Icon",
-                  type: "string",
+                  name: "answer",
+                  title: "Answer",
+                  type: "blockContent",
                 },
               ],
             },

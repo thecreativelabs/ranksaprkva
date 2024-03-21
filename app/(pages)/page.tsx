@@ -1,4 +1,4 @@
-import client from "@/lib/sanity";
+import { client } from "@sanity/lib/client";
 import Container from "@components/Container";
 import Topnav from "@components/navbar/Topnav";
 import Navbar from "@components/navbar/Navbar";
@@ -16,30 +16,27 @@ import Cta from "@components/Cta";
 import Footer from "@components/Footer";
 
 export default async function Home() {
-  const landingPage = await client.fetch(`*[_type == "landingPage"] {
+  const page = await client.fetch(`*[_type == "landingPage"] {  
     header {
       title,
       description,
-      cta { title, button->{
-        text,path
-      } },
-      secondaryButton->{ text, path },
-      revenue
+      mainImage {asset->{url}, alt},
+      secondaryImage {asset->{url}, alt},
+      button->{text, path}
     },
-    features {
+    section1 {
       heading,
       description,
-      image,
-      metrics[],
-      list[],
-      button->{text, path}
-    }[],
-    featuresGrid
+      stats[] {title, image{asset->{url}, alt}},
+      button->{text, path},
+      image {asset->{url}, alt}
+    }
   }[0]`);
+  if (!page) return <></>;
 
   return (
     <div>
-      <Hero />
+      <Hero data={page.header} />
       <Badges />
       <Features />
       <Brands />

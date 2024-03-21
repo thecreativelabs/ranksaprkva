@@ -14,7 +14,17 @@ const header = [
   },
 ];
 
-const Hero = () => {
+const Hero = ({
+  data,
+}: {
+  data: {
+    title: string;
+    description: string;
+    mainImage: { asset: { url: string; alt: string } };
+    secondaryImage: { asset: { url: string; alt: string } };
+    button: { text: string; path: string };
+  };
+}) => {
   return (
     <div className="relative flex flex-wrap justify-center bg-graybg">
       <div className="relative ml-[20px] w-auto text-left md:w-auto lg:w-[500px] xs:pt-4 sm:pt-4 md:mt-4 mb-2 flex flex-col items-left md:items-start md:text-left">
