@@ -8,13 +8,11 @@ import Cta from "@/components/Cta";
 export default function CaseStudyIndividual() {
     return (
         <div>
-            <Topnav />
-            <Navbar />
+            
             <CaseStudyIndividualBanner />
             <ContentSection />
             <Findout />
-            <Cta />
-            <Footer />
+            
         </div>
     )
 }
