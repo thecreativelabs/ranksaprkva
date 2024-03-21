@@ -9,11 +9,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // sans: ["Public Sans", "sans-serif", ...defaultTheme.fontFamily.sans],
-        'DM-sans': ["DM Sans", 'sans-serif'],
-        'Amiri': ["Amiri", "serif"],
-
-        
+        "DM-sans": ["DM Sans", "sans-serif"],
+        Amiri: ["Amiri", "serif"],
+        primary: "sans-serif",
+        secondary: ["DM Sans", "sans-serif"],
+        tertiary: "serif",
       },
       colors: {
         'light-red':'#C42A1C',
@@ -26,8 +26,8 @@ module.exports = {
         'lightgreen':'#8AC7C7',
         'graybg':'#F0F0ED',
         btnBg: {
-          DEFAULT: '#F0B342',
-          hover: '#c92045',
+          DEFAULT: "#F0B342",
+          hover: "#c92045",
         },
       },
       fontSize: {
@@ -54,14 +54,6 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      space: {
-        // '5px': '5px',
-      }    
-    },
-    fontFamily: {
-      primary: 'sans-serif',
-      secondary: ["DM Sans", 'sans-serif'],
-      tertiary: 'serif'
     },
   },
   plugins: [],

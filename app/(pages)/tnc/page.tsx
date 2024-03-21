@@ -15,7 +15,7 @@ const page = () => {
         <h1 className="text-[#C42A1C] uppercase text-center tracking-widest leading-6 md:text-md lg:text-md mb-6 text-sm font-semibold ">
           {data.heading}
         </h1>
-        <div className="h-auto w-auto">
+        <div className="h-auto w-auto pb-12">
           <p className="md:text-5xl text-center h-auto leading-10 tracking-wide font-medium text-3xl font-tertiary mt-4 text-[#3B0D17]">
             {data.subheading}
           </p>

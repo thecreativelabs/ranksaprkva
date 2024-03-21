@@ -3,7 +3,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Topnav from "@/components/navbar/Topnav";
 import Footer from "@/components/Footer";
 import Cta from "@/components/Cta";
-import Brands from '@/components/Brands';
+import Brands from "@/components/Brands";
 import CaseStudyConsulting from "@/components/services/consulting";
 import Services from "@/components/services/service";
 import AdditonalService from "@/components/services/additionalServicec";
@@ -13,22 +13,18 @@ import ServiceLearn from "@/components/services/learn";
 import ServiceBanner from "@/components/services/banner";
 import ServiceQandA from "@/components/services/QandA";
 export default function CaseStudyIndividual() {
-    return (
-        <>
-            <Topnav />
-            <Navbar />
-            <HeroCaseIndividual />
-            <Brands />
-            <CaseStudyConsulting />
-            <Services />
-            <AdditonalService />
-            <ServiceSlider />
-            <ServiceMarketing />
-            <ServiceLearn />
-            <ServiceBanner />
-            <ServiceQandA />
-            <Cta />
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <HeroCaseIndividual />
+      <Brands />
+      <CaseStudyConsulting />
+      <Services />
+      <AdditonalService />
+      <ServiceSlider />
+      <ServiceMarketing />
+      <ServiceLearn />
+      <ServiceBanner />
+      <ServiceQandA />
+    </>
+  );
 }
