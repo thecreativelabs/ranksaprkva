@@ -56,7 +56,7 @@ const Partnership = () => {
 
           <div className="grid place-items-center">
             <div className="sm:grid-cols-2 md:grid-cols-3 mt-16 gap-8 md:gap-20">
-              <div className="bg-[#F0F0ED] w-full flex flex-col gap-4 mb-6 items-start group rounded transition-all px-8 py-10">
+              <div className="bg-graybg w-full flex flex-col gap-4 mb-6 items-start group rounded transition-all px-8 py-10">
                 <div className="items-center justify-between">
                   <div className="mt-1 mb-6 bg-white border shadow shadow-indigo-100/50 border-indigo-100 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">
                     <span className="text-[#C42A1C] text">
@@ -124,7 +124,7 @@ const Partnership = () => {
                 </a>
               </div>
               </div>
-              <div className="bg-[#F0F0ED] w-full flex flex-col gap-4 mb-6 items-start group rounded transition-all px-8 py-10">
+              <div className="bg-graybg w-full flex flex-col gap-4 mb-6 items-start group rounded transition-all px-8 py-10">
                 <div className="w-full items-center justify-between">
                   <div className="mt-1 mb-6 bg-white border  shadow-indigo-100/50 border-indigo-100 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">
                     <span className="text-[#C42A1C]">

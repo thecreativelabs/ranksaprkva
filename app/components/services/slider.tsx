@@ -31,7 +31,7 @@ export default function ServiceSlider() {
 
     ];
     return (
-        <div className="bg-[#F0F0ED] md:py-[80px] sm:py-[40px] py-[25px]">
+        <div className="bg-graybg md:py-[80px] sm:py-[40px] py-[25px]">
             <Container>
                 <Slider data={data} />
             </Container>

@@ -7,7 +7,7 @@ import { IoMdArrowForward } from "react-icons/io";
 export default function FeatureCard(props: any) {
     return (
         <div className="flex flex-col justify-between">
-            <Cards className='h-[256px]' color={props.data.color} image={props.data.image} logo={props.data.logo} />
+            <Cards className='h-[256px]' color={props.data.color} image={props.data.image} logo={props.data.logo} logoclass='top-[-35px] right-[-20px]' />
             <div>
                 <p className="text-dark-red text-xl font-bold font-DM-sans w-[100%]">
                     {props.data.title}

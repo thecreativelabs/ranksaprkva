@@ -24,6 +24,7 @@ module.exports = {
         'lightyellow':'#ffae00',
         'darkyellow':'#F0B342',
         'lightgreen':'#8AC7C7',
+        'graybg':'#F0F0ED',
         btnBg: {
           DEFAULT: '#F0B342',
           hover: '#c92045',
@@ -39,7 +40,7 @@ module.exports = {
         'xl': ['20px', '28px'], 
         'xxl': ['28px', '30px'],
         'xxxl': ['37px', '52px'],
-        'xxxxl': ['50px', '80px'],
+        'xxxxl': ['50px', '70px'],
         'xxxxxl': ['65px', '85px'],
 
 

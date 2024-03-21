@@ -66,7 +66,7 @@ const Stats = () => {
           }
           `}
       </style>
-      <div className="w-full h-auto md:h-[550px] mt-20 mb-20 bg-[#F0F0ED]">
+      <div className="w-full h-auto md:h-[550px] mt-20 mb-20 bg-graybg">
         <Container>
           <div className="w-full h-auto md:h-[550px]">
             <Swiper

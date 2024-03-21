@@ -119,11 +119,11 @@ export default function Slider(props: any) {
                       <div className="w-full ml- flex">
                         <div className="flex w-1/2 flex-col border-r-[1px] ml-[-10px] pb-2 border-[#dcdcdc] justify-center items-center">
                           <div className="flex justify-center items-center">
-                            <FaArrowUp
+                            {(dataa.Icon != null || dataa.Icon!='') ? <FaArrowUp
                               className="h-[30px] relative w-[30px] font-bold"
                               style={{ color: dataa.color }}
 
-                            />
+                            /> : ""}
                             <p
                               className="font-bold text-xxxl font-DM-sans"
                               style={{ color: dataa.color }}>
@@ -137,11 +137,11 @@ export default function Slider(props: any) {
                         <div className="flex w-1/2 flex-col pb-2 justify-center items-center">
                           <div className="flex justify-center items-center">
 
-                            <FaArrowUp
+                            {(dataa.Icon != null || dataa.Icon!='') ? <FaArrowUp
                               className="h-[30px] relative w-[30px] font-bold"
                               style={{ color: dataa.color }}
 
-                            />
+                            /> : ""}
                             <p
                               className="font-bold text-xxxl   font-DM-sans"
                               style={{ color: dataa.color }}>

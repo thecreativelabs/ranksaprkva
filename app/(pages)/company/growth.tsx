@@ -477,7 +477,7 @@ const data = {
 
 const growth = () => {
   return (
-    <div className="mt-20 py-10 bg-[#F0F0ED]/60">
+    <div className="mt-20 py-10 bg-graybg/60">
       <Container>
         <div className="mt-16">
           <p className="md:text-5xl h-auto leading-10 tracking-wider font-medium text-3xl font-tertiary mt-4 text-[#3B0D17] w-auto md:w-[68%]">
