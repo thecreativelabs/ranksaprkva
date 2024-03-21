@@ -3,6 +3,7 @@ import Cards from '@components/case-study/cards';
 import { useState } from 'react';
 import Nextbutton from '@components/methods/Nextbutton';
 import Prevbutton from '@components/methods/PrevButton';
+import Link from 'next/link';
 
 
 
@@ -17,6 +18,7 @@ const data = {
             color: '#EB1D27',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/case-study/abc',
             text: 'ForeSee Medical',
 
         },
@@ -25,6 +27,7 @@ const data = {
             logo: '/case-study/logo-1.png',
             color: '#26384F',
             title: '#1 Ranking for "music foundation"',
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -34,6 +37,7 @@ const data = {
             color: '#F0B342',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'ForeSee Medical',
 
         },
@@ -43,6 +47,7 @@ const data = {
             color: '#EB1D27',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -51,6 +56,7 @@ const data = {
             logo: '/case-study/logo-1.png',
             color: '#26384F',
             title: '#1 Ranking for "music foundation"',
+            link:'/',
             text: 'Eden Health',
 
         },
@@ -60,6 +66,7 @@ const data = {
             color: '#F0B342',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -69,6 +76,7 @@ const data = {
             color: '#EB1D27',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Eden Health',
 
         },
@@ -77,6 +85,7 @@ const data = {
             logo: '/case-study/logo-1.png',
             color: '#26384F',
             title: '#1 Ranking for "music foundation"',
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -86,6 +95,7 @@ const data = {
             color: '#F0B342',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'ForeSee Medical',
 
         },
@@ -95,6 +105,7 @@ const data = {
             color: '#EB1D27',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -103,6 +114,7 @@ const data = {
             logo: '/case-study/logo-1.png',
             color: '#26384F',
             title: '#1 Ranking for "music foundation"',
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -112,6 +124,7 @@ const data = {
             color: '#F0B342',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Eden Health',
 
         },
@@ -121,6 +134,7 @@ const data = {
             color: '#EB1D27',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -129,6 +143,7 @@ const data = {
             logo: '/case-study/logo-1.png',
             color: '#26384F',
             title: '#1 Ranking for "music foundation"',
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -138,6 +153,7 @@ const data = {
             color: '#F0B342',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Eden Health',
 
         },
@@ -147,6 +163,7 @@ const data = {
             color: '#EB1D27',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'ForeSee Medical',
 
         },
@@ -155,6 +172,7 @@ const data = {
             logo: '/case-study/logo-1.png',
             color: '#26384F',
             title: '#1 Ranking for "music foundation"',
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -164,6 +182,7 @@ const data = {
             color: '#F0B342',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -173,6 +192,7 @@ const data = {
             color: '#EB1D27',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -181,6 +201,7 @@ const data = {
             logo: '/case-study/logo-1.png',
             color: '#26384F',
             title: '#1 Ranking for "music foundation"',
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -190,6 +211,7 @@ const data = {
             color: '#F0B342',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -199,6 +221,7 @@ const data = {
             color: '#EB1D27',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'L3 Funding',
 
         },
@@ -207,6 +230,7 @@ const data = {
             logo: '/case-study/logo-1.png',
             color: '#26384F',
             title: '#1 Ranking for "music foundation"',
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -216,6 +240,7 @@ const data = {
             color: '#F0B342',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -225,6 +250,7 @@ const data = {
             color: '#EB1D27',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'L3 Funding',
 
         },
@@ -233,6 +259,7 @@ const data = {
             logo: '/case-study/logo-1.png',
             color: '#26384F',
             title: '#1 Ranking for "music foundation"',
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -242,6 +269,7 @@ const data = {
             color: '#F0B342',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -251,6 +279,7 @@ const data = {
             color: '#EB1D27',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -259,6 +288,7 @@ const data = {
             logo: '/case-study/logo-1.png',
             color: '#26384F',
             title: '#1 Ranking for "music foundation"',
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -268,6 +298,7 @@ const data = {
             color: '#F0B342',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -277,6 +308,7 @@ const data = {
             color: '#EB1D27',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'L3 Funding',
 
         },
@@ -285,6 +317,7 @@ const data = {
             logo: '/case-study/logo-1.png',
             color: '#26384F',
             title: '#1 Ranking for "music foundation"',
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -294,6 +327,7 @@ const data = {
             color: 'pink',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Gentry Dentistry',
 
         },
@@ -303,6 +337,7 @@ const data = {
             color: '#EB1D27',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Eden Health',
 
         },
@@ -311,6 +346,7 @@ const data = {
             logo: '/case-study/logo-1.png',
             color: 'yellow',
             title: '#1 Ranking for "music foundation"',
+            link:'/',
             text: 'L3 Funding',
 
         },
@@ -320,6 +356,7 @@ const data = {
             color: 'blue',
             title: '#1 Ranking for "cargo shorts men"',
 
+            link:'/',
             text: 'Gentry Dentistry',
 
         }
@@ -347,14 +384,14 @@ export default function SeoCases() {
                         {data.title}
                     </p>
                 </div>
-                <div className='grid grid-cols-1 min-h-[] lg:grid-cols-4 gap-[25px] mt-[50px] lg:mt-[70px] sm:mb-[0px] mb-[0px] gap-y-[70px]'>
+                <div className='grid grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-[25px] mt-[50px] lg:mt-[70px] sm:mb-[0px] mb-[0px] gap-y-[70px]'>
                     {data.cards.slice(page * pageSize, (page + 1) * pageSize).map((card, index) => (
                         <div key={index} className='space-y-[12px]'>
-                            <Cards className='h-[256px]' color={card.color} image={card.image} logo={card.logo} />
+                            <Cards className='h-[256px]' color={card.color} image={card.image} logo={card.logo} logoclass='top-[-35px] right-[-20px]' />
                             <p className='font-DM-sans text-sm lg:text-base font-normal'>{card.text}</p>
-                            <p className="text-dark-red text-xl lg:text-[2xl] font-bold font-DM-sans w-[100%]">
+                            <Link href={card.link} className="text-dark-red text-xl lg:text-[2xl] font-bold font-DM-sans w-[100%]">
                                 {card.title}
-                            </p>
+                            </Link>
                         </div>
                     ))}
                 </div>

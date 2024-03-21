@@ -29,7 +29,7 @@ export default function Hero() {
           background-repeat: no-repeat;
         }
       `}</style>
-      <div className="max-h-full  h-fit bg-[#F0F0ED] py-[50px] sm:py-[80px] md:py-[130px] relative w-full">
+      <div className="max-h-full  h-fit bg-graybg py-[50px] sm:py-[80px] md:py-[130px] relative w-full">
         <Container >
           <div className="max-h-full h-full w-full bg-contain bg-no-repeat flex gap-[12px] flex-col background-overlay justify-center items-center">
             <p className="h-[21px] text-center text-light-red text-sm font-medium font-DM-sans uppercase leading-[21px] tracking-widest">

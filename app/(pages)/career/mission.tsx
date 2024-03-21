@@ -71,7 +71,7 @@ const mission = () => {
         {data.it.map((item, index) => (
           <div
             key={index}
-            className="bg-[#F0F0ED] md:h-[270px] w-auto h-auto md:w-[400px] flex flex-col gap-4 mb-2 md:mb-6 items-start group rounded transition-all px-8 py-6"
+            className="bg-graybg md:h-[270px] w-auto h-auto md:w-[400px] flex flex-col gap-4 mb-2 md:mb-6 items-start group rounded transition-all px-8 py-6"
           >
             <div className="items-center justify-between">
               <div className="mt-1 mb-6 bg-white shadow shadow-indigo-100/50 border-indigo-100 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">

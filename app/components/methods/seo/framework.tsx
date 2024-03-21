@@ -56,7 +56,7 @@ const data = {
 
 export default function Framework(): JSX.Element {
     return (
-        <div className="relative background  h-fit sm:py-[100px] py-10  w-full bg-[#F0F0ED]">
+        <div className="relative background  h-fit sm:py-[100px] py-10  w-full bg-graybg">
             <Container>
                 <Image
                     alt='image'

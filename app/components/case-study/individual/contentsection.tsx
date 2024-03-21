@@ -1,12 +1,12 @@
-'use client'
-import FeatureCard from './featureCard';
+import Container from "@/components/Container";
+import LeftContent from "./leftContent";
+import RightContent from "./rightContent";
+import Feature_case_Study from "../Feature-case-study/feature";
+import Findout from "./findout";
 
-
-
-
-export default function Feature_case_Study(props:any) {
-    const data =(props==null || props.data==null)? {
-        title: 'Featured Case Studies',
+export default function ContentSection() {
+    const data = {
+        title: 'Find out why leading businesses choose to do business with Victorious.',
         cards: [
             {
                 image: '/case-study/image-1.png',
@@ -39,19 +39,17 @@ export default function Feature_case_Study(props:any) {
                 },
             },
         ],
-    }:props.data;
+    }
     return (
-        <div className="w-full py-[100px] bg-graybg flex justify-center items-center">
-            <div className="w-[80%] max-w-[1200px] h-[70%]">
-                <p className="text-dark-red text-2xl lg:text-[37.30px] font-normal font-Amiri tracking-wide leading-[67.34px]">
-                    {data.title}
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {data.cards.map((card:any, i:any) => (
-                        <FeatureCard key={i} data={card} />
-                    ))}
+        <div className="border-b-[1px] border-[#a8a8a8] ">
+            <Container>
+                <div className="flex  lg:flex-row flex-col-reverse justify-center  py-[60px] mt-[90px] gap-[30px] ">
+
+                    <LeftContent />
+                    <RightContent />
                 </div>
-            </div>
+            </Container>
         </div>
-    );
+
+    )
 }

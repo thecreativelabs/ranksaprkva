@@ -51,7 +51,7 @@ export default function ContentAndServices() {
         </p>
         <div className="w-[90%] grid grid-cols-1 sm:grid-cols-3 gap-[25px]">
           {data.cards.map((card, i) => (
-            <div key={i} className="bg-[#F0F0ED] px-4 flex justify-center items-center min-h-[290px] max-h-[500px]">
+            <div key={i} className="bg-graybg px-4 flex justify-center items-center min-h-[290px] max-h-[500px]">
               <div className="flex flex-col h-full w-[90%] justify-evenly items-start">
                 <div className="bg-white h-fit w-fit p-2 rounded-[50%]">
                   <Growth className="p-1" />

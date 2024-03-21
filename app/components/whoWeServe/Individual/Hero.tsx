@@ -10,7 +10,7 @@ export default function HeroSection(props:any) {
         color:' bg-lightgreen '
     }:props.data
     return (
-        <div className="h-fit sm:py-[100px] py-[50px] bg-[#F0F0ED] relative">
+        <div className="h-fit sm:py-[100px] py-[50px] bg-graybg relative">
             <Image src='/whoWeServe/herofill.png' className="sm:h-[500px] w-fit z-10 absolute bottom-0" width={1000} height={1000} alt="hero" />
             <Container>
                 <div className="w-full justify-center flex">

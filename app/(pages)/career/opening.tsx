@@ -26,7 +26,7 @@ const data = [
 
 const Opening = () => {
   return (
-    <div className="bg-[#F0F0ED] mt-10 sm:mt-20 md:mt-24 h-[560px] sm:h-[600px] flex justify-center">
+    <div className="bg-graybg mt-10 sm:mt-20 md:mt-24 h-[560px] sm:h-[600px] flex justify-center">
       <Container>
         <div className="text-center mt-10 sm:mt-20">
           {data.map((sectionData, sectionIndex) => (
