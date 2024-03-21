@@ -79,8 +79,8 @@ export default function Services() {
                         {data.content}
                     </p>
 
-                    <div className="w-[100%] mt-[20px] gap-[30px] flex">
-                        <div className="w-[50%] space-y-[23px]">
+                    <div className="w-[100%] mt-[20px] gap-[30px] flex md:flex-row flex-col">
+                        <div className="md:w-[50%] w-[100%] space-y-[23px]">
                             {
                                 data.cards.map((card: any, i: any) => {
                                     return (
@@ -91,7 +91,7 @@ export default function Services() {
                                 })
                             }
                         </div>
-                        <div className="w-[50%] space-y-6 prose p-10 bg-dark-red">
+                        <div className="md:w-[50%] w-[100%] space-y-6 prose p-10 bg-dark-red">
                             {/* <p className="text-white text-sm sm:text-sm font-bold font-DM-sans uppercase tracking-widest">
                                 {data.title}
                             </p> */}
