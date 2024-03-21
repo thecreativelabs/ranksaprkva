@@ -31,22 +31,20 @@ const team = () => {
             </p>
           ))}
         </div>
-        <div className="bg-[#F0B342] rounded mt-6 text-[#3B0D17] h-auto w-[240px] lg:w-[270px] py-1 px-1 md:w-[250px] md:h-14 md:flex md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300">
-          <button className="relative w-full flex items-center justify-center md:inline-flex group gap-px">
-            {data.map((item, index) => (
-              <a
-                key={index}
-                href={item.path}
-                className="flex items-center gap-px md:inline-flex md:items-center md:gap-px"
-              >
-                <span className="text-md md:py-0 px-2 py-2 font-medium cursor-pointer">
-                  {item.text}
-                </span>
-                <GoArrowRight className="font-bold" size={25} />
-              </a>
-            ))}
-          </button>
-        </div>
+        <button className="bg-[#F0B342] mt-10 px-4 rounded text-[#3B0D17] w-[270px] md:w-auto md:h-14 h-14 md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300 relative md:inline-flex inline-flex justify-center">
+          {data.map((item, index) => (
+            <a
+              key={index}
+              href={item.path}
+              className="flex items-center gap-px md:inline-flex md:items-center md:gap-px"
+            >
+              <span className="text-md md:py-0 px-2 py-2 font-medium cursor-pointer">
+                {item.text}
+              </span>
+              <GoArrowRight className="font-bold" size={25} />
+            </a>
+          ))}
+        </button>
       </Container>
     </div>
   );

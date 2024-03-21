@@ -24,23 +24,20 @@ const Hero = () => {
         <p className="text-md w-[250px] md:w-[80%] mt-8 md:text-left text-left text-black ">
           {header[0].description}
         </p>
-
-        <div className="bg-[#F0B342] mt-10 text-[#3B0D17] w-[270px] md:w-auto md:h-14 h-14 md:flex md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300">
-          <button className="relative md:inline-flex inline-flex items-center md:items-center group gap-px">
-            <a
-              href={header[1].path}
-              className="inline-flex items-center gap-px md:inline-flex md:items-center md:gap-px"
-            >
-              <span className="text-lg md:mt-0 font-medium mt-4 ml-5 cursor-pointer">
-                {header[1].text}
-              </span>
-              <GoArrowRight
-                className="ml-1 font-bold md:mt-0 mt-4 mr-2"
-                size={25}
-              />
-            </a>
-          </button>
-        </div>
+        <button className="bg-[#F0B342] mt-10 text-[#3B0D17] w-[270px] md:w-auto md:h-14 h-14 md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300 relative md:inline-flex inline-flex justify-center">
+          <a
+            href={header[1].path}
+            className="inline-flex ml-3 items-center gap-px md:inline-flex md:items-center md:gap-px"
+          >
+            <span className="text-lg md:mt-0 font-medium cursor-pointer">
+              {header[1].text}
+            </span>
+            <GoArrowRight
+              className="ml-1 font-bold md:mt-0 mr-2"
+              size={25}
+            />
+          </a>
+        </button>
       </div>
       <div className="w-full md:w-[560px] mt-10 md:flex flex flex-col p-4 md:p-8 text-center">
         <div className="relative">
