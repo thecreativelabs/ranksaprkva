@@ -46,7 +46,7 @@ export default function Feature_case_Study(props:any) {
                 <p className="text-dark-red text-2xl lg:text-[37.30px] font-normal font-Amiri tracking-wide leading-[67.34px]">
                     {data.title}
                 </p>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {data.cards.map((card:any, i:any) => (
                         <FeatureCard key={i} data={card} />
                     ))}

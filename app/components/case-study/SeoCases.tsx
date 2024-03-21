@@ -384,7 +384,7 @@ export default function SeoCases() {
                         {data.title}
                     </p>
                 </div>
-                <div className='grid grid-cols-1 min-h-[] lg:grid-cols-4 gap-[25px] mt-[50px] lg:mt-[70px] sm:mb-[0px] mb-[0px] gap-y-[70px]'>
+                <div className='grid grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-[25px] mt-[50px] lg:mt-[70px] sm:mb-[0px] mb-[0px] gap-y-[70px]'>
                     {data.cards.slice(page * pageSize, (page + 1) * pageSize).map((card, index) => (
                         <div key={index} className='space-y-[12px]'>
                             <Cards className='h-[256px]' color={card.color} image={card.image} logo={card.logo} logoclass='top-[-35px] right-[-20px]' />
