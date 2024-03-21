@@ -34,8 +34,8 @@ export default function HeroSection(props: any) {
         }
       : props.data;
   return (
-    <div className="w-full flex flex-col justify-center items-center">
-      <div className="w-[80%] max-w-[1200px] flex flex-col justify-evenly">
+    <div className="w-full md:py-[80px] sm:py-[60px] py-[30px] flex flex-col justify-center items-center">
+      <div className="w-[80%] max-w-[1200px] gap-[25px] flex flex-col justify-evenly">
         <p className="text-light-red text-sm font-bold font-DM-sans uppercase leading-[21px] tracking-widest pb-4">
           {data.title}
         </p>
