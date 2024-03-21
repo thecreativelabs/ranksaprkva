@@ -54,7 +54,7 @@ const menuitems = [
   },
   {
     title: "Learn",
-    path: "/contact",
+    path: "/learn",
   },
 ];
 

@@ -50,8 +50,7 @@ const Career = () => {
               </p>
             ))}
           </div>
-          <div className="bg-[#F0B342] mb-20 rounded mt-6 text-[#3B0D17] h-auto w-[240px] lg:w-[270px] py-1 px-1 md:w-[250px] md:h-14 md:flex md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300">
-            <button className="relative w-full flex items-center justify-center md:inline-flex group gap-px">
+            <button className="bg-[#F0B342] mt-10 px-4 rounded text-[#3B0D17] w-[270px] md:w-auto md:h-14 h-14 md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300 relative md:inline-flex inline-flex justify-center">
               {data.map((item, index) => (
                 <a
                   key={index}
@@ -66,7 +65,6 @@ const Career = () => {
               ))}
             </button>
           </div>
-        </div>
       </Container>
       <Gallery />
       <Growth />
