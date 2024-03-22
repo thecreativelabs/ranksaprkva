@@ -38,7 +38,7 @@ export default async function Home() {
     <div>
       <Hero data={page.header} />
       <Badges />
-      <Features />
+      <Features data={page.section1} />
       <Brands />
       <Slider />
       <Partnership />

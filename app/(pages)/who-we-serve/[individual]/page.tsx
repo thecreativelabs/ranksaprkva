@@ -20,9 +20,11 @@ export default function Individual() {
   const [individual, setIndividual] = useState("");
 
   useEffect(() => {
-    const segments = pathname.split("/");
-    if (segments.length >= 3) {
-      setIndividual(segments[2]);
+    const segments = pathname?.split("/");
+    if (segments) {
+      if (segments.length >= 3) {
+        setIndividual(segments[2]);
+      }
     }
   }, [pathname]);
   return (
