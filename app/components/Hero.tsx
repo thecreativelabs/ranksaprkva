@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { GoArrowRight } from "react-icons/go";
+import Button from "./Button";
 
 const header = [
   {
@@ -34,17 +35,7 @@ const Hero = ({
         <p className="text-md w-[250px] md:w-[80%] mt-8 md:text-left text-left text-black ">
           {data.description}
         </p>
-        <button className="bg-[#F0B342] mt-10 text-[#3B0D17] w-[270px] md:w-auto md:h-14 h-14 md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300 relative md:inline-flex inline-flex justify-center">
-          <a
-            href={data.button.path}
-            className="inline-flex ml-3 items-center gap-px md:inline-flex md:items-center md:gap-px"
-          >
-            <span className="text-lg md:mt-0 font-medium cursor-pointer">
-              {data.button.text}
-            </span>
-            <GoArrowRight className="ml-1 font-bold md:mt-0 mr-2" size={25} />
-          </a>
-        </button>
+        <Button props={data.button} />
       </div>
       <div className="w-full md:w-[560px] mt-10 md:flex flex flex-col p-4 md:p-8 text-center">
         <div className="relative">

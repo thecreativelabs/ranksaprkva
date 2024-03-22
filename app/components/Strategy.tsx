@@ -1,6 +1,7 @@
 import React from "react";
 import { FaCircleArrowRight } from "react-icons/fa6";
 import Container from "./Container";
+import Button from "./Button";
 
 const data = {
   heading: "Experience the difference of a values-driven search strategy.",
@@ -16,10 +17,10 @@ const Strategy = ({
   button,
   image,
 }: {
-  title: string;
-  description: string;
-  button: { text: string; path: string };
-  image: { asset: { url: string }; alt: string };
+  title?: string;
+  description?: string;
+  button?: { text: string; path: string };
+  image?: { asset: { url: string }; alt: string };
 }) => {
   return (
     <div
@@ -46,14 +47,11 @@ const Strategy = ({
           <p className="mt-4 text-md text-[#3B0D17] w-auto md:w-[60%] leading-7 tracking-wider font-medium font-primary">
             {description}
           </p>
-          <div className="mt-10 flex items-center mb-8 text-red-600 hover:text-red-600/60  cursor-pointer">
-            <a href={button?.path} className="flex items-center">
-              <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
-                {button?.text}
-              </p>
-              <FaCircleArrowRight className="" size={35} />
-            </a>
-          </div>
+          {button && (
+            <div className="my-10">
+              <Button props={button} variant="link" />
+            </div>
+          )}
         </div>
       </Container>
     </div>

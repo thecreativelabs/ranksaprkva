@@ -16,7 +16,7 @@ const Brands = async () => {
   return (
     <Container>
       <div className="mt-20 bg-white">
-        <h2 className="font-bold text-center text-xl text-[#3B0D17]">
+        <h2 className="font-bold font-DM-sans text-center text-xl text-[#3B0D17]">
           {page.title}
         </h2>
         <div className="mt-10 flex gap-x-16 gap-y-4 md:gap-26 lg:gap-32 items-center justify-center flex-wrap">

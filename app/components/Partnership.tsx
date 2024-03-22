@@ -2,6 +2,7 @@ import React from "react";
 import { FaCircleArrowRight } from "react-icons/fa6";
 import Container from "./Container";
 import { PortableText } from "@components/PortableText";
+import Button from "@components/Button";
 
 const partner = [
   {
@@ -38,13 +39,8 @@ const Partnership = ({ data }: { data: any[] }) => {
                 {data?.[0].title}
               </h3>
               <PortableText value={data?.[0].description} />
-              <div className="mt-10 flex items-center mb-8 text-red-600 hover:text-red-600/60  cursor-pointer">
-                <a href={data?.[0].button.path} className="flex items-center">
-                  <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
-                    {data?.[0].button.text}
-                  </p>
-                  <FaCircleArrowRight className="" size={35} />
-                </a>
+              <div className="mt-10">
+                <Button props={data?.[0].button} variant="link" />
               </div>
             </div>
           </div>

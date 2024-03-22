@@ -9,6 +9,8 @@ import PrevButton from "@components/ui/icons/PrevButton";
 import "swiper/css";
 import Image from "next/image";
 
+import Button from "@components/Button";
+
 interface Counter {
   number: {
     Icon: JSX.Element;
@@ -195,23 +197,10 @@ const Slider = () => {
                           <p className="text-dark-red text-left sm:text-xxl md:text-xxl tracking-wider leading-7 md:leading-10 text-md font-bold font-DM-sans w-[100%]">
                             {dataa.content}
                           </p>
-                          <div className="md:text-sm text-xs justify-start w-auto font-bold mt-[20px] uppercase cursor-pointer flex tracking-wide gap-[15px] items-center text-light-red">
-                            <a href="/" className="flex">
-                              {dataa.button}
-                              <button
-                                type="button"
-                                title="button"
-                                className="mt-[-12px] ml-2 w-[38px] rounded-[50%] bg-light-red hover:bg-light-red/60"
-                              >
-                                <CircleArrow
-                                  className=""
-                                  style={{ color: "black" }}
-                                  bg="light-pink"
-                                  color="white"
-                                />
-                              </button>
-                            </a>
-                          </div>
+                          <Button
+                            props={{ text: dataa.button, path: "/" }}
+                            variant="link"
+                          />
                         </div>
                       </div>
                     </div>

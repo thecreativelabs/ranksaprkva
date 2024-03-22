@@ -11,7 +11,7 @@ module.exports = {
       fontFamily: {
         "DM-sans": ["DM Sans", "sans-serif"],
         Amiri: ["Amiri", "serif"],
-        primary: "sans-serif",
+        primary: ["DM Sans", "sans-serif"],
         secondary: ["DM Sans", "sans-serif"],
         tertiary: "serif",
       },

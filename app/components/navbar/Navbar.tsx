@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 const menuitems = [
   {
     title: "Method",
-    path: "/methods",
+    path: "/method",
   },
   {
     title: "Services",
