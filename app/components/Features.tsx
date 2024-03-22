@@ -1,6 +1,7 @@
 import React from "react";
 import { FaCircleArrowRight } from "react-icons/fa6";
 import Container from "./Container";
+import { PortableText } from "./PortableText";
 
 const feature = [
   {
@@ -34,17 +35,11 @@ const Features = ({
               <h3 className="md:text-4xl text-2xl font-tertiary tracking-wide text-[#3B0D17] font-medium mt-2 ">
                 {data.heading}
               </h3>
-              <h3 className="mt-4 text-[#3B0D17] md:text-xl tracking-wide font-semibold text-md [text-wrap:balance]">
-                {/* {data.description} */}
-              </h3>
-              <p className="mt-4 text-[#3B0D17] leading-7 tracking-wide">
-                {feature[0].description}
-              </p>
+              <PortableText value={data.description} />
               <div className="mt-10 flex items-center mb-8 text-red-600 hover:text-red-600/60  cursor-pointer">
-                <a href={feature[0].path} className="flex items-center">
-                  {" "}
+                <a href={data.button.path} className="flex items-center">
                   <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
-                    {feature[0].text}
+                    {data.button.text}
                   </p>
                   <FaCircleArrowRight className="" size={35} />
                 </a>

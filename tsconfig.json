@@ -34,7 +34,8 @@
     "app/components/methods/Slider.tsx",
     "app/components/whoWeServe/CardSection.tsx",
     "app/components/whoWeServe/serveCards.tsx",
-    "sanity/plugins/settings.jsx"
+    "sanity/plugins/settings.jsx",
+    "app/components/PortableText.jsx"
   ],
   "exclude": ["node_modules"]
 }

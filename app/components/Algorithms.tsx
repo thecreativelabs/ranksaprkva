@@ -283,29 +283,40 @@ const AlgoData = {
   ],
 };
 
-const Algorithms = () => {
+const Algorithms = ({
+  heading,
+  description,
+  features,
+}: {
+  heading: string;
+  description: string;
+  features: {
+    title: string;
+    description: string;
+  }[];
+}) => {
   return (
     <Container>
       <div>
         <h1 className="text-[#C42A1C] tracking-widest leading-6 md:text-xl text-md mb-6 lg:text-sm font-semibold ">
-          <slot name="title tracking-widest leading-6">
-            {AlgoData.title}
-          </slot>
+          <slot name="title tracking-widest leading-6">{heading}</slot>
         </h1>
         <p className="md:text-2xl tracking-wide leading-7 font-medium text-xl font-serif mt-4 text-[#3B0D17] mx-auto w-full">
-          <slot name="desc">{AlgoData.description}</slot>
+          <slot name="desc">{description}</slot>
         </p>
       </div>
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-8 md:gap-10">
-        {AlgoData.it.map((item, index) => (
+        {features.map((item, index) => (
           <div
             key={index}
             className="bg-graybg md:h-[300px] h-auto w-full flex flex-col gap-4 mb-6 items-start group rounded transition-all px-8 py-6"
           >
             <div className="items-center justify-between">
               <div className="mt-1 mb-6 bg-white border shadow shadow-indigo-100/50 border-indigo-100 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">
-                <span className="text-[#C42A1C] text">{item.icon}</span>
+                <span className="text-[#C42A1C] text">
+                  {AlgoData.it[index].icon}
+                </span>
               </div>
               <h3 className="font-semibold font-sans text-left text-2xl text-[#3B0D17]">
                 {item.title}

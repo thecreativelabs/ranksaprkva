@@ -30,6 +30,38 @@ export default async function Home() {
       stats[] {title, image{asset->{url}, alt}},
       button->{text, path},
       image {asset->{url}, alt}
+    },
+    section2 {
+      features[] {
+        title,
+        description,
+        button->{text, path}
+      },
+      featuresAlt {
+        heading,
+        description,
+        features[] {
+          title,
+          description,
+        },
+      },
+      whoWeServe {
+        heading,
+        description
+      }
+    },
+    section3 {
+      title,
+      description,
+      button->{text, path},
+      image {asset->{url}, alt}
+    },
+    faqs {
+      title,
+      faqs[] {
+        question,
+        answer
+      }
     }
   }[0]`);
   if (!page) return <></>;
@@ -37,15 +69,15 @@ export default async function Home() {
   return (
     <div>
       <Hero data={page.header} />
-      <Badges />
+      <Badges data={page.section1?.stats} />
       <Features data={page.section1} />
       <Brands />
       <Slider />
-      <Partnership />
-      <Algorithms />
-      <Learn />
-      <Strategy />
-      <Faq />
+      <Partnership data={page.section2?.features} />
+      <Algorithms {...page.section2?.featuresAlt} />
+      <Learn {...page.section2?.whoWeServe} />
+      <Strategy {...page.section3} />
+      <Faq {...page.faqs} />
     </div>
   );
 }

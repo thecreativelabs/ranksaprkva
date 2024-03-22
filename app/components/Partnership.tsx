@@ -1,6 +1,7 @@
 import React from "react";
 import { FaCircleArrowRight } from "react-icons/fa6";
 import Container from "./Container";
+import { PortableText } from "@components/PortableText";
 
 const partner = [
   {
@@ -22,11 +23,11 @@ const partner = [
     description2:
       "SEO is an untapped marketing channel with the power to unlock high-conversion traffic and long-term ROI — well help you find the key.",
     text: "EXPLORE OUR SERVICES",
-    path: "/"
+    path: "/",
   },
 ];
 
-const Partnership = () => {
+const Partnership = ({ data }: { data: any[] }) => {
   return (
     <Container>
       <div className="mt-18 mb-20">
@@ -34,19 +35,13 @@ const Partnership = () => {
           <div className="grid md:ml-16 mt-14">
             <div className="max-w-lg">
               <h3 className="md:text-4xl font-tertiary font-medium mt-4 text-3xl text-[#3B0D17]">
-                {partner[2].title}
+                {data?.[0].title}
               </h3>
-              <p className="mt-4 text-md text-[#3B0D17] leading-7 tracking-wider font-medium font-primary [text-wrap:balance]">
-                {partner[2].description}
-                <br />
-                <br />
-                {partner[2].description2}
-              </p>
+              <PortableText value={data?.[0].description} />
               <div className="mt-10 flex items-center mb-8 text-red-600 hover:text-red-600/60  cursor-pointer">
-                <a href={partner[2].path} className="flex items-center"> 
-                  {" "}
+                <a href={data?.[0].button.path} className="flex items-center">
                   <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
-                    {partner[2].text}
+                    {data?.[0].button.text}
                   </p>
                   <FaCircleArrowRight className="" size={35} />
                 </a>
@@ -107,22 +102,19 @@ const Partnership = () => {
                     </span>
                   </div>
                   <h3 className="font-semibold text-md font-sans text-left md:text-2xl text-[#3B0D17]">
-                    {partner[0].title}
+                    {data?.[1].title}
                   </h3>
                 </div>
                 <div>
-                  <p className="mt-2 leading-relaxed text-[#3B0D17]">
-                    {partner[0].description}
-                  </p>
+                  <PortableText value={data?.[1].description} />
                 </div>
                 <div className="mt-10 flex items-center mb-8 text-red-600 hover:text-red-600/60  cursor-pointer">
-                <a href={partner[2].path} className="flex items-center"> 
-                  {" "}
-                  <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
-                    {partner[2].text}
-                  </p>
-                </a>
-              </div>
+                  <a href={data?.[1].button.path} className="flex items-center">
+                    <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
+                      {data?.[1].button.text}
+                    </p>
+                  </a>
+                </div>
               </div>
               <div className="bg-graybg w-full flex flex-col gap-4 mb-6 items-start group rounded transition-all px-8 py-10">
                 <div className="w-full items-center justify-between">
@@ -199,22 +191,19 @@ const Partnership = () => {
                     </span>
                   </div>
                   <h3 className="font-semibold text-md font-sans text-left md:text-2xl text-[#3B0D17]">
-                    {partner[1].title}
+                    {data?.[2].title}
                   </h3>
                 </div>
                 <div>
-                  <p className="mt-2 leading-relaxed text-[#3B0D17]">
-                    {partner[1].description}
-                  </p>
+                  <PortableText value={data?.[2].description} />
                 </div>
                 <div className="mt-10 flex items-center mb-8 text-red-600 hover:text-red-600/60  cursor-pointer">
-                <a href={partner[2].path} className="flex items-center"> 
-                  {" "}
-                  <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
-                    {partner[2].text}
-                  </p>
-                </a>
-              </div>
+                  <a href={data?.[2].button.link} className="flex items-center">
+                    <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
+                      {data?.[2].button.text}
+                    </p>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

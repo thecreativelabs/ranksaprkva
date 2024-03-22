@@ -66,7 +66,7 @@ export default defineType({
         },
       ],
     },
-    // features
+    // section1
     {
       name: "section1",
       title: "Section 1",
@@ -168,6 +168,12 @@ export default defineType({
                   name: "description",
                   title: "Description",
                   type: "blockContent",
+                },
+                {
+                  name: "button",
+                  title: "Button",
+                  type: "reference",
+                  to: [{ type: "button" }],
                 },
               ],
             },
