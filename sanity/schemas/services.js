@@ -1,6 +1,6 @@
 export default {
-  name: "service",
-  title: "Service",
+  name: "services",
+  title: "Services",
   type: "document",
   fields: [
     {
@@ -17,6 +17,277 @@ export default {
         maxLength: 96,
       },
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "description",
+      title: "Description",
+      type: "string",
+    },
+    {
+      name: "subCategory",
+      title: "Sub Category",
+      type: "reference",
+      to: [{ type: "services" }],
+    },
+    // header
+    {
+      name: "header",
+      title: "Header",
+      type: "object",
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        {
+          name: "title",
+          title: "Title",
+          type: "string",
+        },
+        {
+          name: "heading",
+          title: "Heading",
+          type: "string",
+        },
+        {
+          name: "description",
+          title: "Description",
+          type: "string",
+        },
+        {
+          name: "mainImage",
+          title: "Main Image",
+          type: "image",
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative text",
+              description: "Important for SEO and accessiblity.",
+            },
+          ],
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
+    },
+    // features
+    {
+      name: "features",
+      title: "Features",
+      type: "object",
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        {
+          name: "grid",
+          title: "Grid",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Title",
+              type: "string",
+            },
+            {
+              name: "heading",
+              title: "Heading",
+              type: "string",
+            },
+            {
+              name: "description",
+              title: "Description",
+              type: "string",
+            },
+            {
+              name: "grid",
+              title: "Grid",
+              type: "array",
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    {
+                      name: "title",
+                      title: "Title",
+                      type: "string",
+                    },
+                    {
+                      name: "description",
+                      title: "Description",
+                      type: "string",
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "bulletList",
+          title: "Bullet List",
+          type: "object",
+          fields: [
+            {
+              name: "heading",
+              title: "Heading",
+              type: "string",
+            },
+            {
+              name: "description",
+              title: "Description",
+              type: "string",
+            },
+            {
+              name: "list",
+              title: "List",
+              type: "array",
+              of: [
+                {
+                  type: "string",
+                },
+              ],
+            },
+            {
+              name: "image",
+              title: "Image",
+              type: "image",
+              fields: [
+                {
+                  name: "alt",
+                  type: "string",
+                  title: "Alternative text",
+                  description: "Important for SEO and accessiblity.",
+                },
+              ],
+              options: {
+                hotspot: true,
+              },
+            },
+          ],
+        },
+        {
+          name: "numberList",
+          title: "Number List",
+          type: "object",
+          fields: [
+            {
+              name: "heading",
+              title: "Heading",
+              type: "string",
+            },
+            {
+              name: "description",
+              title: "Description",
+              type: "string",
+            },
+            {
+              name: "list",
+              title: "List",
+              type: "array",
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    {
+                      name: "title",
+                      title: "Title",
+                      type: "string",
+                    },
+                    {
+                      name: "description",
+                      title: "Description",
+                      type: "string",
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    // cta
+    {
+      name: "cta",
+      title: "CTA",
+      type: "object",
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        {
+          name: "heading",
+          title: "Heading",
+          type: "string",
+        },
+        {
+          name: "description",
+          title: "Description",
+          type: "string",
+        },
+        {
+          name: "button",
+          title: "Button",
+          type: "reference",
+          to: [{ type: "button" }],
+        },
+        {
+          name: "image",
+          title: "Image",
+          type: "image",
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative text",
+              description: "Important for SEO and accessiblity.",
+            },
+          ],
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
+    },
+    // faqs
+    {
+      name: "faqs",
+      title: "FAQs",
+      type: "object",
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        {
+          name: "title",
+          title: "Title",
+          type: "string",
+        },
+        {
+          name: "faqs",
+          title: "FAQs",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                {
+                  name: "question",
+                  title: "Question",
+                  type: "string",
+                },
+                {
+                  name: "answer",
+                  title: "Answer",
+                  type: "blockContent",
+                },
+              ],
+            },
+          ],
+        },
+      ],
     },
   ],
 };

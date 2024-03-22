@@ -53,12 +53,12 @@ export default {
         hotspot: true,
       },
     },
-    {
-      name: "services",
-      title: "Services Used",
-      type: "array",
-      of: [{ type: "reference", to: { type: "service" } }],
-    },
+    // {
+    //   name: "services",
+    //   title: "Services Used",
+    //   type: "array",
+    //   of: [{ type: "reference", to: { type: "service" } }],
+    // },
     {
       name: "body",
       title: "Body",
