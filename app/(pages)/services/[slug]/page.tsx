@@ -12,7 +12,22 @@ import ServiceMarketing from "@/components/services/Marketing";
 import ServiceLearn from "@/components/services/learn";
 import ServiceBanner from "@/components/services/banner";
 import ServiceQandA from "@/components/services/QandA";
-export default function CaseStudyIndividual() {
+import { client } from "@sanity/lib/client";
+
+export default async function CaseStudyIndividual({
+  params,
+}: {
+  params: {
+    slug: string;
+  };
+}) {
+  console.log(params);
+  const page =
+    await client.fetch(`*[_type == "services" && slug.current == "${params.slug}" ] {
+    ...
+  }[0]`);
+  console.log(page);
+  if (!page) return <></>;
   return (
     <>
       <HeroCaseIndividual />
