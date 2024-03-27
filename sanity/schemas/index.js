@@ -2,6 +2,7 @@ import category from "./category";
 import settings from "./settings";
 import blockContent from "./blockContent";
 import caseStudies from "./caseStudies";
+import caseStudyLanding from "./caseStudyLanding";
 import services from "./services";
 import button from "./button";
 import marketingSolutions from "./marketingSolutions";
@@ -27,6 +28,7 @@ const schemaTypes = [
   awards,
   landingPage,
   methodPage,
+  caseStudyLanding,
   about,
   careers,
 
