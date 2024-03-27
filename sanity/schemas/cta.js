@@ -4,7 +4,7 @@ import { defineType } from "sanity";
 export default defineType({
   name: "cta",
   title: "CTA",
-  type: "document",
+  type: "object",
   icon: ArrowRightIcon,
   fields: [
     {
@@ -20,10 +20,7 @@ export default defineType({
     {
       name: "button",
       title: "CTA Button",
-      type: "reference",
-      to: {
-        type: "button",
-      },
+      type: "button",
     },
   ],
 });

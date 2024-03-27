@@ -4,7 +4,7 @@ import { defineType } from "sanity";
 export default defineType({
   name: "testimonials",
   title: "Testimonials",
-  type: "document",
+  type: "object",
   icon: UsersIcon,
   fields: [
     {

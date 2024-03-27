@@ -16,6 +16,13 @@ import faqs from "./sanity/schemas/faqs";
 import cta from "./sanity/schemas/cta";
 import careers from "./sanity/schemas/careers";
 import about from "./sanity/schemas/about";
+import methodPage from "./sanity/schemas/methodPage";
+import caseStudyLanding from "@sanity/schemas/caseStudyLanding";
+import termsAndConditions from "@sanity/schemas/termsAndConditions";
+import privacyPolicy from "@sanity/schemas/privacyPolicy";
+import contact from "@sanity/schemas/contact";
+import blogLandingPage from "@sanity/schemas/blogLandingPage";
+import whoWeServe from "@sanity/schemas/whoWeServe";
 
 export default defineConfig({
   name: "rankspark2",
@@ -29,16 +36,31 @@ export default defineConfig({
         settings,
         logos,
         pricing,
-        testimonials,
-        faqs,
-        cta,
         landingPage,
         careers,
         about,
+        methodPage,
+        caseStudyLanding,
+        termsAndConditions,
+        privacyPolicy,
+        contact,
+        blogLandingPage,
+        whoWeServe,
       ]),
     }),
     visionTool(),
-    singletonPlugin(["settings", "landingPage"]),
+    singletonPlugin([
+      "settings",
+      "landingPage",
+      "methodPage",
+      "caseStudyLanding",
+      "termsAndConditions",
+      "privacyPolicy",
+      "careers",
+      "contact",
+      "blogLandingPage",
+      "whoWeServe",
+    ]),
     table(),
     codeInput(),
   ],

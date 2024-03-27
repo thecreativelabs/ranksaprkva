@@ -242,8 +242,7 @@ export default {
         {
           name: "button",
           title: "Button",
-          type: "reference",
-          to: [{ type: "button" }],
+          type: "button",
         },
         {
           name: "image",
