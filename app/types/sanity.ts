@@ -514,6 +514,48 @@ export interface Cta extends SanityDocument {
 }
 
 /**
+ * Award
+ *
+ *
+ */
+export interface Award extends SanityDocument {
+  _type: "award";
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Description — `text`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Image — `image`
+   *
+   *
+   */
+  image?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+
+    /**
+     * Alternative text — `string`
+     *
+     * Important for SEO and accessiblity.
+     */
+    alt?: string;
+  };
+}
+
+/**
  * Home Page
  *
  *
@@ -650,29 +692,34 @@ export interface LandingPage extends SanityDocument {
      *
      */
     button?: SanityReference<Button>;
+
+    /**
+     * Image — `image`
+     *
+     *
+     */
+    image?: {
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+
+      /**
+       * Alternative text — `string`
+       *
+       * Important for SEO and accessiblity.
+       */
+      alt?: string;
+    };
   };
 
   /**
-   * Features Grid — `object`
+   * Section 2 — `object`
    *
    *
    */
-  featuresGrid?: {
-    _type: "featuresGrid";
-    /**
-     * Heading — `string`
-     *
-     *
-     */
-    heading?: string;
-
-    /**
-     * Sub Heading — `string`
-     *
-     *
-     */
-    subHeading?: string;
-
+  section2?: {
+    _type: "section2";
     /**
      * Features — `array`
      *
@@ -688,18 +735,171 @@ export interface LandingPage extends SanityDocument {
         title?: string;
 
         /**
-         * Description — `string`
+         * Description — `blockContent`
          *
          *
          */
-        description?: string;
+        description?: BlockContent;
 
         /**
-         * Icon — `string`
+         * Button — `reference`
          *
          *
          */
-        icon?: string;
+        button?: SanityReference<Button>;
+      }>
+    >;
+
+    /**
+     * Features Alt — `object`
+     *
+     *
+     */
+    featuresAlt?: {
+      _type: "featuresAlt";
+      /**
+       * Heading — `string`
+       *
+       *
+       */
+      heading?: string;
+
+      /**
+       * Description — `string`
+       *
+       *
+       */
+      description?: string;
+
+      /**
+       * Features — `array`
+       *
+       *
+       */
+      features?: Array<
+        SanityKeyed<{
+          /**
+           * Title — `string`
+           *
+           *
+           */
+          title?: string;
+
+          /**
+           * Description — `string`
+           *
+           *
+           */
+          description?: string;
+        }>
+      >;
+    };
+
+    /**
+     * Who We Serve — `object`
+     *
+     *
+     */
+    whoWeServe?: {
+      _type: "whoWeServe";
+      /**
+       * Heading — `string`
+       *
+       *
+       */
+      heading?: string;
+
+      /**
+       * Description — `string`
+       *
+       *
+       */
+      description?: string;
+    };
+  };
+
+  /**
+   * Section 3 — `object`
+   *
+   *
+   */
+  section3?: {
+    _type: "section3";
+    /**
+     * Title — `string`
+     *
+     *
+     */
+    title?: string;
+
+    /**
+     * Description — `string`
+     *
+     *
+     */
+    description?: string;
+
+    /**
+     * Button — `reference`
+     *
+     *
+     */
+    button?: SanityReference<Button>;
+
+    /**
+     * Image — `image`
+     *
+     *
+     */
+    image?: {
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+
+      /**
+       * Alternative text — `string`
+       *
+       * Important for SEO and accessiblity.
+       */
+      alt?: string;
+    };
+  };
+
+  /**
+   * FAQs — `object`
+   *
+   *
+   */
+  faqs?: {
+    _type: "faqs";
+    /**
+     * Title — `string`
+     *
+     *
+     */
+    title?: string;
+
+    /**
+     * FAQs — `array`
+     *
+     *
+     */
+    faqs?: Array<
+      SanityKeyed<{
+        /**
+         * Question — `string`
+         *
+         *
+         */
+        question?: string;
+
+        /**
+         * Answer — `blockContent`
+         *
+         *
+         */
+        answer?: BlockContent;
       }>
     >;
   };
@@ -710,6 +910,824 @@ export interface LandingPage extends SanityDocument {
    *
    */
   publishedAt?: string;
+}
+
+/**
+ * Method Page
+ *
+ *
+ */
+export interface MethodPage extends SanityDocument {
+  _type: "methodPage";
+
+  /**
+   * Header — `object`
+   *
+   *
+   */
+  header?: {
+    _type: "header";
+    /**
+     * Top Text — `string`
+     *
+     *
+     */
+    topText?: string;
+
+    /**
+     * Title — `string`
+     *
+     *
+     */
+    title?: string;
+
+    /**
+     * Description — `text`
+     *
+     *
+     */
+    description?: string;
+  };
+
+  /**
+   * Main Image — `image`
+   *
+   *
+   */
+  mainImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+
+    /**
+     * Alternative text — `string`
+     *
+     * Important for SEO and accessiblity.
+     */
+    alt?: string;
+  };
+
+  /**
+   * Section 1 — `object`
+   *
+   *
+   */
+  section1?: {
+    _type: "section1";
+    /**
+     * CTO Card — `object`
+     *
+     *
+     */
+    ctoCard?: {
+      _type: "ctoCard";
+      /**
+       * Text — `text`
+       *
+       *
+       */
+      text?: string;
+
+      /**
+       * Image — `image`
+       *
+       *
+       */
+      image?: {
+        _type: "image";
+        asset: SanityReference<SanityImageAsset>;
+        crop?: SanityImageCrop;
+        hotspot?: SanityImageHotspot;
+
+        /**
+         * Alternative text — `string`
+         *
+         * Important for SEO and accessiblity.
+         */
+        alt?: string;
+      };
+
+      /**
+       * CTA — `reference`
+       *
+       *
+       */
+      cta?: SanityReference<Cta>;
+    };
+
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string;
+
+    /**
+     * Feature Cards — `array`
+     *
+     *
+     */
+    featureCards?: Array<
+      SanityKeyed<{
+        _type: "featureCard";
+        /**
+         * Icon — `image`
+         *
+         *
+         */
+        icon?: {
+          _type: "image";
+          asset: SanityReference<SanityImageAsset>;
+          crop?: SanityImageCrop;
+          hotspot?: SanityImageHotspot;
+
+          /**
+           * Alternative text — `string`
+           *
+           * Important for SEO and accessiblity.
+           */
+          alt?: string;
+        };
+
+        /**
+         * Title — `string`
+         *
+         *
+         */
+        title?: string;
+
+        /**
+         * Description — `text`
+         *
+         *
+         */
+        description?: string;
+      }>
+    >;
+  };
+
+  /**
+   * Section 2 — `object`
+   *
+   *
+   */
+  section2?: {
+    _type: "section2";
+    /**
+     * Heading — `object`
+     *
+     *
+     */
+    heading?: {
+      _type: "heading";
+      /**
+       * Top Text — `string`
+       *
+       *
+       */
+      topText?: string;
+
+      /**
+       * Title — `string`
+       *
+       *
+       */
+      title?: string;
+
+      /**
+       * Main Image — `image`
+       *
+       *
+       */
+      mainImage?: {
+        _type: "image";
+        asset: SanityReference<SanityImageAsset>;
+        crop?: SanityImageCrop;
+        hotspot?: SanityImageHotspot;
+
+        /**
+         * Alternative text — `string`
+         *
+         * Important for SEO and accessiblity.
+         */
+        alt?: string;
+      };
+    };
+
+    /**
+     * Service List Item 1 — `object`
+     *
+     *
+     */
+    serviceList1?: {
+      _type: "serviceList1";
+      /**
+       * Heading — `string`
+       *
+       *
+       */
+      heading?: string;
+
+      /**
+       * Services — `array`
+       *
+       *
+       */
+      services?: Array<
+        SanityKeyed<{
+          _type: "service";
+          /**
+           * Text — `string`
+           *
+           *
+           */
+          text?: string;
+
+          /**
+           * Sub Services — `array`
+           *
+           *
+           */
+          subServices?: Array<
+            SanityKeyed<{
+              /**
+               * Text — `string`
+               *
+               *
+               */
+              text?: string;
+            }>
+          >;
+        }>
+      >;
+    };
+
+    /**
+     * Service List Item 2 — `object`
+     *
+     *
+     */
+    serviceList2?: {
+      _type: "serviceList2";
+      /**
+       * Heading — `string`
+       *
+       *
+       */
+      heading?: string;
+
+      /**
+       * Services — `array`
+       *
+       *
+       */
+      services?: Array<
+        SanityKeyed<{
+          _type: "service";
+          /**
+           * Text — `string`
+           *
+           *
+           */
+          text?: string;
+
+          /**
+           * Sub Services — `array`
+           *
+           *
+           */
+          subServices?: Array<
+            SanityKeyed<{
+              /**
+               * Text — `string`
+               *
+               *
+               */
+              text?: string;
+            }>
+          >;
+        }>
+      >;
+    };
+
+    /**
+     * Service List Item 3 — `object`
+     *
+     *
+     */
+    serviceList3?: {
+      _type: "serviceList3";
+      /**
+       * Heading — `string`
+       *
+       *
+       */
+      heading?: string;
+
+      /**
+       * Services — `array`
+       *
+       *
+       */
+      services?: Array<
+        SanityKeyed<{
+          _type: "service";
+          /**
+           * Text — `string`
+           *
+           *
+           */
+          text?: string;
+
+          /**
+           * Sub Services — `array`
+           *
+           *
+           */
+          subServices?: Array<
+            SanityKeyed<{
+              /**
+               * Text — `string`
+               *
+               *
+               */
+              text?: string;
+            }>
+          >;
+        }>
+      >;
+    };
+
+    /**
+     * Service List Item 4 — `object`
+     *
+     *
+     */
+    serviceList4?: {
+      _type: "serviceList4";
+      /**
+       * Heading — `string`
+       *
+       *
+       */
+      heading?: string;
+
+      /**
+       * Services — `array`
+       *
+       *
+       */
+      services?: Array<
+        SanityKeyed<{
+          _type: "service";
+          /**
+           * Text — `string`
+           *
+           *
+           */
+          text?: string;
+
+          /**
+           * Sub Services — `array`
+           *
+           *
+           */
+          subServices?: Array<
+            SanityKeyed<{
+              /**
+               * Text — `string`
+               *
+               *
+               */
+              text?: string;
+            }>
+          >;
+        }>
+      >;
+    };
+
+    /**
+     * Additional Services Card — `object`
+     *
+     *
+     */
+    additionalServicesCard?: {
+      _type: "additionalServicesCard";
+      /**
+       * Title — `string`
+       *
+       *
+       */
+      title?: string;
+
+      /**
+       * Cards — `array`
+       *
+       *
+       */
+      cards?: Array<
+        SanityKeyed<{
+          _type: "card";
+          /**
+           * Title — `string`
+           *
+           *
+           */
+          title?: string;
+
+          /**
+           * Icon — `image`
+           *
+           *
+           */
+          icon?: {
+            _type: "image";
+            asset: SanityReference<SanityImageAsset>;
+            crop?: SanityImageCrop;
+            hotspot?: SanityImageHotspot;
+
+            /**
+             * Alternative text — `string`
+             *
+             * Important for SEO and accessiblity.
+             */
+            alt?: string;
+          };
+
+          /**
+           * Services — `array`
+           *
+           *
+           */
+          services?: Array<
+            SanityKeyed<{
+              _type: "service";
+              /**
+               * Text — `string`
+               *
+               *
+               */
+              text?: string;
+
+              /**
+               * Sub Services — `array`
+               *
+               *
+               */
+              subServices?: Array<
+                SanityKeyed<{
+                  /**
+                   * Text — `string`
+                   *
+                   *
+                   */
+                  text?: string;
+                }>
+              >;
+            }>
+          >;
+        }>
+      >;
+    };
+  };
+
+  /**
+   * Section 3 — `object`
+   *
+   *
+   */
+  section3?: {
+    _type: "section3";
+    /**
+     * Top Text — `string`
+     *
+     *
+     */
+    topText?: string;
+
+    /**
+     * Title — `string`
+     *
+     *
+     */
+    title?: string;
+
+    /**
+     * Feature Cards — `array`
+     *
+     *
+     */
+    featureCards?: Array<
+      SanityKeyed<{
+        _type: "featureCard";
+        /**
+         * Icon — `image`
+         *
+         *
+         */
+        icon?: {
+          _type: "image";
+          asset: SanityReference<SanityImageAsset>;
+          crop?: SanityImageCrop;
+          hotspot?: SanityImageHotspot;
+
+          /**
+           * Alternative text — `string`
+           *
+           * Important for SEO and accessiblity.
+           */
+          alt?: string;
+        };
+
+        /**
+         * Title — `string`
+         *
+         *
+         */
+        title?: string;
+
+        /**
+         * Description — `text`
+         *
+         *
+         */
+        description?: string;
+
+        /**
+         * CTA — `reference`
+         *
+         *
+         */
+        cta?: SanityReference<Cta>;
+      }>
+    >;
+
+    /**
+     * Main Image — `image`
+     *
+     *
+     */
+    mainImage?: {
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+
+      /**
+       * Alternative text — `string`
+       *
+       * Important for SEO and accessiblity.
+       */
+      alt?: string;
+    };
+  };
+
+  /**
+   * Awards Section — `object`
+   *
+   *
+   */
+  awardsSection?: {
+    _type: "awardsSection";
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string;
+
+    /**
+     * Awards — `array`
+     *
+     *
+     */
+    awards?: Array<
+      SanityKeyed<{
+        _type: "award";
+        /**
+         * Image — `image`
+         *
+         *
+         */
+        image?: {
+          _type: "image";
+          asset: SanityReference<SanityImageAsset>;
+          crop?: SanityImageCrop;
+          hotspot?: SanityImageHotspot;
+
+          /**
+           * Alternative text — `string`
+           *
+           * Important for SEO and accessiblity.
+           */
+          alt?: string;
+        };
+      }>
+    >;
+
+    /**
+     * CTA — `reference`
+     *
+     *
+     */
+    cta?: SanityReference<Cta>;
+  };
+
+  /**
+   * Section 4 — `object`
+   *
+   *
+   */
+  section4?: {
+    _type: "section4";
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string;
+
+    /**
+     * Description — `text`
+     *
+     *
+     */
+    description?: string;
+
+    /**
+     * Feature Sets — `array`
+     *
+     *
+     */
+    featureSets?: Array<
+      SanityKeyed<{
+        _type: "featureSet";
+        /**
+         * Name — `string`
+         *
+         *
+         */
+        name?: string;
+
+        /**
+         * Image — `image`
+         *
+         *
+         */
+        image?: {
+          _type: "image";
+          asset: SanityReference<SanityImageAsset>;
+          crop?: SanityImageCrop;
+          hotspot?: SanityImageHotspot;
+
+          /**
+           * Alternative text — `string`
+           *
+           * Important for SEO and accessiblity.
+           */
+          alt?: string;
+        };
+
+        /**
+         * Heading — `string`
+         *
+         *
+         */
+        heading?: string;
+
+        /**
+         * Description — `text`
+         *
+         *
+         */
+        description?: string;
+
+        /**
+         * Quote — `object`
+         *
+         *
+         */
+        quote?: {
+          _type: "quote";
+          /**
+           * Text — `text`
+           *
+           *
+           */
+          text?: string;
+
+          /**
+           * Author — `string`
+           *
+           *
+           */
+          author?: string;
+        };
+      }>
+    >;
+  };
+
+  /**
+   * Section 5 — `object`
+   *
+   *
+   */
+  section5?: {
+    _type: "section5";
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string;
+
+    /**
+     * Logo — `reference`
+     *
+     *
+     */
+    logo?: SanityReference<Logos>;
+
+    /**
+     * Case Studies Carousel — `array`
+     *
+     *
+     */
+    caseStudiesCarousel?: Array<
+      SanityKeyed<{
+        _type: "carouselItem";
+        /**
+         * Title — `string`
+         *
+         *
+         */
+        title?: string;
+
+        /**
+         * Case Study — `reference`
+         *
+         *
+         */
+        caseStudy?: SanityReference<CaseStudy>;
+
+        /**
+         * CTA — `button`
+         *
+         *
+         */
+        cta?: Button;
+      }>
+    >;
+  };
+
+  /**
+   * Section 6 — `object`
+   *
+   *
+   */
+  section6?: {
+    _type: "section6";
+    /**
+     * Main Image — `image`
+     *
+     *
+     */
+    mainImage?: {
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+
+      /**
+       * Alternative text — `string`
+       *
+       * Important for SEO and accessiblity.
+       */
+      alt?: string;
+    };
+
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string;
+
+    /**
+     * Description — `text`
+     *
+     *
+     */
+    description?: string;
+
+    /**
+     * CTA — `reference`
+     *
+     *
+     */
+    cta?: SanityReference<Cta>;
+  };
 }
 
 /**
@@ -1247,47 +2265,19 @@ export interface Careers extends SanityDocument {
 }
 
 /**
- * Success Stories
+ * Case Study
  *
  *
  */
-export interface SuccessStories extends SanityDocument {
-  _type: "successStories";
+export interface CaseStudy extends SanityDocument {
+  _type: "caseStudy";
 
   /**
-   * Title — `string`
+   * Header Image — `image`
    *
    *
    */
-  title?: string;
-
-  /**
-   * Slug — `slug`
-   *
-   *
-   */
-  slug?: { _type: "slug"; current: string };
-
-  /**
-   * Heading — `string`
-   *
-   *
-   */
-  heading?: string;
-
-  /**
-   * Description — `string`
-   *
-   *
-   */
-  description?: string;
-
-  /**
-   * Main image — `image`
-   *
-   *
-   */
-  mainImage?: {
+  headerImage?: {
     _type: "image";
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
@@ -1302,11 +2292,42 @@ export interface SuccessStories extends SanityDocument {
   };
 
   /**
-   * Services Used — `array`
+   * Awards — `array`
    *
    *
    */
-  services?: Array<SanityKeyedReference<Service>>;
+  awards?: Array<SanityKeyedReference<Award>>;
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Stats — `array`
+   *
+   *
+   */
+  stats?: Array<
+    SanityKeyed<{
+      _type: "stat";
+      /**
+       * Statistic — `string`
+       *
+       * The statistic to display.
+       */
+      statistic?: string;
+
+      /**
+       * Context — `string`
+       *
+       * The text to display next to the statistic. For example, "users" or "downloads".
+       */
+      context?: string;
+    }>
+  >;
 
   /**
    * Body — `blockContent`
@@ -1314,13 +2335,6 @@ export interface SuccessStories extends SanityDocument {
    *
    */
   body?: BlockContent;
-
-  /**
-   * Published at — `datetime`
-   *
-   *
-   */
-  publishedAt?: string;
 }
 
 /**
@@ -1607,12 +2621,12 @@ export interface Button extends SanityDocument {
 }
 
 /**
- * Service
+ * Services
  *
  *
  */
-export interface Service extends SanityDocument {
-  _type: "service";
+export interface Services extends SanityDocument {
+  _type: "services";
 
   /**
    * Title — `string`
@@ -1627,6 +2641,307 @@ export interface Service extends SanityDocument {
    *
    */
   slug?: { _type: "slug"; current: string };
+
+  /**
+   * Description — `string`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Sub Category — `reference`
+   *
+   *
+   */
+  subCategory?: SanityReference<Services>;
+
+  /**
+   * Header — `object`
+   *
+   *
+   */
+  header?: {
+    _type: "header";
+    /**
+     * Title — `string`
+     *
+     *
+     */
+    title?: string;
+
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string;
+
+    /**
+     * Description — `string`
+     *
+     *
+     */
+    description?: string;
+
+    /**
+     * Main Image — `image`
+     *
+     *
+     */
+    mainImage?: {
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+
+      /**
+       * Alternative text — `string`
+       *
+       * Important for SEO and accessiblity.
+       */
+      alt?: string;
+    };
+  };
+
+  /**
+   * Features — `object`
+   *
+   *
+   */
+  features?: {
+    _type: "features";
+    /**
+     * Grid — `object`
+     *
+     *
+     */
+    grid?: {
+      _type: "grid";
+      /**
+       * Title — `string`
+       *
+       *
+       */
+      title?: string;
+
+      /**
+       * Heading — `string`
+       *
+       *
+       */
+      heading?: string;
+
+      /**
+       * Description — `string`
+       *
+       *
+       */
+      description?: string;
+
+      /**
+       * Grid — `array`
+       *
+       *
+       */
+      grid?: Array<
+        SanityKeyed<{
+          /**
+           * Title — `string`
+           *
+           *
+           */
+          title?: string;
+
+          /**
+           * Description — `string`
+           *
+           *
+           */
+          description?: string;
+        }>
+      >;
+    };
+
+    /**
+     * Bullet List — `object`
+     *
+     *
+     */
+    bulletList?: {
+      _type: "bulletList";
+      /**
+       * Heading — `string`
+       *
+       *
+       */
+      heading?: string;
+
+      /**
+       * Description — `string`
+       *
+       *
+       */
+      description?: string;
+
+      /**
+       * List — `array`
+       *
+       *
+       */
+      list?: Array<SanityKeyed<string>>;
+
+      /**
+       * Image — `image`
+       *
+       *
+       */
+      image?: {
+        _type: "image";
+        asset: SanityReference<SanityImageAsset>;
+        crop?: SanityImageCrop;
+        hotspot?: SanityImageHotspot;
+
+        /**
+         * Alternative text — `string`
+         *
+         * Important for SEO and accessiblity.
+         */
+        alt?: string;
+      };
+    };
+
+    /**
+     * Number List — `object`
+     *
+     *
+     */
+    numberList?: {
+      _type: "numberList";
+      /**
+       * Heading — `string`
+       *
+       *
+       */
+      heading?: string;
+
+      /**
+       * Description — `string`
+       *
+       *
+       */
+      description?: string;
+
+      /**
+       * List — `array`
+       *
+       *
+       */
+      list?: Array<
+        SanityKeyed<{
+          /**
+           * Title — `string`
+           *
+           *
+           */
+          title?: string;
+
+          /**
+           * Description — `string`
+           *
+           *
+           */
+          description?: string;
+        }>
+      >;
+    };
+  };
+
+  /**
+   * CTA — `object`
+   *
+   *
+   */
+  cta?: {
+    _type: "cta";
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string;
+
+    /**
+     * Description — `string`
+     *
+     *
+     */
+    description?: string;
+
+    /**
+     * Button — `reference`
+     *
+     *
+     */
+    button?: SanityReference<Button>;
+
+    /**
+     * Image — `image`
+     *
+     *
+     */
+    image?: {
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+
+      /**
+       * Alternative text — `string`
+       *
+       * Important for SEO and accessiblity.
+       */
+      alt?: string;
+    };
+  };
+
+  /**
+   * FAQs — `object`
+   *
+   *
+   */
+  faqs?: {
+    _type: "faqs";
+    /**
+     * Title — `string`
+     *
+     *
+     */
+    title?: string;
+
+    /**
+     * FAQs — `array`
+     *
+     *
+     */
+    faqs?: Array<
+      SanityKeyed<{
+        /**
+         * Question — `string`
+         *
+         *
+         */
+        question?: string;
+
+        /**
+         * Answer — `blockContent`
+         *
+         *
+         */
+        answer?: BlockContent;
+      }>
+    >;
+  };
 }
 
 export type BlockContent = Array<
@@ -1637,6 +2952,33 @@ export type BlockContent = Array<
       crop?: SanityImageCrop;
       hotspot?: SanityImageHotspot;
     }>
+  | SanityKeyed<Code>
+  | SanityKeyed<{
+      _type: "embed";
+      /**
+       * url — `url`
+       *
+       * Enter the URL to Embed 
+(eg: https://youtube.com/embed/xxx or https://open.spotify.com/embed/track/xxxx)
+       */
+      url?: string;
+
+      /**
+       * height — `number`
+       *
+       * Enter Required Height for this Embed. Leave it blank for 16:9 ratio.
+       */
+      height?: number;
+    }>
+  | SanityKeyed<{
+      _type: "tables";
+      /**
+       * Add Table — `table`
+       *
+       * The first row will be treated as the header. If you want to skip, just leave the first row empty.
+       */
+      table?: Table;
+    }>
 >;
 
 export type Documents =
@@ -1646,10 +2988,26 @@ export type Documents =
   | Testimonials
   | Faqs
   | Cta
+  | Award
   | LandingPage
+  | MethodPage
   | About
   | Careers
-  | SuccessStories
+  | CaseStudy
   | MarketingSolutions
   | Button
-  | Service;
+  | Services;
+
+/**
+ * This interface is a stub. It was referenced in your sanity schema but
+ * the definition was not actually found. Future versions of
+ * sanity-codegen will let you type this explicity.
+ */
+type Code = any;
+
+/**
+ * This interface is a stub. It was referenced in your sanity schema but
+ * the definition was not actually found. Future versions of
+ * sanity-codegen will let you type this explicity.
+ */
+type Table = any;

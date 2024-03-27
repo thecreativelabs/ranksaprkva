@@ -1,7 +1,7 @@
 import category from "./category";
 import settings from "./settings";
 import blockContent from "./blockContent";
-import successStories from "./successStories";
+import caseStudies from "./caseStudies";
 import services from "./services";
 import button from "./button";
 import marketingSolutions from "./marketingSolutions";
@@ -11,8 +11,10 @@ import pricing from "./pricing";
 import testimonials from "./testimonials";
 import faqs from "./faqs";
 import cta from "./cta";
+import awards from "./awards";
 import careers from "./careers";
 import about from "./about";
+import methodPage from "./methodPage";
 
 const schemaTypes = [
   // category,
@@ -22,11 +24,13 @@ const schemaTypes = [
   testimonials,
   faqs,
   cta,
+  awards,
   landingPage,
+  methodPage,
   about,
   careers,
 
-  successStories,
+  caseStudies,
   marketingSolutions,
 
   button,

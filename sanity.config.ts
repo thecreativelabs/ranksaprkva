@@ -16,6 +16,7 @@ import faqs from "./sanity/schemas/faqs";
 import cta from "./sanity/schemas/cta";
 import careers from "./sanity/schemas/careers";
 import about from "./sanity/schemas/about";
+import methodPage from "./sanity/schemas/methodPage";
 
 export default defineConfig({
   name: "rankspark2",
@@ -35,10 +36,11 @@ export default defineConfig({
         landingPage,
         careers,
         about,
+        methodPage,
       ]),
     }),
     visionTool(),
-    singletonPlugin(["settings", "landingPage"]),
+    singletonPlugin(["settings", "landingPage", "methodPage"]),
     table(),
     codeInput(),
   ],
