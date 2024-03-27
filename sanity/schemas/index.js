@@ -11,6 +11,7 @@ import logos from "./logos";
 import pricing from "./pricing";
 import testimonials from "./testimonials";
 import faqs from "./faqs";
+import globalImages from "./images";
 import cta from "./cta";
 import awards from "./awards";
 import careers from "./careers";
@@ -25,6 +26,7 @@ const schemaTypes = [
   testimonials,
   faqs,
   cta,
+  globalImages,
   awards,
   landingPage,
   methodPage,
