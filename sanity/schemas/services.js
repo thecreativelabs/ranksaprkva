@@ -69,6 +69,18 @@ export default {
             hotspot: true,
           },
         },
+        {
+          name: "color",
+          title: "Color",
+          type: "string",
+          options: {
+            list: [
+              { title: "Red", value: "#e55447" },
+              { title: "Green", value: "#8AC7C7" },
+              { title: "Yellow", value: "#F0B342" },
+            ],
+          },
+        },
       ],
     },
     // features
