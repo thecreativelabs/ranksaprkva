@@ -1742,58 +1742,58 @@ export interface About extends SanityDocument {
   _type: "about";
 
   /**
-   * Header — `object`
+   * Header — `header`
    *
    *
    */
-  header?: {
-    _type: "header";
+  header?: Header;
+
+  /**
+   * Description — `text`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Hero Image — `image`
+   *
+   *
+   */
+  heroImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+
     /**
-     * Title — `string`
+     * Alternative text — `string`
+     *
+     * Important for SEO and accessiblity.
+     */
+    alt?: string;
+  };
+
+  /**
+   * Sets Us Apart — `object`
+   *
+   *
+   */
+  setsUsApart?: {
+    _type: "setsUsApart";
+    /**
+     * Header — `header`
      *
      *
      */
-    title?: string;
+    header?: Header;
 
     /**
-     * Description — `string`
+     * Body — `blockContent`
      *
      *
      */
-    description?: string;
-
-    /**
-     * Image — `image`
-     *
-     *
-     */
-    image?: {
-      _type: "image";
-      asset: SanityReference<SanityImageAsset>;
-      crop?: SanityImageCrop;
-      hotspot?: SanityImageHotspot;
-
-      /**
-       * Alternative text — `string`
-       *
-       * Important for SEO and accessiblity.
-       */
-      alt?: string;
-    };
-
-    /**
-     * Primary Button — `button`
-     *
-     *
-     */
-    primaryButton?: Button;
-
-    /**
-     * Secondary Button — `button`
-     *
-     *
-     */
-    secondaryButton?: Button;
+    body?: BlockContent;
   };
 
   /**
@@ -2870,59 +2870,18 @@ export interface Vertical extends SanityDocument {
   _type: "vertical";
 
   /**
-   * Meta — `object`
+   * Page Meta — `meta`
    *
    *
    */
-  meta?: {
-    _type: "meta";
-    /**
-     * Name — `string`
-     *
-     *
-     */
-    name?: string;
+  pageMeta?: Meta;
 
-    /**
-     * Icon — `image`
-     *
-     *
-     */
-    icon?: {
-      _type: "image";
-      asset: SanityReference<SanityImageAsset>;
-      crop?: SanityImageCrop;
-      hotspot?: SanityImageHotspot;
-
-      /**
-       * Alt Text — `string`
-       *
-       *
-       */
-      alt?: string;
-    };
-
-    /**
-     * Description — `string`
-     *
-     *
-     */
-    description?: string;
-
-    /**
-     * Type — `string`
-     *
-     *
-     */
-    type?: "industry" | "platform" | "market";
-
-    /**
-     * Slug — `slug`
-     *
-     *
-     */
-    slug?: { _type: "slug"; current: string };
-  };
+  /**
+   * Type — `string`
+   *
+   *
+   */
+  type?: "industry" | "platform" | "market";
 
   /**
    * Main Image — `image`
@@ -3238,6 +3197,13 @@ export interface WhoWeServe extends SanityDocument {
  */
 export interface CaseStudy extends SanityDocument {
   _type: "caseStudy";
+
+  /**
+   * Page Meta — `meta`
+   *
+   *
+   */
+  pageMeta?: Meta;
 
   /**
    * Header Image — `image`
@@ -4040,6 +4006,49 @@ export type Cta = {
    *
    */
   button?: Button;
+};
+
+export type Meta = {
+  _type: "meta";
+  /**
+   * Name — `string`
+   *
+   *
+   */
+  name?: string;
+
+  /**
+   * Icon — `image`
+   *
+   *
+   */
+  icon?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+
+    /**
+     * Alt Text — `string`
+     *
+     *
+     */
+    alt?: string;
+  };
+
+  /**
+   * Description — `string`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Slug — `slug`
+   *
+   *
+   */
+  slug?: { _type: "slug"; current: string };
 };
 
 export type Button = {

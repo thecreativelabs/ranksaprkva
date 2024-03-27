@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "@/components/Container";
 import { GoArrowRight } from "react-icons/go";
-import Page from "./page";
 import Gallery from "./gallery";
 import Growth from "./growth";
 import Mission from "./mission";
@@ -11,6 +10,8 @@ import Howcare from "./howcare";
 import Picture from "./picture";
 import Opening from "./opening";
 import Faq from "./faq";
+import { client } from "@sanity/lib/client";
+import { Careers, JobOpening } from "@/types/sanity";
 
 const data = [
   {
@@ -23,7 +24,12 @@ const data = [
   },
 ];
 
-const Career = () => {
+export default async function Page() {
+  const careers = (await client.fetch(`*[_type == "careers"][0]`)) as Careers;
+  const jobOpenings = (await client.fetch(
+    `*[_type == "jobOpening"]`
+  )) as JobOpening[];
+
   return (
     <>
       <Container>
@@ -50,21 +56,21 @@ const Career = () => {
               </p>
             ))}
           </div>
-            <button className="bg-[#F0B342] mt-10 px-4 rounded text-[#3B0D17] w-[270px] md:w-auto md:h-14 h-14 md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300 relative md:inline-flex inline-flex justify-center">
-              {data.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.path}
-                  className="flex items-center gap-px md:inline-flex md:items-center md:gap-px"
-                >
-                  <span className="text-md md:py-0 px-2 py-2 font-medium cursor-pointer">
-                    {item.text}
-                  </span>
-                  <GoArrowRight className="font-bold" size={25} />
-                </a>
-              ))}
-            </button>
-          </div>
+          <button className="bg-[#F0B342] mt-10 px-4 rounded text-[#3B0D17] w-[270px] md:w-auto md:h-14 h-14 md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300 relative md:inline-flex inline-flex justify-center">
+            {data.map((item, index) => (
+              <a
+                key={index}
+                href={item.path}
+                className="flex items-center gap-px md:inline-flex md:items-center md:gap-px"
+              >
+                <span className="text-md md:py-0 px-2 py-2 font-medium cursor-pointer">
+                  {item.text}
+                </span>
+                <GoArrowRight className="font-bold" size={25} />
+              </a>
+            ))}
+          </button>
+        </div>
       </Container>
       <Gallery />
       <Growth />
@@ -77,6 +83,4 @@ const Career = () => {
       <Faq />
     </>
   );
-};
-
-export default Career;
+}

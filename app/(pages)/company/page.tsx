@@ -9,6 +9,9 @@ import Feedback from "./feedback";
 import Stats from "./stats";
 import Gallery from "./gallery";
 import Strategy from "@/components/Strategy";
+import { client } from "@sanity/lib/client";
+import { About } from "@/types/sanity";
+import { urlForImage } from "@sanity/lib/image";
 
 const data = {
   heading: "PEOPLE-POWERED INNOVATION",
@@ -19,17 +22,28 @@ const data = {
   title: "picture",
 };
 
-const page = () => {
+export default async function Page() {
+  const data = (await client.fetch(`*[_type == "about"][0]{
+    ...,
+    featuredCaseStudy {
+      ...,
+      caseStudy->{
+          ...,
+          awards[]->
+        }
+    }
+  }`)) as About;
+
   return (
     <>
       <Container>
         <div className="mt-20">
           <h1 className="text-[#C42A1C] tracking-widest leading-6 md:text-md lg:text-md mb-6 text-sm font-semibold ">
-            {data.heading}
+            {data.header?.topText}
           </h1>
           <div className="h-auto">
             <p className="md:text-5xl h-auto leading-10 tracking-wide font-medium text-3xl font-tertiary mt-4 text-[#3B0D17] w-auto md:w-[70%]">
-              {data.subheading}
+              {data.header?.title}
             </p>
             <p className="mt-8 tracking-wider text-md md:text-md w-auto md:w-[60%]">
               {data.description}
@@ -37,7 +51,14 @@ const page = () => {
           </div>
         </div>
         <div className="w-auto h-auto flex mt-10 md:mt-16 justify-center items-center">
-          <img src={data.image} alt={data.title} width={1230} height={900} />
+          {data.heroImage && (
+            <img
+              src={urlForImage(data.heroImage)}
+              alt={data.heroImage?.alt}
+              width={1230}
+              height={900}
+            />
+          )}
         </div>
       </Container>
 
@@ -51,6 +72,4 @@ const page = () => {
       <Strategy />
     </>
   );
-};
-
-export default page;
+}

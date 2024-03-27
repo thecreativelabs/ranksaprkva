@@ -8,8 +8,25 @@ import Navbar from "@/components/navbar/Navbar";
 import Topnav from "@/components/navbar/Topnav";
 import Footer from "@/components/Footer";
 import Cta from "@/components/Cta";
+import { client } from "@sanity/lib/client";
+import { CaseStudyLanding } from "@/types/sanity";
 
-export default function Case_study() {
+export default async function Case_study() {
+  const data = (await client.fetch(`*[_type == "caseStudyLanding"][0] {
+    ...,
+    featuredAwards[]->,
+    featuredCaseStudiesSection {
+      ...,
+      featuredCaseStudies[] {
+        ...,
+        caseStudy->{
+          ...,
+          awards[]->
+        }
+      }
+    }
+  }`)) as CaseStudyLanding;
+
   return (
     <>
       <HeroSection />

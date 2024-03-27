@@ -11,46 +11,43 @@ export default defineType({
     {
       name: "header",
       title: "Header",
+      type: "header",
+    },
+    {
+      name: "description",
+      title: "Description",
+      type: "text",
+    },
+    {
+      name: "heroImage",
+      title: "Hero Image",
+      type: "image",
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative text",
+          description: "Important for SEO and accessiblity.",
+        },
+      ],
+    },
+    {
+      name: "setsUsApart",
+      title: "Sets Us Apart",
       type: "object",
       options: {
         collapsible: true,
       },
       fields: [
         {
-          name: "title",
-          title: "Title",
-          type: "string",
+          name: "header",
+          title: "Header",
+          type: "header",
         },
         {
-          name: "description",
-          title: "Description",
-          type: "string",
-        },
-        {
-          name: "image",
-          title: "Image",
-          type: "image",
-          fields: [
-            {
-              name: "alt",
-              type: "string",
-              title: "Alternative text",
-              description: "Important for SEO and accessiblity.",
-            },
-          ],
-          options: {
-            hotspot: true,
-          },
-        },
-        {
-          name: "primaryButton",
-          title: "Primary Button",
-          type: "button",
-        },
-        {
-          name: "secondaryButton",
-          title: "Secondary Button",
-          type: "button",
+          name: "body",
+          title: "Body",
+          type: "blockContent",
         },
       ],
     },

@@ -1,4 +1,3 @@
-"use client";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import HeroSection from "@/components/whoWeServe/Individual/Hero";
@@ -15,18 +14,23 @@ import Learn from "@/components/whoWeServe/Individual/Learn";
 import Banner from "@/components/whoWeServe/Individual/Banner";
 import Testimonial from "@/components/whoWeServe/Individual/Testimonial";
 import QandA from "@/components/whoWeServe/Individual/QandA";
-export default function Individual() {
-  const pathname = usePathname();
-  const [individual, setIndividual] = useState("");
+import { client } from "@sanity/lib/client";
+import { Vertical } from "@/types/sanity";
 
-  useEffect(() => {
-    const segments = pathname?.split("/");
-    if (segments) {
-      if (segments.length >= 3) {
-        setIndividual(segments[2]);
-      }
+export default async function Individual({
+  params,
+}: {
+  params: { individual: string };
+}) {
+  const slug = params.individual;
+
+  const data = (await client.fetch(
+    `*[_type == "vertical" && pageMeta.slug.current == $slug][0]`,
+    {
+      slug,
     }
-  }, [pathname]);
+  )) as Vertical | null;
+
   return (
     <div>
       <HeroSection />

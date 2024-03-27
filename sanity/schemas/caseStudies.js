@@ -6,6 +6,11 @@ export default defineType({
   type: "document",
   fields: [
     defineField({
+      name: "pageMeta",
+      title: "Page Meta",
+      type: "meta",
+    }),
+    defineField({
       name: "headerImage",
       title: "Header Image",
       type: "image",

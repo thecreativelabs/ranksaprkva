@@ -8,7 +8,25 @@ import SearchAndGrowth from "@/components/methods/searchAndGrowth";
 import Framework from "@/components/methods/seo/framework";
 import Help from "@/components/Cta";
 import Cta from "@/components/Cta";
-export default function Methods() {
+import { client } from "@sanity/lib/client";
+import { MethodPage } from "@/types/sanity";
+
+export default async function Methods() {
+  const data = (await client.fetch(`*[_type == "methodPage"][0] {
+    ...,
+    section5 {
+      ...,
+      logo->,
+      caseStudiesCarousel[] {
+        ...,
+        caseStudy->{
+          ...,
+          awards[]->
+        }
+      }
+    }
+  }`)) as MethodPage;
+
   return (
     <>
       <Hero />

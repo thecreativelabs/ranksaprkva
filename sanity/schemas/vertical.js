@@ -21,57 +21,17 @@ export default defineType({
   type: "document",
   fields: [
     {
-      name: "meta",
-      title: "Meta",
-      type: "object",
+      name: "pageMeta",
+      title: "Page Meta",
+      type: "meta",
+    },
+    {
+      name: "type",
+      title: "Type",
+      type: "string",
       options: {
-        collapsible: true,
+        list: TYPES,
       },
-      fields: [
-        {
-          name: "name",
-          title: "Name",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          name: "icon",
-          title: "Icon",
-          type: "image",
-          fields: [
-            {
-              name: "alt",
-              title: "Alt Text",
-              type: "string",
-              options: {
-                isHighlighted: true,
-              },
-            },
-          ],
-        },
-        {
-          name: "description",
-          title: "Description",
-          type: "string",
-        },
-        {
-          name: "type",
-          title: "Type",
-          type: "string",
-          options: {
-            list: TYPES,
-          },
-        },
-        {
-          name: "slug",
-          title: "Slug",
-          type: "slug",
-          options: {
-            source: "name",
-          },
-          validation: (Rule) => Rule.required(),
-        },
-      ],
     },
     {
       name: "mainImage",

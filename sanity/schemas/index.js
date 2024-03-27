@@ -26,6 +26,7 @@ import author from "./author";
 import blogLandingPage from "./blogLandingPage";
 import vertical from "./vertical";
 import whoWeServe from "./whoWeServe";
+import meta from "./meta";
 
 const schemaTypes = [
   // components
@@ -53,6 +54,7 @@ const schemaTypes = [
   blogLandingPage,
   vertical,
   whoWeServe,
+  meta,
 
   caseStudies,
   marketingSolutions,

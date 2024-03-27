@@ -11,27 +11,30 @@ const data = [
     author: "By Alyssa Bailey",
     logo: "https://cdn.shortpixel.ai/spai/q_glossy+w_45+to_auto+ret_img/victorious.com/wp-content/uploads/2023/12/alyssa_square-96x96.jpg",
   },
-//   {
-//     src: "https://cdn.shortpixel.ai/spai/q_glossy+w_390+to_auto+ret_img/victorious.com/wp-content/uploads/2024/03/gsc-indexing-errors-cover.jpg",
-//     alt: "cover",
-//     discription:
-//       "Google Search Console is a helpful tool that not only shows you how often your pages appear in search and for what queries. It also allows you to",
-//     title: "How To Fix Search Console Indexing Errors",
-//     author: "By Alyssa Bailey",
-//     logo: "https://cdn.shortpixel.ai/spai/q_glossy+w_45+to_auto+ret_img/victorious.com/wp-content/uploads/2023/12/alyssa_square-96x96.jpg",
-//   },
-//   {
-//     src: "https://cdn.shortpixel.ai/spai/q_glossy+w_390+to_auto+ret_img/victorious.com/wp-content/uploads/2024/03/gsc-indexing-errors-cover.jpg",
-//     alt: "cover",
-//     discription:
-//       "Google Search Console is a helpful tool that not only shows you how often your pages appear in search and for what queries. It also allows you to",
-//     title: "How To Fix Search Console Indexing Errors",
-//     author: "By Alyssa Bailey",
-//     logo: "https://cdn.shortpixel.ai/spai/q_glossy+w_45+to_auto+ret_img/victorious.com/wp-content/uploads/2023/12/alyssa_square-96x96.jpg",
-//   },
+  //   {
+  //     src: "https://cdn.shortpixel.ai/spai/q_glossy+w_390+to_auto+ret_img/victorious.com/wp-content/uploads/2024/03/gsc-indexing-errors-cover.jpg",
+  //     alt: "cover",
+  //     discription:
+  //       "Google Search Console is a helpful tool that not only shows you how often your pages appear in search and for what queries. It also allows you to",
+  //     title: "How To Fix Search Console Indexing Errors",
+  //     author: "By Alyssa Bailey",
+  //     logo: "https://cdn.shortpixel.ai/spai/q_glossy+w_45+to_auto+ret_img/victorious.com/wp-content/uploads/2023/12/alyssa_square-96x96.jpg",
+  //   },
+  //   {
+  //     src: "https://cdn.shortpixel.ai/spai/q_glossy+w_390+to_auto+ret_img/victorious.com/wp-content/uploads/2024/03/gsc-indexing-errors-cover.jpg",
+  //     alt: "cover",
+  //     discription:
+  //       "Google Search Console is a helpful tool that not only shows you how often your pages appear in search and for what queries. It also allows you to",
+  //     title: "How To Fix Search Console Indexing Errors",
+  //     author: "By Alyssa Bailey",
+  //     logo: "https://cdn.shortpixel.ai/spai/q_glossy+w_45+to_auto+ret_img/victorious.com/wp-content/uploads/2023/12/alyssa_square-96x96.jpg",
+  //   },
 ];
 
-const SlugPage = () => {
+export default async function Page({ params }: {params: {page: string}}) {
+
+  const slug = 
+
   return (
     <main className="mt-16 mb-16">
       <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 lg:gap-24">
@@ -75,6 +78,4 @@ const SlugPage = () => {
       </ul>
     </main>
   );
-};
-
-export default SlugPage;
+}

@@ -1,9 +1,9 @@
-"use client";
-
 import React from "react";
 import Container from "@/components/Container";
 import Contactform from "./contactform";
 import { Icon } from "next/dist/lib/metadata/types/metadata-types";
+import { client } from "@sanity/lib/client";
+import { Contact } from "@/types/sanity";
 
 const contact = {
   header: "Get in touch.",
@@ -15,7 +15,9 @@ const contact = {
   w3ckey: "your_web3forms_access_key_here",
 };
 
-const Contact = () => {
+export default async function Page() {
+  const data = (await client.fetch(`*[_type == "contact"][0]`)) as Contact;
+
   return (
     <Container>
       <div className="grid md:grid-cols-2 gap-10 mx-auto max-w-6xl mt-16">
@@ -150,6 +152,4 @@ const Contact = () => {
       </div>
     </Container>
   );
-};
-
-export default Contact;
+}
