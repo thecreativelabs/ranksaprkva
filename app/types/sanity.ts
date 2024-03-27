@@ -366,36 +366,6 @@ export interface Pricing extends SanityDocument {
 }
 
 /**
- * CTA
- *
- *
- */
-export interface Cta extends SanityDocument {
-  _type: "cta";
-
-  /**
-   * Heading — `string`
-   *
-   *
-   */
-  heading?: string;
-
-  /**
-   * Sub Heading — `string`
-   *
-   *
-   */
-  subHeading?: string;
-
-  /**
-   * CTA Button — `button`
-   *
-   *
-   */
-  button?: Button;
-}
-
-/**
  * Job Opening
  *
  *
@@ -2554,6 +2524,344 @@ export interface PrivacyPolicy extends SanityDocument {
 }
 
 /**
+ * Contact Page
+ *
+ *
+ */
+export interface Contact extends SanityDocument {
+  _type: "contact";
+
+  /**
+   * Heading — `string`
+   *
+   *
+   */
+  heading?: string;
+
+  /**
+   * Description — `text`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Address — `object`
+   *
+   *
+   */
+  address?: {
+    _type: "address";
+    /**
+     * Text — `string`
+     *
+     *
+     */
+    text?: string;
+
+    /**
+     * Link — `string`
+     *
+     *
+     */
+    link?: string;
+  };
+
+  /**
+   * Contact Info — `object`
+   *
+   *
+   */
+  contactInfo?: {
+    _type: "contactInfo";
+    /**
+     * Email — `object`
+     *
+     *
+     */
+    email?: {
+      _type: "email";
+      /**
+       * Text — `string`
+       *
+       *
+       */
+      text?: string;
+
+      /**
+       * Link — `string`
+       *
+       *
+       */
+      link?: string;
+    };
+
+    /**
+     * Phone — `object`
+     *
+     *
+     */
+    phone?: {
+      _type: "phone";
+      /**
+       * Text — `string`
+       *
+       *
+       */
+      text?: string;
+
+      /**
+       * Link — `string`
+       *
+       *
+       */
+      link?: string;
+    };
+  };
+}
+
+/**
+ * Article
+ *
+ *
+ */
+export interface Article extends SanityDocument {
+  _type: "article";
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * Slug — `slug`
+   *
+   *
+   */
+  slug?: { _type: "slug"; current: string };
+
+  /**
+   * Author — `reference`
+   *
+   *
+   */
+  author?: SanityReference<Author>;
+
+  /**
+   * Cover Image — `image`
+   *
+   *
+   */
+  coverImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+
+    /**
+     * Alternative text — `string`
+     *
+     * Important for SEO and accessiblity.
+     */
+    alt?: string;
+  };
+
+  /**
+   * Published At — `datetime`
+   *
+   *
+   */
+  publishedAt?: string;
+
+  /**
+   * Overview — `text`
+   *
+   *
+   */
+  overview?: string;
+
+  /**
+   * Tags — `array`
+   *
+   *
+   */
+  tags?: Array<SanityKeyed<string>>;
+
+  /**
+   * Reading Time — `string`
+   *
+   *
+   */
+  readingTime?: string;
+
+  /**
+   * Body — `object`
+   *
+   *
+   */
+  body?: {
+    _type: "body";
+    /**
+     * Sections — `array`
+     *
+     *
+     */
+    sections?: Array<
+      SanityKeyed<{
+        _type: "section";
+        /**
+         * Title — `string`
+         *
+         *
+         */
+        title?: string;
+
+        /**
+         * Content — `blockContent`
+         *
+         *
+         */
+        content?: BlockContent;
+      }>
+    >;
+  };
+}
+
+/**
+ * Author
+ *
+ *
+ */
+export interface Author extends SanityDocument {
+  _type: "author";
+
+  /**
+   * Name — `string`
+   *
+   *
+   */
+  name?: string;
+
+  /**
+   * Socials — `array`
+   *
+   *
+   */
+  socials?: Array<
+    SanityKeyed<{
+      /**
+       * Name — `string`
+       *
+       *
+       */
+      name?: "twitter" | "linkedin" | "github";
+
+      /**
+       * URL — `url`
+       *
+       *
+       */
+      url?: string;
+    }>
+  >;
+
+  /**
+   * Bio — `text`
+   *
+   *
+   */
+  bio?: string;
+
+  /**
+   * Image — `image`
+   *
+   *
+   */
+  image?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+}
+
+/**
+ * Blog Landing Page
+ *
+ *
+ */
+export interface BlogLandingPage extends SanityDocument {
+  _type: "blogLandingPage";
+
+  /**
+   * Heading — `string`
+   *
+   *
+   */
+  heading?: string;
+
+  /**
+   * Description — `text`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Featured Blogs — `array`
+   *
+   *
+   */
+  featuredBlogs?: Array<SanityKeyedReference<Article>>;
+
+  /**
+   * Popular Resource Blogs — `object`
+   *
+   *
+   */
+  popularResourceBlogs?: {
+    _type: "popularResourceBlogs";
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string;
+
+    /**
+     * Blogs — `array`
+     *
+     *
+     */
+    blogs?: Array<SanityKeyedReference<Article>>;
+  };
+
+  /**
+   * Link Building Blogs — `object`
+   *
+   *
+   */
+  linkBuildingBlogs?: {
+    _type: "linkBuildingBlogs";
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string;
+
+    /**
+     * Blogs — `array`
+     *
+     *
+     */
+    blogs?: Array<SanityKeyedReference<Article>>;
+  };
+}
+
+/**
  * Case Study
  *
  *
@@ -3340,6 +3648,30 @@ export type Faqs = {
   closeable?: boolean;
 };
 
+export type Cta = {
+  _type: "cta";
+  /**
+   * Heading — `string`
+   *
+   *
+   */
+  heading?: string;
+
+  /**
+   * Sub Heading — `string`
+   *
+   *
+   */
+  subHeading?: string;
+
+  /**
+   * CTA Button — `button`
+   *
+   *
+   */
+  button?: Button;
+};
+
 export type Button = {
   _type: "button";
   /**
@@ -3398,7 +3730,6 @@ export type Documents =
   | Settings
   | Logos
   | Pricing
-  | Cta
   | JobOpening
   | Award
   | LandingPage
@@ -3408,6 +3739,10 @@ export type Documents =
   | Careers
   | TermsAndConditions
   | PrivacyPolicy
+  | Contact
+  | Article
+  | Author
+  | BlogLandingPage
   | CaseStudy
   | MarketingSolutions
   | Services;

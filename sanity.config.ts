@@ -20,6 +20,8 @@ import methodPage from "./sanity/schemas/methodPage";
 import caseStudyLanding from "@sanity/schemas/caseStudyLanding";
 import termsAndConditions from "@sanity/schemas/termsAndConditions";
 import privacyPolicy from "@sanity/schemas/privacyPolicy";
+import contact from "@sanity/schemas/contact";
+import blogLandingPage from "@sanity/schemas/blogLandingPage";
 
 export default defineConfig({
   name: "rankspark2",
@@ -40,6 +42,8 @@ export default defineConfig({
         caseStudyLanding,
         termsAndConditions,
         privacyPolicy,
+        contact,
+        blogLandingPage,
       ]),
     }),
     visionTool(),
@@ -51,6 +55,8 @@ export default defineConfig({
       "termsAndConditions",
       "privacyPolicy",
       "careers",
+      "contact",
+      "blogLandingPage",
     ]),
     table(),
     codeInput(),

@@ -20,6 +20,10 @@ import about from "./about";
 import methodPage from "./methodPage";
 import termsAndConditions from "./termsAndConditions";
 import privacyPolicy from "./privacyPolicy";
+import contact from "./contact";
+import article from "./article";
+import author from "./author";
+import blogLandingPage from "./blogLandingPage";
 
 const schemaTypes = [
   // components
@@ -41,6 +45,10 @@ const schemaTypes = [
   careers,
   termsAndConditions,
   privacyPolicy,
+  contact,
+  article,
+  author,
+  blogLandingPage,
 
   caseStudies,
   marketingSolutions,
