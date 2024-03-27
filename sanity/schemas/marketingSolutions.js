@@ -53,8 +53,7 @@ export default {
         {
           name: "button",
           title: "Button",
-          type: "reference",
-          to: [{ type: "button" }],
+          type: "button",
         },
       ],
     },
@@ -108,8 +107,7 @@ export default {
             {
               name: "button",
               title: "Button",
-              type: "reference",
-              to: [{ type: "button" }],
+              type: "button",
               hidden: ({ parent }) => parent?.type !== "ctaButton",
             },
             {

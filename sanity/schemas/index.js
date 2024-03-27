@@ -1,4 +1,5 @@
 import category from "./category";
+import header from "./header";
 import settings from "./settings";
 import blockContent from "./blockContent";
 import caseStudies from "./caseStudies";
@@ -11,14 +12,19 @@ import logos from "./logos";
 import pricing from "./pricing";
 import testimonials from "./testimonials";
 import faqs from "./faqs";
-import globalImages from "./images";
+import jobOpenings from "./jobOpenings";
 import cta from "./cta";
 import awards from "./awards";
 import careers from "./careers";
 import about from "./about";
 import methodPage from "./methodPage";
+import termsAndConditions from "./termsAndConditions";
+import privacyPolicy from "./privacyPolicy";
 
 const schemaTypes = [
+  // components
+  header,
+
   // category,
   settings,
   logos,
@@ -26,13 +32,15 @@ const schemaTypes = [
   testimonials,
   faqs,
   cta,
-  globalImages,
+  jobOpenings,
   awards,
   landingPage,
   methodPage,
   caseStudyLanding,
   about,
   careers,
+  termsAndConditions,
+  privacyPolicy,
 
   caseStudies,
   marketingSolutions,

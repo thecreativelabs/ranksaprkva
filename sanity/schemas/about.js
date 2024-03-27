@@ -45,14 +45,12 @@ export default defineType({
         {
           name: "primaryButton",
           title: "Primary Button",
-          type: "reference",
-          to: [{ type: "button" }],
+          type: "button",
         },
         {
           name: "secondaryButton",
           title: "Secondary Button",
-          type: "reference",
-          to: [{ type: "button" }],
+          type: "button",
         },
       ],
     },
@@ -158,14 +156,9 @@ export default defineType({
       },
       fields: [
         defineField({
-          name: "topText",
-          title: "Top Text",
-          type: "string",
-        }),
-        defineField({
-          name: "heading",
-          title: "Heading",
-          type: "string",
+          name: "header",
+          title: "Header",
+          type: "header",
         }),
         defineField({
           name: "body",
@@ -231,24 +224,70 @@ export default defineType({
     defineField({
       name: "testimonials",
       title: "Testimonials",
-      type: "reference",
-      to: [{ type: "testimonials" }],
+      type: "testimonials",
     }),
 
     // Featured Case Study
     defineField({
       name: "featuredCaseStudy",
       title: "Featured Case Study",
-      type: "reference",
-      to: [{ type: "caseStudy" }],
+      type: "object",
+      fields: [
+        defineField({
+          name: "heading",
+          title: "Heading",
+          type: "string",
+        }),
+        defineField({
+          name: "cta",
+          title: "CTA",
+          type: "button",
+        }),
+        defineField({
+          name: "caseStudy",
+          title: "Case Study",
+          type: "reference",
+          to: [{ type: "caseStudy" }],
+        }),
+      ],
     }),
 
     // Gallery
     defineField({
       name: "images",
       title: "Images",
-      type: "array",
-      of: [{ type: "globalImages" }],
+      type: "object",
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        defineField({
+          name: "heading",
+          title: "Heading",
+          type: "string",
+        }),
+        defineField({
+          name: "images",
+          title: "Images",
+          type: "array",
+          of: [
+            {
+              type: "image",
+              fields: [
+                {
+                  name: "alt",
+                  type: "string",
+                  title: "Alternative text",
+                  description: "Important for SEO and accessiblity.",
+                },
+              ],
+              options: {
+                hotspot: true,
+              },
+            },
+          ],
+        }),
+      ],
     }),
 
     // Custom Strategy Section

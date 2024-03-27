@@ -6,14 +6,9 @@ export default defineType({
   type: "document",
   fields: [
     defineField({
-      name: "topText",
-      title: "Top Text",
-      type: "string",
-    }),
-    defineField({
-      name: "title",
-      title: "Title",
-      type: "string",
+      name: "header",
+      title: "Header",
+      type: "header",
     }),
     defineField({
       name: "description",
@@ -101,14 +96,9 @@ export default defineType({
       },
       fields: [
         defineField({
-          name: "topText",
-          title: "Top Text",
-          type: "string",
-        }),
-        defineField({
-          name: "heading",
-          title: "Heading",
-          type: "string",
+          name: "header",
+          title: "Header",
+          type: "header",
         }),
         defineField({
           name: "description",
@@ -139,8 +129,7 @@ export default defineType({
     defineField({
       name: "faqSection",
       title: "FAQ Section",
-      type: "reference",
-      to: [{ type: "faqs" }],
+      type: "faqs",
     }),
   ],
 });

@@ -4,7 +4,7 @@ import { defineType } from "sanity";
 export default defineType({
   name: "faqs",
   title: "FAQs",
-  type: "document",
+  type: "object",
   icon: DocumentTextIcon,
   fields: [
     {
@@ -39,5 +39,14 @@ export default defineType({
         },
       ],
     },
+    {
+      name: "closeable",
+      title: "Closeable",
+      type: "boolean",
+    },
   ],
+
+  initialValue: {
+    closeable: true,
+  },
 });

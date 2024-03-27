@@ -16,14 +16,9 @@ export default defineType({
       },
       fields: [
         defineField({
-          name: "topText",
-          title: "Top Text",
-          type: "string",
-        }),
-        defineField({
-          name: "title",
-          title: "Title",
-          type: "string",
+          name: "header",
+          title: "Header",
+          type: "header",
         }),
         defineField({
           name: "description",
@@ -84,8 +79,7 @@ export default defineType({
             defineField({
               name: "cta",
               title: "CTA",
-              type: "reference",
-              to: [{ type: "cta" }],
+              type: "cta",
             }),
           ],
         }),
@@ -151,14 +145,9 @@ export default defineType({
           },
           fields: [
             defineField({
-              name: "topText",
-              title: "Top Text",
-              type: "string",
-            }),
-            defineField({
-              name: "title",
-              title: "Title",
-              type: "string",
+              name: "header",
+              title: "Header",
+              type: "header",
             }),
             defineField({
               name: "mainImage",
@@ -324,14 +313,9 @@ export default defineType({
       },
       fields: [
         defineField({
-          name: "topText",
-          title: "Top Text",
-          type: "string",
-        }),
-        defineField({
-          name: "title",
-          title: "Title",
-          type: "string",
+          name: "header",
+          title: "Header",
+          type: "header",
         }),
         defineField({
           name: "featureCards",
@@ -368,8 +352,7 @@ export default defineType({
                 defineField({
                   name: "cta",
                   title: "CTA",
-                  type: "reference",
-                  to: [{ type: "cta" }],
+                  type: "cta",
                 }),
               ],
             }),
@@ -429,8 +412,7 @@ export default defineType({
         defineField({
           name: "cta",
           title: "CTA",
-          type: "reference",
-          to: [{ type: "cta" }],
+          type: "cta",
         }),
       ],
     }),
@@ -609,8 +591,7 @@ export default defineType({
         defineField({
           name: "cta",
           title: "CTA",
-          type: "reference",
-          to: [{ type: "cta" }],
+          type: "cta",
         }),
       ],
     }),
