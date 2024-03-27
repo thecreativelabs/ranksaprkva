@@ -24,6 +24,8 @@ import contact from "./contact";
 import article from "./article";
 import author from "./author";
 import blogLandingPage from "./blogLandingPage";
+import vertical from "./vertical";
+import whoWeServe from "./whoWeServe";
 
 const schemaTypes = [
   // components
@@ -49,6 +51,8 @@ const schemaTypes = [
   article,
   author,
   blogLandingPage,
+  vertical,
+  whoWeServe,
 
   caseStudies,
   marketingSolutions,

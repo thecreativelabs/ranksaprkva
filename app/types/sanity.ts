@@ -2862,6 +2862,376 @@ export interface BlogLandingPage extends SanityDocument {
 }
 
 /**
+ * Vertical
+ *
+ *
+ */
+export interface Vertical extends SanityDocument {
+  _type: "vertical";
+
+  /**
+   * Meta — `object`
+   *
+   *
+   */
+  meta?: {
+    _type: "meta";
+    /**
+     * Name — `string`
+     *
+     *
+     */
+    name?: string;
+
+    /**
+     * Icon — `image`
+     *
+     *
+     */
+    icon?: {
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+
+      /**
+       * Alt Text — `string`
+       *
+       *
+       */
+      alt?: string;
+    };
+
+    /**
+     * Description — `string`
+     *
+     *
+     */
+    description?: string;
+
+    /**
+     * Type — `string`
+     *
+     *
+     */
+    type?: "industry" | "platform" | "market";
+
+    /**
+     * Slug — `slug`
+     *
+     *
+     */
+    slug?: { _type: "slug"; current: string };
+  };
+
+  /**
+   * Main Image — `image`
+   *
+   *
+   */
+  mainImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+
+    /**
+     * Alt Text — `string`
+     *
+     *
+     */
+    alt?: string;
+  };
+
+  /**
+   * Header — `header`
+   *
+   *
+   */
+  header?: Header;
+
+  /**
+   * Top Companies — `array`
+   *
+   *
+   */
+  topCompanies?: Array<
+    SanityKeyed<{
+      _type: "company";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+
+      /**
+       * Alt Text — `string`
+       *
+       *
+       */
+      alt?: string;
+    }>
+  >;
+
+  /**
+   * Features Section — `object`
+   *
+   *
+   */
+  featuresSection?: {
+    _type: "featuresSection";
+    /**
+     * Header — `header`
+     *
+     *
+     */
+    header?: Header;
+
+    /**
+     * Description — `text`
+     *
+     *
+     */
+    description?: string;
+
+    /**
+     * Features — `array`
+     *
+     *
+     */
+    features?: Array<
+      SanityKeyed<{
+        _type: "feature";
+        /**
+         * Icon — `image`
+         *
+         *
+         */
+        icon?: {
+          _type: "image";
+          asset: SanityReference<SanityImageAsset>;
+          crop?: SanityImageCrop;
+          hotspot?: SanityImageHotspot;
+
+          /**
+           * Alt Text — `string`
+           *
+           *
+           */
+          alt?: string;
+        };
+
+        /**
+         * Title — `string`
+         *
+         *
+         */
+        title?: string;
+
+        /**
+         * Description — `text`
+         *
+         *
+         */
+        description?: string;
+      }>
+    >;
+  };
+
+  /**
+   * Hero Section — `object`
+   *
+   *
+   */
+  heroSection?: {
+    _type: "heroSection";
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string;
+
+    /**
+     * Description — `blockContent`
+     *
+     *
+     */
+    description?: BlockContent;
+
+    /**
+     * Main Image — `image`
+     *
+     *
+     */
+    mainImage?: {
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+
+      /**
+       * Alt Text — `string`
+       *
+       *
+       */
+      alt?: string;
+    };
+  };
+
+  /**
+   * Featured Case Study — `object`
+   *
+   *
+   */
+  featuredCaseStudy?: {
+    _type: "featuredCaseStudy";
+    /**
+     * Title — `string`
+     *
+     *
+     */
+    title?: string;
+
+    /**
+     * Case Study — `reference`
+     *
+     *
+     */
+    caseStudy?: SanityReference<CaseStudy>;
+  };
+
+  /**
+   * Feature Section — `object`
+   *
+   *
+   */
+  featureSection?: {
+    _type: "featureSection";
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string;
+
+    /**
+     * Description — `blockContent`
+     *
+     *
+     */
+    description?: BlockContent;
+
+    /**
+     * Features — `array`
+     *
+     *
+     */
+    features?: Array<
+      SanityKeyed<{
+        _type: "feature";
+        /**
+         * Title — `string`
+         *
+         *
+         */
+        title?: string;
+
+        /**
+         * Description — `text`
+         *
+         *
+         */
+        description?: string;
+      }>
+    >;
+  };
+
+  /**
+   * CTA — `object`
+   *
+   *
+   */
+  cta?: {
+    _type: "cta";
+    /**
+     * Title — `string`
+     *
+     *
+     */
+    title?: string;
+
+    /**
+     * Description — `text`
+     *
+     *
+     */
+    description?: string;
+
+    /**
+     * Button — `button`
+     *
+     *
+     */
+    button?: Button;
+
+    /**
+     * Image — `image`
+     *
+     *
+     */
+    image?: {
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+
+      /**
+       * Alt Text — `string`
+       *
+       *
+       */
+      alt?: string;
+    };
+  };
+
+  /**
+   * Testimonial Section — `testimonials`
+   *
+   *
+   */
+  testimonials?: Testimonials;
+
+  /**
+   * FAQs — `faqs`
+   *
+   *
+   */
+  faqs?: Faqs;
+}
+
+/**
+ * Who We Serve
+ *
+ *
+ */
+export interface WhoWeServe extends SanityDocument {
+  _type: "whoWeServe";
+
+  /**
+   * Header — `header`
+   *
+   *
+   */
+  header?: Header;
+
+  /**
+   * Description — `text`
+   *
+   *
+   */
+  description?: string;
+}
+
+/**
  * Case Study
  *
  *
@@ -3743,6 +4113,8 @@ export type Documents =
   | Article
   | Author
   | BlogLandingPage
+  | Vertical
+  | WhoWeServe
   | CaseStudy
   | MarketingSolutions
   | Services;
