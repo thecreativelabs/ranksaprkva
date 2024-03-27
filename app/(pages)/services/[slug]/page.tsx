@@ -21,18 +21,54 @@ export default async function CaseStudyIndividual({
     slug: string;
   };
 }) {
-  console.log(params);
   const page =
     await client.fetch(`*[_type == "services" && slug.current == "${params.slug}" ] {
-    ...
-  }[0]`);
-  console.log(page);
+      header {
+        title,
+        heading,
+        description,
+        mainImage {asset->{url}, alt},
+        color
+      },
+      features {
+        grid {
+          title,
+          heading,
+          description,        
+          grid[] {title,description},
+        },
+        bulletList {
+          heading,
+          description,
+          list[],
+          image{asset->{url}, alt},
+        },
+        numberList {
+          heading,
+          description,
+          list[] {
+            title, description,
+          },
+        },
+      },
+      cta {
+        heading,
+        description,
+        button->{text, path},
+        image {asset->{url}, alt},
+      },
+      faqs {
+        title,
+        faqs[] { question, answer }
+      },
+    }[0]`);
+  // console.log(page);
   if (!page) return <></>;
   return (
     <>
-      <HeroCaseIndividual />
+      <HeroCaseIndividual {...page.header} />
       <Brands />
-      <CaseStudyConsulting />
+      <CaseStudyConsulting {...page.features.grid} />
       <Services />
       <AdditonalService />
       <ServiceSlider />
