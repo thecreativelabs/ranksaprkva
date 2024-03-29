@@ -31,7 +31,7 @@ const data = [
   //   },
 ];
 
-export default async function Page({ params }: { params: { page: string } }) {
+export default async function Page({ params }: { params?: { page: string } }) {
   // const slug =
 
   return (
