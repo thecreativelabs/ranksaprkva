@@ -13,7 +13,7 @@ const menuitems = [
   },
   {
     title: "Services",
-    path: "/services",
+    path: "/services/seo-services",
     // children: marketingSolutions?.map((solution) => ({
     //   title: solution.title,
     //   path: "/marketing-solutions/" + solution.slug.current,

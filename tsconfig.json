@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -22,15 +18,9 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./app/*"
-      ],
-      "@components/*": [
-        "./app/components/*"
-      ],
-      "@sanity/*": [
-        "./sanity/*"
-      ]
+      "@/*": ["./app/*"],
+      "@components/*": ["./app/components/*"],
+      "@sanity/*": ["./sanity/*"]
     },
     "target": "ES2017"
   },
@@ -46,9 +36,8 @@
     "app/components/whoWeServe/serveCards.tsx",
     "sanity/plugins/settings.jsx",
     "app/components/PortableText.jsx",
-    "sanity/schemas/methodPage.js"
+    "sanity/schemas/methodPage.js",
+    "app/components/navbar/RadixNavbar.jsx"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

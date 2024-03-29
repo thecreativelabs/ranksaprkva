@@ -29,7 +29,8 @@ export default defineType({
         {
           name: "button",
           title: "Button",
-          type: "button",
+          type: "reference",
+          to: [{ type: "button" }],
         },
         {
           name: "mainImage",
@@ -120,7 +121,8 @@ export default defineType({
         {
           name: "button",
           title: "Button",
-          type: "button",
+          type: "reference",
+          to: [{ type: "button" }],
         },
         {
           name: "image",
@@ -170,7 +172,8 @@ export default defineType({
                 {
                   name: "button",
                   title: "Button",
-                  type: "button",
+                  type: "reference",
+                  to: [{ type: "button" }],
                 },
               ],
             },
@@ -258,7 +261,8 @@ export default defineType({
         {
           name: "button",
           title: "Button",
-          type: "button",
+          type: "reference",
+          to: [{ type: "button" }],
         },
         {
           name: "image",

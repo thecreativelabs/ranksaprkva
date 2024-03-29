@@ -64,6 +64,7 @@ export default async function Home() {
       }
     }
   }[0]`);
+  // console.log(page.header);
   if (!page) return <></>;
 
   return (

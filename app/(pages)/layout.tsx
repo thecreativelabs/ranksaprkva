@@ -6,6 +6,7 @@ import Topnav from "@/components/navbar/Topnav";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/Footer";
 import Cta from "@/components/Cta";
+import RadixNavbar from "@/components/navbar/RadixNavbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <Topnav />
+        {/* <RadixNavbar /> */}
         <Navbar />
         {children}
         <Cta />
