@@ -17,6 +17,10 @@ import QandA from "@/components/whoWeServe/Individual/QandA";
 import { client } from "@sanity/lib/client";
 import { Vertical } from "@/types/sanity";
 
+import Growth from "@components/ui/icons/Growth";
+import Task from "@components/ui/icons/taskList";
+import Search from "@components/ui/icons/search";
+
 export default async function Individual({
   params,
 }: {
@@ -31,11 +35,13 @@ export default async function Individual({
     }
   )) as Vertical | null;
 
+  const icons = [<Growth key={0} />, <Task key={1} />, <Search key={2} />];
+
   return (
     <div>
       <HeroSection />
       <Brands />
-      <Consulting />
+      <Consulting icons={icons} />
       <Marketing />
       <div className="bg-gray py-[70px]">
         <Container>

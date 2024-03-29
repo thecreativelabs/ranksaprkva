@@ -515,12 +515,6 @@ export default defineType({
           type: "string",
         }),
         defineField({
-          name: "logo",
-          title: "Logo",
-          type: "reference",
-          to: [{ type: "logos" }],
-        }),
-        defineField({
           name: "caseStudiesCarousel",
           title: "Case Studies Carousel",
           type: "array",

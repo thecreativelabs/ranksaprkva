@@ -13,6 +13,7 @@ import ServiceLearn from "@/components/services/learn";
 import ServiceBanner from "@/components/services/banner";
 import ServiceQandA from "@/components/services/QandA";
 import { client } from "@sanity/lib/client";
+import Faq from "@/components/Faq";
 
 export default async function CaseStudyIndividual({
   params,
@@ -42,7 +43,7 @@ export default async function CaseStudyIndividual({
           description,
           list[],
           image{asset->{url}, alt},
-        },
+        }[],
         numberList {
           heading,
           description,
@@ -69,13 +70,18 @@ export default async function CaseStudyIndividual({
       <HeroCaseIndividual {...page.header} />
       <Brands />
       <CaseStudyConsulting {...page.features.grid} />
+
+      {/* Pricing */}
       <Services />
       <AdditonalService />
       <ServiceSlider />
-      <ServiceMarketing />
-      <ServiceLearn />
-      <ServiceBanner />
-      <ServiceQandA />
+      {/* Pricing */}
+
+      <ServiceMarketing data={page.features.bulletList} />
+      <ServiceLearn data={page.features.numberList} />
+      <ServiceBanner data={page.cta} />
+      <Faq {...page.faqs} />
+      {/* <ServiceQandA /> */}
     </>
   );
 }

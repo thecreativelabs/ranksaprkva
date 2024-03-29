@@ -139,43 +139,48 @@ export default {
         {
           name: "bulletList",
           title: "Bullet List",
-          type: "object",
-          fields: [
+          type: "array",
+          of: [
             {
-              name: "heading",
-              title: "Heading",
-              type: "string",
-            },
-            {
-              name: "description",
-              title: "Description",
-              type: "string",
-            },
-            {
-              name: "list",
-              title: "List",
-              type: "array",
-              of: [
-                {
-                  type: "string",
-                },
-              ],
-            },
-            {
-              name: "image",
-              title: "Image",
-              type: "image",
+              type: "object",
               fields: [
                 {
-                  name: "alt",
+                  name: "heading",
+                  title: "Heading",
                   type: "string",
-                  title: "Alternative text",
-                  description: "Important for SEO and accessiblity.",
+                },
+                {
+                  name: "description",
+                  title: "Description",
+                  type: "string",
+                },
+                {
+                  name: "list",
+                  title: "List",
+                  type: "array",
+                  of: [
+                    {
+                      type: "string",
+                    },
+                  ],
+                },
+                {
+                  name: "image",
+                  title: "Image",
+                  type: "image",
+                  fields: [
+                    {
+                      name: "alt",
+                      type: "string",
+                      title: "Alternative text",
+                      description: "Important for SEO and accessiblity.",
+                    },
+                  ],
+                  options: {
+                    hotspot: true,
+                  },
                 },
               ],
-              options: {
-                hotspot: true,
-              },
             },
           ],
         },

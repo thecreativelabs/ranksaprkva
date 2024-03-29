@@ -2,15 +2,12 @@ import React from "react";
 import Container from "./Container";
 import { client } from "@sanity/lib/client";
 
-const logos = {
-  title: "Trusted by top brands for page one results.",
-};
-
 const Brands = async () => {
   const page = await client.fetch(`*[_type == "logos"] {  
     title,
     logos[] {asset->{url}, alt}
   }[0]`);
+  // console.log(page);
   if (!page) return <></>;
 
   return (
