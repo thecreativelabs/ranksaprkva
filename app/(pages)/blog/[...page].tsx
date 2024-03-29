@@ -31,9 +31,8 @@ const data = [
   //   },
 ];
 
-export default async function Page({ params }: {params: {page: string}}) {
-
-  const slug = 
+export default async function Page({ params }: { params: { page: string } }) {
+  // const slug =
 
   return (
     <main className="mt-16 mb-16">

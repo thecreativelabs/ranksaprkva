@@ -33,6 +33,7 @@ export default async function Page() {
         }
     }
   }`)) as About;
+  if (!data) return <></>;
 
   return (
     <>
