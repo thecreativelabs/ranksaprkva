@@ -1928,45 +1928,46 @@ export interface About extends SanityDocument {
     description?: string;
 
     /**
-     * Feature — `object`
+     * Features — `array`
      *
      *
      */
-    feature?: {
-      _type: "feature";
-      /**
-       * Icon — `image`
-       *
-       *
-       */
-      icon?: {
-        _type: "image";
-        asset: SanityReference<SanityImageAsset>;
-        crop?: SanityImageCrop;
-        hotspot?: SanityImageHotspot;
+    features?: Array<
+      SanityKeyed<{
+        /**
+         * Icon — `image`
+         *
+         *
+         */
+        icon?: {
+          _type: "image";
+          asset: SanityReference<SanityImageAsset>;
+          crop?: SanityImageCrop;
+          hotspot?: SanityImageHotspot;
+
+          /**
+           * Alternative text — `string`
+           *
+           * Important for SEO and accessiblity.
+           */
+          alt?: string;
+        };
 
         /**
-         * Alternative text — `string`
+         * Heading — `string`
          *
-         * Important for SEO and accessiblity.
+         *
          */
-        alt?: string;
-      };
+        heading?: string;
 
-      /**
-       * Heading — `string`
-       *
-       *
-       */
-      heading?: string;
-
-      /**
-       * Description — `text`
-       *
-       *
-       */
-      description?: string;
-    };
+        /**
+         * Description — `text`
+         *
+         *
+         */
+        description?: string;
+      }>
+    >;
   };
 
   /**

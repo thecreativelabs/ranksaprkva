@@ -7,11 +7,12 @@ const Button = ({
   props,
 }: {
   variant?: "fill" | "link";
-  props: {
-    text: string;
-    path: string;
+  props?: {
+    text?: string;
+    path?: string;
   };
 }) => {
+  if (!props) return <></>;
   return variant === "link" ? (
     <a
       href={props.path}

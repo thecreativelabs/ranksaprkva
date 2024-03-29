@@ -13,26 +13,8 @@ import { client } from "@sanity/lib/client";
 import { About } from "@/types/sanity";
 import { urlForImage } from "@sanity/lib/image";
 
-const data = {
-  heading: "PEOPLE-POWERED INNOVATION",
-  subheading: "Dependable search strategies that deliver.",
-  description:
-    "Victorious is a values-driven search agency dedicated to empowering our customers with search-first marketing services.",
-  image: "https://victorious.com/wp-content/uploads/2023/12/company-hero.jpg",
-  title: "picture",
-};
-
 export default async function Page() {
-  const data = (await client.fetch(`*[_type == "about"][0]{
-    ...,
-    featuredCaseStudy {
-      ...,
-      caseStudy->{
-          ...,
-          awards[]->
-        }
-    }
-  }`)) as About;
+  const data = (await client.fetch(`*[_type == "about"][0]`)) as About;
   if (!data) return <></>;
 
   return (
@@ -63,14 +45,25 @@ export default async function Page() {
         </div>
       </Container>
 
-      <Sets />
-      <Team />
-      <Story />
-      <Growth />
-      <Feedback />
+      <Sets setsUsApart={data.setsUsApart} />
+      <Team teamSection={data.teamSection} />
+      <Story story={data.story} />
+      <Growth featureGrid={data.featureGrid} />
+      <Feedback testimonials={data.testimonials} />
       <Stats />
       {/* <Gallery /> */}
-      <Strategy />
+
+      <Strategy
+        title={data.customStrategySection?.heading}
+        description={data.customStrategySection?.description}
+        button={data.customStrategySection?.cta}
+        image={{
+          asset: {
+            url: urlForImage(data.customStrategySection?.image),
+          },
+          alt: data.customStrategySection?.image?.alt,
+        }}
+      />
     </>
   );
 }

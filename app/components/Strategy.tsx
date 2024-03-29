@@ -19,8 +19,8 @@ const Strategy = ({
 }: {
   title?: string;
   description?: string;
-  button?: { text: string; path: string };
-  image?: { asset: { url: string }; alt: string };
+  button?: { text?: string; path?: string };
+  image?: { asset: { url?: string }; alt?: string };
 }) => {
   return (
     <div

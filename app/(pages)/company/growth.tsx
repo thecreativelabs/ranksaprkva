@@ -1,5 +1,7 @@
 import React from "react";
 import Container from "@/components/Container";
+import { About } from "@/types/sanity";
+import { urlForImage } from "@sanity/lib/image";
 
 const data = {
   heading: "Driven by passion, defined by growth.",
@@ -475,29 +477,29 @@ const data = {
   ],
 };
 
-const growth = () => {
+const growth = ({ featureGrid: data }: Pick<About, "featureGrid">) => {
   return (
     <div className="mt-20 py-10 bg-graybg/60">
       <Container>
         <div className="mt-16">
           <p className="md:text-5xl h-auto leading-10 tracking-wider font-medium text-3xl font-tertiary mt-4 text-[#3B0D17] w-auto md:w-[68%]">
-            {data.heading}
+            {data?.heading}
           </p>
           <p className="md:mt-10 mt-6 text-[#3B0D17] text-md tracking-wider leading-7 w-auto md:w-[800px]">
-            {data.description}
+            {data?.description}
           </p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 mt-10 gap-8 md:gap-0">
-            {data.it.map((item, index) => (
+            {data?.features?.map((item, index) => (
               <div
                 key={index}
                 className="md:h-[220px] w-auto h-auto md:w-[360px] flex flex-col gap-0 md:gap-4 mb-0 md:mb-6 items-start group rounded transition-all px-0 md:px-8 py-6"
               >
                 <div className="items-center justify-between">
                   <div className="mt-1 mb-4 md:mb-6 bg-white shadow shadow-indigo-100/50 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">
-                    <span className="text-[#C42A1C] text">{item.icon}</span>
+                    <img src={urlForImage(item.icon)} alt={item.icon?.alt} />
                   </div>
                   <h3 className="font-semibold font-sans text-left text-lg md:text-2xl text-[#3B0D17]">
-                    {item.title}
+                    {item.heading}
                   </h3>
                 </div>
                 <div>

@@ -185,33 +185,38 @@ export default defineType({
           type: "text",
         }),
         defineField({
-          name: "feature",
-          title: "Feature",
-          type: "object",
-          fields: [
-            defineField({
-              name: "icon",
-              title: "Icon",
-              type: "image",
+          name: "features",
+          title: "Features",
+          type: "array",
+          of: [
+            {
+              type: "object",
               fields: [
-                {
-                  name: "alt",
+                defineField({
+                  name: "icon",
+                  title: "Icon",
+                  type: "image",
+                  fields: [
+                    {
+                      name: "alt",
+                      type: "string",
+                      title: "Alternative text",
+                      description: "Important for SEO and accessiblity.",
+                    },
+                  ],
+                }),
+                defineField({
+                  name: "heading",
+                  title: "Heading",
                   type: "string",
-                  title: "Alternative text",
-                  description: "Important for SEO and accessiblity.",
-                },
+                }),
+                defineField({
+                  name: "description",
+                  title: "Description",
+                  type: "text",
+                }),
               ],
-            }),
-            defineField({
-              name: "heading",
-              title: "Heading",
-              type: "string",
-            }),
-            defineField({
-              name: "description",
-              title: "Description",
-              type: "text",
-            }),
+            },
           ],
         }),
       ],
