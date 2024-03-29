@@ -8,13 +8,8 @@ export default defineType({
   icon: DocumentTextIcon,
   fields: [
     {
-      name: "heading",
-      title: "Heading",
-      type: "string",
-    },
-    {
-      name: "subHeading",
-      title: "Sub Heading",
+      name: "title",
+      title: "Title",
       type: "string",
     },
     {
@@ -33,7 +28,7 @@ export default defineType({
             {
               name: "answer",
               title: "Answer",
-              type: "string",
+              type: "blockContent",
             },
           ],
         },

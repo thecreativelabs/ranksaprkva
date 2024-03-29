@@ -8,11 +8,11 @@ export default function HeroSection({
   mainImage,
   color,
 }: {
-  title: string;
-  heading: string;
-  description: string;
-  mainImage: { asset: { url: string }; alt: string };
-  color: string;
+  title?: string;
+  heading?: string;
+  description?: string;
+  mainImage?: { asset: { url: string }; alt: string };
+  color?: string;
 }) {
   return (
     <div className="h-fit sm:py-[100px] py-[50px] bg-graybg relative">
@@ -36,7 +36,7 @@ export default function HeroSection({
                   }}
                 ></div>
                 <Image
-                  src={mainImage?.asset?.url}
+                  src={mainImage?.asset?.url || ""}
                   className="max-h-fit w-fit sm:h-[350px] h-fit bottom-0"
                   width={1000}
                   height={1000}

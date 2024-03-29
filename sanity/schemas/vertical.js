@@ -33,125 +33,20 @@ export default defineType({
         list: TYPES,
       },
     },
-    {
-      name: "mainImage",
-      title: "Main Image",
-      type: "image",
-      fields: [
-        {
-          name: "alt",
-          title: "Alt Text",
-          type: "string",
-          options: {
-            isHighlighted: true,
-          },
-        },
-      ],
-    },
+    // header
     {
       name: "header",
       title: "Header",
-      type: "header",
-    },
-
-    // Top companies
-    {
-      name: "topCompanies",
-      title: "Top Companies",
-      type: "array",
-      of: [
-        {
-          name: "company",
-          title: "Company",
-          description: "Company Logo",
-          type: "image",
-          fields: [
-            {
-              name: "alt",
-              title: "Alt Text",
-              type: "string",
-              options: {
-                isHighlighted: true,
-              },
-            },
-          ],
-        },
-      ],
-    },
-
-    // Features
-    {
-      name: "featuresSection",
-      title: "Features Section",
       type: "object",
       options: {
         collapsible: true,
       },
       fields: [
         {
-          name: "header",
-          title: "Header",
-          type: "header",
+          name: "title",
+          title: "Title",
+          type: "string",
         },
-        {
-          name: "description",
-          title: "Description",
-          type: "text",
-        },
-        {
-          name: "features",
-          title: "Features",
-          type: "array",
-          of: [
-            {
-              name: "feature",
-              title: "feature",
-              type: "object",
-              options: {
-                collapsible: true,
-              },
-              fields: [
-                {
-                  name: "icon",
-                  title: "Icon",
-                  type: "image",
-                  fields: [
-                    {
-                      name: "alt",
-                      title: "Alt Text",
-                      type: "string",
-                      options: {
-                        isHighlighted: true,
-                      },
-                    },
-                  ],
-                },
-                {
-                  name: "title",
-                  title: "Title",
-                  type: "string",
-                },
-                {
-                  name: "description",
-                  title: "Description",
-                  type: "text",
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-
-    // Next Section
-    {
-      name: "heroSection",
-      title: "Hero Section",
-      type: "object",
-      options: {
-        collapsible: true,
-      },
-      fields: [
         {
           name: "heading",
           title: "Heading",
@@ -160,7 +55,7 @@ export default defineType({
         {
           name: "description",
           title: "Description",
-          type: "blockContent",
+          type: "string",
         },
         {
           name: "mainImage",
@@ -169,13 +64,26 @@ export default defineType({
           fields: [
             {
               name: "alt",
-              title: "Alt Text",
               type: "string",
-              options: {
-                isHighlighted: true,
-              },
+              title: "Alternative text",
+              description: "Important for SEO and accessiblity.",
             },
           ],
+          options: {
+            hotspot: true,
+          },
+        },
+        {
+          name: "color",
+          title: "Color",
+          type: "string",
+          options: {
+            list: [
+              { title: "Red", value: "#e55447" },
+              { title: "Green", value: "#8AC7C7" },
+              { title: "Yellow", value: "#F0B342" },
+            ],
+          },
         },
       ],
     },
@@ -203,10 +111,169 @@ export default defineType({
       ],
     },
 
-    // Feature Section
+    // features
     {
-      name: "featureSection",
-      title: "Feature Section",
+      name: "features",
+      title: "Features",
+      type: "object",
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        {
+          name: "grid",
+          title: "Grid",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Title",
+              type: "string",
+            },
+            {
+              name: "heading",
+              title: "Heading",
+              type: "string",
+            },
+            {
+              name: "description",
+              title: "Description",
+              type: "string",
+            },
+            {
+              name: "grid",
+              title: "Grid",
+              type: "array",
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    {
+                      name: "title",
+                      title: "Title",
+                      type: "string",
+                    },
+                    {
+                      name: "description",
+                      title: "Description",
+                      type: "string",
+                    },
+                    {
+                      name: "icon",
+                      title: "Icon",
+                      type: "image",
+                      fields: [
+                        {
+                          name: "alt",
+                          type: "string",
+                          title: "Alternative text",
+                          description: "Important for SEO and accessiblity.",
+                        },
+                      ],
+                      options: {
+                        hotspot: true,
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "bulletList",
+          title: "Bullet List",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                {
+                  name: "heading",
+                  title: "Heading",
+                  type: "string",
+                },
+                {
+                  name: "description",
+                  title: "Description",
+                  type: "string",
+                },
+                {
+                  name: "list",
+                  title: "List",
+                  type: "array",
+                  of: [
+                    {
+                      type: "string",
+                    },
+                  ],
+                },
+                {
+                  name: "image",
+                  title: "Image",
+                  type: "image",
+                  fields: [
+                    {
+                      name: "alt",
+                      type: "string",
+                      title: "Alternative text",
+                      description: "Important for SEO and accessiblity.",
+                    },
+                  ],
+                  options: {
+                    hotspot: true,
+                  },
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "numberList",
+          title: "Number List",
+          type: "object",
+          fields: [
+            {
+              name: "heading",
+              title: "Heading",
+              type: "string",
+            },
+            {
+              name: "description",
+              title: "Description",
+              type: "string",
+            },
+            {
+              name: "list",
+              title: "List",
+              type: "array",
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    {
+                      name: "title",
+                      title: "Title",
+                      type: "string",
+                    },
+                    {
+                      name: "description",
+                      title: "Description",
+                      type: "string",
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+
+    // cta
+    {
+      name: "cta",
+      title: "CTA",
       type: "object",
       options: {
         collapsible: true,
@@ -220,56 +287,7 @@ export default defineType({
         {
           name: "description",
           title: "Description",
-          type: "blockContent",
-        },
-        {
-          name: "features",
-          title: "Features",
-          type: "array",
-          of: [
-            {
-              name: "feature",
-              title: "Feature",
-              type: "object",
-              options: {
-                collapsible: true,
-              },
-              fields: [
-                {
-                  name: "title",
-                  title: "Title",
-                  type: "string",
-                },
-                {
-                  name: "description",
-                  title: "Description",
-                  type: "text",
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-
-    // CTA
-    {
-      name: "cta",
-      title: "CTA",
-      type: "object",
-      options: {
-        collapsible: true,
-      },
-      fields: [
-        {
-          name: "title",
-          title: "Title",
           type: "string",
-        },
-        {
-          name: "description",
-          title: "Description",
-          type: "text",
         },
         {
           name: "button",
@@ -283,13 +301,14 @@ export default defineType({
           fields: [
             {
               name: "alt",
-              title: "Alt Text",
               type: "string",
-              options: {
-                isHighlighted: true,
-              },
+              title: "Alternative text",
+              description: "Important for SEO and accessiblity.",
             },
           ],
+          options: {
+            hotspot: true,
+          },
         },
       ],
     },
@@ -308,4 +327,11 @@ export default defineType({
       type: "faqs",
     },
   ],
+  preview: {
+    select: {
+      title: "pageMeta.name",
+      subtitle: "type",
+      media: "pageMeta.icon",
+    },
+  },
 });

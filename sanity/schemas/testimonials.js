@@ -13,11 +13,6 @@ export default defineType({
       type: "string",
     },
     {
-      name: "subHeading",
-      title: "Sub Heading",
-      type: "string",
-    },
-    {
       name: "testimonials",
       title: "Testimonials",
       type: "array",
@@ -36,6 +31,16 @@ export default defineType({
               type: "string",
             },
             {
+              name: "description",
+              title: "Description",
+              type: "text",
+            },
+            {
+              name: "rating",
+              title: "Rating",
+              type: "number",
+            },
+            {
               name: "image",
               title: "Image",
               type: "image",
@@ -50,11 +55,6 @@ export default defineType({
               options: {
                 hotspot: true,
               },
-            },
-            {
-              name: "text",
-              title: "Text",
-              type: "string",
             },
           ],
         },

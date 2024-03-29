@@ -20,6 +20,7 @@ import { Vertical } from "@/types/sanity";
 import Growth from "@components/ui/icons/Growth";
 import Task from "@components/ui/icons/taskList";
 import Search from "@components/ui/icons/search";
+import Faq from "@/components/Faq";
 
 export default async function Individual({
   params,
@@ -28,32 +29,83 @@ export default async function Individual({
 }) {
   const slug = params.individual;
 
-  const data = (await client.fetch(
-    `*[_type == "vertical" && pageMeta.slug.current == $slug][0]`,
+  const data = await client.fetch(
+    `*[_type == "vertical" && pageMeta.slug.current == $slug][0] {
+      header {
+        title,
+        heading,
+        description,
+        mainImage {asset->{url}, alt},
+        color
+      },
+      featuredCaseStudy {
+        ...
+      },
+      features {
+        grid {
+          title,
+          heading,
+          description,        
+          grid[] {title,description},
+        },
+        bulletList {
+          heading,
+          description,
+          list[],
+          image{asset->{url}, alt},
+        }[],
+        numberList {
+          heading,
+          description,
+          list[] {
+            title, description,
+          },
+        },
+      },
+      cta {
+        heading,
+        description,
+        button {text, path},
+        image {asset->{url}, alt},
+      },
+      testimonials {
+        heading,
+        testimonials[] {
+          name,
+          title,
+          description,
+          rating,
+          image {asset->{url}, alt},
+        },
+      },
+      faqs {
+        title,
+        faqs[] { question, answer }
+      },
+    }`,
     {
       slug,
     }
-  )) as Vertical | null;
+  );
 
   const icons = [<Growth key={0} />, <Task key={1} />, <Search key={2} />];
 
   return (
     <div>
-      <HeroSection />
+      <HeroSection {...data?.header} />
       <Brands />
-      <Consulting icons={icons} />
-      <Marketing />
+      <Consulting {...data?.features?.grid} icons={icons} />
+      <Marketing data={data?.features?.bulletList} />
       <div className="bg-gray py-[70px]">
         <Container>
-          <div>
-            <Slider />
-          </div>
+          <Slider />
         </Container>
       </div>
-      <Learn />
-      <Banner />
-      <Testimonial />
-      <QandA />
+      <Learn {...data?.features?.numberList} />
+      <Banner {...data?.cta} />
+      <Testimonial {...data?.testimonials} />
+      <Faq {...data?.faqs} />
+      {/* <QandA /> */}
     </div>
   );
 }

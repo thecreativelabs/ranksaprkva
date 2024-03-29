@@ -44,7 +44,7 @@ export default function Banner({
           className="absolute bottom-0 right-0"
           height={550}
           width={550}
-          alt={image?.alt}
+          alt={image?.alt || ""}
         />
       </div>
     </Container>

@@ -474,11 +474,11 @@ export interface LandingPage extends SanityDocument {
     description?: string;
 
     /**
-     * Button — `button`
+     * Button — `reference`
      *
      *
      */
-    button?: Button;
+    button?: SanityReference<Button>;
 
     /**
      * Main Image — `image`
@@ -576,11 +576,11 @@ export interface LandingPage extends SanityDocument {
     description?: BlockContent;
 
     /**
-     * Button — `button`
+     * Button — `reference`
      *
      *
      */
-    button?: Button;
+    button?: SanityReference<Button>;
 
     /**
      * Image — `image`
@@ -631,11 +631,11 @@ export interface LandingPage extends SanityDocument {
         description?: BlockContent;
 
         /**
-         * Button — `button`
+         * Button — `reference`
          *
          *
          */
-        button?: Button;
+        button?: SanityReference<Button>;
       }>
     >;
 
@@ -729,11 +729,11 @@ export interface LandingPage extends SanityDocument {
     description?: string;
 
     /**
-     * Button — `button`
+     * Button — `reference`
      *
      *
      */
-    button?: Button;
+    button?: SanityReference<Button>;
 
     /**
      * Image — `image`
@@ -1509,13 +1509,6 @@ export interface MethodPage extends SanityDocument {
      *
      */
     heading?: string;
-
-    /**
-     * Logo — `reference`
-     *
-     *
-     */
-    logo?: SanityReference<Logos>;
 
     /**
      * Case Studies Carousel — `array`
@@ -2884,124 +2877,19 @@ export interface Vertical extends SanityDocument {
   type?: "industry" | "platform" | "market";
 
   /**
-   * Main Image — `image`
+   * Header — `object`
    *
    *
    */
-  mainImage?: {
-    _type: "image";
-    asset: SanityReference<SanityImageAsset>;
-    crop?: SanityImageCrop;
-    hotspot?: SanityImageHotspot;
-
+  header?: {
+    _type: "header";
     /**
-     * Alt Text — `string`
+     * Title — `string`
      *
      *
      */
-    alt?: string;
-  };
+    title?: string;
 
-  /**
-   * Header — `header`
-   *
-   *
-   */
-  header?: Header;
-
-  /**
-   * Top Companies — `array`
-   *
-   *
-   */
-  topCompanies?: Array<
-    SanityKeyed<{
-      _type: "company";
-      asset: SanityReference<SanityImageAsset>;
-      crop?: SanityImageCrop;
-      hotspot?: SanityImageHotspot;
-
-      /**
-       * Alt Text — `string`
-       *
-       *
-       */
-      alt?: string;
-    }>
-  >;
-
-  /**
-   * Features Section — `object`
-   *
-   *
-   */
-  featuresSection?: {
-    _type: "featuresSection";
-    /**
-     * Header — `header`
-     *
-     *
-     */
-    header?: Header;
-
-    /**
-     * Description — `text`
-     *
-     *
-     */
-    description?: string;
-
-    /**
-     * Features — `array`
-     *
-     *
-     */
-    features?: Array<
-      SanityKeyed<{
-        _type: "feature";
-        /**
-         * Icon — `image`
-         *
-         *
-         */
-        icon?: {
-          _type: "image";
-          asset: SanityReference<SanityImageAsset>;
-          crop?: SanityImageCrop;
-          hotspot?: SanityImageHotspot;
-
-          /**
-           * Alt Text — `string`
-           *
-           *
-           */
-          alt?: string;
-        };
-
-        /**
-         * Title — `string`
-         *
-         *
-         */
-        title?: string;
-
-        /**
-         * Description — `text`
-         *
-         *
-         */
-        description?: string;
-      }>
-    >;
-  };
-
-  /**
-   * Hero Section — `object`
-   *
-   *
-   */
-  heroSection?: {
-    _type: "heroSection";
     /**
      * Heading — `string`
      *
@@ -3010,11 +2898,11 @@ export interface Vertical extends SanityDocument {
     heading?: string;
 
     /**
-     * Description — `blockContent`
+     * Description — `string`
      *
      *
      */
-    description?: BlockContent;
+    description?: string;
 
     /**
      * Main Image — `image`
@@ -3028,12 +2916,19 @@ export interface Vertical extends SanityDocument {
       hotspot?: SanityImageHotspot;
 
       /**
-       * Alt Text — `string`
+       * Alternative text — `string`
        *
-       *
+       * Important for SEO and accessiblity.
        */
       alt?: string;
     };
+
+    /**
+     * Color — `string`
+     *
+     *
+     */
+    color?: "#e55447" | "#8AC7C7" | "#F0B342";
   };
 
   /**
@@ -3059,49 +2954,176 @@ export interface Vertical extends SanityDocument {
   };
 
   /**
-   * Feature Section — `object`
+   * Features — `object`
    *
    *
    */
-  featureSection?: {
-    _type: "featureSection";
+  features?: {
+    _type: "features";
     /**
-     * Heading — `string`
+     * Grid — `object`
      *
      *
      */
-    heading?: string;
+    grid?: {
+      _type: "grid";
+      /**
+       * Title — `string`
+       *
+       *
+       */
+      title?: string;
+
+      /**
+       * Heading — `string`
+       *
+       *
+       */
+      heading?: string;
+
+      /**
+       * Description — `string`
+       *
+       *
+       */
+      description?: string;
+
+      /**
+       * Grid — `array`
+       *
+       *
+       */
+      grid?: Array<
+        SanityKeyed<{
+          /**
+           * Title — `string`
+           *
+           *
+           */
+          title?: string;
+
+          /**
+           * Description — `string`
+           *
+           *
+           */
+          description?: string;
+
+          /**
+           * Icon — `image`
+           *
+           *
+           */
+          icon?: {
+            _type: "image";
+            asset: SanityReference<SanityImageAsset>;
+            crop?: SanityImageCrop;
+            hotspot?: SanityImageHotspot;
+
+            /**
+             * Alternative text — `string`
+             *
+             * Important for SEO and accessiblity.
+             */
+            alt?: string;
+          };
+        }>
+      >;
+    };
 
     /**
-     * Description — `blockContent`
+     * Bullet List — `array`
      *
      *
      */
-    description?: BlockContent;
-
-    /**
-     * Features — `array`
-     *
-     *
-     */
-    features?: Array<
+    bulletList?: Array<
       SanityKeyed<{
-        _type: "feature";
         /**
-         * Title — `string`
+         * Heading — `string`
          *
          *
          */
-        title?: string;
+        heading?: string;
 
         /**
-         * Description — `text`
+         * Description — `string`
          *
          *
          */
         description?: string;
+
+        /**
+         * List — `array`
+         *
+         *
+         */
+        list?: Array<SanityKeyed<string>>;
+
+        /**
+         * Image — `image`
+         *
+         *
+         */
+        image?: {
+          _type: "image";
+          asset: SanityReference<SanityImageAsset>;
+          crop?: SanityImageCrop;
+          hotspot?: SanityImageHotspot;
+
+          /**
+           * Alternative text — `string`
+           *
+           * Important for SEO and accessiblity.
+           */
+          alt?: string;
+        };
       }>
     >;
+
+    /**
+     * Number List — `object`
+     *
+     *
+     */
+    numberList?: {
+      _type: "numberList";
+      /**
+       * Heading — `string`
+       *
+       *
+       */
+      heading?: string;
+
+      /**
+       * Description — `string`
+       *
+       *
+       */
+      description?: string;
+
+      /**
+       * List — `array`
+       *
+       *
+       */
+      list?: Array<
+        SanityKeyed<{
+          /**
+           * Title — `string`
+           *
+           *
+           */
+          title?: string;
+
+          /**
+           * Description — `string`
+           *
+           *
+           */
+          description?: string;
+        }>
+      >;
+    };
   };
 
   /**
@@ -3112,14 +3134,14 @@ export interface Vertical extends SanityDocument {
   cta?: {
     _type: "cta";
     /**
-     * Title — `string`
+     * Heading — `string`
      *
      *
      */
-    title?: string;
+    heading?: string;
 
     /**
-     * Description — `text`
+     * Description — `string`
      *
      *
      */
@@ -3144,9 +3166,9 @@ export interface Vertical extends SanityDocument {
       hotspot?: SanityImageHotspot;
 
       /**
-       * Alt Text — `string`
+       * Alternative text — `string`
        *
-       *
+       * Important for SEO and accessiblity.
        */
       alt?: string;
     };
@@ -3612,6 +3634,13 @@ export interface Services extends SanityDocument {
        */
       alt?: string;
     };
+
+    /**
+     * Color — `string`
+     *
+     *
+     */
+    color?: "#e55447" | "#8AC7C7" | "#F0B342";
   };
 
   /**
@@ -3674,52 +3703,53 @@ export interface Services extends SanityDocument {
     };
 
     /**
-     * Bullet List — `object`
+     * Bullet List — `array`
      *
      *
      */
-    bulletList?: {
-      _type: "bulletList";
-      /**
-       * Heading — `string`
-       *
-       *
-       */
-      heading?: string;
-
-      /**
-       * Description — `string`
-       *
-       *
-       */
-      description?: string;
-
-      /**
-       * List — `array`
-       *
-       *
-       */
-      list?: Array<SanityKeyed<string>>;
-
-      /**
-       * Image — `image`
-       *
-       *
-       */
-      image?: {
-        _type: "image";
-        asset: SanityReference<SanityImageAsset>;
-        crop?: SanityImageCrop;
-        hotspot?: SanityImageHotspot;
+    bulletList?: Array<
+      SanityKeyed<{
+        /**
+         * Heading — `string`
+         *
+         *
+         */
+        heading?: string;
 
         /**
-         * Alternative text — `string`
+         * Description — `string`
          *
-         * Important for SEO and accessiblity.
+         *
          */
-        alt?: string;
-      };
-    };
+        description?: string;
+
+        /**
+         * List — `array`
+         *
+         *
+         */
+        list?: Array<SanityKeyed<string>>;
+
+        /**
+         * Image — `image`
+         *
+         *
+         */
+        image?: {
+          _type: "image";
+          asset: SanityReference<SanityImageAsset>;
+          crop?: SanityImageCrop;
+          hotspot?: SanityImageHotspot;
+
+          /**
+           * Alternative text — `string`
+           *
+           * Important for SEO and accessiblity.
+           */
+          alt?: string;
+        };
+      }>
+    >;
 
     /**
      * Number List — `object`
@@ -3789,11 +3819,11 @@ export interface Services extends SanityDocument {
     description?: string;
 
     /**
-     * Button — `button`
+     * Button — `reference`
      *
      *
      */
-    button?: Button;
+    button?: SanityReference<Button>;
 
     /**
      * Image — `image`
@@ -3881,13 +3911,6 @@ export type Testimonials = {
   heading?: string;
 
   /**
-   * Sub Heading — `string`
-   *
-   *
-   */
-  subHeading?: string;
-
-  /**
    * Testimonials — `array`
    *
    *
@@ -3909,6 +3932,20 @@ export type Testimonials = {
       title?: string;
 
       /**
+       * Description — `text`
+       *
+       *
+       */
+      description?: string;
+
+      /**
+       * Rating — `number`
+       *
+       *
+       */
+      rating?: number;
+
+      /**
        * Image — `image`
        *
        *
@@ -3926,13 +3963,6 @@ export type Testimonials = {
          */
         alt?: string;
       };
-
-      /**
-       * Text — `string`
-       *
-       *
-       */
-      text?: string;
     }>
   >;
 };
@@ -3940,18 +3970,11 @@ export type Testimonials = {
 export type Faqs = {
   _type: "faqs";
   /**
-   * Heading — `string`
+   * Title — `string`
    *
    *
    */
-  heading?: string;
-
-  /**
-   * Sub Heading — `string`
-   *
-   *
-   */
-  subHeading?: string;
+  title?: string;
 
   /**
    * FAQs — `array`
@@ -3968,11 +3991,11 @@ export type Faqs = {
       question?: string;
 
       /**
-       * Answer — `string`
+       * Answer — `blockContent`
        *
        *
        */
-      answer?: string;
+      answer?: BlockContent;
     }>
   >;
 
@@ -4076,33 +4099,6 @@ export type BlockContent = Array<
       crop?: SanityImageCrop;
       hotspot?: SanityImageHotspot;
     }>
-  | SanityKeyed<Code>
-  | SanityKeyed<{
-      _type: "embed";
-      /**
-       * url — `url`
-       *
-       * Enter the URL to Embed 
-(eg: https://youtube.com/embed/xxx or https://open.spotify.com/embed/track/xxxx)
-       */
-      url?: string;
-
-      /**
-       * height — `number`
-       *
-       * Enter Required Height for this Embed. Leave it blank for 16:9 ratio.
-       */
-      height?: number;
-    }>
-  | SanityKeyed<{
-      _type: "tables";
-      /**
-       * Add Table — `table`
-       *
-       * The first row will be treated as the header. If you want to skip, just leave the first row empty.
-       */
-      table?: Table;
-    }>
 >;
 
 export type Documents =
@@ -4127,17 +4123,3 @@ export type Documents =
   | CaseStudy
   | MarketingSolutions
   | Services;
-
-/**
- * This interface is a stub. It was referenced in your sanity schema but
- * the definition was not actually found. Future versions of
- * sanity-codegen will let you type this explicity.
- */
-type Code = any;
-
-/**
- * This interface is a stub. It was referenced in your sanity schema but
- * the definition was not actually found. Future versions of
- * sanity-codegen will let you type this explicity.
- */
-type Table = any;
