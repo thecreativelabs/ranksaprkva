@@ -38,14 +38,14 @@ export default defineType({
       ],
     },
     {
-      name: "publishedAt",
-      title: "Published At",
-      type: "datetime",
-    },
-    {
       name: "overview",
       title: "Overview",
       type: "text",
+    },
+    {
+      name: "body",
+      title: "Body",
+      type: "blockContent",
     },
     {
       name: "tags",
@@ -57,40 +57,6 @@ export default defineType({
       name: "readingTime",
       title: "Reading Time",
       type: "string",
-    },
-    {
-      name: "body",
-      title: "Body",
-      type: "object",
-      options: {
-        collapsible: true,
-      },
-      fields: [
-        {
-          name: "sections",
-          title: "Sections",
-          type: "array",
-          of: [
-            {
-              name: "section",
-              title: "Section",
-              type: "object",
-              fields: [
-                {
-                  name: "title",
-                  title: "Title",
-                  type: "string",
-                },
-                {
-                  name: "content",
-                  title: "Content",
-                  type: "blockContent",
-                },
-              ],
-            },
-          ],
-        },
-      ],
     },
   ],
 });

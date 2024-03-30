@@ -24,7 +24,7 @@ export default async function CaseStudyIndividual({
   )) as CaseStudy | null;
 
   if (data === null) {
-    return notFound();
+    // return notFound();
   }
 
   return (

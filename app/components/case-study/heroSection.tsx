@@ -1,9 +1,10 @@
 "use client";
+import { CaseStudyLandingWithReferences } from "@/(pages)/case-study/page";
 import { CaseStudyLanding, WhoWeServe } from "@/types/sanity";
 import { urlForImage } from "@sanity/lib/image";
 import Image from "next/image";
 
-export default function HeroSection(data: CaseStudyLanding) {
+export default function HeroSection(data: CaseStudyLandingWithReferences) {
   return (
     <div className="w-full md:py-[80px] sm:py-[60px] py-[30px] flex flex-col justify-center items-center">
       <div className="w-[80%] max-w-[1200px] gap-[25px] flex flex-col justify-evenly">
@@ -21,18 +22,17 @@ export default function HeroSection(data: CaseStudyLanding) {
             {data.tagline}
           </p>
         )}
-        {/* TODO */}
-        {/* <div className="sm:w-[60%] w-[100%] grid sm:grid-cols-4 grid-cols-4 gap-[10px]">
+        <div className="sm:w-[60%] w-[100%] grid sm:grid-cols-4 grid-cols-4 gap-[10px]">
           {data.featuredAwards?.map((award, i) => (
             <Image
               key={i}
               width={170}
               height={170}
-              src={urlForImage() || ""}
-              alt={}
+              src={urlForImage(award.image) || ""}
+              alt={award.image?.alt || ""}
             />
           ))}
-        </div> */}
+        </div>
       </div>
     </div>
   );

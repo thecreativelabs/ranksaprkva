@@ -9,7 +9,12 @@ import Topnav from "@/components/navbar/Topnav";
 import Footer from "@/components/Footer";
 import Cta from "@/components/Cta";
 import { client } from "@sanity/lib/client";
-import { CaseStudyLanding } from "@/types/sanity";
+import { Award, CaseStudyLanding } from "@/types/sanity";
+
+export type CaseStudyLandingWithReferences = Omit<
+  CaseStudyLanding,
+  "featuredAwards"
+> & { featuredAwards?: Award[] };
 
 export default async function Case_study() {
   const data = (await client.fetch(`*[_type == "caseStudyLanding"][0] {
@@ -25,11 +30,11 @@ export default async function Case_study() {
         }
       }
     }
-  }`)) as CaseStudyLanding;
+  }`)) as CaseStudyLandingWithReferences;
 
   return (
     <>
-      <HeroSection />
+      <HeroSection {...data} />
       <FeatureCaseStudy />
       <SeoCases />
       <Review />

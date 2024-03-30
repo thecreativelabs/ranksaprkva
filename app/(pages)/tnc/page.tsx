@@ -4,13 +4,6 @@ import { client } from "@sanity/lib/client";
 import { TermsAndConditions } from "@/types/sanity";
 import { PortableText } from "@/components/PortableText";
 
-const data = {
-  heading: "VICTORIOUS",
-  subheading: "Terms and Conditions",
-  description:
-    "All content on www.victorious.com, including but not limited to text, APIs, graphics, photographs.",
-};
-
 export default async function Page() {
   const data = (await client.fetch(
     `*[_type == "termsAndConditions"][0]`

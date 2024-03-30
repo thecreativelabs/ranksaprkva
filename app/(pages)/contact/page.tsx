@@ -16,20 +16,23 @@ const contact = {
 };
 
 export default async function Page() {
-  const data = (await client.fetch(`*[_type == "contact"][0]`)) as Contact;
+  const data = (await client.fetch(
+    `*[_type == "contact"][0]`
+  )) as Contact | null;
+  if (!data) return <></>;
 
   return (
     <Container>
       <div className="grid md:grid-cols-2 gap-10 mx-auto max-w-6xl mt-16">
         <div className="md:w-[510px] w-auto">
           <h2 className="text-3xl font-tertiary md:text-5xl text-[#3B0D17]">
-            {contact?.header}
+            {data.heading}
           </h2>
           <p className="text-lg font-sans leading-relaxed mt-6 text-[#3B0D17]">
-            {contact?.subheader}
+            {data.description}
           </p>
           <div className="md:flex mt-10 md:gap-[50px]">
-            {contact?.email && (
+            {data.address && (
               <div className="flex flex-col mt-2 text-blue-700">
                 <div className="md:flex-col flex ">
                   <svg
@@ -72,15 +75,16 @@ export default async function Page() {
                     </h2>
                     <a
                       className="text-[#e55447]"
-                      href={`mailto:${contact?.email}`}
+                      href={data.address.link}
+                      target="_blank"
                     >
-                      {contact?.address}
+                      {data.address.text}
                     </a>
                   </div>
                 </div>
               </div>
             )}
-            {contact?.phone && (
+            {data.contactInfo && (
               <div className="flex flex-col mr-0 md:mr-24 mt-2 text-blue-700">
                 <div className="md:flex-col flex ">
                   <svg
@@ -135,10 +139,16 @@ export default async function Page() {
                     </h2>
                     <a
                       className="text-[#e55447]"
-                      href={`tel:${contact?.phone}`}
+                      href={`mailto:${data.contactInfo.email?.text}`}
                     >
-                      info@victoriousseo.com <br />
-                      (415) 621-9830
+                      {data.contactInfo.email?.text}
+                    </a>
+                    <br />
+                    <a
+                      className="text-[#e55447]"
+                      href={`tel:${data.contactInfo.phone?.text}`}
+                    >
+                      {data.contactInfo.phone?.text}
                     </a>
                   </div>
                 </div>

@@ -5,6 +5,8 @@ import Container from "../Container";
 import Dropdown from "../navbar/Dropdown";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import RadixNavbar from "./RadixNavbar";
+import Button from "../Button";
 
 const menuitems = [
   {
@@ -89,7 +91,6 @@ const Navbar = () => {
   const activeClasses =
     "top-4 z-50 py-2 border-gray-200 backdrop-blur-lg mx-auto w-[95%] lg:w-[1200px]";
 
-  // const navbar = () => {
   return (
     <header
       className={`${headerClasses} ${
@@ -99,19 +100,16 @@ const Navbar = () => {
       <Container>
         <div className="bg-white flex flex-col lg:flex-row justify-between items-center relative z-50 transition-none">
           <div className="flex w-full lg:w-auto items-center justify-between">
+            {/* logo */}
             <a
               href="/"
               className="text-lg flex items-center transition focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#3B0D17] focus-visible:outline-none focus-visible:shadow-outline-[#3B0D17] rounded-full px-2 -ml-2"
             >
               <div className="w-32 md:w-32">
-                <Image
-                  src="https://victorious.com/wp-content/uploads/2023/08/victorious-logo.svg"
-                  alt="logo"
-                  width={120}
-                  height={120}
-                />
+                <img src="/logo.png" alt="RankSpark logo" className="p-2" />
               </div>
             </a>
+            {/* Hamburger menu on mobile */}
             <div
               className="block lg:hidden cursor-pointer"
               onClick={handleDropdownToggle}
@@ -145,6 +143,7 @@ const Navbar = () => {
               )}
             </div>
           </div>
+
           <div
             className={`md:ml-[150px] text-[#3B0D17] gap-y-2 text-lg w-full lg:w-auto mt-2 lg:flex lg:mt-0 ${
               dropdownOpen ? "block" : "hidden"
@@ -175,18 +174,13 @@ const Navbar = () => {
               ))}
             </ul>
             <button className="rounded-sm bg-[#F0B342] text-[#3B0D17] py-4 px-6 lg:hidden flex items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300">
-              <span className="font-medium text-sm font-semibold cursor-pointer">
+              <span className="text-sm font-semibold cursor-pointer">
                 FREE SEO REVIEW
               </span>
             </button>
           </div>
-          <div className="rounded-sm bg-[#F0B342] text-[#3B0D17] w-[200px] h-12 hidden lg:flex items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300">
-            <button className="relative inline-flex items-center group gap-px text-center">
-              <span className="ml-6 font-medium cursor-pointer">
-                FREE SEO REVIEW
-              </span>
-            </button>
-          </div>
+
+          <Button props={{ text: "FREE SEO REVIEW", path: "/" }} />
         </div>
       </Container>
     </header>

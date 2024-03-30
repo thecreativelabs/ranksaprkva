@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import classNames from "classnames";
@@ -6,7 +8,7 @@ import "./styles.css";
 
 const RadixNavbar = () => {
   return (
-    <NavigationMenu.Root className="NavigationMenuRoot">
+    <NavigationMenu.Root className="NavigationMenuRoot z-[1000] bg-red-400">
       <NavigationMenu.List className="NavigationMenuList">
         <NavigationMenu.Item>
           <NavigationMenu.Trigger className="NavigationMenuTrigger">
@@ -114,15 +116,21 @@ const RadixNavbar = () => {
   );
 };
 
-const ListItem = ({ className, children, title, ...props }) => (
-  <li>
-    <NavigationMenu.Link asChild>
-      <a className={classNames("ListItemLink", className)} {...props}>
-        <div className="ListItemHeading">{title}</div>
-        <p className="ListItemText">{children}</p>
-      </a>
-    </NavigationMenu.Link>
-  </li>
+const ListItem = React.forwardRef(
+  ({ className, children, title, ...props }, forwardedRef) => (
+    <li>
+      <NavigationMenu.Link asChild>
+        <a
+          className={classNames("ListItemLink", className)}
+          {...props}
+          ref={forwardedRef}
+        >
+          <div className="ListItemHeading">{title}</div>
+          <p className="ListItemText">{children}</p>
+        </a>
+      </NavigationMenu.Link>
+    </li>
+  )
 );
 
 export default RadixNavbar;
