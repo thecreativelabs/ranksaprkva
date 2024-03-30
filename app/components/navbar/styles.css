@@ -13,15 +13,14 @@
   line-height: 1;
   border-radius: 4px;
   font-size: 15px;
-  color: var(--violet-11);
 }
 .NavigationMenuTrigger:focus,
 .NavigationMenuLink:focus {
-  box-shadow: 0 0 0 2px var(--violet-7);
+  box-shadow: 0 0 0 2px var(--mauve-4);
 }
 .NavigationMenuTrigger:hover,
 .NavigationMenuLink:hover {
-  background-color: var(--violet-3);
+  background-color: var(--mauve-3);
 }
 
 .NavigationMenuTrigger {
@@ -142,7 +141,7 @@
   line-height: 1;
 }
 .ListItemLink:focus {
-  box-shadow: 0 0 0 2px var(--violet-7);
+  box-shadow: 0 0 0 2px var(--mauve-4);
 }
 .ListItemLink:hover {
   background-color: var(--mauve-3);
@@ -205,7 +204,7 @@
 
 .CaretDown {
   position: relative;
-  color: var(--violet-10);
+  color: var(--mauve-11);
   top: 1px;
   transition: transform 250ms ease;
 }
