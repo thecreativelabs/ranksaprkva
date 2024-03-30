@@ -24,6 +24,22 @@ export default {
       type: "string",
     },
     {
+      name: "icon",
+      title: "Icon",
+      type: "image",
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative text",
+          description: "Important for SEO and accessiblity.",
+        },
+      ],
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       name: "subCategory",
       title: "Sub Category",
       type: "reference",

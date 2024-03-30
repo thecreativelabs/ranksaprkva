@@ -37,7 +37,7 @@
     "sanity/plugins/settings.jsx",
     "app/components/PortableText.jsx",
     "sanity/schemas/methodPage.js",
-    "app/components/navbar/RadixNavbar.jsx"
+    "app/components/navbar/RadixNavbar.tsx"
   ],
   "exclude": ["node_modules"]
 }
