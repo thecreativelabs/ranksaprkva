@@ -176,17 +176,18 @@ const RadixNavbar = ({
                         </div>
                       ) : (
                         <div className="p-8 w-[800px] grid grid-cols-3 space-x-4">
-                          {whoWeServeList.map((item) => (
-                            <NavigationMenu.Link asChild>
+                          {whoWeServeList.map((item, key) => (
+                            <NavigationMenu.Link asChild key={key}>
                               <div>
                                 <p className="text-center border-b border-slate-200 pb-2">
                                   {item.type}
                                 </p>
                                 <div className="mt-4">
-                                  {item.list.map((item) => (
+                                  {item.list.map((item, key) => (
                                     <Link
                                       href={`/who-we-serve/${item.pageMeta.slug.current}`}
                                       className="ListItemLink"
+                                      key={key}
                                     >
                                       <div className="flex items-center space-x-4">
                                         <img
