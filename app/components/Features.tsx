@@ -33,7 +33,7 @@ const Features = ({
         <div className="grid md:grid-cols-2 py-10">
           <div className="ml-5 mr-5 grid place-items-center">
             <div className="max-w-lg">
-              <h3 className="md:text-4xl text-2xl font-tertiary tracking-wide text-[#3B0D17] font-medium mt-2 ">
+              <h3 className="md:text-4xl text-2xl font-tertiary tracking-wide text-dark-red font-medium mt-2 ">
                 {data.heading}
               </h3>
               <PortableText value={data.description} />

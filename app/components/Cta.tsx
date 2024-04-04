@@ -21,7 +21,7 @@ export default function Cta() {
               <div className="mb-4">
                 <label
                   htmlFor="email"
-                  className="text-left block text-sm font-medium text-[#3B0D17]"
+                  className="text-left block text-sm font-medium text-dark-red"
                 >
                   Email<span className="text-[#f52d2d]">*</span>
                 </label>
@@ -38,7 +38,7 @@ export default function Cta() {
               <div className="mb-4">
                 <label
                   htmlFor="interest"
-                  className="text-left block text-sm font-medium text-[#3B0D17]"
+                  className="text-left block text-sm font-medium text-dark-red"
                 >
                   What are you looking for?
                 </label>

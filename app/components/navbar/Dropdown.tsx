@@ -29,7 +29,7 @@ const NavDropdown: React.FC<NavDropdownProps> = ({
       <div className="group">
         <button
           onClick={toggleDropdown}
-          className="flex items-center gap-1 text-sm w-full lg:w-auto transition lg:px-3 py-2 text-[#3B0D17] hover:text-[#F0B342] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full"
+          className="flex items-center gap-1 text-sm w-full lg:w-auto transition lg:px-3 py-2 text-dark-red hover:text-[#F0B342] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full"
         >
           <a href={path}>{title}</a>
           {/* <span>{title}</span> */}

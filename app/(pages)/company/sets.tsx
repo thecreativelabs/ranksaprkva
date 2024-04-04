@@ -11,7 +11,7 @@ const Sets = ({ setsUsApart: data }: Pick<About, "setsUsApart">) => {
           {data?.header?.topText}
         </h1>
         <div className="h-auto">
-          <p className="md:text-5xl h-auto leading-10 tracking-wider font-medium text-3xl font-tertiary mt-4 text-[#3B0D17] w-auto md:w-[68%]">
+          <p className="md:text-5xl h-auto leading-10 tracking-wider font-medium text-3xl font-tertiary mt-4 text-dark-red w-auto md:w-[68%]">
             {data?.header?.title}
           </p>
           <div className="md:mt-8 mt-4 flex flex-wrap gap-3">

@@ -2222,6 +2222,18 @@ export interface Careers extends SanityDocument {
         media?: { _type: "file"; asset: SanityReference<any> };
 
         /**
+         * Poster Image — `image`
+         *
+         *
+         */
+        posterImage?: {
+          _type: "image";
+          asset: SanityReference<SanityImageAsset>;
+          crop?: SanityImageCrop;
+          hotspot?: SanityImageHotspot;
+        };
+
+        /**
          * Author — `string`
          *
          *
@@ -2663,18 +2675,18 @@ export interface Article extends SanityDocument {
   };
 
   /**
-   * Published At — `datetime`
-   *
-   *
-   */
-  publishedAt?: string;
-
-  /**
    * Overview — `text`
    *
    *
    */
   overview?: string;
+
+  /**
+   * Body — `blockContent`
+   *
+   *
+   */
+  body?: BlockContent;
 
   /**
    * Tags — `array`
@@ -2689,38 +2701,6 @@ export interface Article extends SanityDocument {
    *
    */
   readingTime?: string;
-
-  /**
-   * Body — `object`
-   *
-   *
-   */
-  body?: {
-    _type: "body";
-    /**
-     * Sections — `array`
-     *
-     *
-     */
-    sections?: Array<
-      SanityKeyed<{
-        _type: "section";
-        /**
-         * Title — `string`
-         *
-         *
-         */
-        title?: string;
-
-        /**
-         * Content — `blockContent`
-         *
-         *
-         */
-        content?: BlockContent;
-      }>
-    >;
-  };
 }
 
 /**
@@ -3581,6 +3561,25 @@ export interface Services extends SanityDocument {
    *
    */
   description?: string;
+
+  /**
+   * Icon — `image`
+   *
+   *
+   */
+  icon?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+
+    /**
+     * Alternative text — `string`
+     *
+     * Important for SEO and accessiblity.
+     */
+    alt?: string;
+  };
 
   /**
    * Sub Category — `reference`

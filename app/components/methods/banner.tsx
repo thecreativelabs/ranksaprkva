@@ -30,7 +30,7 @@ export default function Banner() {
           <p className="sm:text-xxxl text-xxl text-center text-white font-Amiri">{data.text}</p>
           <button className="sm:text-sm text-xs font-bold mt-[20px] uppercase flex justify-center tracking-widest gap-[15px] items-center text-white">
             {data.button.text}
-            <span className=" h-[38px] w-[38px] sm:mb-0 mb-2 flex justify-center items-center rounded-[50%] bg-[#F0B342] hover:bg-white">
+            <span className=" h-[38px] w-[38px] sm:mb-0 mb-2 flex justify-center items-center rounded-[50%] bg-darkyellow hover:bg-white">
               <IoMdArrowForward className='h-[25px] w-[25px] hover:text-dark-red' />
             </span>
           </button>

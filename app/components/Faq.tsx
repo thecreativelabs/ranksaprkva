@@ -20,7 +20,7 @@ function Faq({
     <Container>
       <div className="grid mb-20 md:grid-cols-2 gap-x-8">
         <div className="mt-20">
-          <h1 className="text-2xl font-tertiary leading-8 text-[#3B0D17] md:text-4xl font-medium font-serif tracking-wide md:tracking-wide">
+          <h1 className="text-2xl font-tertiary leading-8 text-dark-red md:text-4xl font-medium font-serif tracking-wide md:tracking-wide">
             {title}
           </h1>
         </div>
@@ -41,7 +41,7 @@ function Faq({
                     </span>
                   </summary>
                   {/* <p
-                    className="text-[#3B0D17] mt-3 group-open:animate-fadeIn"
+                    className="text-dark-red mt-3 group-open:animate-fadeIn"
                     style={{ transition: "transform 1s ease-in-out" }}
                   >
                     {item.answer}

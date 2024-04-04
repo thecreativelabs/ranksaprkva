@@ -41,10 +41,10 @@ const Strategy = ({
           />
         </div>
         <div className="grid ml-0 mt-14">
-          <h2 className="md:text-5xl tracking-wider leading-8 font-tertiary w-auto md:w-[60%] font-medium mt-4 text-3xl text-[#3B0D17]">
+          <h2 className="md:text-5xl tracking-wider leading-8 font-tertiary w-auto md:w-[60%] font-medium mt-4 text-3xl text-dark-red">
             {title}
           </h2>
-          <p className="mt-4 text-md text-[#3B0D17] w-auto md:w-[60%] leading-7 tracking-wider font-medium font-primary">
+          <p className="mt-4 text-md text-dark-red w-auto md:w-[60%] leading-7 tracking-wider font-medium font-primary">
             {description}
           </p>
           {button && (

@@ -145,7 +145,7 @@ const Navbar = () => {
           </div>
 
           <div
-            className={`md:ml-[150px] text-[#3B0D17] gap-y-2 text-lg w-full lg:w-auto mt-2 lg:flex lg:mt-0 ${
+            className={`md:ml-[150px] text-dark-red gap-y-2 text-lg w-full lg:w-auto mt-2 lg:flex lg:mt-0 ${
               dropdownOpen ? "block" : "hidden"
             }`}
           >
@@ -163,7 +163,7 @@ const Navbar = () => {
                     <li className="relative">
                       <a
                         href={item.path}
-                        className="relative flex lg:px-3 py-2 border-spacing-y-3 text-sm text-[#3B0D17] transition hover:text-[#F0B342] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo focus-visible:outline-none"
+                        className="relative flex lg:px-3 py-2 border-spacing-y-3 text-sm text-dark-red transition hover:text-[#F0B342] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo focus-visible:outline-none"
                       >
                         {item.title}
                         <span className="absolute left-0 right-0 bottom-0 rounded-none transform transition-transform origin-bottom"></span>
@@ -173,7 +173,7 @@ const Navbar = () => {
                 </>
               ))}
             </ul>
-            <button className="rounded-sm bg-[#F0B342] text-[#3B0D17] py-4 px-6 lg:hidden flex items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300">
+            <button className="rounded-sm bg-darkyellow text-dark-red py-4 px-6 lg:hidden flex items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300">
               <span className="text-sm font-semibold cursor-pointer">
                 FREE SEO REVIEW
               </span>
