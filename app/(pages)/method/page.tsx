@@ -26,17 +26,16 @@ export default async function Methods() {
       }
     }
   }`)) as MethodPage;
-
   return (
     <>
-      <Hero />
-      <SearchAndGrowth />
-      <Framework />
-      <ContentAndServices />
-      <Banner />
-      <InnovativeSection />
-      <Companies />
-      <Results />
+      <Hero header={data.header} mainImage={data.mainImage} />
+      <SearchAndGrowth section1={data.section1} />
+      <Framework section2={data.section2} />
+      <ContentAndServices section3={data.section3} />
+      <Banner data={data.awardsSection} />
+      <InnovativeSection section4={data.section4} />
+      <Companies section5={data.section5} />
+      <Results section6={data.section6} />
     </>
   );
 }

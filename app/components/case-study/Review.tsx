@@ -7,12 +7,13 @@ import Rating from "@components/case-study/rating";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { CaseStudyLanding } from "@/types/sanity";
 
 // Initialize Swiper core components
 // SwiperCore.use([Pagination]);
 
 // import 'swiper/css';
-const data = {
+const data1 = {
   title: "REALIZING WHAT’S POSSIBLE WITH SEO CASE STUDIES",
   heading: "Your business deserves to shine, and we're here to make it happen.",
   leftcontent:
@@ -104,7 +105,13 @@ const data = {
     ],
   },
 };
-export default function Review() {
+export default function Review({
+  data,
+  reviews,
+}: {
+  data: CaseStudyLanding["section3"];
+  reviews: CaseStudyLanding["section4"];
+}) {
   const swiperRef = useRef<SwiperRef>(null);
 
   const handlePrev = () => {
@@ -140,18 +147,18 @@ export default function Review() {
       <div className="w-full sm:h-[100vh] max-w-[1200px] max-h-[700px] px-4 lg:px-0 lg:w-4/5 flex flex-col justify-center">
         {/* Title and heading */}
         <p className="text-light-red text-sm sm:text-sm font-bold font-DM-sans uppercase tracking-widest">
-          {data.title}
+          {data?.header?.topText}
         </p>
         <p className="text-dark-red sm:w-[70%] w-[100%] text-xxl lg:text-xxxxl font-normal font-Amiri mt-8 lg:mt-6 leading-[32px] lg:leading-relaxed">
-          {data.heading}
+          {data?.header?.title}
         </p>
         {/* Left and right content */}
         <div className="flex flex-col lg:flex-row mt-8 lg:mt-12 gap-6 lg:gap-12">
           <p className="text-dark-red text-base lg:text-xl font-normal font-DM-Sans leading-normal lg:max-w-[48%]">
-            {data.leftcontent}
+            {data1.leftcontent}
           </p>
           <p className="text-dark-red text-base lg:text-xl font-normal font-DM-Sans leading-normal lg:max-w-[47%]">
-            {data.rightcontent}
+            {data1.rightcontent}
           </p>
         </div>
       </div>
@@ -162,20 +169,20 @@ export default function Review() {
         <div className="flex max-w-[1200px] w-full mt-[70px] justify-center items-center ">
           <div className="flex sm:flex-row flex-col w-[78%] gap-[20px] items-center">
             <p className="text-2xl font-['Roboto'] font-normal">
-              {data.testimonial.title}
+              {data1.testimonial.title}
             </p>
             <div className="flex items-center gap-[10px]">
               <p className="text-xl font-['Roboto'] font-normal">
-                {data.testimonial.rating}
+                {data1.testimonial.rating}
               </p>
               <div>
                 <Rating
-                  rating={data.testimonial.rating}
+                  rating={data1.testimonial.rating}
                   className="text-light-red"
                 />
               </div>
               <p className="text-xs text-light-red">
-                {data.testimonial.totalreviews} reviews
+                {data1.testimonial.totalreviews} reviews
               </p>
             </div>
           </div>
@@ -203,7 +210,7 @@ export default function Review() {
               className="h-[100%] flex w-[95%] p-52  relative"
               breakpoints={breakpoints}
             >
-              {data.testimonial.cards.map((card, i) => {
+              {data1.testimonial.cards.map((card, i) => {
                 return (
                   <SwiperSlide key={i}>
                     <div className=" bg-white hover:shadow-xl shadow p-4  flex flex-col mb-10 ">

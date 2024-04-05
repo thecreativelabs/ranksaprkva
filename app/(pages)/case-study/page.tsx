@@ -31,14 +31,13 @@ export default async function Case_study() {
       }
     }
   }`)) as CaseStudyLandingWithReferences;
-
   return (
     <>
       <HeroSection {...data} />
       <FeatureCaseStudy />
-      <SeoCases />
-      <Review />
-      <QAndA />
+      <SeoCases heading={data.section2?.heading} />
+      <Review data={data.section3} reviews={data.section4} />
+      <QAndA data={data.faqSection} />
     </>
   );
 }
