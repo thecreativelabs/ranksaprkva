@@ -84,6 +84,11 @@ export default defineType({
                   type: "file",
                 }),
                 defineField({
+                  name: "posterImage",
+                  title: "Poster Image",
+                  type: "image",
+                }),
+                defineField({
                   name: "author",
                   title: "Author",
                   type: "string",

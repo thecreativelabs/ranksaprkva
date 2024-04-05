@@ -19,7 +19,7 @@ const Badges = ({
                   className="w-full h-[70px] object-contain"
                 />
               </div>
-              <p className="text-center mt-12 font-bold text-xl text-[#3B0D17]">
+              <p className="text-center mt-12 font-bold text-xl text-dark-red">
                 {stat.title}
               </p>
             </div>

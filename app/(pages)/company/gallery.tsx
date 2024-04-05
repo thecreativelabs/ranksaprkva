@@ -29,7 +29,7 @@ const Slider = () => {
   return (
     <div className="w-full mt-20 mb-20">
       <Container>
-        <p className="mt-8 tracking-wider text-[#3B0D17] font-bold leading-6 py-6 text-lg md:text-2xl w-auto md:w-[70%]">
+        <p className="mt-8 tracking-wider text-dark-red font-bold leading-6 py-6 text-lg md:text-2xl w-auto md:w-[70%]">
           {data.heading}
         </p>
         <div className="w-full h-auto md:h-[700px]">

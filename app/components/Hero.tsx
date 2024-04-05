@@ -29,7 +29,7 @@ const Hero = ({
   return (
     <div className="relative flex flex-wrap justify-center bg-graybg">
       <div className="relative ml-[20px] w-auto text-left md:w-auto lg:w-[500px] xs:pt-4 sm:pt-4 md:mt-4 mb-2 flex flex-col items-left md:items-start md:text-left">
-        <h1 className="w-auto md:w-auto z-10 tracking-wide mt-6 text-3xl md:text-4xl lg:text-6xl xl:text-8xl md:text-left text-left lg:text-left text-[#3B0D17] font-tertiary">
+        <h1 className="w-auto md:w-auto z-10 tracking-wide mt-6 text-3xl md:text-4xl lg:text-6xl xl:text-8xl md:text-left text-left lg:text-left text-dark-red font-tertiary">
           {data.title}
         </h1>
         <p className="text-md w-[250px] md:w-[80%] mt-8 md:text-left text-left text-black ">

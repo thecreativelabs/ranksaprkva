@@ -35,7 +35,7 @@ const Partnership = ({ data }: { data: any[] }) => {
         <div className="grid md:grid-cols-2 py-10">
           <div className="grid md:ml-16 mt-14">
             <div className="max-w-lg">
-              <h3 className="md:text-4xl font-tertiary font-medium mt-4 text-3xl text-[#3B0D17]">
+              <h3 className="md:text-4xl font-tertiary font-medium mt-4 text-3xl text-dark-red">
                 {data?.[0].title}
               </h3>
               <PortableText value={data?.[0].description} />
@@ -97,7 +97,7 @@ const Partnership = ({ data }: { data: any[] }) => {
                       </svg>
                     </span>
                   </div>
-                  <h3 className="font-semibold text-md font-sans text-left md:text-2xl text-[#3B0D17]">
+                  <h3 className="font-semibold text-md font-sans text-left md:text-2xl text-dark-red">
                     {data?.[1].title}
                   </h3>
                 </div>
@@ -186,7 +186,7 @@ const Partnership = ({ data }: { data: any[] }) => {
                       </svg>
                     </span>
                   </div>
-                  <h3 className="font-semibold text-md font-sans text-left md:text-2xl text-[#3B0D17]">
+                  <h3 className="font-semibold text-md font-sans text-left md:text-2xl text-dark-red">
                     {data?.[2].title}
                   </h3>
                 </div>

@@ -23,7 +23,7 @@ function StarIcon() {
 const Feedback = ({ testimonials: data }: Pick<About, "testimonials">) => {
   return (
     <Container>
-      <h2 className="md:text-5xl text-center h-auto leading-10 tracking-wider font-medium text-3xl font-tertiary mt-14 text-[#3B0D17] w-auto md:w-auto">
+      <h2 className="md:text-5xl text-center h-auto leading-10 tracking-wider font-medium text-3xl font-tertiary mt-14 text-dark-red w-auto md:w-auto">
         {data?.heading}
       </h2>
       <div className="mt-20 grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-0">
@@ -38,7 +38,7 @@ const Feedback = ({ testimonials: data }: Pick<About, "testimonials">) => {
                   {item.name?.[0]}
                 </span>
               </div>
-              <div className="flex w-auto text-[#3B0D17] flex-col">
+              <div className="flex w-auto text-dark-red flex-col">
                 <p className="tracking-widest mb-2 font-semibold w-[200px] text-sm ">
                   {item.name}
                 </p>
@@ -53,7 +53,7 @@ const Feedback = ({ testimonials: data }: Pick<About, "testimonials">) => {
                 className="text-darkyellow text-[22px] m-1"
               />
             </div>
-            <div className="mb-6 mt-4 md:mt-0 text-[#3B0D17] p-0 tracking-wider leading-6 text-sm md:text-md">
+            <div className="mb-6 mt-4 md:mt-0 text-dark-red p-0 tracking-wider leading-6 text-sm md:text-md">
               <p>{item.description}</p>
             </div>
           </div>

@@ -102,7 +102,7 @@ const contactform = () => {
         />
         <div className="flex flex-col space-y md:flex-row md:space-x-4">
           <div className="flex-1 mb-5 bg-white md:bg-white">
-            <p className="text-sm mb-1 text-[#3B0D17] font-normal">
+            <p className="text-sm mb-1 text-dark-red font-normal">
               First name<span className="font-bold text-[#e55447]">*</span>
             </p>
             <input
@@ -117,7 +117,7 @@ const contactform = () => {
             </div>
           </div>
           <div className="flex-1 mb-5">
-            <p className="text-sm mb-1 text-[#3B0D17] font-normal">
+            <p className="text-sm mb-1 text-dark-red font-normal">
               Last Name<span className="text-[#e55447] font-bold">*</span>
             </p>
             <input
@@ -135,7 +135,7 @@ const contactform = () => {
 
         <div className="flex flex-col space-y md:flex-row md:space-x-4">
           <div className="flex-1 mb-5">
-            <p className="text-sm mb-1 text-[#3B0D17] font-normal">
+            <p className="text-sm mb-1 text-dark-red font-normal">
               Email Address<span className="text-[#e55447] font-bold">*</span>
             </p>
             <label htmlFor="email_address" className="sr-only">
@@ -157,7 +157,7 @@ const contactform = () => {
             </div>
           </div>
           <div className="flex-1 mb-5">
-            <p className="text-sm mb-1 text-[#3B0D17] font-normal">Phone</p>
+            <p className="text-sm mb-1 text-dark-red font-normal">Phone</p>
             <input
               type="tel"
               placeholder=""
@@ -171,10 +171,10 @@ const contactform = () => {
           </div>
         </div>
         <div className="mb-5 bg-white px-4 py-3">
-          <p className="text-md mb-1 text-[#3B0D17] -px-4 font-normal">
+          <p className="text-md mb-1 text-dark-red -px-4 font-normal">
             Which describes you?<span className="text-[#e55447]">*</span>
           </p>
-          <div className="text-sm mt-4 text-[#3B0D17] space-y-1">
+          <div className="text-sm mt-4 text-dark-red space-y-1">
             {[
               "I am looking for agency services",
               "I am an agency looking for a white label partner",
@@ -189,7 +189,7 @@ const contactform = () => {
                   value={option}
                   name="description"
                 />
-                <p className="ml-4 text-[#3B0D17]">{option}</p>
+                <p className="ml-4 text-dark-red">{option}</p>
               </label>
             ))}
           </div>
@@ -199,7 +199,7 @@ const contactform = () => {
           </div>
         </div>
         <div className="mb-3">
-          <p className="text-sm mb-1 text-[#3B0D17] font-normal">
+          <p className="text-sm mb-1 text-dark-red font-normal">
             Your Message<span className="text-[#e55447] font-bold">*</span>
           </p>
           <textarea

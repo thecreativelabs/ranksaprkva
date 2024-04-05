@@ -35,7 +35,7 @@ const Button = ({
       </div>
     </a>
   ) : (
-    <button className="bg-[#F0B342] mt-10 px-4 rounded text-[#3B0D17] w-[270px] md:w-auto md:h-14 h-14 md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300 relative md:inline-flex inline-flex justify-center">
+    <button className="bg-darkyellow mt-10 px-4 rounded text-dark-red w-[270px] md:w-auto md:h-14 h-14 md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300 relative md:inline-flex inline-flex justify-center">
       <a
         href={props.path}
         className="flex items-center gap-px md:inline-flex md:items-center md:gap-px"

@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "@/components/Container";
+import { Careers } from "@/types/sanity";
 
 const data = [
   {
@@ -24,14 +25,14 @@ const data = [
   }
 ];
 
-const Opening = () => {
+const Opening = ({jobOpeningsSection: data1}: Pick<Careers,"jobOpeningsSection">) => {
   return (
     <div className="bg-graybg mt-10 sm:mt-20 md:mt-24 h-[560px] sm:h-[600px] flex justify-center">
       <Container>
         <div className="text-center mt-10 sm:mt-20">
           {data.map((sectionData, sectionIndex) => (
             <div key={sectionIndex}>
-              <h2 className="text-3xl sm:text-5xl tracking-wide text-[#3B0D17] font-tertiary">{sectionData.section}</h2>
+              <h2 className="text-3xl sm:text-5xl tracking-wide text-dark-red font-tertiary">{sectionData?.section}</h2>
               <div className="mb-4 mt-14 sm:mt-14">
                 <label
                   htmlFor="interest"
@@ -53,7 +54,7 @@ const Opening = () => {
                 </select>
                 {sectionData.jobOpenings.map((item, index) => (
                   <div key={index} className="mt-6">
-                    <h2 className="text-lg sm:text-xl font-bold text-[#3B0D17]">{item.heading}</h2>
+                    <h2 className="text-lg sm:text-xl font-bold text-dark-red">{item.heading}</h2>
                     <p className="text-md sm:text-lg mt-4 font-semibold text-[#e66262]">{item.subheading}</p>
                     <p className="text-sm sm:text-md">{item.description}</p>
                   </div>

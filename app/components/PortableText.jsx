@@ -127,12 +127,12 @@ const components = {
   },
   block: {
     // normal: (props) => (
-    //   <p className="mt-4 text-[#3B0D17] md:text-base tracking-wide leading- font-normal text-md">
+    //   <p className="mt-4 text-dark-red md:text-base tracking-wide leading- font-normal text-md">
     //     {props.children}
     //   </p>
     // ),
     // h3: (props) => (
-    //   <h3 className="mt-4 text-[#3B0D17] md:text-xl tracking-wide font-semibold text-md [text-wrap:balance]">
+    //   <h3 className="mt-4 text-dark-red md:text-xl tracking-wide font-semibold text-md [text-wrap:balance]">
     //     {props.children}
     //   </h3>
     // ),

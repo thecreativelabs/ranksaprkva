@@ -1,7 +1,9 @@
 import React from 'react'
 import Container from '@/components/Container'
+import { Careers } from '@/types/sanity';
+import { urlForImage } from '@sanity/lib/image';
 
-const data = {
+const data1 = {
     title: "OUR MISSION",
     heading: "Victorious is committed to helping our customers unleash their true search potential. From small marketing teams to large enterprise SEOs, we help businesses boost their visibility by shaping search-first marketing strategies into sustainable growth engines.",
     description:
@@ -50,40 +52,40 @@ const data = {
     ],
   };
 
-const mission = () => {
+const mission = ({missionValues: data }: Pick<Careers, "missionValues">) => {
   return (
     <Container>
       <div>
         <h1 className="text-[#C42A1C] tracking-widest leading-6 md:text-xl text-md mb-6 lg:text-sm font-semibold ">
           <slot name="title tracking-widest leading-6">
-            {data.title}
+            {data?.header?.topText}
           </slot>
         </h1>
-        <p className="md:text-3xl tracking-wide leading-7 md:leading-10 font-medium text-xl font-serif mt-4 text-[#3B0D17] mx-auto w-full">
-          <slot name="desc">{data.heading}</slot>
+        <p className="md:text-3xl tracking-wide leading-7 md:leading-10 font-medium text-xl font-serif mt-4 text-dark-red mx-auto w-full">
+          <slot name="desc">{data?.header?.title}</slot>
         </p>
-        <p className='mt-10 text-md tracking-wider leading-7 w-auto md:w-[800px]'>{data.description}</p>
+        <p className='mt-10 text-md tracking-wider leading-7 w-auto md:w-[800px]'>{data?.description}</p>
       </div>
 
     <div className='mt-16'>
-    <h2 className='md:text-3xl text-lg w-auto font-semibold text-[#3B0D17]'>Our Values</h2>
+    <h2 className='md:text-3xl text-lg w-auto font-semibold text-dark-red'>{data?.values?.heading}</h2>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 mt-10 gap-8 md:gap-8">
-        {data.it.map((item, index) => (
+        {data?.values?.cards?.map((item, index) => (
           <div
             key={index}
             className="bg-graybg md:h-[270px] w-auto h-auto md:w-[400px] flex flex-col gap-4 mb-2 md:mb-6 items-start group rounded transition-all px-8 py-6"
           >
             <div className="items-center justify-between">
               <div className="mt-1 mb-6 bg-white shadow shadow-indigo-100/50 border-indigo-100 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">
-                <span className="text-[#C42A1C] text">{item.icon}</span>
+                <img src={urlForImage(item?.icon)} />
               </div>
-              <h3 className="font-semibold font-sans text-left text-lg md:text-2xl text-[#3B0D17]">
-                {item.title}
+              <h3 className="font-semibold font-sans text-left text-lg md:text-2xl text-dark-red">
+                {item?.heading}
               </h3>
             </div>
             <div>
-              <p className="mt-2 leading-relaxed md:text-md text-sm text-[#3B0D17]">
-                {item.description}
+              <p className="mt-2 leading-relaxed md:text-md text-sm text-dark-red">
+                {item?.description}
               </p>
             </div>
           </div>

@@ -482,10 +482,10 @@ const growth = ({ featureGrid: data }: Pick<About, "featureGrid">) => {
     <div className="mt-20 py-10 bg-graybg/60">
       <Container>
         <div className="mt-16">
-          <p className="md:text-5xl h-auto leading-10 tracking-wider font-medium text-3xl font-tertiary mt-4 text-[#3B0D17] w-auto md:w-[68%]">
+          <p className="md:text-5xl h-auto leading-10 tracking-wider font-medium text-3xl font-tertiary mt-4 text-dark-red w-auto md:w-[68%]">
             {data?.heading}
           </p>
-          <p className="md:mt-10 mt-6 text-[#3B0D17] text-md tracking-wider leading-7 w-auto md:w-[800px]">
+          <p className="md:mt-10 mt-6 text-dark-red text-md tracking-wider leading-7 w-auto md:w-[800px]">
             {data?.description}
           </p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 mt-10 gap-8 md:gap-0">
@@ -498,12 +498,12 @@ const growth = ({ featureGrid: data }: Pick<About, "featureGrid">) => {
                   <div className="mt-1 mb-4 md:mb-6 bg-white shadow shadow-indigo-100/50 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">
                     <img src={urlForImage(item.icon)} alt={item.icon?.alt} />
                   </div>
-                  <h3 className="font-semibold font-sans text-left text-lg md:text-2xl text-[#3B0D17]">
+                  <h3 className="font-semibold font-sans text-left text-lg md:text-2xl text-dark-red">
                     {item.heading}
                   </h3>
                 </div>
                 <div>
-                  <p className="mt-2 leading-relaxed md:text-md text-sm text-[#3B0D17]">
+                  <p className="mt-2 leading-relaxed md:text-md text-sm text-dark-red">
                     {item.description}
                   </p>
                 </div>

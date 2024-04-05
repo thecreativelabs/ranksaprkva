@@ -700,10 +700,10 @@ const Learn = ({
     <Container>
       <div className="flex mt-20 justify-center items-center h-auto">
         <div className="relative w-auto md:w-[60%] justify-center items-center">
-          <h2 className="md:text-4xl text-2xl tracking-wider font-tertiary text-[#3B0D17] lg:text-4xl font-medium md:font-medium font-serif ">
+          <h2 className="md:text-4xl text-2xl tracking-wider font-tertiary text-dark-red lg:text-4xl font-medium md:font-medium font-serif ">
             {heading}
           </h2>
-          <p className="mt-8 mb-8 text-md text-[#3B0D17] w-auto md:w-[100%] leading-7 tracking-wider font-primary">
+          <p className="mt-8 mb-8 text-md text-dark-red w-auto md:w-[100%] leading-7 tracking-wider font-primary">
             {description}
           </p>
           <div className="flex flex-col w-auto md:flex-row gap-x-8">

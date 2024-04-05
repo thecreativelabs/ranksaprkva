@@ -301,7 +301,7 @@ const Algorithms = ({
         <h1 className="text-[#C42A1C] tracking-widest leading-6 md:text-xl text-md mb-6 lg:text-sm font-semibold ">
           <slot name="title tracking-widest leading-6">{heading}</slot>
         </h1>
-        <p className="md:text-2xl tracking-wide leading-7 font-medium text-xl font-serif mt-4 text-[#3B0D17] mx-auto w-full">
+        <p className="md:text-2xl tracking-wide leading-7 font-medium text-xl font-serif mt-4 text-dark-red mx-auto w-full">
           <slot name="desc">{description}</slot>
         </p>
       </div>
@@ -318,12 +318,12 @@ const Algorithms = ({
                   {AlgoData.it[index].icon}
                 </span>
               </div>
-              <h3 className="font-semibold font-sans text-left text-2xl text-[#3B0D17]">
+              <h3 className="font-semibold font-sans text-left text-2xl text-dark-red">
                 {item.title}
               </h3>
             </div>
             <div>
-              <p className="mt-2 leading-relaxed text-[#3B0D17]">
+              <p className="mt-2 leading-relaxed text-dark-red">
                 {item.description}
               </p>
             </div>

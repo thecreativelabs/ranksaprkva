@@ -296,7 +296,7 @@ const Footer = () => {
               {footermenu.media.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-[#e55447] hover:bg-[#fff] transition-all duration-200 rounded-full w-10 h-10 flex items-center justify-center text-[#3b0d17]"
+                  className="bg-[#e55447] hover:bg-[#fff] transition-all duration-200 rounded-full w-10 h-10 flex items-center justify-center text-dark-red"
                 >
                   {item.icon}
                   <span className="sr-only">{item.name}</span>

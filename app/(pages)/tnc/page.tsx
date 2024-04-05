@@ -16,7 +16,7 @@ export default async function Page() {
           {data.header?.topText}
         </h1>
         <div className="h-auto w-auto pb-12">
-          <p className="md:text-5xl text-center h-auto leading-10 tracking-wide font-medium text-3xl font-tertiary mt-4 text-[#3B0D17]">
+          <p className="md:text-5xl text-center h-auto leading-10 tracking-wide font-medium text-3xl font-tertiary mt-4 text-dark-red">
             {data.header?.title}
           </p>
           <div className="mx-auto my-10 bg-slate-300 h-[1px] w-full"></div>

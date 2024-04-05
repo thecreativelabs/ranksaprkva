@@ -25,7 +25,7 @@ export default async function Page() {
             {data.header?.topText}
           </h1>
           <div className="h-auto">
-            <p className="md:text-5xl h-auto leading-10 tracking-wide font-medium text-3xl font-tertiary mt-4 text-[#3B0D17] w-auto md:w-[70%]">
+            <p className="md:text-5xl h-auto leading-10 tracking-wide font-medium text-3xl font-tertiary mt-4 text-dark-red w-auto md:w-[70%]">
               {data.header?.title}
             </p>
             <p className="mt-8 tracking-wider text-md md:text-md w-auto md:w-[60%]">

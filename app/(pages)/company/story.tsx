@@ -18,7 +18,7 @@ const Story = ({ story }: Pick<About, "story">) => {
           {story?.header?.topText}
         </h1>
         <div className="h-auto">
-          <p className="md:text-5xl h-auto leading-10 tracking-wide font-medium text-3xl font-tertiary mt-4 text-[#3B0D17] w-auto md:w-[70%]">
+          <p className="md:text-5xl h-auto leading-10 tracking-wide font-medium text-3xl font-tertiary mt-4 text-dark-red w-auto md:w-[70%]">
             {story?.header?.title}
           </p>
 

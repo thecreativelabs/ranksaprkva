@@ -25,10 +25,10 @@ export default async function Page() {
     <Container>
       <div className="grid md:grid-cols-2 gap-10 mx-auto max-w-6xl mt-16">
         <div className="md:w-[510px] w-auto">
-          <h2 className="text-3xl font-tertiary md:text-5xl text-[#3B0D17]">
+          <h2 className="text-3xl font-tertiary md:text-5xl text-dark-red">
             {data.heading}
           </h2>
-          <p className="text-lg font-sans leading-relaxed mt-6 text-[#3B0D17]">
+          <p className="text-lg font-sans leading-relaxed mt-6 text-dark-red">
             {data.description}
           </p>
           <div className="md:flex mt-10 md:gap-[50px]">
@@ -70,7 +70,7 @@ export default async function Page() {
                     </>
                   </svg>
                   <div className="ml-4 md:ml-1">
-                    <h2 className="md:text-xl text-md font-semibold text-[#3B0D17] mt-2 mb-2">
+                    <h2 className="md:text-xl text-md font-semibold text-dark-red mt-2 mb-2">
                       Address
                     </h2>
                     <a
@@ -134,7 +134,7 @@ export default async function Page() {
                     </>
                   </svg>
                   <div className="ml-4 md:ml-1">
-                    <h2 className="md:text-xl text-md font-semibold text-[#3B0D17] mt-2 mb-2">
+                    <h2 className="md:text-xl text-md font-semibold text-dark-red mt-2 mb-2">
                       Contact Info
                     </h2>
                     <a
