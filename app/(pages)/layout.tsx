@@ -115,7 +115,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={outfit.className}>
+      <body className={inter.className}>
         <Topnav />
         {/* <Navbar /> */}
         <RadixNavbar services={services} whoWeServe={whoWeServe} />
