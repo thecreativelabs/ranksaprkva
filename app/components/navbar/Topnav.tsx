@@ -1,25 +1,25 @@
-import React from 'react';
-import Container from '@/components/Container'
+import React from "react";
+import Container from "@/components/Container";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 
 const Topnav = () => {
   const menuitems = [
     {
-      title: 'Contact',
-      path: '/contact', 
+      title: "Contact",
+      path: "/contact",
     },
     {
-      title: 'Careers',
-      path: '/career',
+      title: "Careers",
+      path: "/career",
     },
     {
-      title: 'Customer Login',
-      path: '/',
+      title: "Customer Login",
+      path: "/",
     },
   ];
 
   return (
-    <div className="bg-[#3B0D17] text-white">
+    <div className="bg-dark-red text-white">
       <Container>
         <div className="navbar flex flex-col w-full h-12 text-sm justify-center">
           <div className="flex flex-col items-center justify-between ml-2 lg:flex-row lg:ml-[100px] lg:mr-[100px]">

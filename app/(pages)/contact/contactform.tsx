@@ -103,7 +103,7 @@ const contactform = () => {
         <div className="flex flex-col space-y md:flex-row md:space-x-4">
           <div className="flex-1 mb-5 bg-white md:bg-white">
             <p className="text-sm mb-1 text-dark-red font-normal">
-              First name<span className="font-bold text-[#e55447]">*</span>
+              First name<span className="font-bold text-light-pink">*</span>
             </p>
             <input
               type="text"
@@ -118,7 +118,7 @@ const contactform = () => {
           </div>
           <div className="flex-1 mb-5">
             <p className="text-sm mb-1 text-dark-red font-normal">
-              Last Name<span className="text-[#e55447] font-bold">*</span>
+              Last Name<span className="text-light-pink font-bold">*</span>
             </p>
             <input
               type="text"
@@ -136,7 +136,7 @@ const contactform = () => {
         <div className="flex flex-col space-y md:flex-row md:space-x-4">
           <div className="flex-1 mb-5">
             <p className="text-sm mb-1 text-dark-red font-normal">
-              Email Address<span className="text-[#e55447] font-bold">*</span>
+              Email Address<span className="text-light-pink font-bold">*</span>
             </p>
             <label htmlFor="email_address" className="sr-only">
               Email Address
@@ -172,7 +172,7 @@ const contactform = () => {
         </div>
         <div className="mb-5 bg-white px-4 py-3">
           <p className="text-md mb-1 text-dark-red -px-4 font-normal">
-            Which describes you?<span className="text-[#e55447]">*</span>
+            Which describes you?<span className="text-light-pink">*</span>
           </p>
           <div className="text-sm mt-4 text-dark-red space-y-1">
             {[
@@ -200,7 +200,7 @@ const contactform = () => {
         </div>
         <div className="mb-3">
           <p className="text-sm mb-1 text-dark-red font-normal">
-            Your Message<span className="text-[#e55447] font-bold">*</span>
+            Your Message<span className="text-light-pink font-bold">*</span>
           </p>
           <textarea
             name="message"

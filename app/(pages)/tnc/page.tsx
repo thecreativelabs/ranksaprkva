@@ -12,7 +12,7 @@ export default async function Page() {
   return (
     <Container>
       <div className="mt-20">
-        <h1 className="text-[#C42A1C] uppercase text-center tracking-widest leading-6 md:text-md lg:text-md mb-6 text-sm font-semibold ">
+        <h1 className="text-light-red uppercase text-center tracking-widest leading-6 md:text-md lg:text-md mb-6 text-sm font-semibold ">
           {data.header?.topText}
         </h1>
         <div className="h-auto w-auto pb-12">

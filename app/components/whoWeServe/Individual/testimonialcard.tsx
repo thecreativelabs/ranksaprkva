@@ -23,7 +23,7 @@ export default function TesimonialCard({
           {data.name?.[0]}
         </div>
         <div className="gap-y-[7px] w-[60%] flex flex-col">
-          <p className=" font-DM-sans text-sm tracking-widest font-bold ">
+          <p className=" font-primary text-sm tracking-widest font-bold ">
             {data.name}
           </p>
           <p className="text-sm  font-light leading-5 ">{data.title}</p>
@@ -34,7 +34,7 @@ export default function TesimonialCard({
           rating={data.rating}
           className="text-darkyellow text-[22px] m-1"
         />
-        <p className="text-base font-normal font-DM-sans tracking-wide leading-6 w-[90%]">
+        <p className="text-base font-normal font-primary tracking-wide leading-6 w-[90%]">
           {data.description}
         </p>
       </div>

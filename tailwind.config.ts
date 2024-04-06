@@ -9,26 +9,20 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "DM-sans": ["DM Sans", "sans-serif"],
-        Amiri: ["Amiri", "serif"],
-        primary: ["DM Sans", "sans-serif"],
-        secondary: ["DM Sans", "sans-serif"],
-        tertiary: "serif",
+        // Amiri: ["Amiri", "serif"],
+        // primary: ["DM Sans", "sans-serif"],
+        tertiary: ["Kanit", "sans-serif"],
       },
       colors: {
         "light-red": "#C42A1C",
         "light-pink": "#E55447",
         "dark-red": "#3B0D17",
+        darkyellow: "#F0B342",
         gray: "#F7F7F6",
         lightblue: "#DAF4F4",
         lightyellow: "#ffae00",
-        darkyellow: "#F0B342",
         lightgreen: "#8AC7C7",
         graybg: "#F0F0ED",
-        btnBg: {
-          DEFAULT: "#F0B342",
-          hover: "#c92045",
-        },
       },
       fontSize: {
         "6xl": ["80px", "80px"],

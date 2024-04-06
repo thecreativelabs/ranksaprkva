@@ -298,7 +298,7 @@ const Algorithms = ({
   return (
     <Container>
       <div>
-        <h1 className="text-[#C42A1C] tracking-widest leading-6 md:text-xl text-md mb-6 lg:text-sm font-semibold ">
+        <h1 className="text-light-red tracking-widest leading-6 md:text-xl text-md mb-6 lg:text-sm font-semibold ">
           <slot name="title tracking-widest leading-6">{heading}</slot>
         </h1>
         <p className="md:text-2xl tracking-wide leading-7 font-medium text-xl font-serif mt-4 text-dark-red mx-auto w-full">
@@ -314,7 +314,7 @@ const Algorithms = ({
           >
             <div className="items-center justify-between">
               <div className="mt-1 mb-6 bg-white border shadow shadow-indigo-100/50 border-indigo-100 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">
-                <span className="text-[#C42A1C] text">
+                <span className="text-light-red text">
                   {AlgoData.it[index].icon}
                 </span>
               </div>

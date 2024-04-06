@@ -52,7 +52,7 @@ const Hero = ({
           </div>
         </div>
       </div>
-      <div className="mx-auto my-10 bg-[#e55447] h-[4px] w-full"></div>
+      <div className="mx-auto my-10 bg-light-pink h-[4px] w-full"></div>
     </div>
   );
 };

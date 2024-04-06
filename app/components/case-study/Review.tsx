@@ -146,7 +146,7 @@ export default function Review({
       {/* Content */}
       <div className="w-full sm:h-[100vh] max-w-[1200px] max-h-[700px] px-4 lg:px-0 lg:w-4/5 flex flex-col justify-center">
         {/* Title and heading */}
-        <p className="text-light-red text-sm sm:text-sm font-bold font-DM-sans uppercase tracking-widest">
+        <p className="text-light-red text-sm sm:text-sm font-bold font-primary uppercase tracking-widest">
           {data?.header?.topText}
         </p>
         <p className="text-dark-red sm:w-[70%] w-[100%] text-xxl lg:text-xxxxl font-normal font-Amiri mt-8 lg:mt-6 leading-[32px] lg:leading-relaxed">
@@ -154,10 +154,10 @@ export default function Review({
         </p>
         {/* Left and right content */}
         <div className="flex flex-col lg:flex-row mt-8 lg:mt-12 gap-6 lg:gap-12">
-          <p className="text-dark-red text-base lg:text-xl font-normal font-DM-Sans leading-normal lg:max-w-[48%]">
+          <p className="text-dark-red text-base lg:text-xl font-normal font-primary leading-normal lg:max-w-[48%]">
             {data1.leftcontent}
           </p>
-          <p className="text-dark-red text-base lg:text-xl font-normal font-DM-Sans leading-normal lg:max-w-[47%]">
+          <p className="text-dark-red text-base lg:text-xl font-normal font-primary leading-normal lg:max-w-[47%]">
             {data1.rightcontent}
           </p>
         </div>

@@ -30,7 +30,7 @@ export default function Results({
           <p className="text-[50px] mt-[50px] leading-[50px] font-Amiri font-normal text-dark-red">
             {data?.heading}
           </p>
-          <p className=" text-dark-red mt-[30px] text-[18px] font-normal font-DM-Sans leading-[29.70px]">
+          <p className=" text-dark-red mt-[30px] text-[18px] font-normal font-primary leading-[29.70px]">
             {data?.description}
           </p>
           <button

@@ -103,7 +103,7 @@ const Navbar = () => {
             {/* logo */}
             <a
               href="/"
-              className="text-lg flex items-center transition focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#3B0D17] focus-visible:outline-none focus-visible:shadow-outline-[#3B0D17] rounded-full px-2 -ml-2"
+              className="text-lg flex items-center transition focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-dark-red focus-visible:outline-none focus-visible:shadow-outline-dark-red rounded-full px-2 -ml-2"
             >
               <div className="w-32 md:w-32">
                 <img src="/logo.png" alt="RankSpark logo" className="p-2" />

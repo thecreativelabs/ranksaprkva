@@ -69,7 +69,7 @@ export default function AdditonalService() {
           <p className="text-xxl font-bold tracking-wider">{data?.heading}</p>
           {/* {
                 (data != null && data.content != null) &&
-                <p className="text-dark-red mt-[20px] text-sm lg:text-[17px] leading-[26px] font-normal font-DM-Sans lg:max-w-[50%]">
+                <p className="text-dark-red mt-[20px] text-sm lg:text-[17px] leading-[26px] font-normal font-primary lg:max-w-[50%]">
                     {data.content}
                 </p>
             } */}

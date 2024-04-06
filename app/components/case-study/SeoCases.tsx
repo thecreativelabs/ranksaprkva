@@ -358,12 +358,12 @@ export default function SeoCases(heading: { heading?: string }) {
                   logo={card.logo}
                   logoclass="top-[-35px] right-[-20px]"
                 />
-                <p className="font-DM-sans text-sm lg:text-base font-normal">
+                <p className="font-primary text-sm lg:text-base font-normal">
                   {card.text}
                 </p>
                 <Link
                   href={card.link}
-                  className="text-dark-red text-xl lg:text-[2xl] font-bold font-DM-sans w-[100%]"
+                  className="text-dark-red text-xl lg:text-[2xl] font-bold font-primary w-[100%]"
                 >
                   {card.title}
                 </Link>

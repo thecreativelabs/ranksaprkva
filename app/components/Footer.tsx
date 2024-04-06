@@ -192,27 +192,27 @@ const footermenu = {
   ],
   media: [
     {
-      icon: (<FaFacebookF name="bx:bxl-facebook" className="w-6 h-6" />),
+      icon: <FaFacebookF name="bx:bxl-facebook" className="w-6 h-6" />,
       name: "Facebook",
     },
     {
-      icon: (<FaInstagram name="bx:bxl-linkedin" className="w-6 h-6" />),
-      name: "Instagram"
+      icon: <FaInstagram name="bx:bxl-linkedin" className="w-6 h-6" />,
+      name: "Instagram",
     },
     {
-      icon: (<FaLinkedin name="bx:bxl-twitter" className="w-6 h-6" />),
-      name: "LinkedIn"
+      icon: <FaLinkedin name="bx:bxl-twitter" className="w-6 h-6" />,
+      name: "LinkedIn",
     },
     {
-      icon: (<FaTwitter name="bx:bxl-youtube" className="w-6 h-6" />),
-      name: "Twitter"
+      icon: <FaTwitter name="bx:bxl-youtube" className="w-6 h-6" />,
+      name: "Twitter",
     },
   ],
 };
 
 const Footer = () => {
   return (
-    <footer className="py-14 bg-[#3b0d17] border-t border-slate-100">
+    <footer className="py-14 bg-dark-red border-t border-slate-100">
       <Container>
         <div className="flex flex-col md:flex-row justify-center md:gap-20">
           {footermenu.item.map((item, index) => (
@@ -228,18 +228,15 @@ const Footer = () => {
       </Container>
 
       <Container>
-        <div className="mx-auto my-10 bg-[#e55447] h-[1px] w-full"></div>
+        <div className="mx-auto my-10 bg-light-pink h-[1px] w-full"></div>
         <div className="flex-wrap  gap-4 lg:flex md:flex sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           <div className="text-white w-[200px] mb-8 flex sm:col-span-2 md:col-span-3 lg:col-span-2">
             <a
               href="/"
-              className="text-lg flex items-start justify-start transition focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#3B0D17] px-4 "
+              className="text-lg flex items-start justify-start transition focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-dark-red px-4 "
             >
               <div className="w-auto md:w-auto">
-                <img
-                  src={footermenu.logo}
-                  alt="logo"
-                />
+                <img src={footermenu.logo} alt="logo" />
               </div>
             </a>
           </div>
@@ -256,7 +253,7 @@ const Footer = () => {
                     <a
                       key={index}
                       href={item.path || "#"}
-                      className="py-2 text-sm text-white hover:text-[#e55447]"
+                      className="py-2 text-sm text-white hover:text-light-pink"
                     >
                       {item.title}
                     </a>
@@ -269,7 +266,7 @@ const Footer = () => {
       </Container>
 
       <Container>
-        <div className="mx-auto my-10 bg-[#e55447] h-[1px] w-full"></div>
+        <div className="mx-auto my-10 bg-light-pink h-[1px] w-full"></div>
       </Container>
 
       <div className="mt-4 pt-10 px-5 ">
@@ -283,7 +280,7 @@ const Footer = () => {
               <p className="text-center text-sm text-white mt-2 lg:mt-0 lg:text-left">
                 {footermenu.tnc.map((item, index) => (
                   <>
-                    <a href={item.path} className="hover:text-[#e55447]">
+                    <a href={item.path} className="hover:text-light-pink">
                       {item.title}
                     </a>
                     {index !== footermenu.tnc.length - 1 && " ・ "}
@@ -296,7 +293,7 @@ const Footer = () => {
               {footermenu.media.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-[#e55447] hover:bg-[#fff] transition-all duration-200 rounded-full w-10 h-10 flex items-center justify-center text-dark-red"
+                  className="bg-light-pink hover:bg-[#fff] transition-all duration-200 rounded-full w-10 h-10 flex items-center justify-center text-dark-red"
                 >
                   {item.icon}
                   <span className="sr-only">{item.name}</span>

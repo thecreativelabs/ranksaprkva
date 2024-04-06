@@ -9,10 +9,10 @@ export default function Cta() {
       <div className="max-h-full h-full w-full max-w-[1400px] bg-contain bg-no-repeat flex gap-[12px] flex-col background-over justify-center items-center">
         <div className="w-[80%] xl:flex justify-between">
           <div className="space-y-[20px]">
-            <p className="text-xxl text-dark-red font-bold font-DM-sans">
+            <p className="text-xxl text-dark-red font-bold font-primary">
               {data.heading}
             </p>
-            <p className="text-base font-normal font-DM-sans text-dark-red">
+            <p className="text-base font-normal font-primary text-dark-red">
               {data.subHeading}
             </p>
           </div>

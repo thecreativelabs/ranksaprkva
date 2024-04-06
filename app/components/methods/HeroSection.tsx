@@ -31,13 +31,13 @@ export default function Hero({
       <div className="max-h-full  h-fit bg-graybg py-[50px] sm:py-[80px] md:py-[130px] relative w-full">
         <Container>
           <div className="max-h-full h-full w-full bg-contain bg-no-repeat flex gap-[12px] flex-col background-overlay justify-center items-center">
-            <p className="h-[21px] text-center text-light-red text-sm font-medium font-DM-sans uppercase leading-[21px] tracking-widest">
+            <p className="h-[21px] text-center text-light-red text-sm font-medium font-primary uppercase leading-[21px] tracking-widest">
               {header?.header?.topText}
             </p>
             <p className="w-[x] text-center text-dark-red text-xxl sm:text-xxxxxl font-normal font-Amiri sm:leading-[67.34px]">
               {header?.header?.title}
             </p>
-            <p className="w-[80%] sm:w-[40%] text-center text-dark-red text-xs sm:text-[18px] font-normal font-DM-Sans leading-[17px] sm:leading-[29.70px]">
+            <p className="w-[80%] sm:w-[40%] text-center text-dark-red text-xs sm:text-[18px] font-normal font-primary leading-[17px] sm:leading-[29.70px]">
               {header?.description}
             </p>
             {/* <img src={herosection.image} className="sm:h-[544px] h-[220px] mt-[4%]" /> */}

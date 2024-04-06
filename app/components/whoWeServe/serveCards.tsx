@@ -10,7 +10,7 @@ const ServeCards = (props: any) => {
         <p className="text-xl pr-2 mt-[5px] font-bold tracking-wider">
           {props.data.heading}
         </p>
-        <p className="text-[16px]  w-[95%] font-normal font-DM-sans leading-[26px]">
+        <p className="text-[16px]  w-[95%] font-normal font-primary leading-[26px]">
           {props.data.content}
         </p>
         <ul className="leading-[25px] list-disc ml-[15px]">

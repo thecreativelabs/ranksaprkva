@@ -13,7 +13,7 @@ export default function ContentAndServices({
   return (
     <Container>
       <div className="md:py-[120px] sm:py-[80px] py-[40px] h-fit w-full flex flex-col gap-[30px] justify-center items-center">
-        <p className="text-light-red text-sm font-medium font-DM-sans uppercase mb-[5px] leading-[21px] tracking-widest">
+        <p className="text-light-red text-sm font-medium font-primary uppercase mb-[5px] leading-[21px] tracking-widest">
           {data?.header?.topText}
         </p>
         <p className="text-center text-dark-red text-xxl sm:text-xxxl sm:w-[60%] w-[90%] font-normal font-Amiri">
@@ -32,7 +32,7 @@ export default function ContentAndServices({
                 <p className="text-xl mt-[-15px] font-bold tracking-wider">
                   {card?.title}
                 </p>
-                <p className="text-[16px] mt-[-20px] w-[95%] font-normal font-DM-sans leading-[26px]">
+                <p className="text-[16px] mt-[-20px] w-[95%] font-normal font-primary leading-[26px]">
                   {card?.description}
                 </p>
                 <button className="text-base font-bold text-light-pink">

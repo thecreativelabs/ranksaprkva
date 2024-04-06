@@ -74,7 +74,7 @@ export default async function Page() {
                       Address
                     </h2>
                     <a
-                      className="text-[#e55447]"
+                      className="text-light-pink"
                       href={data.address.link}
                       target="_blank"
                     >
@@ -138,14 +138,14 @@ export default async function Page() {
                       Contact Info
                     </h2>
                     <a
-                      className="text-[#e55447]"
+                      className="text-light-pink"
                       href={`mailto:${data.contactInfo.email?.text}`}
                     >
                       {data.contactInfo.email?.text}
                     </a>
                     <br />
                     <a
-                      className="text-[#e55447]"
+                      className="text-light-pink"
                       href={`tel:${data.contactInfo.phone?.text}`}
                     >
                       {data.contactInfo.phone?.text}

@@ -138,13 +138,13 @@ export default function Slider(props: any) {
                             ""
                           )}
                           <p
-                            className="font-bold text-xxxl font-DM-sans"
+                            className="font-bold text-xxxl font-primary"
                             style={{ color: dataa.color }}
                           >
                             {dataa.counter[0].number.text}
                           </p>
                         </div>
-                        <p className="text-sm ml-[8px] font-DM-sans font-normal tracking-wider">
+                        <p className="text-sm ml-[8px] font-primary font-normal tracking-wider">
                           {dataa.counter[0].text}
                         </p>
                       </div>
@@ -159,19 +159,19 @@ export default function Slider(props: any) {
                             ""
                           )}
                           <p
-                            className="font-bold text-xxxl   font-DM-sans"
+                            className="font-bold text-xxxl   font-primary"
                             style={{ color: dataa.color }}
                           >
                             {dataa.counter[1].number.text}
                           </p>
                         </div>
-                        <p className="text-sm ml-[8px]  font-DM-sans font-normal tracking-wider">
+                        <p className="text-sm ml-[8px]  font-primary font-normal tracking-wider">
                           {dataa.counter[1].text}
                         </p>
                       </div>
                     </div>
                     <div>
-                      <p className="text-dark-red sm:text-xxl text-xl font-bold font-DM-sans w-[100%]">
+                      <p className="text-dark-red sm:text-xxl text-xl font-bold font-primary w-[100%]">
                         {dataa.content}
                       </p>
                       <div className="text-sm justify-start w-[50%] font-bold mt-[20px]  uppercase flex tracking-widest gap-[15px] items-center text-light-red">

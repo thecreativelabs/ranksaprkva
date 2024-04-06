@@ -50,7 +50,7 @@ export default async function CardSection() {
                         <p className="text-xl pr-2 mt-[5px] font-bold tracking-wider">
                           {card.pageMeta?.name}
                         </p>
-                        <p className="text-[16px]  w-[95%] font-normal font-DM-sans leading-[26px]">
+                        <p className="text-[16px]  w-[95%] font-normal font-primary leading-[26px]">
                           {card.pageMeta?.description}
                         </p>
                       </div>

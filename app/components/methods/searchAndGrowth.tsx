@@ -16,10 +16,10 @@ export default function SearchAndGrowth({
       <div className="relative py-[120px] h-fit  flex flex-col bg-white justify-center items-center">
         <div className="sm:absolute relative top-[-100px] flex flex-col items-center justify-center rounded h-[180px] sm:h-[250px] bg gradient-with-image ">
           <div className="w-[90%] min-w-3xl h-[80%] sm:h-full gap-[20px] flex flex-col justify-center">
-            <p className="text-white text-[20px] sm:text-[28.40px] font-DM-sans font-bold sm:w-[60%] w-[80%] leading-6 sm:leading-10">
+            <p className="text-white text-[20px] sm:text-[28.40px] font-primary font-bold sm:w-[60%] w-[80%] leading-6 sm:leading-10">
               {data?.ctoCard?.text}
             </p>
-            <button className="w-[260px] h-[50px] sm:h-[61px] relative bg-amber-400 rounded text-center text-dark-red text-sm font-bold font-DM-Sans uppercase leading-[21px] tracking-widest">
+            <button className="w-[260px] h-[50px] sm:h-[61px] relative bg-amber-400 rounded text-center text-dark-red text-sm font-bold font-primary uppercase leading-[21px] tracking-widest">
               {data?.ctoCard?.cta?.heading}
             </button>
           </div>

@@ -32,12 +32,12 @@ export default async function Page() {
       ...
     }`
   )) as JobOpening[];
-    console.log(jobOpenings)
+  console.log(jobOpenings);
   return (
     <>
       <Container>
         <div className="mt-20">
-          <h1 className="text-[#C42A1C] tracking-widest leading-6 md:text-md lg:text-md mb-6 text-sm font-semibold ">
+          <h1 className="text-light-red tracking-widest leading-6 md:text-md lg:text-md mb-6 text-sm font-semibold ">
             {careers?.header?.topText}
           </h1>
           <div className="h-auto">
@@ -66,10 +66,10 @@ export default async function Page() {
       </Container>
       <Gallery images={careers.images} />
       <Growth testimonials={careers.testimonials} />
-      <Cultivating heroSection={careers.heroSection}/>
-      <Mission missionValues={careers.missionValues}/>
-      <Whoare whoWeAre={careers.whoWeAre}/>
-      <Howcare benefits={careers.benefits}/>
+      <Cultivating heroSection={careers.heroSection} />
+      <Mission missionValues={careers.missionValues} />
+      <Whoare whoWeAre={careers.whoWeAre} />
+      <Howcare benefits={careers.benefits} />
       <Picture />
       <Opening jobOpeningsSection={careers.jobOpeningsSection} />
       <Faq faqs={careers.faqs} />

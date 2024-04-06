@@ -711,7 +711,7 @@ const Learn = ({
               {learn.it.map((item, index) => (
                 <div key={index}>
                   <a href="/">
-                    <div className="mx-auto bg-[#3b0d17] h-[1px] w-full"></div>
+                    <div className="mx-auto bg-dark-red h-[1px] w-full"></div>
                     <div className="flex mt-5 mb-5 md:gap-x-8">
                       {item.icon}
                       <p className="mt-4 w-[150px] font-semibold md:ml-0 ml-4 text-md md:text-xl">
@@ -729,7 +729,7 @@ const Learn = ({
               {learn.it2.map((items, index) => (
                 <div key={index}>
                   <a href="/">
-                    <div className="mx-auto bg-[#3b0d17] h-[1px] w-full"></div>
+                    <div className="mx-auto bg-dark-red h-[1px] w-full"></div>
                     <div className="flex mt-5 mb-5 md:gap-x-8">
                       {items.icon}
                       <p className="mt-4 w-[150px] font-semibold md:w-[150px] md:ml-0 ml-4 text-md md:text-xl">

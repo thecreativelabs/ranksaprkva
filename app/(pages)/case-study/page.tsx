@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import Cta from "@/components/Cta";
 import { client } from "@sanity/lib/client";
 import { Award, CaseStudyLanding } from "@/types/sanity";
+import Faq from "@/components/Faq";
 
 export type CaseStudyLandingWithReferences = Omit<
   CaseStudyLanding,

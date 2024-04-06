@@ -32,7 +32,7 @@ const QAndA = ({ data }: { data: CaseStudyLanding["faqSection"] }) => {
             <div key={i} className="w-[100%] border-t-[1px] border-black py-4">
               <div className="relative w-full flex justify-between items-center">
                 <button
-                  className="text-xl text-left w-[80%] hover:text-light-pink hover:cursor-pointer font-DM-sans font-bold"
+                  className="text-xl text-left w-[80%] hover:text-light-pink hover:cursor-pointer font-primary font-bold"
                   style={{ color: open[i] ? "#E55447" : "" }}
                   onClick={() => setElement(i, !open[i])}
                 >
@@ -54,7 +54,7 @@ const QAndA = ({ data }: { data: CaseStudyLanding["faqSection"] }) => {
                   transition: "max-height 0.5s ease-in-out",
                 }}
               >
-                <p className="font-DM-sans text-base leading-[25px] font-normal mt-[20px]">
+                <p className="font-primary text-base leading-[25px] font-normal mt-[20px]">
                   <PortableText value={card.answer} />
                 </p>
               </div>
