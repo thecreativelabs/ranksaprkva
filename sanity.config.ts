@@ -10,7 +10,6 @@ import landingPage from "./sanity/schemas/landingPage";
 import { table } from "@sanity/table";
 import { codeInput } from "@sanity/code-input";
 import logos from "./sanity/schemas/logos";
-import pricing from "./sanity/schemas/pricing";
 import testimonials from "./sanity/schemas/testimonials";
 import faqs from "./sanity/schemas/faqs";
 import cta from "./sanity/schemas/cta";
@@ -35,7 +34,6 @@ export default defineConfig({
       structure: pageStructure([
         settings,
         logos,
-        pricing,
         landingPage,
         careers,
         about,

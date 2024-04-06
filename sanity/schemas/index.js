@@ -6,10 +6,8 @@ import caseStudies from "./caseStudies";
 import caseStudyLanding from "./caseStudyLanding";
 import services from "./services";
 import button from "./button";
-import marketingSolutions from "./marketingSolutions";
 import landingPage from "./landingPage";
 import logos from "./logos";
-import pricing from "./pricing";
 import testimonials from "./testimonials";
 import faqs from "./faqs";
 import jobOpenings from "./jobOpenings";
@@ -29,13 +27,9 @@ import whoWeServe from "./whoWeServe";
 import meta from "./meta";
 
 const schemaTypes = [
-  // components
   header,
-
-  // category,
   settings,
   logos,
-  pricing,
   testimonials,
   faqs,
   cta,
@@ -55,10 +49,7 @@ const schemaTypes = [
   vertical,
   whoWeServe,
   meta,
-
   caseStudies,
-  marketingSolutions,
-
   button,
   services,
   blockContent,
