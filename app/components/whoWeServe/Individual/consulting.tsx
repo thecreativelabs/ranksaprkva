@@ -3,13 +3,13 @@ import Growth from "@components/ui/icons/Growth";
 import Task from "@components/ui/icons/taskList";
 import Search from "@components/ui/icons/search";
 import SearchCards from "@/components/methods/searchCards";
+import { Image } from "@/types";
 
 export default function Consulting({
   title,
   heading,
   description,
   grid,
-  icons,
 }: {
   title: string;
   heading: string;
@@ -17,8 +17,8 @@ export default function Consulting({
   grid: {
     title: string;
     description: string;
+    icon: Image;
   }[];
-  icons: JSX.Element[];
 }) {
   return (
     <div className="border-b-[1px] border-[#CCC]">
@@ -36,13 +36,7 @@ export default function Consulting({
             </p>
             <div>
               <div className="grid grid-cols-1 sm:grid-cols-3 mt-[50px] relative gap-[40px]">
-                {grid?.map((item, key) => (
-                  <SearchCards
-                    key={key}
-                    {...item}
-                    icon={icons[key % icons.length]}
-                  />
-                ))}
+                {grid?.map((item, key) => <SearchCards key={key} {...item} />)}
               </div>
             </div>
           </div>

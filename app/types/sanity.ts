@@ -3698,6 +3698,25 @@ export interface Services extends SanityDocument {
            *
            */
           description?: string;
+
+          /**
+           * Icon — `image`
+           *
+           *
+           */
+          icon?: {
+            _type: "image";
+            asset: SanityReference<SanityImageAsset>;
+            crop?: SanityImageCrop;
+            hotspot?: SanityImageHotspot;
+
+            /**
+             * Alternative text — `string`
+             *
+             * Important for SEO and accessiblity.
+             */
+            alt?: string;
+          };
         }>
       >;
     };
@@ -3899,23 +3918,6 @@ export type Header = {
    *
    */
   title?: string;
-};
-
-export type Image = {
-  _type: "image";
-
-  asset: SanityReference<SanityImageAsset>;
-
-  crop?: SanityImageCrop;
-
-  hotspot?: SanityImageHotspot;
-
-  /**
-   * Alternative text — `string`
-   *
-   * Important for SEO and accessiblity.
-   */
-  alt?: string;
 };
 
 export type Testimonials = {

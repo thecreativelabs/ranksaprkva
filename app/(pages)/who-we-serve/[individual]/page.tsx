@@ -13,7 +13,6 @@ import Container from "@/components/Container";
 import Learn from "@/components/whoWeServe/Individual/Learn";
 import Banner from "@/components/whoWeServe/Individual/Banner";
 import Testimonial from "@/components/whoWeServe/Individual/Testimonial";
-import QandA from "@/components/whoWeServe/Individual/QandA";
 import { client } from "@sanity/lib/client";
 import { Vertical } from "@/types/sanity";
 
@@ -105,7 +104,6 @@ export default async function Individual({
       <Banner {...data?.cta} />
       <Testimonial {...data?.testimonials} />
       <Faq {...data?.faqs} />
-      {/* <QandA /> */}
     </div>
   );
 }

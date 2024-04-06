@@ -11,7 +11,6 @@ import ServiceSlider from "@/components/services/slider";
 import ServiceMarketing from "@/components/services/Marketing";
 import ServiceLearn from "@/components/services/learn";
 import ServiceBanner from "@/components/services/banner";
-import ServiceQandA from "@/components/services/QandA";
 import { client } from "@sanity/lib/client";
 import Faq from "@/components/Faq";
 
@@ -36,7 +35,7 @@ export default async function CaseStudyIndividual({
           title,
           heading,
           description,        
-          grid[] {title,description},
+          grid[] {title,description,icon},
         },
         bulletList {
           heading,
@@ -71,17 +70,15 @@ export default async function CaseStudyIndividual({
       <Brands />
       <CaseStudyConsulting {...page.features.grid} />
 
-      {/* Pricing */}
+      {/* TODO: Replace the following 3 with Pricing */}
       <Services />
       <AdditonalService />
       <ServiceSlider />
-      {/* Pricing */}
 
       <ServiceMarketing data={page.features.bulletList} />
       <ServiceLearn data={page.features.numberList} />
       <ServiceBanner data={page.cta} />
       <Faq {...page.faqs} />
-      {/* <ServiceQandA /> */}
     </>
   );
 }

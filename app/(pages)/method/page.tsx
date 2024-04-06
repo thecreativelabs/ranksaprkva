@@ -39,15 +39,3 @@ export default async function Methods() {
     </>
   );
 }
-
-// <Layout>
-//   <HeroSection />
-//   <Growthh />
-//   <Framework />
-//   <ContentService />
-//   <Banner />
-//   <InnovativeSEOSection />
-//   <Companies />
-//   <Results />
-//   <Help />
-// </Layout>
