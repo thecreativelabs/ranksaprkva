@@ -32,20 +32,27 @@ export default function ContentSection(data?: CaseStudyWithReferences) {
               })}
             </div>
             <div className="mt-[20px] sm:mt-[50px] sm:py-[50px] py-[20px]">
-              <p className="text-light-red text-sm sm:text-sm font-bold font-primary uppercase tracking-widest">
+              <h3 className="text-light-red text-sm sm:text-sm font-bold font-primary uppercase tracking-widest">
                 Challenge
-              </p>
-              <PortableText value={data?.challenge!} />
-              <p className="text-light-red text-sm sm:text-sm font-bold font-primary uppercase tracking-widest">
+              </h3>
+              <div className="">
+                <PortableText value={data?.challenge} />
+              </div>
+              <h3 className="pt-8 text-light-red text-sm sm:text-sm font-bold font-primary uppercase tracking-widest">
                 Solution
-              </p>
-              <PortableText value={data?.solution!} />
-              <p className="text-light-red text-sm sm:text-sm font-bold font-primary uppercase tracking-widest">
+              </h3>
+              <div className="">
+                <PortableText value={data?.solution} />
+              </div>
+              <h3 className="pt-8 text-light-red text-sm sm:text-sm font-bold font-primary uppercase tracking-widest">
                 Result
-              </p>
-              <PortableText value={data?.result!} />
-
-              <PortableText value={data?.body!} />
+              </h3>
+              <div className="">
+                <PortableText value={data?.result} />
+              </div>
+              <div className="pt-4">
+                <PortableText value={data?.body!} />
+              </div>
             </div>
           </div>
 

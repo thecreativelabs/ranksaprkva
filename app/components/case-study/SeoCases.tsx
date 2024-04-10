@@ -51,10 +51,10 @@ export default function SeoCases({
                     awards={card.awards}
                     awardClass="top-[-35px] right-[-20px]"
                   />
-                  <p className="font-primary text-sm lg:text-base font-normal">
+                  <p className="font-primary text-sm lg:text-base font-normal pt-4">
                     {card.pageMeta?.name}
                   </p>
-                  {card.pageMeta?.description}
+                  <p className="pt-2">{card.pageMeta?.description}</p>
                 </Link>
               </div>
             ))}
