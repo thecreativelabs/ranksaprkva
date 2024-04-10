@@ -1646,24 +1646,7 @@ export interface CaseStudyLanding extends SanityDocument {
      *
      *
      */
-    featuredCaseStudies?: Array<
-      SanityKeyed<{
-        _type: "caseStudy";
-        /**
-         * Case Study — `reference`
-         *
-         *
-         */
-        caseStudy?: SanityReference<CaseStudy>;
-
-        /**
-         * CTA — `button`
-         *
-         *
-         */
-        cta?: Button;
-      }>
-    >;
+    featuredCaseStudies?: Array<SanityKeyedReference<CaseStudy>>;
   };
 
   /**
@@ -3225,6 +3208,12 @@ export interface CaseStudy extends SanityDocument {
      * Important for SEO and accessiblity.
      */
     alt?: string;
+    /**
+     * color
+     *
+     *
+     */
+    color?: string;
   };
 
   /**
@@ -3262,15 +3251,58 @@ export interface CaseStudy extends SanityDocument {
        * The text to display next to the statistic. For example, "users" or "downloads".
        */
       context?: string;
+
+      color?: string;
     }>
   >;
+  /**
+   * challenge — `blockContent`
+   *
+   *
+   */
+  challenge?: BlockContent;
+
+  /**
+   * solution — `blockContent`
+   *
+   *
+   */
+  solution?: BlockContent;
+
+  /**
+   * result — `blockContent`
+   *
+   *
+   */
+  result?: BlockContent;
 
   /**
    * Body — `blockContent`
    *
    *
    */
+
   body?: BlockContent;
+
+  /**
+   * testimony — `object`
+   *
+   *
+   */
+
+  testimony?: {
+    text?: string;
+    name?: string;
+    designation?: string;
+    image?: {
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+    };
+  };
+
+  services?: Array<SanityKeyedReference<Services>>;
 }
 
 /**

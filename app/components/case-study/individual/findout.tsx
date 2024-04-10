@@ -57,10 +57,9 @@ export default function Findout() {
                 <Cards
                   key={i}
                   className="h-[256px]"
-                  color={card.color}
                   image={card.image}
-                  logo={card.logo}
-                  logoclass="top-[-35px] right-[-20px]"
+                  awards={card.awards}
+                  awardClass="top-[-35px] right-[-20px]"
                 />
                 <p className="font-primary text-sm lg:text-base font-normal">
                   {card.text}

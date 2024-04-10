@@ -8,6 +8,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { CaseStudyLanding } from "@/types/sanity";
+import { PortableText } from "../PortableText";
 
 // Initialize Swiper core components
 // SwiperCore.use([Pagination]);
@@ -154,12 +155,9 @@ export default function Review({
         </p>
         {/* Left and right content */}
         <div className="flex flex-col lg:flex-row mt-8 lg:mt-12 gap-6 lg:gap-12">
-          <p className="text-dark-red text-base lg:text-xl font-normal font-primary leading-normal lg:max-w-[48%]">
-            {data1.leftcontent}
-          </p>
-          <p className="text-dark-red text-base lg:text-xl font-normal font-primary leading-normal lg:max-w-[47%]">
-            {data1.rightcontent}
-          </p>
+          <div className="text-dark-red text-base lg:text-xl font-normal font-primary leading-normal lg:max-w-[48%]">
+            <PortableText value={data?.description} />
+          </div>
         </div>
       </div>
 

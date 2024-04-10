@@ -6,330 +6,19 @@ import Prevbutton from "@components/methods/PrevButton";
 import Link from "next/link";
 import { client } from "@sanity/lib/client";
 import { CaseStudy, Award } from "@/types/sanity";
+import { CaseStudyWithReferences } from "@/(pages)/case-study/page";
 
-const data1 = {
-  title: "Take it from our case studies, SEO is a powerful marketing pipeline.",
-  cards: [
-    {
-      image: "/case-study/image-4.png",
-      logo: "",
-      color: "#EB1D27",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/case-study/abc",
-      text: "ForeSee Medical",
-    },
-    {
-      image: "/methods/Lychee-the-Label.png",
-      logo: "/case-study/logo-1.png",
-      color: "#26384F",
-      title: '#1 Ranking for "music foundation"',
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-3.png",
-      logo: "/case-study/logo-2.png",
-      color: "#F0B342",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "ForeSee Medical",
-    },
-    {
-      image: "/case-study/image-6.png",
-      logo: "",
-      color: "#EB1D27",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/methods/Lychee-the-Label.png",
-      logo: "/case-study/logo-1.png",
-      color: "#26384F",
-      title: '#1 Ranking for "music foundation"',
-      link: "/",
-      text: "Eden Health",
-    },
-    {
-      image: "/case-study/image-5.png",
-      logo: "/case-study/logo-2.png",
-      color: "#F0B342",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-1.png",
-      logo: "",
-      color: "#EB1D27",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Eden Health",
-    },
-    {
-      image: "/methods/Lychee-the-Label.png",
-      logo: "/case-study/logo-1.png",
-      color: "#26384F",
-      title: '#1 Ranking for "music foundation"',
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-2.png",
-      logo: "/case-study/logo-2.png",
-      color: "#F0B342",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "ForeSee Medical",
-    },
-    {
-      image: "/case-study/image-4.png",
-      logo: "",
-      color: "#EB1D27",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/methods/Lychee-the-Label.png",
-      logo: "/case-study/logo-1.png",
-      color: "#26384F",
-      title: '#1 Ranking for "music foundation"',
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-3.png",
-      logo: "/case-study/logo-2.png",
-      color: "#F0B342",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Eden Health",
-    },
-    {
-      image: "/case-study/image-6.png",
-      logo: "",
-      color: "#EB1D27",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/methods/Lychee-the-Label.png",
-      logo: "/case-study/logo-1.png",
-      color: "#26384F",
-      title: '#1 Ranking for "music foundation"',
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-5.png",
-      logo: "/case-study/logo-2.png",
-      color: "#F0B342",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Eden Health",
-    },
-    {
-      image: "/case-study/image-1.png",
-      logo: "",
-      color: "#EB1D27",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "ForeSee Medical",
-    },
-    {
-      image: "/methods/Lychee-the-Label.png",
-      logo: "/case-study/logo-1.png",
-      color: "#26384F",
-      title: '#1 Ranking for "music foundation"',
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-2.png",
-      logo: "/case-study/logo-2.png",
-      color: "#F0B342",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-4.png",
-      logo: "",
-      color: "#EB1D27",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/methods/Lychee-the-Label.png",
-      logo: "/case-study/logo-1.png",
-      color: "#26384F",
-      title: '#1 Ranking for "music foundation"',
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-3.png",
-      logo: "/case-study/logo-2.png",
-      color: "#F0B342",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-6.png",
-      logo: "",
-      color: "#EB1D27",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "L3 Funding",
-    },
-    {
-      image: "/methods/Lychee-the-Label.png",
-      logo: "/case-study/logo-1.png",
-      color: "#26384F",
-      title: '#1 Ranking for "music foundation"',
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-5.png",
-      logo: "/case-study/logo-2.png",
-      color: "#F0B342",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-1.png",
-      logo: "",
-      color: "#EB1D27",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "L3 Funding",
-    },
-    {
-      image: "/methods/Lychee-the-Label.png",
-      logo: "/case-study/logo-1.png",
-      color: "#26384F",
-      title: '#1 Ranking for "music foundation"',
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-2.png",
-      logo: "/case-study/logo-2.png",
-      color: "#F0B342",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-4.png",
-      logo: "",
-      color: "#EB1D27",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/methods/Lychee-the-Label.png",
-      logo: "/case-study/logo-1.png",
-      color: "#26384F",
-      title: '#1 Ranking for "music foundation"',
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-3.png",
-      logo: "/case-study/logo-2.png",
-      color: "#F0B342",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-6.png",
-      logo: "",
-      color: "#EB1D27",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "L3 Funding",
-    },
-    {
-      image: "/methods/Lychee-the-Label.png",
-      logo: "/case-study/logo-1.png",
-      color: "#26384F",
-      title: '#1 Ranking for "music foundation"',
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-5.png",
-      logo: "/case-study/logo-2.png",
-      color: "pink",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-    {
-      image: "/case-study/image-1.png",
-      logo: "",
-      color: "#EB1D27",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Eden Health",
-    },
-    {
-      image: "/methods/Lychee-the-Label.png",
-      logo: "/case-study/logo-1.png",
-      color: "yellow",
-      title: '#1 Ranking for "music foundation"',
-      link: "/",
-      text: "L3 Funding",
-    },
-    {
-      image: "/case-study/image-2.png",
-      logo: "/case-study/logo-2.png",
-      color: "blue",
-      title: '#1 Ranking for "cargo shorts men"',
-
-      link: "/",
-      text: "Gentry Dentistry",
-    },
-  ],
-};
-
-export default function SeoCases(heading: { heading?: string }) {
+export default function SeoCases({
+  heading,
+  caseStudies,
+}: {
+  heading?: string;
+  caseStudies?: CaseStudyWithReferences[];
+}) {
   const [page, setPage] = useState<number>(0);
   const pageSize: number = 16;
-  const lastPage: number = Math.ceil(data1.cards.length / pageSize);
-
+  const size = caseStudies ? caseStudies.length : 0;
+  const lastPage: number = Math.ceil(size / pageSize);
   const handlePrevPage = () => {
     setPage((prevPage) => Math.max(prevPage - 1, 0));
   };
@@ -343,29 +32,28 @@ export default function SeoCases(heading: { heading?: string }) {
       <div className="w-full relative min-h-fit max-w-[1200px] lg:w-[75%] flex justify-center items-center flex-col">
         <div className="w-full flex m justify-center items-center mt-[70px]">
           <p className="text-dark-red w-[80%] lg:w-[unset] text-[27.30px] lg:text-[46px] font-normal font-Amiri tracking-wide leading-[35px] sm:leading-[67.34px]">
-            {heading.heading}
+            {heading}
           </p>
         </div>
         <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-[25px] mt-[50px] lg:mt-[70px] sm:mb-[0px] mb-[0px] gap-y-[70px]">
-          {data1.cards
-            .slice(page * pageSize, (page + 1) * pageSize)
+          {caseStudies
+            ?.slice(page * pageSize, (page + 1) * pageSize)
             .map((card, index) => (
               <div key={index} className="space-y-[12px]">
-                <Cards
-                  className="h-[256px]"
-                  color={card.color}
-                  image={card.image}
-                  logo={card.logo}
-                  logoclass="top-[-35px] right-[-20px]"
-                />
-                <p className="font-primary text-sm lg:text-base font-normal">
-                  {card.text}
-                </p>
                 <Link
-                  href={card.link}
+                  href={`/case-study/${card.pageMeta?.slug?.current}`}
                   className="text-dark-red text-xl lg:text-[2xl] font-bold font-primary w-[100%]"
                 >
-                  {card.title}
+                  <Cards
+                    className="h-[256px]"
+                    image={card.headerImage}
+                    awards={card.awards}
+                    awardClass="top-[-35px] right-[-20px]"
+                  />
+                  <p className="font-primary text-sm lg:text-base font-normal">
+                    {card.pageMeta?.name}
+                  </p>
+                  {card.pageMeta?.description}
                 </Link>
               </div>
             ))}
