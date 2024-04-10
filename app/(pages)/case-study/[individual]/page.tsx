@@ -26,7 +26,6 @@ export default async function CaseStudyIndividual({
       slug,
     }
   )) as CaseStudyWithReferences;
-  console.log(data);
   if (!data) {
     return notFound();
   }

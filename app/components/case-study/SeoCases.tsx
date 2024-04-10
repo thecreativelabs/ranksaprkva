@@ -45,6 +45,7 @@ export default function SeoCases({
                   className="text-dark-red text-xl lg:text-[2xl] font-bold font-primary w-[100%]"
                 >
                   <Cards
+                    key={index}
                     className="h-[256px]"
                     image={card.headerImage}
                     awards={card.awards}

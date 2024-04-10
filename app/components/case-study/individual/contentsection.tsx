@@ -1,6 +1,4 @@
 import Container from "@/components/Container";
-import LeftContent from "./leftContent";
-import RightContent from "./rightContent";
 import Feature_case_Study from "../Feature-case-study/feature";
 import Findout from "./findout";
 import { CaseStudyWithReferences } from "@/(pages)/case-study/page";
@@ -90,6 +88,7 @@ export default function ContentSection(data?: CaseStudyWithReferences) {
                 // );
                 return (
                   <Link
+                    key={i}
                     href={`/services/${service.slug?.current}`}
                     className="text-[17px]  font-primary text-light-pink"
                   >

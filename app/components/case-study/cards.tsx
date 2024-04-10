@@ -36,6 +36,7 @@ const Cards = ({
            } */}
       {awards?.map((award, i) => (
         <img
+          key={i}
           width={1000}
           height={1000}
           alt="logo"
