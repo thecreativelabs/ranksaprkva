@@ -8,7 +8,6 @@ const QAndA = ({ data }: { data: CaseStudyLanding["faqSection"] }) => {
   const size = data?.faqs ? data?.faqs.length : 0;
   const initialArray = Array(size).fill(false);
   const [open, setOpen] = useState<boolean[]>(initialArray);
-  console.log(data);
   const setElement = (index: number, value: boolean) => {
     if (index >= 0 && index < size) {
       setOpen((prevArray) => {
@@ -54,9 +53,9 @@ const QAndA = ({ data }: { data: CaseStudyLanding["faqSection"] }) => {
                   transition: "max-height 0.5s ease-in-out",
                 }}
               >
-                <p className="font-primary text-base leading-[25px] font-normal mt-[20px]">
+                <div>
                   <PortableText value={card.answer} />
-                </p>
+                </div>
               </div>
             </div>
           ))}

@@ -1,22 +1,22 @@
 import Cards from "@components/case-study/cards";
 import { IoMdArrowForward } from "react-icons/io";
-
-export default function FeatureCard(props: any) {
+import { CaseStudy } from "@/types/sanity";
+import { CaseStudyWithReferences } from "@/(pages)/case-study/page";
+export default function FeatureCard(data?: CaseStudyWithReferences) {
   return (
     <div className="flex flex-col justify-between">
       <Cards
         className="h-[256px]"
-        color={props.data.color}
-        image={props.data.image}
-        logo={props.data.logo}
-        logoclass="top-[-35px] right-[-20px]"
+        image={data?.headerImage}
+        awards={data?.awards}
+        awardClass="top-[-35px] right-[-20px]"
       />
       <div>
         <p className="text-dark-red text-xl font-bold font-primary w-[100%]">
-          {props.data.title}
+          {data?.pageMeta?.description}
         </p>
         <div className="text-sm justify-start w-[100%] font-bold mt-[12px]  uppercase flex tracking-widest gap-[15px] items-center text-light-red">
-          {props.data.button.text}
+          READ CASE STUDY
           <button
             type="button"
             title="arrow"

@@ -9,13 +9,32 @@ import Topnav from "@/components/navbar/Topnav";
 import Footer from "@/components/Footer";
 import Cta from "@/components/Cta";
 import { client } from "@sanity/lib/client";
-import { Award, CaseStudyLanding } from "@/types/sanity";
+import { Award, CaseStudyLanding, CaseStudy, Services } from "@/types/sanity";
 import Faq from "@/components/Faq";
+import { groq } from "next-sanity";
+import services from "@sanity/schemas/services";
 
 export type CaseStudyLandingWithReferences = Omit<
   CaseStudyLanding,
-  "featuredAwards"
-> & { featuredAwards?: Award[] };
+  "featuredAwards" | "featuredCaseStudiesSection"
+> & {
+  featuredAwards?: Award[];
+  featuredCaseStudiesSection?: Omit<
+    CaseStudyLanding["featuredCaseStudiesSection"],
+    "featuredCaseStudies"
+  > & {
+    heading?: string;
+    featuredCaseStudies?: (Omit<CaseStudy, "awards" | "services"> & {
+      awards?: Award[];
+      servics?: Services[];
+    })[];
+  };
+};
+
+export type CaseStudyWithReferences = Omit<CaseStudy, "awards" | "services"> & {
+  awards?: Award[];
+  services?: Services[];
+};
 
 export default async function Case_study() {
   const data = (await client.fetch(`*[_type == "caseStudyLanding"][0] {
@@ -23,20 +42,25 @@ export default async function Case_study() {
     featuredAwards[]->,
     featuredCaseStudiesSection {
       ...,
-      featuredCaseStudies[] {
+      featuredCaseStudies[]->{
         ...,
-        caseStudy->{
-          ...,
-          awards[]->
-        }
+        awards[]->
       }
     }
   }`)) as CaseStudyLandingWithReferences;
+
+  const caseStudies = (await client.fetch(
+    `*[_type == "caseStudy"]{
+        ...,
+        awards[]->,
+        services[]->,
+    }`
+  )) as CaseStudyWithReferences[];
   return (
     <>
       <HeroSection {...data} />
-      <FeatureCaseStudy />
-      <SeoCases heading={data.section2?.heading} />
+      <FeatureCaseStudy {...data} />
+      <SeoCases heading={data.section2?.heading} caseStudies={caseStudies} />
       <Review data={data.section3} reviews={data.section4} />
       <QAndA data={data.faqSection} />
     </>

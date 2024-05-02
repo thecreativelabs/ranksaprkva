@@ -23,7 +23,7 @@ Refractor.registerLanguage(bash);
 const ImageComponent = ({ value }) => {
   // const {width, height} = getImageDimensions(value)
   return (
-    <Image
+    <img
       src={urlForImage(value)}
       alt={value.alt || "Image"}
       loading="lazy"

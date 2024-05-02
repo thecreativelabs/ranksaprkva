@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import Cta from "@/components/Cta";
 import { client } from "@sanity/lib/client";
 import { notFound, useParams } from "next/navigation";
-import { CaseStudy } from "@/types/sanity";
+import { CaseStudyWithReferences } from "../page";
 
 export default async function CaseStudyIndividual({
   params,
@@ -17,21 +17,26 @@ export default async function CaseStudyIndividual({
   const slug = params.individual;
 
   const data = (await client.fetch(
-    `*[_type == "caseStudy" && pageMeta.slug.current == $slug][0]`,
+    `*[_type == "caseStudy" && pageMeta.slug.current == $slug][0]{
+      ...,
+      awards[]->,
+      services[]->,
+    }`,
     {
       slug,
     }
-  )) as CaseStudy | null;
-
-  if (data === null) {
-    // return notFound();
+  )) as CaseStudyWithReferences;
+  if (!data) {
+    return notFound();
   }
-
   return (
     <div>
-      <CaseStudyIndividualBanner />
-      <ContentSection />
-      <Findout />
+      <CaseStudyIndividualBanner
+        image={data?.headerImage}
+        awards={data?.awards}
+      />
+      <ContentSection {...data} />
+      {/* <Findout /> */}
     </div>
   );
 }

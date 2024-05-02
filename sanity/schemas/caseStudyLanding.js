@@ -46,24 +46,11 @@ export default defineType({
           title: "Featured Case Studies",
           type: "array",
           of: [
-            defineArrayMember({
-              name: "caseStudy",
-              title: "Case Study",
-              type: "object",
-              fields: [
-                defineField({
-                  name: "caseStudy",
-                  title: "Case Study",
-                  type: "reference",
-                  to: [{ type: "caseStudy" }],
-                }),
-                defineField({
-                  name: "cta",
-                  title: "CTA",
-                  type: "button",
-                }),
-              ],
-            }),
+            {
+              type: "reference",
+              to: [{ type: "caseStudy" }],
+              required: true,
+            },
           ],
         }),
       ],
