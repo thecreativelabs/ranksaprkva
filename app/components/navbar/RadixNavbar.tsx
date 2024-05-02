@@ -10,6 +10,7 @@ import { GoArrowRight } from "react-icons/go";
 import Container from "../Container";
 import { Services, WhoWeServe } from "@/(pages)/layout";
 import { urlForImage } from "@sanity/lib/image";
+import Button from "../Button";
 
 const menuItems = [
   {
@@ -97,20 +98,20 @@ const RadixNavbar = ({
   return (
     <div
       className={classNames(
-        "z-[1000] py-2 top-0 transition-all duration-300",
-        isSticky ? "sticky top-2" : ""
+        "z-[1000] py-2 top-0 transition-all duration-300 bg-violetLight",
+        isSticky ? "sticky" : ""
       )}
     >
       <Container>
         <NavigationMenu.Root
           className={classNames(
-            "bg-white relative border rounded-md flex items-center justify-between",
+            "bg-violetLight relative border rounded-full flex items-center justify-between",
             isSticky ? "border-slate-200" : "border-transparent"
           )}
         >
           {/* logo */}
           <Link href="/">
-            <div className="w-32 md:w-32 md:ml-4">
+            <div className="w-32 md:w-40 md:ml-4">
               <img src="/logo.png" alt="RankSpark logo" className="p-2" />
             </div>
           </Link>
@@ -163,7 +164,7 @@ const RadixNavbar = ({
                                       <Link
                                         href={`/services/${child.slug.current}`}
                                       >
-                                        <p className="text-light-pink">
+                                        <p className="text-violet">
                                           {child.title}
                                         </p>
                                       </Link>
@@ -193,6 +194,7 @@ const RadixNavbar = ({
                                         <img
                                           src={urlForImage(item.pageMeta.icon)}
                                           alt={item.pageMeta.icon.alt}
+                                          className="h-[50px] w-[50px] p-2"
                                         ></img>
                                         <p>{item.pageMeta.name}</p>
                                       </div>
@@ -201,7 +203,7 @@ const RadixNavbar = ({
                                 </div>
                                 <div className="pt-4">
                                   <Link href={`/who-we-serve#${item.type}`}>
-                                    <p className="text-center text-light-pink underline">
+                                    <p className="text-center text-violet underline">
                                       {item.viewAll}
                                     </p>
                                   </Link>
@@ -265,17 +267,10 @@ const RadixNavbar = ({
             )}
           </div>
           <div className="hidden md:block">
-            <button className="bg-darkyellow px-4 rounded text-dark-red w-[270px] md:w-auto md:h-14 h-14 md:items-center items-center gap-4 hover:bg-[#c92045] hover:text-white transition-all duration-300 relative md:inline-flex inline-flex justify-center">
-              <a
-                href={"/"}
-                className="flex items-center gap-px md:inline-flex md:items-center md:gap-px"
-              >
-                <span className="text-md md:py-0 px-2 py-2 font-medium cursor-pointer">
-                  {"FREE SEO REVIEW"}
-                </span>
-                <GoArrowRight className="font-bold" size={25} />
-              </a>
-            </button>
+            <Button
+              props={{ text: "EXPLORE OUR METHOD", path: "/" }}
+              className="!mt-0"
+            />
           </div>
         </NavigationMenu.Root>
       </Container>

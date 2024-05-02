@@ -1,9 +1,7 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { Inter, Kanit, Outfit } from "next/font/google";
 import "./globals.css";
-import Head from "next/head";
 import Topnav from "@/components/navbar/Topnav";
-import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/Footer";
 import Cta from "@/components/Cta";
 import RadixNavbar from "@/components/navbar/RadixNavbar";
@@ -117,7 +115,6 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Topnav />
-        {/* <Navbar /> */}
         <RadixNavbar services={services} whoWeServe={whoWeServe} />
 
         {children}

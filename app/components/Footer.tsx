@@ -7,8 +7,8 @@ import { FaTwitter } from "react-icons/fa";
 // import { Icon } from "astro-icon/components";
 
 const footermenu = {
-  copyright: "Victorious. All rights reserved.",
-  logo: "https://cdn.shortpixel.ai/spai/q_glossy+to_auto+ret_img/victorious.com/wp-content/uploads/2021/02/victorious-white-logo.svg",
+  copyright: "RankSpark. All rights reserved.",
+  logo: "/logo_initial.png",
   heading: [
     {
       title: "Company",
@@ -212,8 +212,8 @@ const footermenu = {
 
 const Footer = () => {
   return (
-    <footer className="py-14 bg-dark-red border-t border-slate-100">
-      <Container>
+    <footer className="py-14 bg-violet border-t border-slate-100">
+      {/* <Container>
         <div className="flex flex-col md:flex-row justify-center md:gap-20">
           {footermenu.item.map((item, index) => (
             <div key={index} className="flex items-center mb-4 md:mb-0 md:mr-4">
@@ -225,15 +225,15 @@ const Footer = () => {
             </div>
           ))}
         </div>
-      </Container>
+      </Container> */}
 
       <Container>
-        <div className="mx-auto my-10 bg-light-pink h-[1px] w-full"></div>
+        <div className="mx-auto my-8 bg-light-pink h-[1px] w-full"></div>
         <div className="flex-wrap  gap-4 lg:flex md:flex sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           <div className="text-white w-[200px] mb-8 flex sm:col-span-2 md:col-span-3 lg:col-span-2">
             <a
               href="/"
-              className="text-lg flex items-start justify-start transition focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-dark-red px-4 "
+              className="text-lg h-fit transition focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-dark-red px-4 "
             >
               <div className="w-auto md:w-auto">
                 <img src={footermenu.logo} alt="logo" />

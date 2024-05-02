@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "next/image";
 import { client } from "@sanity/lib/client";
 import { Article, Author } from "@/types/sanity";
 import { urlForImage } from "@sanity/lib/image";
+import Link from "next/link";
 
 type ArticleWithAuthor = Omit<Article, "author"> & { author: Author };
 
@@ -18,10 +18,7 @@ export default async function Page({ params }: { params?: { page: string } }) {
       <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 lg:gap-24">
         {data?.map((post, index) => (
           <li key={index} className="mt-4">
-            <a
-            // TODO: Make individual blog pages
-            // href={`/blog/${post.title}`}
-            >
+            <Link href={`/blog/${post.slug?.current}`}>
               <div>
                 <img
                   src={urlForImage(post.coverImage)}
@@ -53,7 +50,7 @@ export default async function Page({ params }: { params?: { page: string } }) {
                   </div>
                 </div>
               </div>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

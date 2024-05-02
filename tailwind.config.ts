@@ -14,15 +14,21 @@ module.exports = {
         tertiary: ["Kanit", "sans-serif"],
       },
       colors: {
-        "light-red": "#C42A1C",
-        "light-pink": "#E55447",
-        "dark-red": "#3B0D17",
+        // rankspark
+        violetExtraLight: "#EDEAFF",
+        violetLight: "#E2DDFF",
+        violet: "#895BF7",
+
+        // victorious
+        "light-red": "#895BF7",
+        "light-pink": "#895BF7",
+        "dark-red": "#000",
         darkyellow: "#F0B342",
         gray: "#F7F7F6",
         lightblue: "#DAF4F4",
         lightyellow: "#ffae00",
         lightgreen: "#8AC7C7",
-        graybg: "#F0F0ED",
+        graybg: "#E5E2F7",
       },
       fontSize: {
         "6xl": ["80px", "80px"],

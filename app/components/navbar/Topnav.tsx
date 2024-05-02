@@ -19,7 +19,7 @@ const Topnav = () => {
   ];
 
   return (
-    <div className="bg-dark-red text-white">
+    <div className="bg-violet text-white">
       <Container>
         <div className="navbar flex flex-col w-full h-12 text-sm justify-center">
           <div className="flex flex-col items-center justify-between ml-2 lg:flex-row lg:ml-[100px] lg:mr-[100px]">
@@ -27,13 +27,13 @@ const Topnav = () => {
               <a href="/">
                 <span>🎉 We&apos;re the 2023 SEO Agency of the Year!</span>
               </a>
-              <BsArrowRightCircleFill size="20" className="text-red-500" />
+              <BsArrowRightCircleFill size="20" className="text-violetLight" />
             </div>
             <div className="flex items-center space-x-4">
               {menuitems.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center cursor-pointer space-x-2 hover:text-red-500 transition-all duration-400"
+                  className="flex items-center cursor-pointer space-x-2 hover:text-violetLight transition-all duration-400"
                 >
                   <a href={item.path}>
                     <span>{item.title}</span>

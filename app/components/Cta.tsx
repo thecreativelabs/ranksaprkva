@@ -5,8 +5,8 @@ const data = {
 };
 export default function Cta() {
   return (
-    <div className="bg-[#F7DEB0] sm:h-[50vh] py-12 flex justify-center items-center max-h-[500px] relative w-full">
-      <div className="max-h-full h-full w-full max-w-[1400px] bg-contain bg-no-repeat flex gap-[12px] flex-col background-over justify-center items-center">
+    <div className="bg-violetLight py-24 flex justify-center items-center relative w-full">
+      <div className="max-h-full h-full w-full max-w-[1400px] bg-contain bg-no-repeat flex gap-[12px] flex-col justify-center items-center">
         <div className="w-[80%] xl:flex justify-between">
           <div className="space-y-[20px]">
             <p className="text-xxl text-dark-red font-bold font-primary">
@@ -29,7 +29,7 @@ export default function Cta() {
                   type="email"
                   id="email"
                   name="email"
-                  className="mt-1 p-2 rounded w-full md:w-[540px]"
+                  className="mt-1 p-2 rounded-full w-full md:w-[540px]"
                   placeholder="Enter your email"
                   required
                 />
@@ -45,7 +45,7 @@ export default function Cta() {
                 <select
                   id="interest"
                   name="interest"
-                  className="mt-1 p-2 rounded w-full md:w-[540px]"
+                  className="mt-1 p-2 rounded-full w-full md:w-[540px]"
                   required
                 >
                   <option value="" selected>
@@ -67,7 +67,7 @@ export default function Cta() {
               <div className="mt-6 text-left">
                 <button
                   type="submit"
-                  className="bg-light-pink w-[100px] text-white p-2 rounded"
+                  className="bg-light-pink w-[100px] text-white p-2 rounded-full"
                 >
                   SUBMIT
                 </button>

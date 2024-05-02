@@ -39,9 +39,9 @@ export default async function CardSection() {
                     href={`/who-we-serve/${card.pageMeta?.slug?.current}`}
                     key={i}
                   >
-                    <div className="bg-graybg pl-4 pr-3 py-6 flex min-w-fit justify-center items-center min-h-fit  ">
+                    <div className="bg-graybg rounded-3xl pl-4 pr-3 py-6 flex min-w-fit justify-center items-center min-h-fit  ">
                       <div className="flex flex-col h-full w-[90%] gap-y-4 items-start">
-                        <div className="bg-white h-fit w-fit p-2 rounded-[50%]">
+                        <div className="w-[50px] h-[50px] object-contain flex items-center justify-center p-2 rounded-[50%]">
                           <img
                             src={urlForImage(card.pageMeta?.icon)}
                             alt={card.pageMeta?.icon?.alt}
