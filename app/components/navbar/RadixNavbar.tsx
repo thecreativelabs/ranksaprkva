@@ -102,11 +102,10 @@ const RadixNavbar = ({
         isSticky ? "sticky" : ""
       )}
     >
-      <Container>
+      <Container className="relative">
         <NavigationMenu.Root
           className={classNames(
-            "bg-violetLight relative border rounded-full flex items-center justify-between",
-            isSticky ? "border-slate-200" : "border-transparent"
+            "bg-violetLight relative rounded-full flex items-center justify-between"
           )}
         >
           {/* logo */}
@@ -274,6 +273,88 @@ const RadixNavbar = ({
             />
           </div>
         </NavigationMenu.Root>
+
+        {/* Mobile dropdown */}
+        {dropdownOpen && (
+          <div
+            className={
+              "md:hidden shadow-lg absolute top-10 inset-x-0 bg-violetLight z-[100] flex flex-col py-4 px-8 rounded-b-3xl max-h-[60vh] overflow-y-scroll"
+            }
+          >
+            <ul className="space-y-2">
+              {menuItems.map((item, key) =>
+                item.trigger ? (
+                  <details key={key}>
+                    <summary className="text-lg">{item.title}</summary>
+                    <ul className="ml-4 bg-violetExtraLight rounded-3xl px-4 py-2 mt-4">
+                      {item.title == "Services"
+                        ? servicesList.map((item, key) => (
+                            <li key={key} className="mt-2">
+                              <Link href={`/services/${item.slug.current}`}>
+                                <div className="flex items-center space-x-2">
+                                  <img
+                                    src={urlForImage(item.icon)}
+                                    className="w-8 h-8"
+                                  />
+                                  <span className="text-lg underline underline-offset-4 decoration-dashed decoration-violet">
+                                    {item.title}
+                                  </span>
+                                </div>
+                              </Link>
+                              <ul className="ml-14 space-y-2 mt-2 list-disc text-violet">
+                                {item.childrens.map((child, key) => (
+                                  <li key={key}>
+                                    <Link
+                                      href={`/services/${child.slug.current}`}
+                                    >
+                                      <span className="text-lg text-black">
+                                        {child.title}
+                                      </span>
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </li>
+                          ))
+                        : whoWeServeList.map((item, key) => (
+                            <li key={key} className="space-y-2 mt-4">
+                              <p className="text-lg">{item.type}</p>
+                              <ul className="ml-4 space-y-2">
+                                {item.list.map((item, key) => (
+                                  <li key={key}>
+                                    <Link
+                                      href={`/who-we-serve/${item.pageMeta.slug.current}`}
+                                    >
+                                      <div className="flex items-center space-x-2">
+                                        <img
+                                          src={urlForImage(item.pageMeta.icon)}
+                                          className="w-8 h-8"
+                                        />
+                                        <span className="text-lg underline underline-offset-4 decoration-dashed decoration-violet">
+                                          {item.pageMeta.name}
+                                        </span>
+                                      </div>
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </li>
+                          ))}
+                    </ul>
+                  </details>
+                ) : (
+                  <li key={key}>
+                    <Link href={item.path || ""}>
+                      <span className="text-lg underline underline-offset-4 decoration-dashed decoration-violet">
+                        {item.title}
+                      </span>
+                    </Link>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+        )}
       </Container>
     </div>
   );

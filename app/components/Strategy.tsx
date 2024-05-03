@@ -1,15 +1,6 @@
 import React from "react";
-import { FaCircleArrowRight } from "react-icons/fa6";
 import Container from "./Container";
 import Button from "./Button";
-
-const data = {
-  heading: "Experience the difference of a values-driven search strategy.",
-  discription:
-    "Discover how organic search visibility and a made-to-measure SEO agency partnership can benefit your business in the long run.",
-  text: " GET YOUR CUSTOM STRATEGY",
-  path: "/",
-};
 
 const Strategy = ({
   title,
