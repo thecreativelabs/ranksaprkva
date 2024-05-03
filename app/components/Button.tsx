@@ -40,7 +40,7 @@ const Button = ({
   ) : (
     <button
       className={
-        "flex flex-col bg-violet text-white text-sm mt-10 px-8 pt-4 pb-3 rounded-full w-[270px] md:w-auto md:items-center items-center gap-4 hover:bg-violet/90 hover:text-white transition-all duration-300" +
+        "flex flex-col bg-violet text-white text-sm mt-10 px-8 pt-1 pb-2 md:pt-4 md:pb-3 rounded-full w-[270px] md:w-auto md:items-center items-center gap-4 hover:bg-violet/90 hover:text-white transition-all duration-300" +
         " " +
         className
       }
@@ -70,7 +70,7 @@ const Button = ({
         </Link>
       </div>
       <svg
-        className="-mt-3"
+        className="-mt-4 md:-mt-3"
         width="105"
         height="6"
         viewBox="0 0 105 6"

@@ -11,9 +11,9 @@ export default async function Page() {
   )) as Contact | null;
   if (!data) return <></>;
 
-  const w3ckey = (await client.fetch(
-    `*[_type == "settings"]{w3ckey}[0]`
-  )) as string;
+  const key = (await client.fetch(`*[_type == "settings"]{w3ckey}[0]`)) as {
+    w3ckey?: string;
+  };
 
   return (
     <Container>
@@ -151,7 +151,7 @@ export default async function Page() {
           </div>
         </div>
         <div className="bg-white p-5 md:p-8 rounded-xl mb-5">
-          <Contactform w3ckey={w3ckey} />
+          <Contactform w3ckey={key} />
         </div>
       </div>
     </Container>

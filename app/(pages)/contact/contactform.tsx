@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import Button from "@/components/Button";
 
-const Contactform = ({ w3ckey }: { w3ckey?: string }) => {
+const Contactform = ({ w3ckey }: { w3ckey?: { w3ckey?: string } }) => {
   useEffect(() => {
     const form = document.getElementById("form") as HTMLFormElement;
     const result = document.getElementById("result") as HTMLDivElement;
@@ -79,7 +79,7 @@ const Contactform = ({ w3ckey }: { w3ckey?: string }) => {
       </style>
 
       <form id="form" className="needs-validation mt-[-30px]">
-        <input type="hidden" name="access_key" value={w3ckey} />
+        <input type="hidden" name="access_key" value={w3ckey?.w3ckey} />
         <input
           type="checkbox"
           className="hidden"
@@ -95,7 +95,7 @@ const Contactform = ({ w3ckey }: { w3ckey?: string }) => {
               type="text"
               placeholder=""
               required
-              className="w-full px-4 py-3 border bg-violetExtraLight rounded-full outline-none focus:ring-4 border-violetLight focus:border-violet ring-slate-300"
+              className="w-full px-4 py-3 border bg-violetExtraLight rounded-full outline-none focus:ring-4 border-violetLight focus:border-violet !ring-violetExtraLight"
               name="firstName"
             />
             <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
