@@ -58,7 +58,7 @@ export default function ContentSection(data?: CaseStudyWithReferences) {
 
           {/* RightContent */}
 
-          <div className="lg:w-[30%] w-[100%] p-[40px] bg-graybg h-fit">
+          <div className="lg:w-[30%] w-[100%] p-[40px] bg-violetExtraLight h-fit rounded-3xl">
             <p className=" font-primary text-[22px] font-bold">
               {data?.testimony?.text}
             </p>
@@ -78,7 +78,7 @@ export default function ContentSection(data?: CaseStudyWithReferences) {
             <p className=" pt-[30px] font-primary text-[22px] font-bold">
               Services
             </p>
-            <ul className=" list-disc mt-[10px] ml-[18px]">
+            <ul className="list-disc text-black mt-[10px] ml-[18px]">
               {data?.services?.map((service, i) => {
                 // return service.link == "" ? (
                 //   <li key={i} className="text-[17px] font-primary">
@@ -97,9 +97,11 @@ export default function ContentSection(data?: CaseStudyWithReferences) {
                   <Link
                     key={i}
                     href={`/services/${service.slug?.current}`}
-                    className="text-[17px]  font-primary text-light-pink"
+                    className="text-[17px]  font-primary text-black"
                   >
-                    <div>{service.title}</div>
+                    <li className="underline">
+                      <span className="text-light-pink">{service.title}</span>
+                    </li>
                   </Link>
                 );
               })}

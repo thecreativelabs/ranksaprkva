@@ -95,7 +95,7 @@ export default async function Individual({
       <Brands />
       <Consulting {...data?.features?.grid} icons={icons} />
       <Marketing data={data?.features?.bulletList} />
-      <div className="bg-gray py-[70px]">
+      <div className="bg-violetExtraLight py-[70px] rounded-[3rem]">
         <Container>
           <Slider />
         </Container>

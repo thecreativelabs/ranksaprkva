@@ -57,7 +57,7 @@ export default async function Page({ params }: { params?: { slug: string } }) {
       <div className="md:py-[120px] bg-violetExtraLight sm:py-[80px] py-[40px] h-fit  w-full max-h-[600px] flex  justify-center items-center">
         <Container>
           <div className="w-[100%] flex sm:flex-row flex-col gap-[20px] sm:gap-[0px] items-center">
-            <div className="w-[80%]">
+            <div className="md:w-[80%]">
               <p className="w-[100%] sm:w-[90%] text-dark-red text-3xl lg:text-xxxxl font-normal font-Amiri leading-[30px] sm:leading-[67.34px]">
                 {data[0]?.title}
               </p>
@@ -87,8 +87,8 @@ export default async function Page({ params }: { params?: { slug: string } }) {
       </div>
 
       <Container>
-        <div className="w-[100%] flex  md:mt-[50px] gap-6 justify-center ">
-          <div className=" w-[60%]  flex flex-col gap-3">
+        <div className="w-[100%] flex flex-col-reverse md:flex-row md:mt-[50px] gap-6 justify-center ">
+          <div className="md:w-[60%] flex flex-col gap-3">
             <p className="pb-4 border-b-[1px] border-[#b3b2b2]">
               {data[0]?.readingTime} read
             </p>
@@ -96,7 +96,7 @@ export default async function Page({ params }: { params?: { slug: string } }) {
             <PortableText value={updatedBlocks} />
           </div>
 
-          <div className="w-[30%] h-fit sticky top-[100px] bg-violetExtraLight px-4 py-8 rounded-3xl">
+          <div className="md:w-[30%] mt-4 h-fit md:sticky top-[100px] bg-violetExtraLight px-4 py-8 rounded-3xl">
             <p className="text-violet text-xl font-semibold ml-6">
               In This Article
             </p>

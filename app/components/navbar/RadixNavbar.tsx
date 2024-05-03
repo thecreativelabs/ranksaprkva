@@ -145,6 +145,7 @@ const RadixNavbar = ({
                                 >
                                   <div className="flex space-x-4">
                                     <img
+                                      className="h-[50px] w-[50px] p-2"
                                       src={urlForImage(item.icon)}
                                       alt={item.icon?.alt}
                                     />

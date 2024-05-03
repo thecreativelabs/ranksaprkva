@@ -64,29 +64,21 @@ export default function AdditonalService() {
   };
   return (
     <Container>
-      <div className="mt-[50px]">
-        <div className="bg-white relative z-10 sm:py-[50px] py-4 flex flex-col gap-[10%] justify-center items-center w-[100%]  ">
+      <div className="border border-gray rounded-[3rem] overflow-hidden shadow-xl">
+        <div className="bg-white relative z-10 p-4 md:py-8 flex flex-col gap-[10%] justify-center items-center w-[100%]  ">
           <p className="text-xxl font-bold tracking-wider">{data?.heading}</p>
-          {/* {
-                (data != null && data.content != null) &&
-                <p className="text-dark-red mt-[20px] text-sm lg:text-[17px] leading-[26px] font-normal font-primary lg:max-w-[50%]">
-                    {data.content}
-                </p>
-            } */}
-          <div className="flex sm:flex-row flex-col w-[95%] justify-between py-[30px]">
+          <div className="h-[1px] bg-violet w-full mt-4"></div>
+
+          <div className="flex md:space-x-8 sm:flex-row flex-col w-[95%] justify-between md:py-[30px]">
             {data?.services?.map((service, i) => (
-              <div key={i} className="w-full flex flex-col gap-[20px]">
-                <div className="sm:flex flex-col hidden">
+              <div key={i} className="w-full flex flex-col gap-[20px] pt-4">
+                <div className="text-violet rounded-full flex flex-row border border-violet py-1 px-4 items-center justify-center">
                   <Growth />
-                  <a className="text-xl mt-[15px] font-bold">
+                  <p className="text-xl mt-[15px] font-bold text-black">
                     {service?.heading}
-                  </a>
+                  </p>
                 </div>
-                <div className="flex sm:hidden mt-[20px]">
-                  <Growth />
-                  <a className="text-xl mt-[6px] font-bold">{service?.url}</a>
-                </div>
-                <ul className="ml-[13px] w-[80%] list-disc space-y-2 text-[#f60]">
+                <ul className="ml-[13px] w-[80%] list-disc space-y-2 text-black">
                   {service?.points?.map((point, j) => (
                     <li
                       key={j}

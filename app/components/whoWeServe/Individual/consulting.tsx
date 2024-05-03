@@ -4,6 +4,7 @@ import Task from "@components/ui/icons/taskList";
 import Search from "@components/ui/icons/search";
 import SearchCards from "@/components/methods/searchCards";
 import { Image } from "@/types";
+import SvgDecorative from "@/components/SvgDecorative";
 
 export default function Consulting({
   title,
@@ -21,9 +22,10 @@ export default function Consulting({
   }[];
 }) {
   return (
-    <div className="border-b-[1px] border-[#CCC]">
-      <Container>
-        <div className="w-full flex justify-center">
+    <div className="">
+      <Container className="relative">
+        <SvgDecorative />
+        <div className="w-full flex justify-center border-b-[1px] border-violet">
           <div className="w-[90%] space-y-[30px] sm:py-[80px] py-[40px] sm:mt-[30px] mt-[15px] ">
             <p className="text-light-red text-sm sm:text-sm font-bold font-primary uppercase tracking-widest">
               {title}

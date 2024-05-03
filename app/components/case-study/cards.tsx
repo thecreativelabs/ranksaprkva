@@ -15,7 +15,7 @@ const Cards = ({
 }) => {
   return (
     <div
-      className={`${className}  rounded flex justify-center relative items-center bg-cover `}
+      className={`${className} rounded-3xl flex justify-center relative items-center bg-cover `}
       style={{
         backgroundImage: `url(${"/methods/Vector-3.png"})`,
         backgroundColor: image?.color,

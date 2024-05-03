@@ -34,9 +34,9 @@ function Faq({
                   open
                   style={{ transition: "height 1s ease-in-out" }}
                 >
-                  <summary className="flex text-xl font-semibold justify-between items-center font-sans cursor-pointer list-none text-[#e66262] hover:text-[#e66262]">
+                  <summary className="flex text-xl font-semibold justify-between items-center font-sans cursor-pointer list-none text-violet">
                     <span>{item.question}</span>
-                    <span className="transition group-open:rotate-180 text-[#e66262]">
+                    <span className="transition group-open:rotate-180 text-violet">
                       <Arrow />
                     </span>
                   </summary>

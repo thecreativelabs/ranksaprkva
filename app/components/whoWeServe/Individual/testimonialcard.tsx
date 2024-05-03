@@ -17,9 +17,9 @@ export default function TesimonialCard({
   };
 }) {
   return (
-    <div className="p-[30px] border-[0.5px] border-[#ededed] rounded-lg ">
+    <div className="p-[30px] border-[0.5px] border-[#ededed] rounded-3xl bg-violetExtraLight">
       <div className="flex gap-[15px]">
-        <div className="w-[37px] h-[37px] capitalize font-Amiri text-xl text-dark-red flex justify-center items-center bg-[#fed7aa] rounded-[50%]">
+        <div className="w-[37px] h-[37px] capitalize font-Amiri text-xl text-white flex justify-center items-center bg-violet rounded-[50%]">
           {data.name?.[0]}
         </div>
         <div className="gap-y-[7px] w-[60%] flex flex-col">
@@ -30,10 +30,7 @@ export default function TesimonialCard({
         </div>
       </div>
       <div className="space-y-[15px] mt-[15px]">
-        <Rating
-          rating={data.rating}
-          className="text-darkyellow text-[22px] m-1"
-        />
+        <Rating rating={data.rating} className="text-violet text-[22px] m-1" />
         <p className="text-base font-normal font-primary tracking-wide leading-6 w-[90%]">
           {data.description}
         </p>

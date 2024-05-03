@@ -162,7 +162,7 @@ export default function Review({
       </div>
 
       {/* Testimonial */}
-      <div className="w-full pb-[20px] max-h-fit flex flex-col justify-center items-center bg-[#f9f9f9] mt-8 lg:mt-12">
+      <div className="w-full pb-[20px] max-h-fit flex flex-col justify-center items-center bg-violetExtraLight mt-8 lg:mt-12">
         {/* Title, rating, and total reviews */}
         <div className="flex max-w-[1200px] w-full mt-[70px] justify-center items-center ">
           <div className="flex sm:flex-row flex-col w-[78%] gap-[20px] items-center">
@@ -211,7 +211,7 @@ export default function Review({
               {data1.testimonial.cards.map((card, i) => {
                 return (
                   <SwiperSlide key={i}>
-                    <div className=" bg-white hover:shadow-xl shadow p-4  flex flex-col mb-10 ">
+                    <div className=" bg-white hover:shadow-xl shadow p-4 rounded-3xl flex flex-col mb-10 ">
                       <div className="flex gap-[10px] h-[40px] items-center ">
                         <p className="text-xl font-['Roboto'] font-normal">
                           {card.rating}

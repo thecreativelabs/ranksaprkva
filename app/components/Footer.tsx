@@ -253,7 +253,7 @@ const Footer = () => {
                     <a
                       key={index}
                       href={item.path || "#"}
-                      className="py-2 text-sm text-white hover:text-light-pink"
+                      className="py-2 text-sm text-white hover:text-white/80"
                     >
                       {item.title}
                     </a>
@@ -266,7 +266,7 @@ const Footer = () => {
       </Container>
 
       <Container>
-        <div className="mx-auto my-10 bg-light-pink h-[1px] w-full"></div>
+        <div className="mx-auto my-10 bg-violetLight h-[1px] w-full"></div>
       </Container>
 
       <div className="mt-4 pt-10 px-5 ">
@@ -280,7 +280,7 @@ const Footer = () => {
               <p className="text-center text-sm text-white mt-2 lg:mt-0 lg:text-left">
                 {footermenu.tnc.map((item, index) => (
                   <>
-                    <a href={item.path} className="hover:text-light-pink">
+                    <a href={item.path} className="hover:text-white/80">
                       {item.title}
                     </a>
                     {index !== footermenu.tnc.length - 1 && " ・ "}

@@ -15,19 +15,19 @@ export default async function Page({ params }: { params?: { page: string } }) {
 
   return (
     <main className="mt-16 mb-16">
-      <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 lg:gap-24">
+      <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 lg:gap-18">
         {data?.map((post, index) => (
           <li key={index} className="mt-4">
             <Link href={`/blog/${post.slug?.current}`}>
-              <div>
+              <div className="bg-violetExtraLight rounded-3xl overflow-hidden shadow">
                 <img
                   src={urlForImage(post.coverImage)}
                   alt={post.coverImage?.alt}
                   width={800}
                   height={600}
-                  className="w-full rounded-md object-cover"
+                  className="w-full object-cover"
                 />
-                <div className="mt-4">
+                <div className="py-4 px-6">
                   <time className="text-dark-red text-sm">
                     {new Date(post._createdAt).toLocaleDateString()} •{" "}
                     {post.readingTime || "-"} read • Blog

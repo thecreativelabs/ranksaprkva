@@ -14,21 +14,15 @@ export default function SmallCards({
 }) {
   return (
     <div
-      className={`${className}   rounded flex flex-col justify-center relative items-center bg-cover bg-${index % 3 === 0 ? "lightblue" : index % 3 === 1 ? "dark-red" : "darkyellow"} `}
-      style={{
-        backgroundImage: `url('/case-study/bg${index % 3 == 0 ? 2 : index % 3 == 1 ? 3 : 1}.png')`,
-        // backgroundColor: props.index % 3 == 0 ? '#DAF4F4' : props.index % 3 == 1 ? '#3B0D17' : '#3B0D17'
-      }}
+      className={`${className} flex flex-col justify-center relative items-center bg-cover bg-violetExtraLight rounded-3xl`}
     >
       <div className="flex justify-center items-center">
-        <p
-          className={`font-bold text-xxxl font-primary text-${index % 3 === 0 ? "dark-red" : index % 3 === 1 ? "lightyellow" : "dark-red"}`}
-        >
+        <p className={`font-bold text-xxxl font-primary text-dark-red}`}>
           {stat}
         </p>
       </div>
       <p
-        className={`text-sm ml-[8px]  font-primary font-normal tracking-wider text-${index % 3 === 0 ? "dark-red" : index % 3 === 1 ? "lightyellow" : "dark-red"}`}
+        className={`text-sm ml-[8px]  font-primary font-normal tracking-wider text-dark-red}`}
       >
         {context}
       </p>

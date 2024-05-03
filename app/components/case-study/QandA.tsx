@@ -32,7 +32,7 @@ const QAndA = ({ data }: { data: CaseStudyLanding["faqSection"] }) => {
               <div className="relative w-full flex justify-between items-center">
                 <button
                   className="text-xl text-left w-[80%] hover:text-light-pink hover:cursor-pointer font-primary font-bold"
-                  style={{ color: open[i] ? "#E55447" : "" }}
+                  style={{ color: open[i] ? "#895BF7" : "" }}
                   onClick={() => setElement(i, !open[i])}
                 >
                   {card.question}

@@ -2,10 +2,10 @@ import Growth from "@components/ui/icons/Growth";
 
 const ServeCards = (props: any) => {
   return (
-    <div className="bg-graybg pl-4 pr-3 py-6 flex min-w-fit justify-center items-center min-h-fit  ">
+    <div className="bg-graybg rounded-3xl pl-4 pr-3 py-6 flex min-w-fit justify-center items-center min-h-fit  ">
       <div className="flex flex-col h-full w-[90%] gap-y-4 items-start">
         <div className="bg-white h-fit w-fit p-2 rounded-[50%]">
-          <Growth className="p-1" />
+          <Growth className="p-1 text-violet" />
         </div>
         <p className="text-xl pr-2 mt-[5px] font-bold tracking-wider">
           {props.data.heading}

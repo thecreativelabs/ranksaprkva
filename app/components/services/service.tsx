@@ -2,6 +2,8 @@ import Container from "../Container";
 import ServeCards from "@components/whoWeServe/serveCards";
 
 import { GoArrowRight } from "react-icons/go";
+import Button from "../Button";
+import SvgDecorative from "../SvgDecorative";
 const data = {
   title: "TAILORED TO YOUR NICHE AND SIZE",
   heading: "Experience world-class SEO that makes a world of difference.",
@@ -89,7 +91,7 @@ const data = {
       },
     ],
     button: {
-      text: "start your seo journey",
+      text: "EXPLORE OUR METHOD",
       url: "",
     },
   },
@@ -97,7 +99,7 @@ const data = {
 
 export default function Services() {
   return (
-    <Container>
+    <Container className="relative">
       <div className="flex justify-center items-center">
         <div className=" w-[93%] ml-0 sm:ml-[20px] sm:py-[120px] md:py-[80px] py-[40px] flex flex-col gap-y-[40px]">
           <p className="text-light-red text-sm sm:text-sm font-bold font-primary uppercase tracking-widest">
@@ -120,24 +122,21 @@ export default function Services() {
                 );
               })}
             </div>
-            <div className="md:w-[50%] w-[100%] space-y-6 prose p-10 bg-dark-red">
-              {/* <p className="text-white text-sm sm:text-sm font-bold font-primary uppercase tracking-widest">
-                                {data.title}
-                            </p> */}
-              <p className="text-white sm:w-[100%] w-[100%] text-xxl lg:text-xxxl font-normal font-Amiri  leading-[25px] lg:leading-[40px]">
+            <div className="md:w-[50%] w-[100%] space-y-6 p-10 bg-graybg rounded-3xl">
+              <p className=" sm:w-[100%] w-[100%] text-xxl lg:text-xxxl font-Amiri font-semibold leading-[25px] lg:leading-[40px]">
                 {data.bigcard.heading}
               </p>
-              <p className="text-white text-sm lg:text-[15px]  leading-[26px] font-normal mt-[-7px] font-primary ">
+              <p className=" text-sm lg:text-[15px]  leading-[26px] font-normal mt-[-7px] font-primary ">
                 {data.bigcard.content}
               </p>
               <div className="mt-[20px]">
                 {data.bigcard.points.map((points: any, i: any) => {
                   return (
-                    <div className="space-y-2" key={i}>
-                      <p className="text-xl  text-white pr-2 mt-[5px] font-bold tracking-wider">
+                    <div className="space-y-2 pt-4" key={i}>
+                      <p className="text-xl pr-2 mt-[5px] font-bold tracking-wider">
                         {points.title}
                       </p>
-                      <ul className="leading-[25px] text-white list-disc ml-[15px]">
+                      <ul className="leading-[30px] pt-4 list-disc ml-[15px]">
                         {points.points.map((point: any, i: any) => {
                           return <li key={i}>{point}</li>;
                         })}
@@ -146,26 +145,17 @@ export default function Services() {
                   );
                 })}
               </div>
-              <div className="bg-darkyellow pr-2 text-dark-red rounded-lg w-fit md:h-14 h-14 md:flex md:items-center items-center gap-4 hover:bg-light-red hover:text-white transition-all duration-300">
-                <button className="relative md:inline-flex text-dark-red inline-flex items-center md:items-center group gap-px">
-                  <a
-                    href={data.bigcard.button.url}
-                    className="inline-flex items-center gap-px md:inline-flex md:items-center md:gap-px"
-                  >
-                    <span className="text-base uppercase md:mt-0 font-medium mt-4 ml-5 cursor-pointer">
-                      {data.bigcard.button.text}
-                    </span>
-                    <GoArrowRight
-                      className="ml-1 font-bold md:mt-0 mt-4 mr-2"
-                      size={25}
-                    />
-                  </a>
-                </button>
-              </div>
+              <Button
+                props={{
+                  text: data.bigcard.button.text,
+                  path: data.bigcard.button.url,
+                }}
+              />
             </div>
           </div>
         </div>
       </div>
+      <SvgDecorative variant="left" />
     </Container>
   );
 }

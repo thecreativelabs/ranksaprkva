@@ -72,8 +72,11 @@ export default async function CaseStudyIndividual({
 
       {/* TODO: Replace the following 3 with Pricing */}
       <Services />
-      <AdditonalService />
-      <ServiceSlider />
+
+      <div className="bg-violetExtraLight rounded-[3rem] py-6 md:py-16">
+        <AdditonalService />
+      </div>
+      <ServiceSlider className="!bg-white" />
 
       <ServiceMarketing data={page.features.bulletList} />
       <ServiceLearn data={page.features.numberList} />

@@ -19,6 +19,8 @@ import Bgimg from "../../../public/methods/Vector-3.png";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { FaArrowUp } from "react-icons/fa";
+import ImageDecorative from "../ImageDecorative";
+import Button from "../Button";
 
 export default function Slider(props: any) {
   const data =
@@ -104,7 +106,7 @@ export default function Slider(props: any) {
               <SwiperSlide key={i} className="">
                 <div className="flex sm:flex-row flex-col w-full h-full justify-between  items-center">
                   <div
-                    className={` h-[90%] sm:mt-[10px] mt-[45px] sm:w-[50%] w-[80%] flex justify-center relative items-center bg-cover`}
+                    className={`rounded-3xl h-[90%] sm:mt-[10px] mt-[45px] sm:w-[50%] w-[80%] flex justify-center relative items-center bg-cover`}
                     style={{
                       backgroundImage: `url(${"./methods/Vector-3.png"})`,
                       backgroundColor: dataa.color,
@@ -116,13 +118,6 @@ export default function Slider(props: any) {
                       alt="image"
                       src={dataa.image}
                       className="h-[200px] max-w-fit"
-                    ></Image>
-                    <Image
-                      height={100}
-                      width={100}
-                      alt="image"
-                      src={dataa.logo}
-                      className="absolute h-[100px] max-w-fit top-[-32px] right-[-35px]"
                     ></Image>
                   </div>
                   <div className="sm:w-[40%] w-[80%] ml-[30px] gap-y-[30px] flex flex-col justify-evenly items-center">
@@ -174,21 +169,7 @@ export default function Slider(props: any) {
                       <p className="text-dark-red sm:text-xxl text-xl font-bold font-primary w-[100%]">
                         {dataa.content}
                       </p>
-                      <div className="text-sm justify-start w-[50%] font-bold mt-[20px]  uppercase flex tracking-widest gap-[15px] items-center text-light-red">
-                        {dataa.button}
-                        <button
-                          type="button"
-                          title="button"
-                          className="mt-[-2px] w-[38px] rounded-[50%] bg-light-red hover:bg-black"
-                        >
-                          <CircleArrow
-                            className=""
-                            style={{ color: "black" }}
-                            bg="light-pink"
-                            color="white"
-                          />
-                        </button>
-                      </div>
+                      <Button props={{ text: dataa.button }} />
                     </div>
                   </div>
                 </div>
