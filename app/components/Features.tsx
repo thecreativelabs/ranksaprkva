@@ -3,6 +3,7 @@ import { FaCircleArrowRight } from "react-icons/fa6";
 import Container from "./Container";
 import { PortableText } from "./PortableText";
 import Button from "@components/Button";
+import SvgDecorative from "./SvgDecorative";
 
 const feature = [
   {
@@ -29,7 +30,7 @@ const Features = ({
 }) => {
   return (
     <Container>
-      <div className="mt-24">
+      <div className="mt-24 relative">
         <div className="grid md:grid-cols-2 py-10">
           <div className="ml-5 mr-5 grid place-items-center">
             <div className="max-w-lg">
@@ -37,9 +38,6 @@ const Features = ({
                 {data.heading}
               </h3>
               <PortableText value={data.description} />
-              <div className="mt-10">
-                <Button props={data.button} variant="link" />
-              </div>
             </div>
           </div>
           <div className="grid ml-5 mr-5 items-center mb-2">
@@ -47,7 +45,7 @@ const Features = ({
               src={data.image.asset.url}
               alt={data.image.asset.alt || ""}
               loading="lazy"
-              className={`md:h-[28rem] max-w-full w-auto rounded-3xl `}
+              className={`md:h-[28rem] max-w-full w-auto rounded-3xl object-contain`}
             />
           </div>
         </div>

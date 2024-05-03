@@ -30,9 +30,9 @@ export default function InnovativeSection({
                   type="button"
                   title="button"
                   key={i}
-                  className="sm:w-[150px] w-[150px] h-[40px] sm:h-[60px]  border-black border-2"
+                  className="sm:w-[150px] w-[150px] h-[40px] sm:h-[60px] border-black border-2"
                   style={{
-                    backgroundColor: i === buttonIndex ? "#8AC7C7" : "#fff",
+                    backgroundColor: i === buttonIndex ? "#E2DDFF" : "#fff",
                   }}
                   onClick={() => setButtonIndex(i)}
                 >

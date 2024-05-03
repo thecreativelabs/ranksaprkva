@@ -504,10 +504,10 @@ const mission = ({ missionValues: data }: Pick<Careers, "missionValues">) => {
           {data?.values?.cards?.map((item, index) => (
             <div
               key={index}
-              className="bg-graybg md:h-[270px] w-auto h-auto md:w-[400px] flex flex-col gap-4 mb-2 md:mb-6 items-start group rounded transition-all px-8 py-6"
+              className="bg-graybg rounded-[3rem] md:h-[270px] w-auto h-auto md:w-[400px] flex flex-col gap-4 mb-2 md:mb-6 items-start group transition-all px-8 py-6"
             >
               <div className="items-center justify-between">
-                <div className="mt-1 mb-6 bg-white shadow shadow-indigo-100/50 border-indigo-100 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">
+                <div className="mt-1 mb-6 bg-violet shadow shadow-indigo-100/50 border-indigo-100 transition-colors rounded-full grid place-items-center p-2 w-14 h-14 shrink-0">
                   <img src={urlForImage(item?.icon)} />
                 </div>
                 <h3 className="font-semibold font-sans text-left text-lg md:text-2xl text-dark-red">

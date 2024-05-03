@@ -4,6 +4,7 @@ import Image from "next/image";
 import Container from "../Container";
 import { MethodPage } from "@/types/sanity";
 import { urlForImage } from "@sanity/lib/image";
+import SvgDecorative from "../SvgDecorative";
 
 export default function ContentAndServices({
   section3: data,
@@ -23,11 +24,11 @@ export default function ContentAndServices({
           {data?.featureCards?.map((card, i) => (
             <div
               key={i}
-              className="bg-graybg px-4 flex justify-center items-center min-h-[290px] max-h-[500px]"
+              className="bg-graybg rounded-[3rem] px-4 flex justify-center items-center min-h-[290px] max-h-[500px]"
             >
               <div className="flex flex-col h-full w-[90%] justify-evenly items-start">
-                <div className="bg-white h-fit w-fit p-2 rounded-[50%]">
-                  <Growth className="p-1" />
+                <div className="bg-violet h-fit w-fit p-2 rounded-[50%]">
+                  <Growth className="p-1 text-white" />
                 </div>
                 <p className="text-xl mt-[-15px] font-bold tracking-wider">
                   {card?.title}
@@ -35,14 +36,11 @@ export default function ContentAndServices({
                 <p className="text-[16px] mt-[-20px] w-[95%] font-normal font-primary leading-[26px]">
                   {card?.description}
                 </p>
-                <button className="text-base font-bold text-light-pink">
-                  {card?.cta?.heading}
-                </button>
               </div>
             </div>
           ))}
         </div>
-        <div className="w-[90%] sm:mt-[50px] mt-[10px] max-h-fit">
+        <div className="w-[90%] sm:mt-[50px] mt-[10px] max-h-fit relative">
           <img src={urlForImage(data?.mainImage)} />
         </div>
       </div>

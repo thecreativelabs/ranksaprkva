@@ -10,6 +10,8 @@ import Help from "@/components/Cta";
 import Cta from "@/components/Cta";
 import { client } from "@sanity/lib/client";
 import { MethodPage } from "@/types/sanity";
+import ServiceBanner from "@/components/services/banner";
+import Strategy from "@/components/Strategy";
 
 export default async function Methods() {
   const data = (await client.fetch(`*[_type == "methodPage"][0] {

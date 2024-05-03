@@ -2,34 +2,8 @@ import React from "react";
 import Container from "@/components/Container";
 import { Careers } from "@/types/sanity";
 import { urlForImage } from "@sanity/lib/image";
-
-// const data = {
-//   heading: "Cultivating careers. Crafting success.",
-//   description:
-//     "At Victorious, you’re not just another cog in the machine. Because our best work is done together, you’re vital to our success — and we want you to feel like it.",
-//   features: [
-//     {
-//       heading: "A Commitment to Excellence",
-//       description:
-//         "We believe in building an environment of autonomy and trust because the best motivation is your own drive to succeed.",
-//       image:
-//         "https://cdn.shortpixel.ai/spai/q_glossy+w_644+to_auto+ret_img/victorious.com/wp-content/uploads/2023/10/Image1.webp",
-//     },
-//     {
-//       heading: "The Freedom of Flexibility",
-//       description:
-//         "Victorious employees are encouraged to find a healthy work-life balance with unlimited time off and a scheduled winter break for some much-needed R&R.",
-//       image:
-//         "https://cdn.shortpixel.ai/spai/q_glossy+w_644+to_auto+ret_img/victorious.com/wp-content/uploads/2023/10/Image2.webp",
-//     },
-//     {
-//       heading: "Growth Opportunities",
-//       description:
-//         "Learn new skills, attend professional events, connect with mentors, collaborate with cross-functional teams, and follow your passions for personal fulfillment.",
-//       image: "https://victorious.com/wp-content/uploads/2023/10/Image3.webp",
-//     },
-//   ],
-// };
+import ImageDecorative from "@/components/ImageDecorative";
+import ImageDecorativeAsset from "@/components/ImageDecorativeAsset";
 
 const cultivating = ({ heroSection: data }: Pick<Careers, "heroSection">) => {
   return (
@@ -46,19 +20,14 @@ const cultivating = ({ heroSection: data }: Pick<Careers, "heroSection">) => {
       </div>
       <div className="mt-24">
         {data?.cards?.map((feature, index) => (
-          <div key={index} className="grid md:grid-cols-2 py-10">    
+          <div key={index} className="grid md:grid-cols-2 py-10">
             {/* Image div */}
             <div
               className={`grid mt-10 place-items-center ${
                 index % 2 === 1 ? "" : "md:order-2"
               }`}
             >
-              <img
-                src={urlForImage(feature?.image)}
-                alt=""
-                loading="lazy"
-                className="max-w-full w-auto md:max-w-lg h-auto"
-              />
+              <ImageDecorativeAsset asset={feature.image} />
             </div>
             {/* Text div */}
             <div className="grid place-items-center">

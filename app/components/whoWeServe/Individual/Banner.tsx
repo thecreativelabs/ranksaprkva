@@ -24,7 +24,7 @@ export default function Banner({
         <p className="sm:text-lg font-primary sm:w-[60%] w-[80%] mt-[10px] text-dark-red font-normal tracking-wider space-x-5 sm:leading-[30px] text-[12px] leading-[17px]">
           {description}
         </p>
-        <Button props={{ text: button.text }} />
+        <Button props={button} />
         <Image
           src={image?.asset.url}
           className="absolute bottom-0 right-0"

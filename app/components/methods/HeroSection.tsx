@@ -3,6 +3,7 @@ import Image from "next/image";
 import Container from "../Container";
 import { MethodPage, Header } from "@/types/sanity";
 import { urlForImage } from "@sanity/lib/image";
+import SvgDecorative from "../SvgDecorative";
 
 export default function Hero({
   header,
@@ -13,24 +14,10 @@ export default function Hero({
 }) {
   return (
     <>
-      <style jsx>{`
-        .background-overlay::before {
-          content: "";
-          background-image: url("./methods/Vector.png");
-          background-position: 0px 30px;
-          opacity: 0.4;
-          position: absolute;
-          top: 30%;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-size: 105%;
-          background-repeat: no-repeat;
-        }
-      `}</style>
-      <div className="max-h-full  h-fit bg-graybg py-[50px] sm:py-[80px] md:py-[130px] relative w-full">
-        <Container>
-          <div className="max-h-full h-full w-full bg-contain bg-no-repeat flex gap-[12px] flex-col background-overlay justify-center items-center">
+      <div className="max-h-full  h-fit bg-white py-[50px] sm:py-[80px] md:py-[130px] relative w-full">
+        <Container className="relative">
+          <SvgDecorative variant="left" />
+          <div className="max-h-full h-full w-full bg-contain bg-no-repeat flex gap-[12px] flex-col justify-center items-center">
             <p className="h-[21px] text-center text-light-red text-sm font-medium font-primary uppercase leading-[21px] tracking-widest">
               {header?.header?.topText}
             </p>
@@ -42,7 +29,7 @@ export default function Hero({
             </p>
             {/* <img src={herosection.image} className="sm:h-[544px] h-[220px] mt-[4%]" /> */}
             <img
-              alt="img"
+              alt={mainImage?.alt}
               src={urlForImage(mainImage)}
               width={500}
               height={544}

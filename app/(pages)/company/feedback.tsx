@@ -30,10 +30,10 @@ const Feedback = ({ testimonials: data }: Pick<About, "testimonials">) => {
         {data?.testimonials?.map((item, index) => (
           <div
             key={index}
-            className="max-w-[26rem] border border-slate-200 px-4 bg-white md:h-auto w-auto h-auto md:w-[360px] flex flex-col gap-0 md:gap-4 mb-0 md:mb-6 items-start group rounded transition-all md:px-8 py-6"
+            className="max-w-[26rem] border border-slate-200 px-4 bg-graybg rounded-3xl md:h-auto w-auto h-auto md:w-[360px] flex flex-col gap-0 md:gap-4 mb-0 md:mb-6 items-start group transition-all md:px-8 py-6"
           >
             <div className="mx-0 flex items-center gap-4 pt-0 pb-2">
-              <div className="rounded-full flex justify-center items-center bg-[#FFDBAC] w-[40px] h-[40px]">
+              <div className="rounded-full flex justify-center items-center bg-violet text-white w-[40px] h-[40px]">
                 <span className="text-center font-tertiary text-lg">
                   {item.name?.[0]}
                 </span>
@@ -50,7 +50,7 @@ const Feedback = ({ testimonials: data }: Pick<About, "testimonials">) => {
             <div className="flex items-center md:mt-0 mt-2 gap-2">
               <Rating
                 rating={item.rating}
-                className="text-darkyellow text-[22px] m-1"
+                className="text-violet text-[22px] m-1"
               />
             </div>
             <div className="mb-6 mt-4 md:mt-0 text-dark-red p-0 tracking-wider leading-6 text-sm md:text-md">

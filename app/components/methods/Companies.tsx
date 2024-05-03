@@ -15,7 +15,7 @@ export default function Companies({
   section5: MethodPage["section5"];
 }) {
   return (
-    <div className="bg-graybg">
+    <div className="bg-white">
       <Container>
         <div className="md:pb-[80px] sm:pb-[40px] pb-[20px] pt-[50px] h-fit  w-full  flex flex-col justify-evenly items-center">
           <div className="h-[45%] w-[70%] py-[50px] border-b-[1px] gap-[20%] border-solid border-[#ccc] flex flex-col justify-center items-center">
@@ -29,7 +29,7 @@ export default function Companies({
                     src={data1.logo[0]}
                     width={100}
                     height={100}
-                    className="sm:h-[50px] max-w-fit h-[30px]"
+                    className="sm:h-[50px] max-w-fit h-[30px] object-cover"
                     alt={`logo-${i}`}
                   />
                 </div>

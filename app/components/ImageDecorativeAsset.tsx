@@ -1,14 +1,9 @@
+import { Image as ImageType } from "@/types";
+import { urlForImage } from "@sanity/lib/image";
 import Image from "next/image";
 import React from "react";
 
-const ImageDecorative = ({
-  asset,
-}: {
-  asset?: {
-    asset?: { url?: string };
-    alt?: string;
-  };
-}) => {
+const ImageDecorativeAsset = ({ asset }: { asset?: ImageType }) => {
   return (
     <div className="sm:w-[50%] w-[100%] flex items-center relative">
       <svg
@@ -27,11 +22,9 @@ const ImageDecorative = ({
         />
       </svg>
 
-      <Image
-        src={asset?.asset?.url || ""}
-        className="max-h-fit w-fit sm:h-[350px] h-fit bottom-0 rounded-3xl aspect-[14/9] object-cover"
-        width={1000}
-        height={1000}
+      <img
+        src={urlForImage(asset) || ""}
+        className="rounded-3xl h-[28rem] object-cover"
         alt={asset?.alt || ""}
       />
       <svg
@@ -53,4 +46,4 @@ const ImageDecorative = ({
   );
 };
 
-export default ImageDecorative;
+export default ImageDecorativeAsset;

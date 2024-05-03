@@ -16,6 +16,7 @@ const team = ({ teamSection }: Pick<About, "teamSection">) => {
             {teamSection?.description}
           </p>
         </div>
+
         <Button props={teamSection?.cta} />
       </Container>
     </div>

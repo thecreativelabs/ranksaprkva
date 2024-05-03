@@ -3,6 +3,7 @@ import SEO from "@components/methods/seo/seo";
 import Container from "@/components/Container";
 import { MethodPage } from "@/types/sanity";
 import { urlForImage } from "@sanity/lib/image";
+import AdditonalService from "@/components/services/additionalServicec";
 
 const data1 = {
   image: "/methods/v-isotype.png",
@@ -64,17 +65,18 @@ export default function Framework({
     data?.serviceList4,
   ];
   return (
-    <div className="relative background  h-fit sm:py-[100px] py-10  w-full bg-graybg">
+    <div className="relative h-fit sm:py-[100px] py-10  w-full bg-graybg">
       <Container>
         <img
-          alt="image"
+          alt={data?.heading?.mainImage?.alt}
           src={urlForImage(data?.heading?.mainImage)}
           height={1000}
           width={1000}
-          className="absolute sm:top-[-60px] top-[-20px] left-[45%] sm:h-[120px] sm:w-[120px] h-[50px] w-[50px]"
+          className="absolute h-[100px] w-[100px] md:h-[150px] md:w-[150px] aspect-square top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-2xl shadow-violet rounded-full overflow-hidden"
         />
+
         <div className="w-full h-full flex flex-col justify-center items-center">
-          <p className="text-light-red text-sm font-medium font-primary uppercase mb-[5px] leading-[21px] tracking-widest">
+          <p className="text-light-red text-sm font-medium font-primary uppercase mb-[5px] pt-8 leading-[21px] tracking-widest">
             {data?.heading?.header?.topText}
           </p>
           <p className="text-center text-dark-red sm:text-[37.30px] text-[20px] font-normal font-Amiri leading-[30px] sm:leading-[67.34px]">
@@ -108,8 +110,9 @@ export default function Framework({
               </div>
             ))}
           </div>
-          <div className="bg-white relative z-10 px-[50px] w-[100%] mt-[50px] border-t-[3px] border-solid border-yellow-500 h-[45%]">
-            <SEO data={data} />
+
+          <div className="mt-12">
+            <AdditonalService />
           </div>
         </div>
       </Container>

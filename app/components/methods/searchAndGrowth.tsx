@@ -5,6 +5,10 @@ import Search from "@components/ui/icons/search";
 import SearchCards from "./searchCards";
 import Container from "../Container";
 import { MethodPage } from "@/types/sanity";
+import Banner from "../whoWeServe/Individual/Banner";
+import Button from "../Button";
+import Image from "next/image";
+import { urlForImage } from "@sanity/lib/image";
 
 export default function SearchAndGrowth({
   section1: data,
@@ -14,16 +18,20 @@ export default function SearchAndGrowth({
   return (
     <Container>
       <div className="relative py-[120px] h-fit  flex flex-col bg-white justify-center items-center">
-        <div className="sm:absolute relative top-[-100px] flex flex-col items-center justify-center rounded h-[180px] sm:h-[250px] bg gradient-with-image ">
-          <div className="w-[90%] min-w-3xl h-[80%] sm:h-full gap-[20px] flex flex-col justify-center">
-            <p className="text-white text-[20px] sm:text-[28.40px] font-primary font-bold sm:w-[60%] w-[80%] leading-6 sm:leading-10">
-              {data?.ctoCard?.text}
-            </p>
-            <button className="w-[260px] h-[50px] sm:h-[61px] relative bg-amber-400 rounded text-center text-dark-red text-sm font-bold font-primary uppercase leading-[21px] tracking-widest">
-              {data?.ctoCard?.cta?.heading}
-            </button>
-          </div>
+        <div className="bg-violetExtraLight rounded-[3rem] overflow-hidden relative px-[20px] sm:px-[70px] sm:py-[50px] pt-[20px] pb-[250px] bg-[url(/whoWeServe/vector.svg)] bg-cover sm:bg-contain bg-no-repeat bg-right shadow-[0_0_25px_0px] shadow-violetLight">
+          <p className=" sm:text-xxxl leading-[25px] text-xxl w-[100%] md:w-[55%] font-normal font-Amiri">
+            {data?.ctoCard?.text}
+          </p>
+          <Button props={data?.ctoCard?.cta?.button} />
+          <Image
+            src={urlForImage(data?.ctoCard?.image) || ""}
+            className="absolute bottom-0 right-0"
+            height={550}
+            width={550}
+            alt={data?.ctoCard?.image?.alt || ""}
+          />
         </div>
+
         <div className="w-[90%]  sm:p-0 p-4 mt-[-15%] sm:mt-[15%]">
           <p className="sm:text-xxl text-lg font-medium tracking-wide w-[100%]">
             {data?.heading}

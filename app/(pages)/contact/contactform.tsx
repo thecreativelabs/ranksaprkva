@@ -164,7 +164,7 @@ const Contactform = ({ w3ckey }: { w3ckey?: { w3ckey?: string } }) => {
             {[
               "I am looking for agency services",
               "I am an agency looking for a white label partner",
-              "I am a current Victorious customer",
+              "I am a current RankSpark customer",
               "Other",
             ].map((option) => (
               <label className="flex items-center" key="">
@@ -192,7 +192,8 @@ const Contactform = ({ w3ckey }: { w3ckey?: { w3ckey?: string } }) => {
             name="message"
             required
             placeholder=""
-            className="w-full px-4 py-3 border bg-violetExtraLight rounded-full outline-none h-14 focus:ring-4 border-violetLight focus:border-violet !ring-violetLight"
+            rows={4}
+            className="w-full px-4 py-3 border bg-violetExtraLight rounded-3xl outline-none focus:ring-4 border-violetLight focus:border-violet !ring-violetLight"
           ></textarea>
           <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
             Please enter your message.

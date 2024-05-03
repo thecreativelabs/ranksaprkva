@@ -14,6 +14,7 @@ import Strategy from "@components/Strategy";
 import Faq from "@components/Faq";
 import Cta from "@components/Cta";
 import Footer from "@components/Footer";
+import ServiceSlider from "@/components/services/slider";
 
 export default async function Home() {
   const page = await client.fetch(`*[_type == "landingPage"] {  
@@ -73,7 +74,8 @@ export default async function Home() {
       <Badges data={page.section1?.stats} />
       <Features data={page.section1} />
       <Brands />
-      <Slider />
+      <ServiceSlider className="!bg-white" />
+
       <Partnership data={page.section2?.features} />
       <Algorithms {...page.section2?.featuresAlt} />
       <Learn {...page.section2?.whoWeServe} />
