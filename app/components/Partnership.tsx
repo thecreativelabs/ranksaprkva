@@ -4,6 +4,7 @@ import Container from "./Container";
 import { PortableText } from "@components/PortableText";
 import Button from "@components/Button";
 import SvgDecorative from "./SvgDecorative";
+import Link from "next/link";
 
 const Partnership = ({ data }: { data: any[] }) => {
   return (
@@ -83,11 +84,14 @@ const Partnership = ({ data }: { data: any[] }) => {
                   <PortableText value={data?.[1].description} />
                 </div>
                 <div className="mt-10 flex items-center mb-8 text-violet underline  cursor-pointer">
-                  <a href={data?.[1].button.path} className="flex items-center">
+                  <Link
+                    href={data?.[1].button.path || "/"}
+                    className="flex items-center"
+                  >
                     <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
                       {data?.[1].button.text}
                     </p>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="bg-graybg w-full flex flex-col gap-4 mb-6 items-start group rounded-[3rem] transition-all px-8 py-6">
@@ -172,11 +176,14 @@ const Partnership = ({ data }: { data: any[] }) => {
                   <PortableText value={data?.[2].description} />
                 </div>
                 <div className="mt-10 flex items-center mb-8 text-violet underline  cursor-pointer">
-                  <a href={data?.[2].button.link} className="flex items-center">
+                  <Link
+                    href={data?.[2].button.path || "/"}
+                    className="flex items-center"
+                  >
                     <p className="mr-2 font-sans font-semibold text-red-600tracking-wide">
                       {data?.[2].button.text}
                     </p>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

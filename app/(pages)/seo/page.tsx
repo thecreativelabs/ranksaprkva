@@ -35,9 +35,7 @@ export default async function CaseStudyIndividual({
       <div className="bg-violetExtraLight rounded-[3rem] mt-12 py-6 md:py-16">
         <AdditonalService />
       </div>
-      <Container>
-        <ServiceSlider className="!bg-white" />
-      </Container>
+      <ServiceSlider className="!bg-white" />
     </>
   );
 }

@@ -121,7 +121,7 @@ export default function Slider(props: any) {
                     ></Image>
                   </div>
                   <div className="sm:w-[40%] space-y-[30px] flex flex-col justify-evenly items-center">
-                    <div className="w-full flex">
+                    <div className="w-full flex pt-4">
                       <div className="flex w-1/2 flex-col border-r-[1px] ml-[-10px] pb-2 border-[#dcdcdc] justify-center items-center">
                         <div className="flex justify-center items-center">
                           {dataa.Icon != null || dataa.Icon != "" ? (
@@ -133,7 +133,7 @@ export default function Slider(props: any) {
                             ""
                           )}
                           <p
-                            className="font-bold text-xxxl font-primary"
+                            className="font-bold text-xxl md:text-xxxl font-primary"
                             style={{ color: dataa.color }}
                           >
                             {dataa.counter[0].number.text}
@@ -154,7 +154,7 @@ export default function Slider(props: any) {
                             ""
                           )}
                           <p
-                            className="font-bold text-xxxl   font-primary"
+                            className="font-bold text-xxl md:text-xxxl font-primary"
                             style={{ color: dataa.color }}
                           >
                             {dataa.counter[1].number.text}
