@@ -180,7 +180,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          <Button props={{ text: "FREE SEO REVIEW", path: "/" }} />
+          <Button props={{ text: "FREE SEO REVIEW", path: "/seo" }} />
         </div>
       </Container>
     </header>

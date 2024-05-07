@@ -9,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // Amiri: ["Amiri", "serif"],
-        // primary: ["DM Sans", "sans-serif"],
+        Amiri: ["Kanit", "sans-serif"],
+        primary: ["Kanit", "sans-serif"],
         tertiary: ["Kanit", "sans-serif"],
       },
       colors: {

@@ -54,19 +54,6 @@ const RadixNavbar = ({
     setDropdownOpen(!dropdownOpen);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setIsSticky(scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const servicesList = services
     .filter((item) => !item.subCategory)
     .map((item) => ({
@@ -98,8 +85,7 @@ const RadixNavbar = ({
   return (
     <div
       className={classNames(
-        "z-[1000] py-2 top-0 transition-all duration-300 bg-violetLight",
-        isSticky ? "sticky" : ""
+        "z-[1000] sticky top-0 py-2 transition-all duration-300 bg-violetLight"
       )}
     >
       <Container className="relative">
@@ -268,7 +254,7 @@ const RadixNavbar = ({
           </div>
           <div className="hidden md:block">
             <Button
-              props={{ text: "EXPLORE OUR METHOD", path: "/" }}
+              props={{ text: "EXPLORE OUR METHOD", path: "/seo" }}
               className="!mt-0"
             />
           </div>

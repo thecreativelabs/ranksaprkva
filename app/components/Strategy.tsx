@@ -20,7 +20,7 @@ const Strategy = ({
           <img
             src={image?.asset?.url}
             alt={image?.alt}
-            className="h-auto md:max-w-full w-[100%] rounded-[3rem]"
+            className="h-auto md:max-w-full w-[100%] rounded-3xl md:rounded-[3rem]"
           />
           <svg
             className="absolute hidden md:block -top-20 -right-10 -z-10"

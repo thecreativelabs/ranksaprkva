@@ -10,9 +10,5 @@ export default function ServiceBanner({
     image: { asset: { url: string }; alt: string };
   };
 }) {
-  return (
-    <Container>
-      <Banner {...data} />
-    </Container>
-  );
+  return <Banner {...data} />;
 }

@@ -13,9 +13,5 @@ export default function ServiceLearn({
     }[];
   };
 }) {
-  return (
-    <Container>
-      <Learn {...data} />
-    </Container>
-  );
+  return <Learn {...data} />;
 }

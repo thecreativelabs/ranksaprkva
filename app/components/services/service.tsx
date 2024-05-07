@@ -92,7 +92,7 @@ const data = {
     ],
     button: {
       text: "EXPLORE OUR METHOD",
-      url: "",
+      url: "/seo",
     },
   },
 };
@@ -100,12 +100,12 @@ const data = {
 export default function Services() {
   return (
     <Container className="relative">
-      <div className="flex justify-center items-center">
-        <div className=" w-[93%] ml-0 sm:ml-[20px] sm:py-[120px] md:py-[80px] py-[40px] flex flex-col gap-y-[40px]">
+      <div className="flexjustify-center items-center">
+        <div className="sm:py-[120px] md:py-[80px] py-[40px] flex flex-col gap-y-[40px]">
           <p className="text-light-red text-sm sm:text-sm font-bold font-primary uppercase tracking-widest">
             {data.title}
           </p>
-          <p className="text-dark-red sm:w-[60%] w-[60%] text-xxl lg:text-xxxxl font-normal font-Amiri  leading-[32px] lg:leading-[55px]">
+          <p className="text-dark-red sm:w-[60%] text-xxl lg:text-xxxxl font-normal font-Amiri  leading-[32px] lg:leading-[55px]">
             {data.heading}
           </p>
           <p className="text-dark-red text-sm lg:text-[17px] leading-[26px] font-normal mt-[-7px] font-primary lg:max-w-[72%]">

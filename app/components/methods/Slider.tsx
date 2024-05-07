@@ -88,7 +88,7 @@ export default function Slider(props: any) {
           }
           `}
       </style>
-      <div className="w-full h-[400px] bg-transparent">
+      <div className="w-full h-auto md:h-[400px] bg-transparent">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           spaceBetween={50}
@@ -106,7 +106,7 @@ export default function Slider(props: any) {
               <SwiperSlide key={i} className="">
                 <div className="flex sm:flex-row flex-col w-full h-full justify-between  items-center">
                   <div
-                    className={`rounded-3xl h-[90%] sm:mt-[10px] mt-[45px] sm:w-[50%] w-[80%] flex justify-center relative items-center bg-cover`}
+                    className={`rounded-3xl h-[90%] sm:mt-[10px] mt-[45px] sm:w-[50%] w-full flex justify-center relative items-center bg-cover`}
                     style={{
                       backgroundImage: `url(${"./methods/Vector-3.png"})`,
                       backgroundColor: dataa.color,
@@ -120,8 +120,8 @@ export default function Slider(props: any) {
                       className="h-[200px] max-w-fit"
                     ></Image>
                   </div>
-                  <div className="sm:w-[40%] w-[80%] ml-[30px] gap-y-[30px] flex flex-col justify-evenly items-center">
-                    <div className="w-full ml- flex">
+                  <div className="sm:w-[40%] space-y-[30px] flex flex-col justify-evenly items-center">
+                    <div className="w-full flex">
                       <div className="flex w-1/2 flex-col border-r-[1px] ml-[-10px] pb-2 border-[#dcdcdc] justify-center items-center">
                         <div className="flex justify-center items-center">
                           {dataa.Icon != null || dataa.Icon != "" ? (

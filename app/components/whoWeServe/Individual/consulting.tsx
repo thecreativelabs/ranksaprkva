@@ -26,11 +26,11 @@ export default function Consulting({
       <Container className="relative">
         <SvgDecorative />
         <div className="w-full flex justify-center border-b-[1px] border-violet">
-          <div className="w-[90%] space-y-[30px] sm:py-[80px] py-[40px] sm:mt-[30px] mt-[15px] ">
+          <div className="space-y-[30px] sm:py-[80px] py-[40px] sm:mt-[30px] mt-[15px] ">
             <p className="text-light-red text-sm sm:text-sm font-bold font-primary uppercase tracking-widest">
               {title}
             </p>
-            <p className="text-dark-red sm:w-[70%] w-[60%] text-xxl lg:text-xxxxl font-normal font-Amiri  leading-[32px] lg:leading-[55px]">
+            <p className="text-dark-red sm:w-[70%] text-xxl lg:text-xxxxl font-normal font-Amiri  leading-[32px] lg:leading-[55px]">
               {heading}
             </p>
             <p className="text-dark-red text-sm lg:text-[17px] leading-[26px] font-normal mt-[-7px] font-primary lg:max-w-[50%]">

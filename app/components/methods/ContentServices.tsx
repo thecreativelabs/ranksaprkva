@@ -20,7 +20,7 @@ export default function ContentAndServices({
         <p className="text-center text-dark-red text-xxl sm:text-xxxl sm:w-[60%] w-[90%] font-normal font-Amiri">
           {data?.header?.title}
         </p>
-        <div className="w-[90%] grid grid-cols-1 sm:grid-cols-3 gap-[25px]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-[25px]">
           {data?.featureCards?.map((card, i) => (
             <div
               key={i}

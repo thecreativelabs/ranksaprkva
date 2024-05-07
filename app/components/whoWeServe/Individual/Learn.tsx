@@ -12,8 +12,8 @@ export default function Learn({
   return (
     <Container>
       <div className="w-full flex justify-center">
-        <div className=" sm:w-[58%] w-[90%]  sm:py-[80px] py-[30px]">
-          <p className="text-dark-red text-2xl text-center lg:text-[37.30px] font-normal font-Amiri tracking-wide leading-[30px] sm:leading-[67.34px]">
+        <div className=" sm:w-[58%] sm:py-[80px] py-[30px]">
+          <p className="text-dark-red text-2xl md:text-center lg:text-[37.30px] font-normal font-Amiri tracking-wide leading-[30px] sm:leading-[67.34px]">
             {heading}
           </p>
           <p className="font-primary  text-base sm:text-lg leading-[28px] tracking-wide font-normal mt-[15px]">

@@ -64,7 +64,7 @@ export default function AdditonalService() {
   };
   return (
     <Container>
-      <div className="border border-gray rounded-[3rem] overflow-hidden shadow-xl">
+      <div className="border border-gray rounded-3xl md:rounded-[3rem] overflow-hidden shadow-lg">
         <div className="bg-white relative z-10 p-4 md:py-8 flex flex-col gap-[10%] justify-center items-center w-[100%]  ">
           <p className="text-xxl font-bold tracking-wider">{data?.heading}</p>
           <div className="h-[1px] bg-violet w-full mt-4"></div>

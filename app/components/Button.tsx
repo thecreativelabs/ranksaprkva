@@ -40,7 +40,7 @@ const Button = ({
   ) : (
     <button
       className={
-        "flex flex-col bg-violet text-white text-sm mt-10 px-8 pt-1 pb-2 md:pt-4 md:pb-3 rounded-full w-[270px] md:w-auto md:items-center items-center gap-4 hover:bg-violet/90 hover:text-white transition-all duration-300" +
+        "flex flex-col bg-violet text-white text-sm mt-10 px-4 md:px-8 pt-1 pb-2 md:pt-4 md:pb-3 rounded-full md:w-auto md:items-center items-center gap-4 hover:bg-violet/90 hover:text-white transition-all duration-300" +
         " " +
         className
       }

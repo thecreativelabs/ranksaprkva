@@ -36,7 +36,7 @@ export default function Companies({
               ))}
             </div>
           </div>
-          <div className="h-[60%] flex mt-[50px] justify-center items-center w-[100%]">
+          <div className="flex mt-[50px] justify-center items-center w-[100%]">
             <Slider />
           </div>
         </div>

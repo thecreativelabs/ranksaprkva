@@ -17,22 +17,22 @@ export default function SearchAndGrowth({
 }): JSX.Element {
   return (
     <Container>
-      <div className="relative py-[120px] h-fit  flex flex-col bg-white justify-center items-center">
-        <div className="bg-violetExtraLight rounded-[3rem] overflow-hidden relative px-[20px] sm:px-[70px] sm:py-[50px] pt-[20px] pb-[250px] bg-[url(/whoWeServe/vector.svg)] bg-cover sm:bg-contain bg-no-repeat bg-right shadow-[0_0_25px_0px] shadow-violetLight">
+      <div className="relative h-fit flex flex-col bg-white justify-center items-center">
+        <div className="bg-violetExtraLight rounded-[3rem] overflow-hidden relative px-[20px] sm:px-[70px] sm:py-[50px] pt-[20px] bg-[url(/whoWeServe/vector.svg)] bg-contain bg-no-repeat bg-right shadow-[0_0_25px_0px] shadow-violetLight">
           <p className=" sm:text-xxxl leading-[25px] text-xxl w-[100%] md:w-[55%] font-normal font-Amiri">
             {data?.ctoCard?.text}
           </p>
           <Button props={data?.ctoCard?.cta?.button} />
           <Image
             src={urlForImage(data?.ctoCard?.image) || ""}
-            className="absolute bottom-0 right-0"
+            className="translate-x-8 md:translate-x-0 md:absolute bottom-0 right-0"
             height={550}
             width={550}
             alt={data?.ctoCard?.image?.alt || ""}
           />
         </div>
 
-        <div className="w-[90%]  sm:p-0 p-4 mt-[-15%] sm:mt-[15%]">
+        <div className="sm:p-0 p-4 my-[15%]">
           <p className="sm:text-xxl text-lg font-medium tracking-wide w-[100%]">
             {data?.heading}
           </p>

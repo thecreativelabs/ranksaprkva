@@ -1,5 +1,5 @@
 import type { Metadata, ResolvingMetadata } from "next";
-import { Inter, Kanit, Outfit } from "next/font/google";
+import { Inter, Kanit, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Topnav from "@/components/navbar/Topnav";
 import Footer from "@/components/Footer";
@@ -23,8 +23,8 @@ const kanit = Kanit({
   subsets: ["latin"],
 });
 
-const outfit = Outfit({
-  weight: ["400", "600"],
+const dmSans = DM_Sans({
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
 });
 
@@ -113,11 +113,11 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={dmSans.className}>
         <Topnav />
         <RadixNavbar services={services} whoWeServe={whoWeServe} />
 
-        {children}
+        <div className="overflow-x-hidden">{children}</div>
         <Cta />
         <Footer />
       </body>

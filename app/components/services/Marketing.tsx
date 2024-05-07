@@ -11,9 +11,5 @@ export default function ServiceMarketing({
     image: { asset: { url: string }; alt: string };
   }[];
 }) {
-  return (
-    <Container>
-      <Marketing data={data} />
-    </Container>
-  );
+  return <Marketing data={data} />;
 }
