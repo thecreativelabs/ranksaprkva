@@ -16,7 +16,7 @@ const Brands = async () => {
         <h2 className="font-bold font-primary text-center text-xl text-dark-red">
           {page.title}
         </h2>
-        <div className="mt-10 flex gap-x-16 gap-y-4 md:gap-26 lg:gap-32 items-center justify-center flex-wrap">
+        <div className="mt-10 flex gap-x-16 gap-y-4 md:gap-x-26 lg:gap-x-32 items-center justify-center flex-wrap">
           {page.logos?.map((logo: any, key: number) => (
             <div key={key}>
               <div className="text-gray-500 my-2 h-7 md:h-9 mt-10">

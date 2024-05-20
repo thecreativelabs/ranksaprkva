@@ -30,8 +30,8 @@ export default async function CaseStudyIndividual({
         <div className="mt-12">
           <CalInline />
         </div>
-        <Brands />
       </Container>
+      <Brands />
       <div className="bg-violetExtraLight rounded-[3rem] mt-12 py-6 md:py-16">
         <AdditonalService />
       </div>
