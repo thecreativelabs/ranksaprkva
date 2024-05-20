@@ -47,6 +47,10 @@ const Footer = ({
             title: "Reviews",
             path: "/",
           },
+          {
+            title: "Sitemap",
+            path: "/sitemap",
+          },
         ],
       },
       {
