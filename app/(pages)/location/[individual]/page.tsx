@@ -29,7 +29,7 @@ export default async function Individual({
   const slug = params.individual;
 
   const data = await client.fetch(
-    `*[_type == "vertical" && pageMeta.slug.current == $slug][0] {
+    `*[_type == "location" && slug.current == $slug][0] {
       header {
         title,
         heading,

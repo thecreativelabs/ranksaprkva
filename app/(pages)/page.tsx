@@ -15,6 +15,7 @@ import Faq from "@components/Faq";
 import Cta from "@components/Cta";
 import Footer from "@components/Footer";
 import ServiceSlider from "@/components/services/slider";
+import { WhoWeServe } from "./layout";
 
 export default async function Home() {
   const page = await client.fetch(`*[_type == "landingPage"] {  
@@ -65,6 +66,15 @@ export default async function Home() {
       }
     }
   }[0]`);
+
+  const whoWeServe = (await client.fetch(`*[_type == "vertical"] {
+    type,
+    pageMeta {
+      name,
+      slug,
+      icon
+    }
+  }`)) as WhoWeServe[];
   // console.log(page.header);
   if (!page) return <></>;
 
@@ -78,7 +88,7 @@ export default async function Home() {
 
       <Partnership data={page.section2?.features} />
       <Algorithms {...page.section2?.featuresAlt} />
-      <Learn {...page.section2?.whoWeServe} />
+      <Learn {...page.section2?.whoWeServe} verticals={whoWeServe} />
       <Strategy {...page.section3} />
       <Faq {...page.faqs} />
     </div>

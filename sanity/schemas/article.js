@@ -38,6 +38,21 @@ export default defineType({
       ],
     },
     {
+      name: "includeInFooter",
+      title: "Include in Footer",
+      description:
+        "Checking this lists the article under Learn section in Footer",
+      type: "boolean",
+    },
+    // optional field which only shows up when includeInFooter is true
+    {
+      name: "footerName",
+      title: "Footer Name",
+      description: "3-4 words short name for the article in footer",
+      type: "string",
+      hidden: ({ parent }) => !parent.includeInFooter,
+    },
+    {
       name: "overview",
       title: "Overview",
       type: "text",

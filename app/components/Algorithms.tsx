@@ -314,7 +314,7 @@ const Algorithms = ({
         {features.map((item, index) => (
           <div
             key={index}
-            className="md:h-[300px] h-auto w-full flex flex-col gap-4 mb-6 items-start group rounded transition-all px-8 py-6"
+            className="md:h-[300px] h-auto w-full flex flex-col gap-4 mb-6 items-start group rounded transition-all"
           >
             <div className="items-center justify-between">
               <div className="mt-1 mb-6 shadow-[0_0_30px_20px] shadow-violetLight bg-gradient-to-t from-[#7B4EE7] to-[#AFA8F6] transition-colors rounded-full grid place-items-center p-2 w-24 h-24 shrink-0">

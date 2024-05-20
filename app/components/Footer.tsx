@@ -4,213 +4,123 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import { Blog, Location, Services } from "@/(pages)/layout";
 // import { Icon } from "astro-icon/components";
 
-const footermenu = {
-  copyright: "RankSpark. All rights reserved.",
-  logo: "/logo_initial.png",
-  heading: [
-    {
-      title: "Company",
-      item: [
-        {
-          title: "Company",
-          path: "/about",
-        },
-        {
-          title: "Contact",
-          path: "/careers",
-        },
-        {
-          title: "Careers",
-          path: "/blog",
-        },
-        {
-          title: "Method",
-          path: "/contact",
-        },
-        {
-          title: "Awards",
-          path: "/contact",
-        },
-        {
-          title: "Reviews",
-          path: "/contact",
-        },
-      ],
-    },
-    {
-      title: "Learn",
-      item: [
-        {
-          title: "Why SEO Matters",
-          path: "/about",
-        },
-        {
-          title: "How To Outsource SEO",
-          path: "/careers",
-        },
-        {
-          title: "Keyword Research Explained",
-          path: "/blog",
-        },
-        {
-          title: "On-Page SEO Explained",
-          path: "/contact",
-        },
-        {
-          title: "Off-Page SEO Explained",
-          path: "/contact",
-        },
-        {
-          title: "2024 SEO Checklist",
-          path: "/contact",
-        },
-      ],
-    },
-    {
-      title: "Services",
-      item: [
-        {
-          title: "SEO Services",
-          path: "/about",
-        },
-        {
-          title: "On-Page SEO",
-          path: "/careers",
-        },
-        {
-          title: "Keyword Research",
-          path: "/blog",
-        },
-        {
-          title: "SEO Audit",
-          path: "/contact",
-        },
-        {
-          title: "Off-Page SEO",
-          path: "/contact",
-        },
-        {
-          title: "Link Building",
-          path: "/contact",
-        },
-        {
-          title: "SEO Content Writing",
-          path: "/contact",
-        },
-        {
-          title: "Web Implementation",
-          path: "/contact",
-        },
-      ],
-    },
-    {
-      title: "Where We Are",
-      item: [
-        {
-          title: "San Francisco SEO",
-          path: "/about",
-        },
-        {
-          title: "Austin SEO Agency",
-          path: "/careers",
-        },
-        {
-          title: "Boston SEO Agency",
-          path: "/blog",
-        },
-        {
-          title: "Chicago SEO Agency",
-          path: "/contact",
-        },
-        {
-          title: "Denver SEO Agency",
-          path: "/contact",
-        },
-        {
-          title: "Des Moines SEO Agency",
-          path: "/contact",
-        },
-        {
-          title: "DC SEO Company",
-          path: "/contact",
-        },
-        {
-          title: "Los Angeles SEO Agency",
-          path: "/contact",
-        },
-        {
-          title: "New York City SEO Agency",
-          path: "/contact",
-        },
-        {
-          title: "Phoenix SEO Agency",
-          path: "/contact",
-        },
-        {
-          title: "San Diego SEO Agency",
-          path: "/contact",
-        },
-        {
-          title: "Seattle SEO Agencyy",
-          path: "/contact",
-        },
-      ],
-    },
-  ],
-  item: [
-    {
-      logo: "https://victorious.com/wp-content/uploads/2021/02/GLobal-SEO.svg",
-      title: "Global SEO Agency of the Year",
-      discription: "Search Engine Land®",
-    },
-    {
-      logo: "https://victorious.com/wp-content/uploads/2021/02/Best-National-SEO-20.svg",
-      title: "U.S. SEO Agency of the Year",
-      discription: "U.S. Search Awards®",
-    },
-    {
-      logo: "https://victorious.com/wp-content/uploads/2021/02/Enterprise-SEO.svg",
-      title: "Enterprise SEO Agency of the Year",
-      discription: "Clutch®",
-    },
-  ],
-  tnc: [
-    {
-      title: "Privacy Policy",
-      path: "/privacy",
-    },
-    {
-      title: "Terms of Use",
-      path: "/tnc",
-    },
-    {
-      title: " Sitemap",
-      path: "/blog",
-    },
-  ],
-  media: [
-    {
-      icon: <FaFacebookF name="bx:bxl-facebook" className="w-6 h-6" />,
-      name: "Facebook",
-    },
-    {
-      icon: <FaInstagram name="bx:bxl-linkedin" className="w-6 h-6" />,
-      name: "Instagram",
-    },
-    {
-      icon: <FaLinkedin name="bx:bxl-twitter" className="w-6 h-6" />,
-      name: "LinkedIn",
-    },
-    {
-      icon: <FaTwitter name="bx:bxl-youtube" className="w-6 h-6" />,
-      name: "Twitter",
-    },
-  ],
-};
-
-const Footer = () => {
+const Footer = ({
+  blogs,
+  services,
+  locations,
+}: {
+  blogs: Blog[];
+  services: Services[];
+  locations: Location[];
+}) => {
+  const footermenu = {
+    copyright: "RankSpark. All rights reserved.",
+    logo: "/logo_initial.png",
+    heading: [
+      {
+        title: "Company",
+        item: [
+          {
+            title: "Company",
+            path: "/company",
+          },
+          {
+            title: "Contact",
+            path: "/contact",
+          },
+          {
+            title: "Careers",
+            path: "/career",
+          },
+          {
+            title: "Method",
+            path: "/method",
+          },
+          {
+            title: "Awards",
+            path: "/",
+          },
+          {
+            title: "Reviews",
+            path: "/",
+          },
+        ],
+      },
+      {
+        title: "Learn",
+        item: blogs?.map((blog) => ({
+          title: blog.footerName,
+          path: `/blog/${blog.slug.current}`,
+        })),
+      },
+      {
+        title: "Services",
+        item: services?.map((service) => ({
+          title: service.title,
+          path: `/services/${service.slug.current}`,
+        })),
+      },
+      {
+        title: "Where We Are",
+        item: locations?.map((location) => ({
+          title: location.name,
+          path: `/location/${location.slug.current}`,
+        })),
+      },
+    ],
+    item: [
+      {
+        logo: "https://victorious.com/wp-content/uploads/2021/02/GLobal-SEO.svg",
+        title: "Global SEO Agency of the Year",
+        discription: "Search Engine Land®",
+      },
+      {
+        logo: "https://victorious.com/wp-content/uploads/2021/02/Best-National-SEO-20.svg",
+        title: "U.S. SEO Agency of the Year",
+        discription: "U.S. Search Awards®",
+      },
+      {
+        logo: "https://victorious.com/wp-content/uploads/2021/02/Enterprise-SEO.svg",
+        title: "Enterprise SEO Agency of the Year",
+        discription: "Clutch®",
+      },
+    ],
+    tnc: [
+      {
+        title: "Privacy Policy",
+        path: "/privacy",
+      },
+      {
+        title: "Terms of Use",
+        path: "/tnc",
+      },
+      {
+        title: " Sitemap",
+        path: "/blog",
+      },
+    ],
+    media: [
+      {
+        icon: <FaFacebookF name="bx:bxl-facebook" className="w-6 h-6" />,
+        name: "Facebook",
+      },
+      {
+        icon: <FaInstagram name="bx:bxl-linkedin" className="w-6 h-6" />,
+        name: "Instagram",
+      },
+      {
+        icon: <FaLinkedin name="bx:bxl-twitter" className="w-6 h-6" />,
+        name: "LinkedIn",
+      },
+      {
+        icon: <FaTwitter name="bx:bxl-youtube" className="w-6 h-6" />,
+        name: "Twitter",
+      },
+    ],
+  };
   return (
     <footer className="py-14 bg-violet border-t border-slate-100">
       {/* <Container>

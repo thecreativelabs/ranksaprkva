@@ -2,6 +2,9 @@ import React from "react";
 import Container from "./Container";
 import { FaArrowRight } from "react-icons/fa6";
 import SvgDecorative from "./SvgDecorative";
+import { WhoWeServe } from "@/(pages)/layout";
+import { urlForImage } from "@sanity/lib/image";
+import Link from "next/link";
 
 const learn = {
   title: "Learn how an SEO firm can help you master your market.",
@@ -693,9 +696,11 @@ const learn = {
 const Learn = ({
   heading,
   description,
+  verticals,
 }: {
   heading: string;
   description: string;
+  verticals: WhoWeServe[];
 }) => {
   return (
     <Container className="relative">
@@ -708,34 +713,24 @@ const Learn = ({
             {description}
           </p>
           <div className="flex flex-col w-auto md:flex-row gap-x-8">
-            <div className="w-full cursor-pointer md:w-1/2">
-              {learn.it.map((item, index) => (
-                <div key={index}>
-                  <a href="/">
-                    <div className="flex mt-5 mb-5 md:gap-x-8 border border-violet px-4 py-2 rounded-full justify-center items-center">
-                      {item.icon}
-                      <p className="w-[150px] font-semibold md:ml-0 ml-4 text-md md:text-xl">
-                        {item.title}
-                      </p>
-                      <FaArrowRight className="text-violet w-6 h-6" />
-                    </div>
-                  </a>
-                </div>
-              ))}
-            </div>
-            <div className="w-full cursor-pointer md:w-1/2">
-              {learn.it2.map((item, index) => (
-                <div key={index}>
-                  <a href="/">
-                    <div className="flex mt-5 mb-5 md:gap-x-8 border border-violet px-4 py-2 rounded-full justify-center items-center">
-                      {item.icon}
-                      <p className="w-[150px] font-semibold md:ml-0 ml-4 text-md md:text-xl">
-                        {item.title}
-                      </p>
-                      <FaArrowRight className="text-violet w-6 h-6" />
-                    </div>
-                  </a>
-                </div>
+            <div className="grid md:grid-cols-2 gap-x-12">
+              {verticals.map((vertical, key) => (
+                <Link
+                  key={key}
+                  href={`/who-we-serve/${vertical.pageMeta.slug.current}`}
+                >
+                  <div className="flex mb-5 md:mb-8 md:gap-x-8 border border-violet px-4 py-2 rounded-full justify-between items-center">
+                    <img
+                      className="w-10 h-10 object-contain"
+                      src={urlForImage(vertical.pageMeta.icon)}
+                      alt={vertical.pageMeta.icon.alt}
+                    />
+                    <p className="font-semibold md:ml-0 ml-4 text-md md:text-xl">
+                      {vertical.pageMeta.name}
+                    </p>
+                    <FaArrowRight className="text-violet w-6 h-6" />
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

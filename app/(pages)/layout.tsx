@@ -90,6 +90,21 @@ export type WhoWeServe = {
   };
 };
 
+export type Location = {
+  name: string;
+  slug: {
+    _type: string;
+    current: string;
+  };
+};
+export type Blog = {
+  footerName: string;
+  slug: {
+    _type: string;
+    current: string;
+  };
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -110,6 +125,15 @@ export default async function RootLayout({
       icon
     }
   }`)) as WhoWeServe[];
+  const locations = (await client.fetch(`*[_type == "location"] {
+    name,
+    slug
+  }`)) as Location[];
+  const blogs =
+    (await client.fetch(`*[_type == "article" && includeInFooter == true] {
+    footerName,
+    slug
+  }`)) as Blog[];
 
   return (
     <html lang="en">
@@ -119,7 +143,7 @@ export default async function RootLayout({
 
         <div className="overflow-x-hidden">{children}</div>
         <Cta />
-        <Footer />
+        <Footer blogs={blogs} services={services} locations={locations} />
       </body>
     </html>
   );

@@ -23,6 +23,7 @@ import article from "./article";
 import author from "./author";
 import blogLandingPage from "./blogLandingPage";
 import vertical from "./vertical";
+import location from "./location";
 import whoWeServe from "./whoWeServe";
 import meta from "./meta";
 
@@ -47,6 +48,7 @@ const schemaTypes = [
   author,
   blogLandingPage,
   vertical,
+  location,
   whoWeServe,
   meta,
   caseStudies,
