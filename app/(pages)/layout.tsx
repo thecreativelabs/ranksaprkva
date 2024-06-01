@@ -148,3 +148,9 @@ export default async function RootLayout({
     </html>
   );
 }
+
+// ⚠️ CACHING DISABLED WHILE IN DEVELOPMENT
+// remove this line when deploying to production
+// or set a revalidate time
+// export const revalidate = 60 * 60 * 24; // 24 hours
+export const revalidate = 0;
